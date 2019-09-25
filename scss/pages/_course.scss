@@ -1,0 +1,265 @@
+.course-page {
+  .banner {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.history-section{
+  .history-holder{
+    width: 1330px;
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 80px auto;
+
+    .history-block{
+      display: flex;
+      justify-content: center;
+      padding-bottom: 60px;
+      position: relative;
+
+      &:before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        left: 50%;
+        width: 1px;
+        background-color: $text-color;
+      }
+
+      &:last-child{
+        &:before{
+          display: none;
+        }
+      }
+
+      &__left, &__right{
+        width: 50%;
+        position: relative;
+
+        .title{
+          font-size: 18px;
+          width: 100%;
+          padding-bottom: 15px;
+          letter-spacing: 0;
+          border-bottom: 1px solid $text-color;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+
+        .context{
+          color: $text-color;
+          font-size: 15px;
+          height: 50px;
+          width: 100%;
+          overflow: visible;
+        }
+      }
+
+      &__right{
+        text-align: right;
+
+        &.sub-content{
+          *{
+            display: none;
+          }
+        }
+      }
+
+      &__thumbnail{
+        width: 300px;
+        flex-basis: 300px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /* Responsive */
+  @media #{$information-laptop}{
+    .history-holder {
+      width: 1280px;
+
+      .history-block {
+        &__left, &__right {
+          .context {
+            font-size: 14px;
+          }
+        }
+
+        &__thumbnail {
+          width: 280px;
+          flex-basis: 280px;
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-laptop}{
+    .history-holder {
+      width: 1200px;
+    }
+  }
+
+  @media #{$information-hz-phone}{
+    .history-holder{
+      margin: 50px auto;
+
+      .history-block{
+        padding-bottom: 50px;
+
+        &:before{
+          left: 140px;
+        }
+
+        &:last-child{
+          &:before{
+            display: none;
+          }
+        }
+
+        &__left{
+          display: none;
+        }
+
+        &__right{
+          text-align: left;
+          width: 100%;
+
+          &.sub-content{
+            *{
+              display: block;
+            }
+          }
+
+          .title{
+            font-size: 18px;
+            padding-bottom: 13px;
+            padding-left: 20px;
+            letter-spacing: 0;
+            margin-bottom: 13px;
+          }
+
+          .context{
+            font-size: 15px;
+            height: auto;
+            padding-left: 20px;
+
+            br{
+              display: none;
+            }
+          }
+        }
+
+        &__thumbnail{
+          width: 280px;
+          flex-basis: 280px;
+        }
+      }
+    }
+  }
+  @media #{$information-sm-tablet}{
+    .history-holder{
+      margin: 50px auto;
+
+      .history-block{
+        padding-bottom: 50px;
+
+        &:before{
+          left: 130px;
+        }
+
+        &__right{
+
+          .title{
+            font-size: 18px;
+            padding-bottom: 12px;
+            padding-left: 20px;
+            margin-bottom: 12px;
+          }
+
+          .context{
+            font-size: 14px;
+            padding-left: 20px;
+          }
+        }
+
+        &__thumbnail{
+          width: 260px;
+          flex-basis: 260px;
+        }
+      }
+    }
+  }
+  @media #{$information-phone}{
+    .history-holder{
+      margin: 50px auto 40px;
+
+      .history-block{
+        padding-bottom: 30px;
+
+        &:before{
+          left: 75px;
+        }
+
+        &__right{
+
+          .title{
+            font-size: 16px;
+            padding-bottom: 8px;
+            padding-left: 15px;
+            margin-bottom: 8px;
+          }
+
+          .context{
+            font-size: 12px;
+            padding-left: 15px;
+          }
+        }
+
+        &__thumbnail{
+          width: 150px;
+          flex-basis: 150px;
+        }
+      }
+    }
+  }
+  @media #{$information-sm-phone}{
+    .history-holder{
+      margin: 40px auto 30px;
+
+      .history-block{
+        padding-bottom: 25px;
+
+        &:before{
+          left: 60px;
+        }
+
+        &__right{
+
+          .title{
+            font-size: 16px;
+            padding-bottom: 8px;
+            padding-left: 12px;
+            margin-bottom: 8px;
+          }
+
+          .context{
+            font-size: 12px;
+            padding-left: 12px;
+          }
+        }
+
+        &__thumbnail{
+          width: 120px;
+          flex-basis: 120px;
+        }
+      }
+    }
+  }
+}

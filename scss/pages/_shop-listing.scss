@@ -1,0 +1,616 @@
+.section-shop-listing{
+  padding: 40px 0 80px;
+  position: relative;
+  z-index: 0;
+
+  #storemapper{
+    #storemapper-left, #storemapper-right{
+      height: 600px;
+    }
+
+    .storemapper-powered-by,  .storemapper-powered-by[style]{
+      display: none !important;
+    }
+
+    #storemapper-form{
+      box-shadow: none;
+      padding-bottom: 0;
+
+      .storemapper-form-inner{
+        position: relative;
+
+        #storemapper-zip{
+          height: 40px;
+          border: 1px solid #DDD;
+          border-radius: 19px;
+          padding-right: 75px !important;
+          box-shadow: none;
+        }
+
+        #storemapper-go{
+          position: absolute;
+          top: 3px;
+          right: 3px;
+          background-color: $main-color;
+          display: inline-block;
+          width: auto;
+          height: 34px;
+          border-radius: 17px;
+          margin: 0;
+          background-image: #{$main-gradient};
+        }
+
+        .storemapper-reset{
+          display: none;
+        }
+      }
+
+      .storemapper-dropdown-menu{
+        li{
+          font-size: 15px;
+          padding: 5px 15px;
+          text-align: left;
+        }
+
+        &.active {
+          display: block;
+          top: 110%;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    &.show_categories #storemapper-form {
+      .storemapper-categories{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 12px;
+
+        .storemapper-dropdown-btn{
+          font-size: 15px;
+          font-weight: 400;
+
+          .caret{
+            display: none;
+          }
+
+          &:after{
+            content: '';
+            display: inline-block;
+            background-image: url('../img/icons/filter-icon.png');
+            background-repeat: no-repeat;
+            background-size: 22px 14px;
+            width: 28px;
+            height: 15px;
+            margin-left: 2px;
+            background-position: center;
+          }
+        }
+      }
+    }
+
+    #storemapper-list{
+      background-color: #fff;
+      .tier{
+        box-shadow: none;
+        border: 1px solid #ddd;
+
+        h4{
+          color: $main-color !important;
+          font-size: 16px;
+          font-weight: 700;
+          display: inline-block;
+          background: -webkit-linear-gradient(0deg, #F91201, #F86704, #F26D20);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        p{
+          font-size: 13px;
+          line-height: 19px;
+          position: relative;
+          color: $text-color;
+          margin-bottom: 5px;
+
+          a{
+            color: $main-color;
+          }
+
+          svg{
+            fill: $main-color;
+          }
+
+          &:before{
+            content: '';
+            width: 18px;
+            height: 18px;
+            left: 2px;
+            top: 2px;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        }
+
+        div{
+          display: flex;
+          flex-direction: column;
+
+          p{
+            width: 100%;
+            &.storemapper-phone{
+
+            }
+          }
+        }
+
+        .storemapper-distance{
+          display: none;
+        }
+
+        .storemapper_btn-wrap{
+          .storemapper_view{
+            a{
+              color: $main-color;
+              background-color: $white;
+              border-color: $main-color;
+              font-size: 12px;
+              height: 26px;
+              line-height: 25px;
+              border-radius: 13px;
+              padding: 0;
+              width: 150px;
+            }
+          }
+        }
+
+        &.storemapper-selected{
+          background-color: $main-color;
+          color: $white !important;
+          border-color: $main-color;
+
+          p{
+            color: $white !important;
+
+            a{
+              color: $white;
+            }
+
+            svg{
+              fill: $white;
+            }
+          }
+
+          h4{
+            color: $white !important;
+            font-size: 16px;
+            font-weight: 700;
+            background: $white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          .storemapper_btn-wrap {
+            .storemapper_view {
+              a {
+                color: $white;
+                background-color: transparent;
+                border-color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .storemapper-iw-content{
+      padding: 10px;
+
+      h4{
+        font-size: 18px;
+        font-weight: 700;
+        background: -webkit-linear-gradient(0deg, #F91201, #F86704, #F26D20);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      p{
+        padding: 0;
+
+        &.storemapper-popup-address{
+          svg{
+            display: none;
+          }
+        }
+      }
+
+      .storemapper-map-directions{
+        color: $main-color;
+        font-weight: 700;
+        height: 25px;
+        font-size: 12px;
+        outline: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .gm-ui-hover-effect{
+        top: 0 !important;
+        right: 2px !important;
+        font-size: 18px;
+
+        img{
+          width: 20px !important;
+          height: 20px !important;
+        }
+      }
+    }
+
+    @media #{$information-laptop} {
+      #storemapper-left, #storemapper-right{
+        height: 550px;
+      }
+
+      #storemapper-form{
+        .storemapper-form-inner{
+          #storemapper-zip{
+            height: 38px;
+            border-radius: 19px;
+            padding-right: 73px !important;
+          }
+
+          #storemapper-go{
+            top: 3px;
+            right: 2px;
+            height: 32px;
+            border-radius: 16px;
+          }
+        }
+
+        .storemapper-dropdown-menu{
+          li{
+            font-size: 15px;
+            padding: 5px 13px;
+          }
+        }
+      }
+
+      &.show_categories #storemapper-form {
+        .storemapper-categories{
+          margin-top: 8px;
+
+          .storemapper-dropdown-btn{
+            font-size: 14px;
+            &:after{
+              background-size: 18px 12px;
+              width: 18px;
+              height: 12px;
+            }
+          }
+        }
+      }
+
+      #storemapper-list{
+        .tier{
+          h4{
+            font-size: 15px;
+          }
+
+          p{
+            font-size: 12px;
+            line-height: 22px;
+          }
+
+          .storemapper_btn-wrap{
+            .storemapper_view{
+              a{
+                font-size: 12px;
+                height: 26px;
+                line-height: 25px;
+                border-radius: 13px;
+                width: 140px;
+              }
+            }
+          }
+        }
+      }
+
+      .storemapper-iw-content{
+        padding: 8px 8px 0;
+
+        h4{
+          font-size: 15px;
+        }
+
+        p{
+          font-size: 12px;
+        }
+
+        .storemapper-map-directions{
+          height: 25px;
+          font-size: 12px;
+        }
+
+        .gm-ui-hover-effect{
+          top: 0 !important;
+          right: 2px !important;
+
+          img{
+            width: 18px !important;
+            height: 18px !important;
+          }
+        }
+      }
+    }
+    @media #{$information-sm-laptop} {
+      #storemapper-left, #storemapper-right{
+        height: 470px;
+      }
+
+      #storemapper-form{
+        .storemapper-form-inner{
+          #storemapper-zip{
+            height: 36px;
+            border-radius: 18px;
+            padding-right: 72px !important;
+          }
+
+          #storemapper-go{
+            top: 3px;
+            right: 3px;
+            height: 30px;
+            border-radius: 15px;
+          }
+        }
+
+        .storemapper-dropdown-menu{
+          li{
+            font-size: 15px;
+            padding: 4px 12px;
+          }
+        }
+      }
+
+      &.show_categories #storemapper-form {
+        .storemapper-categories{
+          margin-top: 8px;
+
+          .storemapper-dropdown-btn{
+            font-size: 14px;
+            &:after{
+              background-size: 18px 11px;
+              width: 18px;
+              height: 11px;
+            }
+          }
+        }
+      }
+
+      #storemapper-list{
+        .tier{
+          padding: 10px 15px;
+          h4{
+            font-size: 14px;
+          }
+
+          p{
+            font-size: 12px;
+            line-height: 22px;
+          }
+
+          .storemapper_btn-wrap{
+            .storemapper_view{
+              a{
+                font-size: 11px;
+                height: 25px;
+                line-height: 24px;
+                border-radius: 13px;
+                width: 130px;
+              }
+            }
+          }
+        }
+      }
+
+      .storemapper-iw-content{
+        padding: 8px 5px 0;
+
+        h4{
+          font-size: 14px;
+        }
+
+        p{
+          font-size: 12px;
+        }
+
+        .storemapper-map-directions{
+          height: 25px;
+          font-size: 12px;
+        }
+
+        .gm-ui-hover-effect{
+          top: 0 !important;
+          right: 2px !important;
+
+          img{
+            width: 16px !important;
+            height: 16px !important;
+          }
+        }
+      }
+    }
+    @media #{$information-tablet} {}
+
+    @media #{$information-phone} {
+      #storemapper-right{
+        height: auto;
+      }
+
+      #storemapper-left{
+        height: 550px;
+        overflow: auto;
+      }
+
+      #storemapper-form{
+        .storemapper-form-inner{
+          #storemapper-zip{
+            height: 36px;
+            border-radius: 18px;
+            padding-right: 100px;
+          }
+
+          #storemapper-go{
+            top: 3px;
+            right: 3px;
+            height: 30px;
+            border-radius: 15px;
+          }
+        }
+
+        .storemapper-dropdown-menu{
+          li{
+            font-size: 15px;
+            padding: 4px 12px;
+          }
+        }
+      }
+
+      &.show_categories #storemapper-form {
+        .storemapper-categories{
+          margin-top: 8px;
+
+          .storemapper-dropdown-btn{
+            font-size: 13px;
+            &:after{
+              background-size: 16px 10px;
+              width: 18px;
+              height: 10px;
+            }
+          }
+        }
+      }
+
+      #storemapper-list{
+        padding: 20px 10px;
+        .tier{
+          padding: 10px 15px;
+          h4{
+            font-size: 14px;
+          }
+
+          p{
+            font-size: 12px;
+            line-height: 22px;
+          }
+
+          .storemapper_btn-wrap{
+            display: flex;
+            flex-direction: row;
+
+            .storemapper_view, .storemapper_directions{
+              width: 50%;
+
+              a{
+                font-size: 11px;
+                height: 25px;
+                line-height: 24px;
+                border-radius: 13px;
+                width: auto;
+                padding: 0;
+                border: 1px solid $main-color;
+                background-color: transparent;
+                color: $main-color;
+              }
+            }
+          }
+        }
+      }
+
+      .storemapper-iw-content{
+        padding: 8px 5px 0;
+
+        h4{
+          font-size: 14px;
+        }
+
+        p{
+          font-size: 12px;
+        }
+
+        .storemapper-map-directions, .storemapper-maplink{
+          height: 25px;
+          font-size: 12px;
+          font-weight: 700;
+          color: $main-color;
+          padding: 0;
+        }
+
+        .storemapper-maplink{
+          margin-right: 5px;
+        }
+
+        .gm-ui-hover-effect{
+          top: 0 !important;
+          right: 2px !important;
+
+          img{
+            width: 16px !important;
+            height: 16px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Additional Code */
+#storemapper{
+  .storemapper-popup{
+    .storemapper-popup-name{
+      font-size: 18px;
+      color: $main-color;
+    }
+
+    .storemapper-popup-address{
+      padding: 0 !important;
+      margin-bottom: 5px !important;
+      svg{
+        display: none !important;
+      }
+    }
+
+    p{
+      a{
+        color: $main-color;
+
+        svg{ fill: $main-color !important; }
+      }
+    }
+
+    .btn.storemapper-map-directions{
+      padding: 0;
+      color: $main-color;
+      font-weight: 500;
+      font-size: 14px !important;
+      
+      @media #{$information-phone} {
+        font-size: 12px !important;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .gm-ui-hover-effect{
+    top: 2px !important;
+    right: 2px !important;
+    font-size: 18px;
+
+    img{
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.arrow.prev.slick-arrow {
+    width: 28px;
+    height: 53px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background: url('../img/arrow-left.png');
+}
+.arrow.next.slick-arrow {
+    width: 28px;
+    height: 53px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background: url('../img/arrow-right.png');
+}
+body.admin-bar #page-header{
+    top: 32px;
+}
+#page-header .sub-menu__wrapper__item .product-image img {
+    height: 210px;
+}
+
+@media screen and (max-width: 780px){
+    body.admin-bar #page-header{
+        top: 46px;
+    }
+}

@@ -1,0 +1,108 @@
+.footer{
+  padding-top: 90px;
+  @media #{$information-hz-phone} { padding-top: 50px; }
+  @media #{$information-tablet} { padding-top: 45px; }
+  @media #{$information-phone} { padding-top: 40px; }
+  @media #{$information-md-phone} { padding-top: 35px; }
+
+  &__body{
+
+    &__col-title{
+      font-size: 18px;
+      text-transform: uppercase;
+      margin: 0;
+      padding-bottom: 20px;
+      @media #{$information-laptop} {font-size: 17px;}
+      @media #{$information-sm-laptop} {font-size: 16px;}
+      @media #{$information-hz-phone} { padding-bottom: 18px; }
+      @media #{$information-tablet} { padding-bottom: 15px; }
+      @media #{$information-phone} { padding-bottom: 13px; }
+      @media #{$information-md-phone} { padding-bottom: 12px; }
+    }
+
+    &__links{
+      padding: 0;
+
+      @media #{$information-hz-phone} { margin-bottom: 30px; }
+      @media #{$information-tablet} { margin-bottom: 27px; }
+      @media #{$information-phone} { margin-bottom: 26px; }
+      @media #{$information-md-phone} { margin-bottom: 25px; }
+
+      &__item{
+        list-style: none;
+        font-size: 16px;
+        line-height: 28px;
+        color: $text-color;
+        font-weight: 400; //regular
+
+        @media #{$information-laptop} {font-size: 15px;}
+        @media #{$information-sm-laptop} {font-size: 14px;}
+
+        a,span {
+          opacity: 0.6;
+        }
+
+        a{
+          cursor: pointer;
+          transition: all ease-out 150ms 20ms;
+
+          &:hover{
+            opacity: 1;
+          }
+        }
+      }
+
+      &__social{
+        margin-right: 10px;
+        opacity: 0.6;
+        transition: all ease-out 150ms 20ms;
+        cursor: pointer;
+
+        a{
+          display: inline-block;
+          width: 49px;
+          height: 49px;
+
+          @media #{$information-laptop} { 
+            width: 47px;
+            height: 47px;
+          }
+
+          @media #{$information-sm-laptop} {
+            width: 45px;
+            height: 45px;
+          }
+
+          img{
+            width: 100%;
+          }
+        }
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__bottom{
+    border-top: 1px solid #dfdfdf;
+
+    &__copyright{
+      margin: 0;
+      padding: 33px 0 30px;
+      color: $text-color;
+      opacity: 0.6;
+      font-size: 16px;
+      font-weight: 400; // regular
+
+      @media #{$information-laptop} { 
+        font-size: 15px;
+      }
+
+      @media #{$information-sm-laptop} {
+        font-size: 14px;
+      }
+    }
+  }
+}

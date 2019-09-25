@@ -1,0 +1,75 @@
+// Common Blog Heading Block - Reuseable
+.blog-heading{
+  text-align: center;
+  padding: 60px 0 50px;
+  border-bottom: 1px solid #e5e5e5;
+
+  &__title{
+    .title{
+      font-size: 24px;
+      font-weight: 700; //bold
+      letter-spacing: 0;
+
+      @media #{$information-hz-phone} {
+        font-size: 23px;
+        margin-bottom: 15px;
+      }
+
+      @media #{$information-tablet} {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      @media #{$information-phone} {
+        margin-bottom: 10px;
+      }
+
+      @media #{$information-md-phone} {}
+    }
+  }
+
+  &__breadcrumb{
+    font-family: 'DIN Pro', sans-serif;
+    font-size: 15px;
+    margin: 0;
+
+    li{
+      cursor: pointer;
+      color: #c2c2c2;
+      transition: all ease-out 150ms 20ms;
+
+      &:hover{
+        color: #a0a0a0;
+      }
+
+      a{}
+
+      &:after{
+        content: '';
+        display: inline-block;
+        width: 5px;
+        height: 8px;
+        background-image: url("../../img/icons/three-dots.jpg");
+        position: relative;
+        margin: 0 10px;
+      }
+
+      &:first-child{
+        &:before{
+          content: '';
+          display: inline-block;
+          width: 12px;
+          height: 10px;
+          margin: 0 10px;
+          background-image: url("../../img/icons/home.jpg");
+        }
+      }
+
+      &:last-child{
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
