@@ -14,6 +14,15 @@ $specifications = get_specifications_by_id($post->ID);
     <!-- Section slick carousel-->
     <?php
     $list_img = get_field('product_image_set');
+    $list_color_pro = get_field('product_colors');
+    $map_color_with_img = array();
+    array_map(function($item){
+        $array_color_img = explode('/',$item['url']);
+        $name_img = trim(multiexplode(array(".","-"),$array_color_img[count($array_color_img)-1])[0]);
+        if(in_array($name_img,$GLOBALS['list_color_pro'])){
+            array_push($GLOBALS['map_color_with_img'],$name_img);
+        }
+    },$list_img);
     if($list_img):
         ?>
         <section class="slide-detail" id="slide-detail">
@@ -25,23 +34,50 @@ $specifications = get_specifications_by_id($post->ID);
                             <div class="slide-content">
                                 <!--Slide item-->
                                 <?php
-                                foreach($list_img as $img_item) {
-                                    $name_color_img = explode('/',$img_item['url']);
-                                    ?>
-                                    <div class="slide-item <?php echo explode('.',$name_color_img[count($name_color_img)-1])[0];?>">
+                                if(count($map_color_with_img)!=0) {
+                                    foreach ($list_img as $img_item) {
+                                        $name_color_img = explode('/', $img_item['url']);
+                                        $name_img = trim(multiexplode(array(".", "-"), $name_color_img[count($name_color_img) - 1])[0]);
+                                        //$name_img = trim(explode('.',$name_color_img[count($name_color_img)-1])[0]);
+                                        if (in_array($name_img, $map_color_with_img)) {
+                                            ?>
+                                            <div class="slide-item <?php echo explode('.', $name_img); ?>">
+                                                <!--Image and dots-->
+                                                <div class="slide-item-image">
+                                                    <img src="<?php echo $img_item['url']; ?>"
+                                                         alt="<?php echo $img_item['alt']; ?>">
+                                                </div>
+                                                <!--Caption info-->
+                                                <div class="slide-item-caption">
+                                                    <?php if (get_field('product_price')): ?>
+                                                        <h3>
+                                                            <span>Giá:</span>
+                                                            <?php echo get_field('product_price'); ?> VND
+                                                        </h3>
+                                                    <?php endif; ?>
+                                                    <a href="<?php echo site_url('/support/tim-cua-hang/'); ?>">Mua
+                                                        Ngay</a>
+                                                </div>
+                                            </div>
+                                        <?php }
+                                    }
+                                }
+                                else{?>
+                                    <div class="slide-item">
                                         <!--Image and dots-->
                                         <div class="slide-item-image">
-                                            <img src="<?php echo $img_item['url'];?>" alt="<?php echo $img_item['alt'];?>">
+                                            <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>">
                                         </div>
                                         <!--Caption info-->
                                         <div class="slide-item-caption">
-                                            <?php if(get_field('product_price')):?>
+                                            <?php if (get_field('product_price')): ?>
                                                 <h3>
                                                     <span>Giá:</span>
-                                                    <?php echo get_field('product_price');?> VND
+                                                    <?php echo get_field('product_price'); ?> VND
                                                 </h3>
-                                            <?php endif;?>
-                                            <a href="<?php echo site_url('/support/tim-cua-hang/');?>">Mua Ngay</a>
+                                            <?php endif; ?>
+                                            <a href="<?php echo site_url('/support/tim-cua-hang/'); ?>">Mua
+                                                Ngay</a>
                                         </div>
                                     </div>
                                     <?php
@@ -52,8 +88,8 @@ $specifications = get_specifications_by_id($post->ID);
                                 <?php
                                 $list_color_pro = get_field('product_colors');
                                 if($list_color_pro) {
-                                    foreach ($list_color_pro as $key => $color_pro) { ?>
-                                        <li class="<?php echo $color_pro; if($key==0){echo 'active-color';}?> ">
+                                    foreach ($map_color_with_img as $key => $color_pro) { ?>
+                                        <li class="<?php echo $color_pro; if($key==0){echo ' active-color';}?> ">
                                             <button><?php echo $key+1; ?></button>
                                         </li>
                                         <?php
