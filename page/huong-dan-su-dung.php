@@ -57,7 +57,7 @@ get_header();
     }
     .question-item-lp .question-lp .icon-hide-show-faq-lp {
         margin-left: auto;
-        color: #ff881b;
+        color: #f36d21;
     }
     .question-item-lp .question-lp .icon-hide-show-faq-lp .fa-plus {
         display: block;

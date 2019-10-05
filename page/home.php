@@ -40,8 +40,8 @@ get_header();
                     'orderby ' => 'id'
                 ) );
                 foreach ($terms as $key => $term_item){
-                $series_item = get_theme_mod($term_item->slug);
-                if($series_item){
+                    $series_item = get_theme_mod($term_item->slug);
+                    if($series_item){
                 ?>
                 <div class="col-lg-4 col-12 product-showcase__item">
 
@@ -61,7 +61,7 @@ get_header();
                     $title_pro = get_field('feature_name_product', $term_item);
                     $slogan_pro = get_field('feature_slogan_product', $term_item);
                     if ($list_img_real!=null && $title_pro!=null && $slogan_pro!=null) {
-
+                        
                         ?>
                         <div class="product-showcase__item__body">
 
@@ -122,16 +122,16 @@ get_header();
 
                                     <div class="product-detail text-center">
                                         <?php echo acf_render('<h3 class="product-name">', $title_pro, '</h3>') ?>
-                                        <?php echo acf_render('<h4 class="product-slogan"><a href="' . site_url("/products/#") . $term_item->slug . '" style="display: inline-block">', $slogan_pro, '</a></h4>') ?>
+                                        <?php echo acf_render('<h4 class="product-slogan"><a href="' . site_url("/products/#") . $term_item->slug . '" style="display: inline">', $slogan_pro, '</a></h4>') ?>
                                     </div>
                                 </div>
                                 <?php
                             }
                         }
                         wp_reset_postdata();
-                    }
-                    ?>
-                </div>
+                        }
+                        ?>
+                    </div>
                 <?php }}?><!-- Product Item -->
 
             </div>
@@ -151,79 +151,79 @@ get_header();
         $series_item = get_theme_mod($term_item->slug);
         if($series_item && $key%2==0){?>
 
-            <section style="display: none" class="section" id="home-products-<?php echo $key+1;?>">
+        <section style="display: none" class="section" id="home-products-<?php echo $key+1;?>">
 
-                <!-- Products Container -->
-                <div class="container-fluid product-showcase">
+            <!-- Products Container -->
+            <div class="container-fluid product-showcase">
 
-                    <!-- Row -->
-                    <?php
-                    $args = array(
-                        "post_type" => 'product',
-                        "post_status" => 'publish',
-                        'posts_per_page'=>3,
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'series',
-                                'field' => 'term_id',
-                                'terms' => $term_item->term_id,
-                            )
+                <!-- Row -->
+                <?php
+                $args = array(
+                    "post_type" => 'product',
+                    "post_status" => 'publish',
+                    'posts_per_page'=>3,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'series',
+                            'field' => 'term_id',
+                            'terms' => $term_item->term_id,
                         )
-                    );
-                    $query = new WP_Query($args);
-                    if($query->have_posts()):
-                    ?>
-                    <div class="row">
+                    )
+                );
+                $query = new WP_Query($args);
+                if($query->have_posts()):
+                ?>
+                <div class="row">
 
-                        <!-- Product Item -->
-                        <?php while ($query->have_posts()):$query->the_post();?>
-                        <div class="col-lg-4 col-12 product-showcase__item">
+                    <!-- Product Item -->
+                    <?php while ($query->have_posts()):$query->the_post();?>
+                    <div class="col-lg-4 col-12 product-showcase__item">
 
-                            <!-- Product Item Top -->
-                            <div class="product-showcase__item__top text-center">
-                                <h3 class="series-name"><?php echo $term_item->name;?></h3>
-                                <?php
+                        <!-- Product Item Top -->
+                        <div class="product-showcase__item__top text-center">
+                            <h3 class="series-name"><?php echo $term_item->name;?></h3>
+                            <?php
                                 $slogan = get_field('series_slogan',$term_item);
                                 echo acf_render('<h4 class="series-slogan mt-15">',$slogan,'</h4>');
-                                ?>
-                            </div><!-- Product Item Top -->
+                            ?>
+                        </div><!-- Product Item Top -->
 
-                            <!-- Product Item Body -->
-                            <?php
+                        <!-- Product Item Body -->
+                        <?php
                             $list_img_real = get_field('product_image_set');
                             $title_pro = get_field('product_name');
                             $slogan_pro = get_field('product_slogan');
                             if($list_img_real||$title_pro||$slogan_pro):
+                        ?>
+                        <div class="product-showcase__item__body">
+
+                            <!-- Hover Swap Picture Effect -->
+                            <?php if($list_img_real):?>
+                            <div class="image-holder state-1">
+                                <?php
+                                for($key=0;$key<3;$key++){
+                                    echo '<img src="'.$list_img_real[$key]['url'].'" class="image-holder__item item-'.($key+1).'">';
+                                }
                                 ?>
-                                <div class="product-showcase__item__body">
+                            </div>
+                            <?php endif;?><!-- Hover Swap Picture Effect -->
 
-                                    <!-- Hover Swap Picture Effect -->
-                                    <?php if($list_img_real):?>
-                                    <div class="image-holder state-1">
-                                        <?php
-                                        for($key=0;$key<3;$key++){
-                                            echo '<img src="'.$list_img_real[$key]['url'].'" class="image-holder__item item-'.($key+1).'">';
-                                        }
-                                        ?>
-                                    </div>
-                                    <?php endif;?><!-- Hover Swap Picture Effect -->
+                            <div class="product-detail text-center">
+                                <?php echo acf_render('<h3 class="product-name">',$title_pro,'</h3>')?>
+                                <?php echo acf_render('<h4 class="product-slogan">',$slogan_pro,'</h4>')?>
 
-                                    <div class="product-detail text-center">
-                                        <?php echo acf_render('<h3 class="product-name">',$title_pro,'</h3>')?>
-                                        <?php echo acf_render('<h4 class="product-slogan">',$slogan_pro,'</h4>')?>
-
-                                    </div>
-                                </div>
-                            <?php endif;?>
+                            </div>
                         </div>
-                        <?php endwhile;?><!-- Product Item -->
-
+                        <?php endif;?>
                     </div>
-                    <?php endif; wp_reset_postdata();?><!-- Row -->
+                    <?php endwhile;?><!-- Product Item -->
 
-                </div><!-- Products Container -->
+                </div>
+                <?php endif; wp_reset_postdata();?><!-- Row -->
 
-            </section>
+            </div><!-- Products Container -->
+
+        </section>
 
             <?php
         }

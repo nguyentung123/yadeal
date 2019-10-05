@@ -103,11 +103,27 @@
                 <div class="sub-menu__wrapper__item__detail">
                     <!-- Color Variation -->
                     <?php
+                        $list_img = get_field('product_image_set');
                         $list_color_pro = get_field('product_colors');
-                        if($list_color_pro):
+                        $map_color_with_img = array();
+                        array_map(function($item){
+                            $array_color_img = explode('/',$item['url']);
+                            $name_img = trim(multiexplode(array(".","-"),$array_color_img[count($array_color_img)-1])[0]);
+                            if(in_array($name_img,$GLOBALS['list_color_pro'])){
+                                array_push($GLOBALS['map_color_with_img'],$name_img);
+                            }
+                        },$list_img);
+                        if($list_img):
+                        //if($list_color_pro):
                     ?>
 
                     <ul class="color-variations horizontal-list text-right pr-15">
+                        <?php
+                            foreach ($map_color_with_img as $key => $color_pro) { ?>
+                                <li class="color-variations__item <?php echo $color_pro;?> "></li>
+                                <?php
+                            }
+                        ?>
                         <?php foreach( $list_color_pro as $color_pro): ?>
                             <li class="color-variations__item <?php echo $color_pro; ?>"></li>
                         <?php endforeach; ?>

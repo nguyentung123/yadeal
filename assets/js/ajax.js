@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
             return false;
         }
         else {
-            $('.loading-form').show();
+            $('.loading-form').css('display','inline-block');
             jQuery.ajax({
                 type: "post",
                 dataType: "json",
@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
                 success: function (response) {
                     if (response.success) {
                         $('#signup-as-shop-form').hide();
-                        $('#signup-as-shop .modal-content').append('<h3 class="form-success">Successfull</h3>');
+                        $('#signup-as-shop .modal-content').append('<h3 class="form-success">Đăng ký thành công.</h3>');
                     }
                 }
             });
