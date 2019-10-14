@@ -1,0 +1,21 @@
+
+@include keyframes(animate-slide-01) {
+  0%{
+    opacity: 0;
+    @include transform(translateX(100px));
+  }
+  100%{
+    opacity: 1;
+    @include transform(translateX(0px));
+  }
+}
+@include keyframes(animate-slide-02) {
+  0%{
+    opacity: 0;
+    @include transform(translateX(-100px));
+  }
+  100%{
+    opacity: 1;
+    @include transform(translateX(0px));
+  }
+}

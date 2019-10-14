@@ -1,0 +1,57 @@
+.supplier-page {
+  .banner {
+    background: #fff url('../img/supplier-banner.jpg') no-repeat top;
+  }
+
+  .intro {
+    font-size: 1.25rem;
+    text-align: center;
+    width: 630px;
+    margin: 60px auto;
+    @media #{$information-960} {
+      margin: 40px auto;
+    }
+    @media #{$information-sm-tablet} {
+      width: 100%;
+    }
+  }
+
+  .ui-flex {
+    margin: 0 auto 100px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    @media #{$information-960} {
+      margin-bottom: 60px;
+    }
+    @media #{$information-sm-tablet} {
+      margin-bottom: 40px;
+    }
+    .item {
+      width: calc((100% - 60px)/4);
+      margin-right: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 20px hsla(0,0%,47%,.1);
+      &:nth-child(4n+0) {
+        margin-right: 0;
+      }
+      @media #{$information-960} {
+        width: calc((100% - 40px)/3);
+        &:nth-child(4n+0) {
+          margin-right: 20px;
+        }
+        &:nth-child(3n+0) {
+          margin-right: 0;
+        }
+      }
+      @media #{$information-sm-tablet} {
+        width: calc((100% - 20px)/2);
+        &:nth-child(3n+0) {
+          margin-right: 20px;
+        }
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

@@ -35,4 +35,4 @@ export default class Supports {
     OpenModal(){
         this.$modalElem.addClass('active');
     }
-}
+} 

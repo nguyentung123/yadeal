@@ -1,10 +1,11 @@
 // Import Lodash As Demo
+import * as _ from 'lodash';
 import Slider from './slider';
 import Main from './main';
 import Products from './products';
 import Supports from './support';
 import SliderDetail from './slider-detail';
-import FlipClockCustom from './flip-clock-custom';
+import FlipClockCustom from './flip-clock.-custom';
 
 export default class Home {
     /* ===================================
@@ -28,7 +29,6 @@ export default class Home {
 
         // Flip Clock Custom
         this.flipClockCustom = new FlipClockCustom();
-
         this.bindEvents();
     }
 

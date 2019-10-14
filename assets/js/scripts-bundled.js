@@ -17176,7 +17176,7 @@
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(5)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(4)(module)))
 
 /***/ }),
 /* 1 */
@@ -17205,7 +17205,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _slider = _interopRequireDefault(__webpack_require__(3));
+var _ = _interopRequireWildcard(__webpack_require__(0));
+
+var _slider = _interopRequireDefault(__webpack_require__(5));
 
 var _main = _interopRequireDefault(__webpack_require__(19));
 
@@ -17215,9 +17217,11 @@ var _support = _interopRequireDefault(__webpack_require__(21));
 
 var _sliderDetail = _interopRequireDefault(__webpack_require__(22));
 
-var _flipClockCustom = _interopRequireDefault(__webpack_require__(23));
+var _flipClock = _interopRequireDefault(__webpack_require__(23));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -17245,7 +17249,7 @@ function () {
 
     this.sliderDetail = new _sliderDetail.default(); // Flip Clock Custom
 
-    this.flipClockCustom = new _flipClockCustom.default();
+    this.flipClockCustom = new _flipClock.default();
     this.bindEvents();
   }
   /* ===================================
@@ -17269,6 +17273,61 @@ exports.default = Home;
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17535,61 +17594,6 @@ function () {
 }();
 
 exports.default = Slider;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if(!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
 
 /***/ }),
 /* 6 */
@@ -18964,7 +18968,6 @@ function () {
     this.$subMenu = $('#page-sub-menu');
     this.$aboutusMenuTrigger = $('#about-us-sub-menu-trigger');
     this.$aboutusSubMenu = $('#about-us-sub-menu');
-    this.$otherMenuItem = $('.nav .nav-item:not(#sub-menu-trigger, #about-us-sub-menu-trigger)');
     this.$imageHolder = $('.image-holder');
     this.$imageHolderTarget = null;
     this.imageHolderInterval = null;
@@ -19029,15 +19032,6 @@ function () {
       this.$aboutusSubMenu.on('mouseleave', function (e) {
         if (_this.appStatus.showAboutSubMenu) {
           _this.ToggleAboutSubMenu(false);
-        }
-      });
-      this.$otherMenuItem.on('mouseenter', function (e) {
-        if (_this.appStatus.showAboutSubMenu) {
-          _this.ToggleAboutSubMenu(false);
-        }
-
-        if (_this.appStatus.showSubMenu) {
-          _this.ToggleSubMenu(false);
         }
       });
       /* ===== Mobile Menu Effect ===== */
@@ -19497,6 +19491,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _ = _interopRequireWildcard(__webpack_require__(0));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -19546,8 +19544,8 @@ function () {
         fade: true,
         speed: 900,
         infinite: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
+        // autoplay:true,
+        // autoplaySpeed:5000,
         cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
         touchThreshold: 100
       });
@@ -19560,8 +19558,8 @@ function () {
         centerPadding: '0px',
         slidesToShow: 3,
         arrows: true,
-        prevArrow: '<div class="arrow prev"></div>',
-        nextArrow: '<div class="arrow next"></div>',
+        prevArrow: '<div class="arrow prev"><img src="./img/arrow-left.png" alt="left"></div>',
+        nextArrow: '<div class="arrow next"><img src="./img/arrow-right.png" alt="right"></div>',
         dots: false,
         responsive: [{
           breakpoint: 1025,
@@ -19582,21 +19580,18 @@ function () {
   }, {
     key: "AddColorSlide",
     value: function AddColorSlide() {
-      var arrLiTag = $('.slide-dots-custom li');
-      $('.slide-detail .slide-content').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        arrLiTag.each(function (i, e) {
-          if (nextSlide === i) {
-            $(this).addClass('active-color');
-          } else {
-            $(this).removeClass('active-color');
-          }
-        });
-      });
-      this.arrDots.each(function (i, e) {
-        $(this).on('click', _.debounce(function () {
+      var _this = this;
+
+      var _loop = function _loop(i) {
+        $(_this.arrDots[i]).on('click', function () {
           $('.slide-detail .slide-content').slick('slickGoTo', i);
-        }));
-      });
+          var arrLiTag = $('.slide-dots-custom li'); // $(this).parent().addClass('slick-active')
+        });
+      };
+
+      for (var i = 0; i < this.arrDots.length; i++) {
+        _loop(i);
+      }
     }
   }]);
 
@@ -19630,153 +19625,146 @@ function () {
    *  CONSTRUCTOR
    * =================================== */
   function FlipClockCustom() {
-      //call api
-      var number_oxygen,number_trees;
-      let _this = this;
-      fetch(url_website+'/wp-json/oxygen/api/oxygen')
-          .then(function(response) {
-              return response.json();
-          })
-          .then(function(myJson) {
-              number_oxygen = myJson.oxygen;
-              number_trees = myJson.number_trees;
+    _classCallCheck(this, FlipClockCustom);
 
-              // Elements Variable
-              _this.bindEvents(myJson.oxygen,myJson.number_trees);
-          });
-      _classCallCheck(this, FlipClockCustom);
+    // Elements Variable
+    this.bindEvents();
   }
   /* ===================================
    *  EVENTS
    * =================================== */
 
-    _createClass(FlipClockCustom, [{
-        key: "bindEvents",
-        value: function bindEvents(number_oxygen,number_trees) {
-            this.CheckNameUnit();
 
-            if ($('#home-flip-clock').length > 0) {
-                this.NumberDecrease(number_oxygen);
-                this.NumberIncrease(number_trees);
-            }
+  _createClass(FlipClockCustom, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      this.CheckNameUnit();
+
+      if ($('#home-flip-clock').length > 0) {
+        this.NumberDecrease();
+        this.NumberIncrease();
+      }
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "NumberDecrease",
+    value: function NumberDecrease() {
+      // Declare variable flip clock
+      var chars = [];
+      var positions = [];
+      var numberDec = 55975444; // Create our number formatter.
+
+      var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      }); // format price into 1 000 000
+      // function formatter.format(number) => $1,000,00.00
+
+      var formatChar = formatter.format(numberDec).split('$').join('').split('.')[0].split(',').join(' '); // loop string and add each of char into array if char equal space <=> formatChar.charAt(i) === ' '
+
+      for (var i = 0; i < formatChar.length; i++) {
+        if (formatChar.charAt(i) === ' ') {
+          chars.push(i);
         }
-        /* ===================================
-         *  METHODS
-         * =================================== */
-
-    }, {
-        key: "NumberDecrease",
-        value: function NumberDecrease(number) {
-            // Declare variable flip clock
-            var chars = [];
-            var positions = [];
-            var numberDec = number?number:55975441; // Create our number formatter.
-            var formatter = new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD'
-            }); // format price into 1 000 000
-            // function formatter.format(number) => $1,000,00.00
-
-            var formatChar = formatter.format(numberDec).split('$').join('').split('.')[0].split(',').join(' '); // loop string and add each of char into array if char equal space <=> formatChar.charAt(i) === ' '
-
-            for (var i = 0; i < formatChar.length; i++) {
-                if (formatChar.charAt(i) === ' ') {
-                    chars.push(i);
-                }
-            } // loop you just added to determine the correct position to margin
+      } // loop you just added to determine the correct position to margin
 
 
-            for (var i = 0; i < chars.length; i++) {
-                positions.push(chars[i] - i);
-            }
-            /*
-              * Example: formatChar = 1 000 000
-              * when you loop formatChar, chars = [1, 5]
-              * when you loop chars, positions = [1, 4]
-              * index of chars chars[0] = 1, chars[1] = 5 => chars[0] - 0 = 1 and chars[1] - 1 = 4
-              * add new value of array positions, => positions = [1, 4]
-              * */
+      for (var i = 0; i < chars.length; i++) {
+        positions.push(chars[i] - i);
+      }
+      /*
+        * Example: formatChar = 1 000 000
+        * when you loop formatChar, chars = [1, 5]
+        * when you loop chars, positions = [1, 4]
+        * index of chars chars[0] = 1, chars[1] = 5 => chars[0] - 0 = 1 and chars[1] - 1 = 4
+        * add new value of array positions, => positions = [1, 4]
+        * */
 
 
-            var numberDecrease = $('.number-decrease').FlipClock(numberDec, {
-                clockFace: 'Counter'
-            });
-            setTimeout(function () {
-                setInterval(function () {
-                    numberDecrease.decrement();
-                }, 60000);
-            }); // detect of pos to margin
+      var numberDecrease = $('.number-decrease').FlipClock(numberDec, {
+        clockFace: 'Counter'
+      });
+      setTimeout(function () {
+        setInterval(function () {
+          numberDecrease.decrement();
+        }, 60000);
+      }); // detect of pos to margin
 
-            $('.number-decrease .flip').each(function (i, value) {
-                positions.forEach(function (item) {
-                    if (item === i + 1) {
-                        $(value).css('margin-right', '13px');
-                        $(value).addClass('add-dot');
-                    }
-                });
-            });
+      $('.number-decrease .flip').each(function (i, value) {
+        positions.forEach(function (item) {
+          if (item === i + 1) {
+            $(value).css('margin-right', '13px');
+            $(value).addClass('add-dot');
+          }
+        });
+      });
+    }
+  }, {
+    key: "NumberIncrease",
+    value: function NumberIncrease() {
+      // Declare variable flip clock
+      var chars = [];
+      var positions = [];
+      var numberInc = 5597672; // Create our number formatter.
+
+      var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      }); // format price into 1 000 000
+      // function formatter.format(number) => $1,000,00.00
+
+      var formatChar = formatter.format(numberInc).split('$').join('').split('.')[0].split(',').join(' '); // loop string and add each of char into array if char equal space <=> formatChar.charAt(i) === ' '
+
+      for (var i = 0; i < formatChar.length; i++) {
+        if (formatChar.charAt(i) === ' ') {
+          chars.push(i);
         }
-    }, {
-        key: "NumberIncrease",
-        value: function NumberIncrease(number) {
-            // Declare variable flip clock
-            var chars = [];
-            var positions = [];
-            var numberInc = number?number:5597676; // Create our number formatter.
-            var formatter = new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD'
-            }); // format price into 1 000 000
-            // function formatter.format(number) => $1,000,00.00
-
-            var formatChar = formatter.format(numberInc).split('$').join('').split('.')[0].split(',').join(' '); // loop string and add each of char into array if char equal space <=> formatChar.charAt(i) === ' '
-
-            for (var i = 0; i < formatChar.length; i++) {
-                if (formatChar.charAt(i) === ' ') {
-                    chars.push(i);
-                }
-            } // loop you just added to determine the correct position to margin
+      } // loop you just added to determine the correct position to margin
 
 
-            for (var i = 0; i < chars.length; i++) {
-                positions.push(chars[i] - i);
-            }
-            /*
-            * Example: formatChar = 1 000 000
-            * when you loop formatChar, chars = [1, 5]
-            * when you loop chars, positions = [1, 4]
-            * index of chars chars[0] = 1, chars[1] = 5 => chars[0] - 0 = 1 and chars[1] - 1 = 4
-            * add new value of array positions, => positions = [1, 4]
-            * */
+      for (var i = 0; i < chars.length; i++) {
+        positions.push(chars[i] - i);
+      }
+      /*
+      * Example: formatChar = 1 000 000
+      * when you loop formatChar, chars = [1, 5]
+      * when you loop chars, positions = [1, 4]
+      * index of chars chars[0] = 1, chars[1] = 5 => chars[0] - 0 = 1 and chars[1] - 1 = 4
+      * add new value of array positions, => positions = [1, 4]
+      * */
 
 
-            var numberIncrease = $('.number-increase').FlipClock(numberInc, {
-                clockFace: 'Counter'
-            });
-            setTimeout(function () {
-                setInterval(function () {
-                    numberIncrease.increment();
-                }, 60000);
-            }); // detect of pos to margin
+      var numberIncrease = $('.number-increase').FlipClock(numberInc, {
+        clockFace: 'Counter'
+      });
+      setTimeout(function () {
+        setInterval(function () {
+          numberIncrease.increment();
+        }, 60000);
+      }); // detect of pos to margin
 
-            $('.number-increase .flip').each(function (i, value) {
-                positions.forEach(function (item) {
-                    if (item === i + 1) {
-                        $(value).css('margin-right', '13px');
-                        $(value).addClass('add-dot');
-                    }
-                });
-            });
-        }
-    }, {
-        key: "CheckNameUnit",
-        value: function CheckNameUnit() {
-            if (window.innerWidth <= 1024) {
-                $('.unit01').html('Tấn');
-                $('.unit02').html('Nghìn cây xanh');
-            }
-        }
-    }]);
+      $('.number-increase .flip').each(function (i, value) {
+        positions.forEach(function (item) {
+          if (item === i + 1) {
+            $(value).css('margin-right', '13px');
+            $(value).addClass('add-dot');
+          }
+        });
+      });
+    }
+  }, {
+    key: "CheckNameUnit",
+    value: function CheckNameUnit() {
+      if (window.innerWidth <= 1024) {
+        $('.unit01').html('Tấn');
+        $('.unit02').html('Nghìn cây xanh');
+      }
+    }
+  }]);
+
   return FlipClockCustom;
 }();
 

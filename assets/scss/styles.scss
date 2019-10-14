@@ -1,0 +1,27 @@
+// Import Font Awesome As Demo
+@import 'vendors/fontawesome/font-awesome.scss';
+
+// Template Core
+@import 'common/_variables';
+@import 'common/_helpers';
+@import 'common/_typography';
+@import 'common/_elements';
+@import 'common/_animation';
+
+// Component
+@import 'components/header';
+@import 'components/footer';
+@import 'components/common';
+@import 'components/sliders';
+@import 'components/modal';
+
+// pages
+@import 'pages/home';
+@import 'pages/products';
+@import 'pages/support';
+@import 'pages/blank';
+@import 'pages/shop';
+@import "pages/about";
+@import "pages/course";
+@import "pages/supplier";
+@import "pages/detail";

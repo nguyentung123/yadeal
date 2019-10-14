@@ -1,0 +1,111 @@
+.course-page {
+  .banner {
+    background: #fff url('../img/course-banner.jpg') no-repeat top;
+  }
+
+  .intro {
+    width: 640px;
+    margin: 60px auto;
+    text-align: center;
+    @media #{$information-960} {
+      margin: 4.6% auto;
+    }
+    @media #{$information-sm-tablet} {
+      width: 100%;
+    }
+    p {
+      color: #1a1a1a;
+      font-size: 1.25rem;
+      line-height: 1.8em;
+    }
+  }
+
+  .course-list {
+    border-top: 1px solid #ececec;
+    margin-bottom: 160px;
+    @media #{$information-960} {
+      margin-bottom: 80px;
+    }
+    @media #{$information-sm-tablet} {
+      margin-bottom: 60px;
+    }
+    .month,
+    .year {
+      border-bottom: 1px solid #ececec;
+    }
+    .num {
+      position: relative;
+      min-width: 170px;
+      border-right: 1px solid #ececec;
+      @media #{$information-960} {
+        min-width: 120px;
+      }
+      @media #{$information-sm-tablet} {
+        min-width: 90px;
+      }
+    }
+    .year {
+      .num {
+        color: #000;
+        font-size: 3.5rem;
+        line-height: .8em;
+        padding-top: 60px;
+        font-weight: bolder;
+        z-index: 1;
+        @media #{$information-960} {
+          font-size: 3rem;
+          padding-top: 30px;
+        }
+        @media #{$information-sm-tablet} {
+          font-size: 2.5rem;
+        }
+      }
+    }
+    .month {
+      .num {
+        text-align: right;
+        font-size: 1.125rem;
+        padding: 5.4% 3% 0 0;
+      }
+      .content {
+        width: calc(100% - 170px);
+        padding: 5.4% 0 5.4% 5.4%;
+        @media #{$information-960} {
+          padding-left: 10px;
+          width: calc(100% - 120px);
+        }
+        @media #{$information-sm-tablet} {
+          padding-left: 0;
+        }
+        @media #{$information-sm-tablet} {
+          flex-direction: column;
+        }
+        .text {
+          width: 640px;
+          padding-right: 11.4%;
+          @media #{$information-960} {
+            padding-right: 30px;
+          }
+          @media #{$information-sm-tablet} {
+            width: 100%;
+          }
+          h5 {
+            font-size: 1.375rem;
+            line-height: 1.8rem;
+            @media #{$information-960} {
+              font-size: 1.075rem;
+            }
+          }
+          p {
+            margin-top: 20px;
+            color: #4c4c4c;
+          }
+        }
+        .img-box {
+        }
+
+      }
+    }
+  }
+
+}

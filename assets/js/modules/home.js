@@ -1,4 +1,5 @@
 // Import Lodash As Demo
+import * as _ from 'lodash';
 import YouTubePlayer from 'youtube-player';
 
 export default class Home {

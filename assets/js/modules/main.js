@@ -11,8 +11,6 @@ export default class Main {
         this.$aboutusMenuTrigger = $('#about-us-sub-menu-trigger');
         this.$aboutusSubMenu = $('#about-us-sub-menu');
 
-        this.$otherMenuItem = $('.nav .nav-item:not(#sub-menu-trigger, #about-us-sub-menu-trigger)');
-
         this.$imageHolder = $('.image-holder');
         this.$imageHolderTarget = null;
         this.imageHolderInterval = null;
@@ -78,16 +76,6 @@ export default class Main {
                 this.ToggleAboutSubMenu(false);
             }
         });
-
-        this.$otherMenuItem.on('mouseenter', (e) => {
-            if(this.appStatus.showAboutSubMenu){
-                this.ToggleAboutSubMenu(false);
-            }
-
-            if(this.appStatus.showSubMenu){
-                this.ToggleSubMenu(false);
-            }
-        })
 
         /* ===== Mobile Menu Effect ===== */
         this.CloseMbSubMenu();
