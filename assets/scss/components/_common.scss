@@ -10,18 +10,18 @@
       font-weight: 700; //bold
       letter-spacing: 0;
 
-      @media #{$information-hz-phone} {
-        font-size: 23px;
-        margin-bottom: 15px;
+      @media #{$information-laptop} {
+        font-size: 22px;
+        margin-bottom: 13px;
       }
 
       @media #{$information-tablet} {
-        font-size: 22px;
-        margin-bottom: 12px;
+        font-size: 20px;
+        margin-bottom: 10px;
       }
 
       @media #{$information-phone} {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
       }
 
       @media #{$information-md-phone} {}
@@ -71,5 +71,13 @@
         }
       }
     }
+  }
+
+  @media #{$information-laptop} {
+    padding: 50px 0 45px;
+  }
+
+  @media #{$information-sm-laptop} {
+    padding: 45px 0 40px;
   }
 }

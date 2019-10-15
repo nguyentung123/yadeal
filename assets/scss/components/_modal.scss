@@ -99,6 +99,20 @@
             color: $text-color;
         }
     }
+
+    .message{
+        display: none;
+
+        &.success{
+            color: $main-color;
+            display: block;
+        }
+
+        &.error{
+            color: #ff2222;
+            display: block;
+        }
+    }
     
     @media #{$information-laptop} {
         .form-field{
