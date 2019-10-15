@@ -17369,7 +17369,7 @@ function () {
     this.sliderOptions1 = {
       'arrows': false,
       'speed': 1500,
-      'autoplay': false,
+      'autoplay': true,
       'autoplaySpeed': 5000,
       'pauseOnFocus': false,
       'pauseOnHover': false
