@@ -41,6 +41,11 @@
             width: 128%;
             height: 128%;
           }
+
+          video{
+            min-height: 100%;
+            min-width: 100%;
+          }
         }
 
         &:after{

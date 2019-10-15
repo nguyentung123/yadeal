@@ -4517,6 +4517,9 @@ body.fixed-header {
         #home-banner-1 .main-content__slider #slider-style-1 .slide-video .video-holder {
           width: 128%;
           height: 128%; } }
+      #home-banner-1 .main-content__slider #slider-style-1 .slide-video .video-holder video {
+        min-height: 100%;
+        min-width: 100%; }
     #home-banner-1 .main-content__slider #slider-style-1 .slide-video:after {
       content: '';
       width: 100%;

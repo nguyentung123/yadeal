@@ -16,12 +16,11 @@ get_header();
     <!-- Section Home Banner 2 - END -->
 
     <?php
-    $terms = get_terms( array(
-        'taxonomy' => 'series',
-        'hide_empty' => false,
-        'orderby ' => 'id'
-    ) );
-
+        $terms = get_terms( array(
+            'taxonomy' => 'series',
+            'hide_empty' => false,
+            'orderby ' => 'id'
+        ) );
     ?>
 
     <section class="section" id="home-products-1">
