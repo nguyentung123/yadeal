@@ -89,7 +89,7 @@
         <div class="container sub-menu mb-hide" id="page-sub-menu">
 
             <!-- Row - Product Wrapper -->
-            <div class="sub-menu__wrapper row">
+            <div class="sub-menu__wrapper row product-list-layout">
                 <?php $number_show=0; while ($query->have_posts()):$query->the_post(); if($number_show>=6){break;}
                     $show = get_field('show_in_menu_header');
                     if($show[0]=='show'){
@@ -97,14 +97,14 @@
                         ?>
 
                         <!-- Product Item -->
-                        <div class="col-md-4 col-6 sub-menu__wrapper__item">
+                        <div class="col-md-4 col-6 product-item">
 
                             <!-- Product Detail Wrapper -->
-                            <div class="sub-menu__wrapper__item__detail">
+                            <div class="product-detail">
 
                                 <!-- Color Variation -->
                                 <?php $list_color_pro = get_field('product_colors'); ?>
-                                <ul class="color-variations horizontal-list text-right pr-15">
+                                <ul class="color-variations horizontal-list text-right">
                                     <?php foreach ($list_color_pro as $color_name): ?>
                                         <li class="color-variations__item <?php echo $color_name;?> "></li>
                                     <?php endforeach; ?>
@@ -144,7 +144,7 @@
     <?php endif; wp_reset_postdata();?>
 
     <!-- Fixed Position Sub Menu -->
-    <div class="container sub-menu" id="about-us-sub-menu">
+    <div class="container sub-menu" id="about-us-sub-menu" style="display: none">
         <!-- Row - About Wrapper -->
         <div class="sub-menu__wrapper row">
             <!-- About Item -->
@@ -161,10 +161,14 @@
                         <div class="line"></div>
                     </a>
                 </div>
-            </div><!-- About Item -->
+                <!-- About Detail Wrapper -->
+
+            </div>
+            <!-- About Item -->
 
             <!-- About Item -->
             <div class="col-md-4 col-6 sub-menu__wrapper__item">
+
                 <!-- About Detail Wrapper -->
                 <div class="sub-menu__wrapper__item__detail">
                     <a href="<?php echo site_url('/course') ?>">
@@ -176,6 +180,8 @@
                         <div class="line"></div>
                     </a>
                 </div>
+                <!-- About Detail Wrapper -->
+
             </div><!-- About Item -->
 
             <!-- About Item -->
@@ -192,6 +198,8 @@
                         <div class="line"></div>
                     </a>
                 </div>
+                <!-- About Detail Wrapper -->
+
             </div><!-- About Item -->
         </div>
     </div>
