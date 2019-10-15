@@ -1,4 +1,3 @@
-// Import Lodash As Demo
 export default class Main {
     /* ===================================
      *  CONSTRUCTOR

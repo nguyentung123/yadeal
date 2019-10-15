@@ -1,6 +1,3 @@
-// Import Lodash As Demo
-import * as _ from 'lodash';
-
 export default class Products {
     /* ===================================
      *  CONSTRUCTOR
@@ -19,7 +16,7 @@ export default class Products {
             current: 'all',
             allowSwitchState: true,
             context: 'Tất cả'
-        }
+        },
 
         this.bindEvents();
     }

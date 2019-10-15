@@ -144,7 +144,8 @@
     <?php endif; wp_reset_postdata();?>
 
     <!-- Fixed Position Sub Menu -->
-    <div class="container sub-menu" id="about-us-sub-menu" style="display: none">
+    <!-- Fixed Position Sub Menu -->
+    <div class="container sub-menu" id="about-us-sub-menu">
         <!-- Row - About Wrapper -->
         <div class="sub-menu__wrapper row">
             <!-- About Item -->
@@ -154,34 +155,28 @@
                 <div class="sub-menu__wrapper__item__detail">
                     <a href="<?php echo site_url('/about') ?>">
                         <div class="about-us__thumbnail">
-                            <img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/about-thumbnail.jpg">
+                            <img class="img-fluid" src="<?php echo get_theme_file_uri('assets/img/about-thumbnail.jpg');?>">
                         </div>
                         <p class="sub-title">Giới thiệu Yadea</p>
                         <p class="txt-gray desc">Công ty TNHH Xe Máy Điện Thông Minh YADEA</p>
                         <div class="line"></div>
                     </a>
                 </div>
-                <!-- About Detail Wrapper -->
-
-            </div>
-            <!-- About Item -->
+            </div><!-- About Item -->
 
             <!-- About Item -->
             <div class="col-md-4 col-6 sub-menu__wrapper__item">
-
                 <!-- About Detail Wrapper -->
                 <div class="sub-menu__wrapper__item__detail">
                     <a href="<?php echo site_url('/course') ?>">
                         <div class="about-us__thumbnail">
-                            <img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/history-thumbnail.jpg">
+                            <img class="img-fluid" src="<?php echo get_theme_file_uri('assets/img/history-thumbnail.jpg');?>">
                         </div>
                         <p class="sub-title">Quá trình phát triển</p>
                         <p class="txt-gray desc">Lịch sử hình thành - quá trình phát triển của YADEA</p>
                         <div class="line"></div>
                     </a>
                 </div>
-                <!-- About Detail Wrapper -->
-
             </div><!-- About Item -->
 
             <!-- About Item -->
@@ -191,15 +186,13 @@
                 <div class="sub-menu__wrapper__item__detail">
                     <a href="<?php echo site_url('/supplier') ?>">
                         <div class="about-us__thumbnail">
-                            <img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/supplier-thumbnail.jpg">
+                            <img class="img-fluid" src="<?php echo get_theme_file_uri('assets/img/supplier-thumbnail.jpg');?>">
                         </div>
                         <p class="sub-title">Đối tác hàng đầu</p>
                         <p class="txt-gray desc">Đối tác hàng đầu của chúng tôi</p>
                         <div class="line"></div>
                     </a>
                 </div>
-                <!-- About Detail Wrapper -->
-
             </div><!-- About Item -->
         </div>
     </div>

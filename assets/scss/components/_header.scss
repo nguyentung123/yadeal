@@ -88,7 +88,7 @@
     &__wrapper{
       width: 100%;
       background-color: $white;
-      padding: 30px 10px 20px;
+      padding: 10px;
       position: absolute;
       box-shadow: 0 0 24px rgba(0,0,0,0.2);
       overflow: hidden;
@@ -106,7 +106,7 @@
 
       &.product-list-layout{
         .product-item{
-          margin: 20px 0;
+          margin: 15px 0;
 
           .product-detail{
             position: relative;
@@ -155,33 +155,59 @@
         &__item{
           margin: 0;
           padding-top: 25px;
-          padding-bottom: 40px;
+          padding-bottom: 30px;
           background-color: transparent;
           transition: all ease-out 150ms 20ms;
           border-right: 0.5px solid #E4E4E4;
           position: relative;
 
+          img{
+            width: 100%;
+          }
+
           &__detail{
             padding: 0 12px;
+            text-align: center;
+
             .sub-title{
               margin-top: 16px;
               margin-bottom: 5px;
+              transition: all ease-out 200ms 20ms;
             }
 
-            .fa{
+            .desc{
+              transition: all ease-out 200ms 20ms;
+            }
+
+            .line{
+              width: 60px;
+              height: 4px;
+              margin: auto;
+              border-radius: 2px;
+              background-color: $main-color;
               position: absolute;
-              bottom: 20px;
-              left: 25px;
-              color: $main-color;
-              transform: translateX(0);
+              bottom: 25px;
+              left: 50%;
+              transition: all ease-out 300ms 20ms;
+              -webkit-transform: translateX(-50%) scaleX(0);
+              transform: translateX(-50%) scaleX(0);
             }
           }
 
           &:hover{
-            background-color: #EFEFEF;
-              .fa{
-                animation: aboutus-arrow 700ms infinite ease-in-out;
+            .sub-menu__wrapper__item__detail{
+              .sub-title{
+                color: $main-color;
               }
+              .desc{
+                color: $main-color;
+              }
+            }
+
+            .line{
+              -webkit-transform: translateX(-50%) scaleX(1);
+              transform: translateX(-50%) scaleX(1);
+            }
           }
         }
       }
@@ -562,11 +588,4 @@ body{
     &.orange{ background-color: $main-color; }
     &.brown{ background-color: #e58e26; }
   }
-}
-
-
-@keyframes aboutus-arrow {
-  0%{transform: translateX(0px);}
-  50%{transform: translateX(2px);}
-  100%{transform: translateX(0px);}
 }
