@@ -14,7 +14,7 @@ function yadea_theme_scripts() {
     wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded:100,200,300,400,500,600,700,800,900&amp;subset=vietnamese' );
 
     // Main Stylesheet
-    wp_enqueue_style( 'yadea-main-stylesheet', get_theme_file_uri('assets/css/styles.css'));
+    wp_enqueue_style( 'yadea-main-stylesheet', get_theme_file_uri('assets/css/styles.css'), array(), microtime());
 
     // Main Stylesheet
     wp_enqueue_style( 'yadea-wp-fix', get_theme_file_uri('assets/css/wp-yadea-custom.css'));

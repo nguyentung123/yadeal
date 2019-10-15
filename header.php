@@ -85,76 +85,62 @@
     );
     $query=new WP_Query($args);
     if($query->have_posts()):
-    ?>
-    <div class="container sub-menu mb-hide" id="page-sub-menu">
+        ?>
+        <div class="container sub-menu mb-hide" id="page-sub-menu">
 
-        <!-- Row - Product Wrapper -->
-        <div class="sub-menu__wrapper row">
-            <?php $number_show=0; while ($query->have_posts()):$query->the_post(); if($number_show>=6){break;}
-                $show = get_field('show_in_menu_header');
-                if($show[0]=='show'){
-                    $number_show++;
-            ?>
+            <!-- Row - Product Wrapper -->
+            <div class="sub-menu__wrapper row">
+                <?php $number_show=0; while ($query->have_posts()):$query->the_post(); if($number_show>=6){break;}
+                    $show = get_field('show_in_menu_header');
+                    if($show[0]=='show'){
+                        $number_show++;
+                        ?>
 
-            <!-- Product Item -->
-            <div class="col-md-4 col-6 sub-menu__wrapper__item">
+                        <!-- Product Item -->
+                        <div class="col-md-4 col-6 sub-menu__wrapper__item">
 
-                <!-- Product Detail Wrapper -->
-                <div class="sub-menu__wrapper__item__detail">
-                    <!-- Color Variation -->
-                    <?php
-                        $list_img = get_field('product_image_set');
-                        $list_color_pro = get_field('product_colors');
-                        $map_color_with_img = array();
-                        array_map(function($item){
-                            $array_color_img = explode('/',$item['url']);
-                            $name_img = trim(multiexplode(array(".","-"),$array_color_img[count($array_color_img)-1])[0]);
-                            if(in_array($name_img,$GLOBALS['list_color_pro'])){
-                                array_push($GLOBALS['map_color_with_img'],$name_img);
-                            }
-                        },$list_img);
-                        if($list_img):
-                        //if($list_color_pro):
+                            <!-- Product Detail Wrapper -->
+                            <div class="sub-menu__wrapper__item__detail">
+
+                                <!-- Color Variation -->
+                                <?php $list_color_pro = get_field('product_colors'); ?>
+                                <ul class="color-variations horizontal-list text-right pr-15">
+                                    <?php foreach ($list_color_pro as $color_name): ?>
+                                        <li class="color-variations__item <?php echo $color_name;?> "></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <!-- Color Variation -->
+
+                                <!-- Product Image -->
+                                <div class="product-image">
+                                    <?php
+                                    $url_img = has_post_thumbnail($post->ID) ? get_the_post_thumbnail_url($post->ID): get_theme_file_uri('assets/img/product1.png');
+                                    ?>
+                                    <a href="<?php echo site_url('/products'); ?>">
+                                        <img src="<?php echo $url_img;?>" class="img-fluid">
+                                    </a>
+                                </div>
+                                <!-- Product Image -->
+
+                                <!-- Product Context -->
+                                <div class="product-context text-center">
+                                    <h4 class="product-name page-desc">
+                                        <a href="<?php echo site_url('/products'); ?>">
+                                            <?php echo get_field('product_name')?get_field('product_name'):get_the_title();?>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <!-- Product Context -->
+
+                            </div>
+                        </div><!-- Product Item -->
+
+                        <?php
+                    }
                     ?>
-
-                    <ul class="color-variations horizontal-list text-right pr-15">
-                        <?php
-                            foreach ($map_color_with_img as $key => $color_pro) { ?>
-                                <li class="color-variations__item <?php echo $color_pro;?> "></li>
-                                <?php
-                            }
-                        ?>
-                        <?php foreach( $list_color_pro as $color_pro): ?>
-                            <li class="color-variations__item <?php echo $color_pro; ?>"></li>
-                        <?php endforeach; ?>
-                    </ul><!-- Color Variation -->
-                    <?php endif;?>
-
-                    <!-- Product Image -->
-                    <div class="product-image">
-                        <?php
-                        $url_img = get_the_post_thumbnail_url($post->ID)? get_the_post_thumbnail_url($post->ID):get_theme_file_uri('assets/img/product1.png');
-                        ?>
-                        <a href="<?php echo site_url('/products'); ?>"><img src="<?php echo $url_img;?>" class="img-fluid"></a>
-                    </div><!-- Product Image -->
-
-                    <!-- Product Context -->
-                    <div class="product-context text-center">
-                        <h4 class="product-name page-desc">
-                            <a href="<?php echo site_url('/products'); ?>">
-                                <?php echo get_field('product_name')?get_field('product_name'):get_the_title();?>
-                            </a>
-                        </h4>
-                    </div><!-- Product Context -->
-                </div>
-            </div><!-- Product Item -->
-
-            <?php
-                }
-            ?>
-            <?php endwhile;?>
+                <?php endwhile;?>
+            </div>
         </div>
-    </div>
     <?php endif; wp_reset_postdata();?>
 
     <!-- Fixed Position Sub Menu -->
@@ -226,41 +212,41 @@
                 );
                 $query=new WP_Query($args);
                 if($query->have_posts()):
-                ?>
-                <ul class="nav-item__sub-menu">
-                    <?php $number_show=0; while ($query->have_posts()):$query->the_post(); if($number_show>=6){break;}
-                        $show = get_field('show_in_menu_header');
-                        if($show[0]=='show'){
-                        $number_show++;
                     ?>
-                    <!-- Product Item -->
-                    <li class="product-item">
-                        <a href="<?php echo site_url('/products'); ?>">
-                            <!-- Product image -->
-                            <?php
-                            $url_img = get_the_post_thumbnail_url($post->ID)? get_the_post_thumbnail_url($post->ID):get_theme_file_uri('assets/img/product1.png');
-                            ?>
-                            <img class="product-image" src="<?php echo $url_img; ?>">
-                            <!-- Color Variation -->
-                            <?php
-                            $list_color_pro = get_field('product_colors');
-                            if($list_color_pro):
+                    <ul class="nav-item__sub-menu">
+                        <?php $number_show=0; while ($query->have_posts()):$query->the_post(); if($number_show>=6){break;}
+                            $show = get_field('show_in_menu_header');
+                            if($show[0]=='show'){
+                                $number_show++;
                                 ?>
-                                <ul class="color-variations horizontal-list text-right pr-15">
-                                    <?php foreach( $list_color_pro as $color_pro): ?>
-                                        <li class="color-variations__item <?php echo $color_pro; ?>"></li>
-                                    <?php endforeach; ?>
-                                </ul><!-- Color Variation -->
-                            <?php endif;?>
+                                <!-- Product Item -->
+                                <li class="product-item">
+                                    <a href="<?php echo site_url('/products'); ?>">
+                                        <!-- Product image -->
+                                        <?php
+                                        $url_img = get_the_post_thumbnail_url($post->ID)? get_the_post_thumbnail_url($post->ID):get_theme_file_uri('assets/img/product1.png');
+                                        ?>
+                                        <img class="product-image" src="<?php echo $url_img; ?>">
+                                        <!-- Color Variation -->
+                                        <?php
+                                        $list_color_pro = get_field('product_colors');
+                                        if($list_color_pro):
+                                            ?>
+                                            <ul class="color-variations horizontal-list text-right pr-15">
+                                                <?php foreach( $list_color_pro as $color_pro): ?>
+                                                    <li class="color-variations__item <?php echo $color_pro; ?>"></li>
+                                                <?php endforeach; ?>
+                                            </ul><!-- Color Variation -->
+                                        <?php endif;?>
 
-                            <!-- Product Name -->
-                            <h5 class="product-name text-center"><?php echo get_field('product_name')?get_field('product_name'):get_the_title();?></h5>
-                        </a>
+                                        <!-- Product Name -->
+                                        <h5 class="product-name text-center"><?php echo get_field('product_name')?get_field('product_name'):get_the_title();?></h5>
+                                    </a>
 
-                    </li>
-                            <?php
-                        } endwhile;?>
-                </ul>
+                                </li>
+                                <?php
+                            } endwhile;?>
+                    </ul>
                 <?php endif; wp_reset_postdata();?>
             </li>
             <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">

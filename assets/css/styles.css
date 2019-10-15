@@ -4226,6 +4226,18 @@ body.fixed-header {
       background-color: #e02e2a; }
     .color-variations__item.yellow {
       background-color: #fff307; }
+    .color-variations__item.green {
+      background-color: #009432; }
+    .color-variations__item.pink {
+      background-color: #ED4C67; }
+    .color-variations__item.blue {
+      background-color: #0652DD; }
+    .color-variations__item.purple {
+      background-color: #833471; }
+    .color-variations__item.orange {
+      background-color: #f36d21; }
+    .color-variations__item.brown {
+      background-color: #e58e26; }
 
 @keyframes aboutus-arrow {
   0% {
