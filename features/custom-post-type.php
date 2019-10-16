@@ -104,7 +104,7 @@ function yadea_custom_posts_type(){
         'show_in_nav_menus'   => true,
         'menu_position'       => 5,
         'menu_icon'           => 'dashicons-tag',
-        'rewrite' => array('slug' => 'chi-tiet'),
+        'rewrite'             => array('slug' => 'chi-tiet'),
         'supports'            => array('title', 'thumbnail', 'custom-fields'),
     ));
 
@@ -133,32 +133,6 @@ function yadea_custom_posts_type(){
         'supports'            => array('title','editor', 'thumbnail', 'custom-fields'),
     ));
 
-    // detail Product
-    register_post_type('specifications', array(
-        'label'         => 'Specifications product',
-        'description'   => 'Specifications product',
-        'labels'        => array(
-            'name'            => 'Specifications product',
-            'singular_name'   => 'Specifications product',
-            'add_new'         => 'Add New Specifications product',
-            'add_new_item'    => 'Add New Specifications product',
-            'edit_item'       => 'Edit Specifications product',
-            'new_item'        => 'New Specifications product',
-            'view_item'       => 'View Specifications product',
-            'view_items'      => 'View Specifications product',
-            'all_items'       => 'All Specifications product',
-            'attributes'      => 'Specifications product Attributes'
-        ),
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_admin_bar'   => true,
-        'exclude_from_search' => false,
-        'show_in_nav_menus'   => true,
-        'menu_position'       => 5,
-        'menu_icon'           => 'dashicons-tag',
-        'supports'            => array('title', 'thumbnail', 'custom-fields')
-    ));
-
     // Applicant
     register_post_type('applicant', array(
         'label'         => 'Applicant',
@@ -176,31 +150,6 @@ function yadea_custom_posts_type(){
         'menu_icon'           => 'dashicons-welcome-write-blog',
         'supports'            => array('title', 'thumbnail', 'custom-fields','editor')
     ));
-    // Landing page product
-    register_post_type('landing-page', array(
-        'label'         => 'Landing Page Product',
-        'description'   => 'Landing Page for Product',
-        'labels'        => array(
-            'name'            => 'Landing Page Product',
-            'singular_name'   => 'Landing Page Product',
-            'add_new'         => 'Add New Landing Page Product',
-            'add_new_item'    => 'Add New Landing Page Product',
-            'edit_item'       => 'Edit Landing Page Product',
-            'new_item'        => 'New Landing Page Product',
-            'view_item'       => 'View Landing Page Product',
-            'view_items'      => 'View Landing Page Product',
-            'all_items'       => 'All Landing Page Product'
-        ),
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_admin_bar'   => true,
-        'exclude_from_search' => false,
-        'show_in_nav_menus'   => true,
-        'menu_position'       => 6,
-        'menu_icon'           => 'dashicons-tag',
-        'supports'            => array('title', 'editor', 'revisions', 'author', 'excerpt', 'editor-page-attributes', 'thumbnail')
-    ));
-
 }
 add_action( 'init', 'yadea_custom_posts_type' );
 

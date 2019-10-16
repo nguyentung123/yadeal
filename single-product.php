@@ -1,14 +1,6 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package Yadea_Theme
- */
-
 get_header();
-$specifications = get_specifications_by_id($post->ID);
+$specifications = get_field('product_specs');
 ?>
 <main>
     <!-- Section slick carousel-->
@@ -92,49 +84,99 @@ $specifications = get_specifications_by_id($post->ID);
 
 
     <!-- Section parameter information-->
-    <?php
-    if($specifications):
-        ?>
+    <?php if($specifications): ?>
         <section class="param-detail" id="param-detail">
             <div class="container">
-                <div class="row">
+
+                <?php if($specifications['product_spec_size'] AND count($specifications['product_spec_size']) > 0):?>
+                    <?php $productSizeData = $specifications['product_spec_size'] ?>
                     <!--Title main-->
                     <div class="col-lg-12">
                         <h3>
                             Thông số kỹ thuật
                         </h3>
                     </div>
-                    <?php
-                    $pos = 0;
-                    foreach ($specifications['val'] as $key=>$specification_item):$pos++;
-                        if($pos==1){continue;}
-                        ?>
-                        <div class="col-lg-12">
-                            <!--Sub title-->
-                            <?php $label_item_field = get_field_object($key)['label']; ?>
-                            <h4><?php echo ($label_item_field);?></h4>
-                            <!--Content-->
-                            <div class="content">
+                    <div class="content">
+                        <?php foreach($productSizeData as $key => $data_item): ?>
+                            <?php if($key == 0): ?>
                                 <div class="content-table">
-                                    <?php $list_label=array(); if(have_rows($key)):while (have_rows($key)):the_row();
-                                        foreach ($specification_item as $key_children => $value){
-                                            array_push($list_label,get_sub_field_object($key_children)['label']);
-                                        }
-                                        break;
-                                    endwhile;endif;?>
-                                    <?php $pos_label=0; foreach ($specification_item as $key_children => $value):?>
-                                        <?php if($value):?>
-                                            <div class="item">
-                                                <p><?php echo $list_label[$pos_label];?></p>
-                                                <b><?php echo $value; ?></b>
-                                            </div>
-                                        <?php endif;?>
-                                        <?php $pos_label++;endforeach;?>
+                            <?php elseif($key % 3 == 0 AND $key !== 0): ?>
                                 </div>
+                                <div class="content-table">
+                            <?php endif; ?>
+
+                            <div class="item">
+                                <p><?php echo $data_item['product_size_title'] ?></p>
+                                <b><?php echo str_replace('\n', '<br>',$data_item['product_size_value']) ?></b>
                             </div>
-                        </div>
-                    <?php endforeach;?>
-                </div>
+
+                            <?php if($key == count($productSizeData) - 1 ):?>
+                                </div>
+                            <?php endif;?>
+
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if($specifications['product_spec_frame'] AND count($specifications['product_spec_frame']) > 0):?>
+                    <?php $productFrameData = $specifications['product_spec_frame'] ?>
+                    <!--Title main-->
+                    <div class="col-lg-12">
+                        <h3>
+                            Khung Xe
+                        </h3>
+                    </div>
+                    <div class="content">
+                        <?php foreach($productFrameData as $key => $data_item): ?>
+                            <?php if($key == 0): ?>
+                                <div class="content-table">
+                            <?php elseif($key % 3 == 0 AND $key !== 0): ?>
+                                </div>
+                                <div class="content-table">
+                            <?php endif; ?>
+
+                            <div class="item">
+                                <p><?php echo $data_item['product_frame_title'] ?></p>
+                                <b><?php echo str_replace('\n', '<br>', $data_item['product_frame_value']); ?></b>
+                            </div>
+
+                            <?php if($key == count($productFrameData) - 1 ):?>
+                                </div>
+                            <?php endif;?>
+
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if($specifications['product_spec_engine'] AND count($specifications['product_spec_engine']) > 0):?>
+                    <?php $productEngineData = $specifications['product_spec_engine'] ?>
+                    <!--Title main-->
+                    <div class="col-lg-12">
+                        <h3>
+                            Động cơ
+                        </h3>
+                    </div>
+                    <div class="content">
+                        <?php foreach($productEngineData as $key => $data_item): ?>
+                            <?php if($key == 0): ?>
+                                <div class="content-table">
+                            <?php elseif($key % 3 == 0 AND $key !== 0): ?>
+                                </div>
+                                <div class="content-table">
+                            <?php endif; ?>
+
+                            <div class="item">
+                                <p><?php echo $data_item['product_engine_title'] ?></p>
+                                <b><?php echo str_replace('\n', '<br>', $data_item['product_engine_value']); ?></b>
+                            </div>
+
+                            <?php if($key == count($productEngineData) - 1 ):?>
+                                </div>
+                            <?php endif;?>
+
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </section>
     <?php endif;?>
@@ -143,33 +185,7 @@ $specifications = get_specifications_by_id($post->ID);
 
 
     <!-- Section slide image reality-->
-    <?php
-    $list_img_real = get_field('product_image_real_set');
-    if($list_img_real):
-        ?>
-        <section class="slide-image-reality" id="slide-image-reality">
-            <div class="container">
-                <div class="row">
-                    <!-- Title main-->
-                    <div class="col-lg-12">
-                        <h3>Hình ảnh thực tế <?php the_title();?></h3>
-                    </div>
-                    <div class="col-lg-12">
-                        <!-- Slick carousel image-->
-                        <div class="slide-content">
-                            <?php
-                            $count = 0;
-                            foreach($list_img_real as $key => $value){
-                                $count++;if($count>8)break;
-                                echo '<img src="'.$value['url'].'" class="image-holder__item item-'.($key+1).'">';
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    <?php endif;?>
+
     <!-- Section slide image reality-->
 </main>
 

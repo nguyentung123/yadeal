@@ -38,15 +38,16 @@
         }
 
         &.white{ background-color: $white; }
-        &.gray{ background-color: #52555A }
-        &.light-gray{ background-color: #c7c7c7; }
-        &.red{ background-color: #e02e2a; }
-        &.yellow{ background-color: #fff307; }
+        &.gray{ background-color: #AAA; }
+        &.light-gray{ background-color: #dfe6e9; }
+        &.red{ background-color: #d63031; }
+        &.yellow{ background-color: #fdcb6e; }
+        &.black{background-color: #444;}
 
-        &.green{ background-color: #009432; }
-        &.pink{ background-color: #ED4C67; }
-        &.blue{ background-color: #0652DD; }
-        &.purple{ background-color: #833471; }
+        &.green{ background-color: #00b894; }
+        &.pink{ background-color: #fd79a8; }
+        &.blue{ background-color: #0984e3; }
+        &.purple{ background-color: #6c5ce7; }
         &.orange{ background-color: $main-color; }
         &.brown{ background-color: #e58e26; }
 

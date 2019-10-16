@@ -44,16 +44,6 @@ function get_all_specifications(){
     return $all_specifications;
 }
 
-function get_specifications_by_id($id){
-    $data = get_all_specifications();
-    foreach ($data as $data_item){
-        if($data_item['id']==$id){
-            return $data_item;
-        }
-    }
-    return '';
-}
-
 function multiexplode ($delimiters,$string) {
     $ready = str_replace($delimiters, $delimiters[0], $string);
     $launch = explode($delimiters[0], $ready);

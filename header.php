@@ -118,7 +118,7 @@
                                         }
                                     }
                                 ?>
-                                <a href="<?php echo site_url('/products'); ?>">
+                                <a href="<?php echo get_permalink(); ?>">
                                     <img src="<?php echo $url_img;?>" class="img-fluid">
                                 </a>
                             </div>
@@ -219,7 +219,7 @@
 
                             <!-- Product Item -->
                             <li class="product-item">
-                                <a href="<?php echo site_url('/products'); ?>">
+                                <a href="<?php echo get_permalink(); ?>">
                                     <?php $list_color_pro = get_field('product_colors'); ?>
                                     <!-- Product image -->
                                     <?php

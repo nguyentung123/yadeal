@@ -7265,21 +7265,23 @@ body.fixed-header {
         .slide-detail .slide-container .slide-dots-custom li.white {
           background-color: #FFF; }
         .slide-detail .slide-container .slide-dots-custom li.gray {
-          background-color: #52555A; }
+          background-color: #AAA; }
         .slide-detail .slide-container .slide-dots-custom li.light-gray {
-          background-color: #c7c7c7; }
+          background-color: #dfe6e9; }
         .slide-detail .slide-container .slide-dots-custom li.red {
-          background-color: #e02e2a; }
+          background-color: #d63031; }
         .slide-detail .slide-container .slide-dots-custom li.yellow {
-          background-color: #fff307; }
+          background-color: #fdcb6e; }
+        .slide-detail .slide-container .slide-dots-custom li.black {
+          background-color: #444; }
         .slide-detail .slide-container .slide-dots-custom li.green {
-          background-color: #009432; }
+          background-color: #00b894; }
         .slide-detail .slide-container .slide-dots-custom li.pink {
-          background-color: #ED4C67; }
+          background-color: #fd79a8; }
         .slide-detail .slide-container .slide-dots-custom li.blue {
-          background-color: #0652DD; }
+          background-color: #0984e3; }
         .slide-detail .slide-container .slide-dots-custom li.purple {
-          background-color: #833471; }
+          background-color: #6c5ce7; }
         .slide-detail .slide-container .slide-dots-custom li.orange {
           background-color: #f36d21; }
         .slide-detail .slide-container .slide-dots-custom li.brown {
