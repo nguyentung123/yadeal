@@ -183,11 +183,13 @@
       margin-top: 80px;
 
       &__title{
-        max-width: 33.3%;
-        margin: 0 0 100px;
-
-        img{
-          width: 100%;
+        .series-title{
+          background-image: url('../img/placeholder/series-text-clipmask.jpg');
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          color: #AAA;
+          font-size: 72px;
+          font-weight: 800;
         }
       }
 
@@ -252,6 +254,10 @@
   
         &__title{
           margin: 0 0 90px;
+
+          .series-title{
+            font-size: 68px;
+          }
         }
   
         &__products{
@@ -296,6 +302,10 @@
   
         &__title{
           margin: 0 0 85px;
+
+          .series-title{
+            font-size: 66px;
+          }
         }
   
         &__products{
@@ -341,8 +351,9 @@
 
         &__title{
           margin: 0 0 20px;
-          img{
-            max-width: 40%;
+
+          .series-title{
+            font-size: 58px;
           }
         }
 
@@ -400,8 +411,9 @@
 
         &__title{
           margin: 0 0 20px;
-          img{
-            max-width: 46%;
+
+          .series-title{
+            font-size: 47px;
           }
         }
 
@@ -457,8 +469,9 @@
 
         &__title{
           margin: 0 0 20px;
-          img{
-            max-width: 44%;
+
+          .series-title{
+            font-size: 42px;
           }
         }
 

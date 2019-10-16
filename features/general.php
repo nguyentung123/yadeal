@@ -59,4 +59,8 @@ function multiexplode ($delimiters,$string) {
     $launch = explode($delimiters[0], $ready);
     return  $launch;
 }
+
+function cmp($a, $b){
+    return $a->series_priority - $b->series_priority;
+}
 ?>

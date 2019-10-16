@@ -80,10 +80,10 @@ export default class SliderDetail {
 
   AddColorSlide () {
     for(let i=0 ; i< this.arrDots.length ; i++) {
-      $(this.arrDots[i]).on('click', function () {
+      $(this.arrDots[i]).on('click', function (e) {
         $('.slide-detail .slide-content').slick('slickGoTo', i);
-        var arrLiTag = $('.slide-dots-custom li');
-        // $(this).parent().addClass('slick-active')
+        $('.slide-dots-custom li.active-color').removeClass('active-color');
+        $(e.target).parents('li').addClass('active-color');
       })
     }
   }

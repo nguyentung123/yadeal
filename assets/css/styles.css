@@ -4306,21 +4306,23 @@ body.fixed-header {
     .color-variations__item.white {
       background-color: #FFF; }
     .color-variations__item.gray {
-      background-color: #52555A; }
+      background-color: #AAA; }
     .color-variations__item.light-gray {
-      background-color: #c7c7c7; }
+      background-color: #dfe6e9; }
     .color-variations__item.red {
-      background-color: #e02e2a; }
+      background-color: #d63031; }
     .color-variations__item.yellow {
-      background-color: #fff307; }
+      background-color: #fdcb6e; }
+    .color-variations__item.black {
+      background-color: #444; }
     .color-variations__item.green {
-      background-color: #009432; }
+      background-color: #00b894; }
     .color-variations__item.pink {
-      background-color: #ED4C67; }
+      background-color: #fd79a8; }
     .color-variations__item.blue {
-      background-color: #0652DD; }
+      background-color: #0984e3; }
     .color-variations__item.purple {
-      background-color: #833471; }
+      background-color: #6c5ce7; }
     .color-variations__item.orange {
       background-color: #f36d21; }
     .color-variations__item.brown {
@@ -5841,11 +5843,13 @@ body.fixed-header {
     min-height: 100vh; }
     #product-list .series__block {
       margin-top: 80px; }
-      #product-list .series__block__title {
-        max-width: 33.3%;
-        margin: 0 0 100px; }
-        #product-list .series__block__title img {
-          width: 100%; }
+      #product-list .series__block__title .series-title {
+        background-image: url("../img/placeholder/series-text-clipmask.jpg");
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        color: #AAA;
+        font-size: 72px;
+        font-weight: 800; }
       #product-list .series__block__products__item {
         margin-bottom: 100px; }
         #product-list .series__block__products__item__image {
@@ -5882,6 +5886,8 @@ body.fixed-header {
         margin-top: 75px; }
         #product-list .series__block__title {
           margin: 0 0 90px; }
+          #product-list .series__block__title .series-title {
+            font-size: 68px; }
         #product-list .series__block__products__item {
           margin-bottom: 90px; }
           #product-list .series__block__products__item__detail {
@@ -5906,6 +5912,8 @@ body.fixed-header {
         margin-top: 70px; }
         #product-list .series__block__title {
           margin: 0 0 85px; }
+          #product-list .series__block__title .series-title {
+            font-size: 66px; }
         #product-list .series__block__products__item {
           margin-bottom: 85px; }
           #product-list .series__block__products__item__detail {
@@ -5930,8 +5938,8 @@ body.fixed-header {
         margin-top: 40px; }
         #product-list .series__block__title {
           margin: 0 0 20px; }
-          #product-list .series__block__title img {
-            max-width: 40%; }
+          #product-list .series__block__title .series-title {
+            font-size: 58px; }
         #product-list .series__block__products__item {
           margin-bottom: 80px; }
           #product-list .series__block__products__item__image {
@@ -5963,8 +5971,8 @@ body.fixed-header {
         margin-top: 30px; }
         #product-list .series__block__title {
           margin: 0 0 20px; }
-          #product-list .series__block__title img {
-            max-width: 46%; }
+          #product-list .series__block__title .series-title {
+            font-size: 47px; }
         #product-list .series__block__products__item {
           margin-bottom: 70px; }
           #product-list .series__block__products__item__image img {
@@ -5995,8 +6003,8 @@ body.fixed-header {
         margin-top: 25px; }
         #product-list .series__block__title {
           margin: 0 0 20px; }
-          #product-list .series__block__title img {
-            max-width: 44%; }
+          #product-list .series__block__title .series-title {
+            font-size: 42px; }
         #product-list .series__block__products__item {
           margin-bottom: 60px; }
           #product-list .series__block__products__item__image img {

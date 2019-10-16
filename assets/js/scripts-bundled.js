@@ -18145,9 +18145,10 @@ function () {
       var _this = this;
 
       var _loop = function _loop(i) {
-        $(_this.arrDots[i]).on('click', function () {
+        $(_this.arrDots[i]).on('click', function (e) {
           $('.slide-detail .slide-content').slick('slickGoTo', i);
-          var arrLiTag = $('.slide-dots-custom li'); // $(this).parent().addClass('slick-active')
+          $('.slide-dots-custom li.active-color').removeClass('active-color');
+          $(e.target).parents('li').addClass('active-color');
         });
       };
 

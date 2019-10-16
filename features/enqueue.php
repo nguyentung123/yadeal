@@ -29,7 +29,7 @@ function yadea_theme_scripts() {
     wp_enqueue_script('yadea_jquery', get_theme_file_uri('assets/js/jquery-3.3.1.min.js'));
 
     // flipclock
-    wp_enqueue_script('yadea_flipclock', get_theme_file_uri('assets/js/flipclock.js'));
+    wp_enqueue_script('yadea_flipclock', get_theme_file_uri('assets/js/flipclock.js'), array('yadea_jquery'), '1.0', true);
 
     // Popper
     wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('yadea_jquery'), '1.0', true);
