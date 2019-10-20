@@ -67,81 +67,7 @@
     </div><!-- Container -->
 
     <!-- Fixed Position Sub Menu -->
-    <?php
-    $productHeaderQueryOptions = array(
-        'post_type'       => 'product',
-        'post_status'     => 'publish',
-        'posts_per_page'  => 6,
-        'order'           => 'ASC',
-        'orderby'         => 'meta_value_num',
-        'meta_key'        => 'product_priority'
-    );
-    $productHeaderQuery = new WP_Query($productHeaderQueryOptions);
-
-    if($productHeaderQuery->have_posts()): ?>
-        <!-- Product Listing Sub Menu -->
-        <div class="container sub-menu mb-hide" id="page-sub-menu">
-
-            <!-- Row - Product Wrapper -->
-            <div class="sub-menu__wrapper row product-list-layout">
-
-                <?php while ($productHeaderQuery->have_posts()): ?>
-                    <?php $productHeaderQuery->the_post(); ?>
-
-                    <!-- Product Item -->
-                    <div class="col-md-4 col-6 product-item">
-
-                        <!-- Product Detail Wrapper -->
-                        <div class="product-detail">
-
-                            <!-- Color Variation -->
-                            <?php $list_color_pro = get_field('product_colors'); ?>
-                            <?php if(count($list_color_pro) > 0): ?>
-                                <ul class="color-variations horizontal-list text-right">
-                                    <?php foreach ($list_color_pro as $color_item): ?>
-                                        <li class="color-variations__item <?php echo $color_item['product_color_name'];?> "></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            <?php endif; ?>
-
-                            <!-- Color Variation -->
-
-                            <!-- Product Image -->
-                            <div class="product-image">
-                                <?php
-                                    $url_img = get_theme_file_uri('assets/img/product1.png');
-                                    if( has_post_thumbnail() ){
-                                        $url_img = get_the_post_thumbnail_url();
-                                    } else {
-                                        if( $list_color_pro AND $list_color_pro[0]['product_color_image']){
-                                            $url_img = $list_color_pro[0]['product_color_image'];
-                                        }
-                                    }
-                                ?>
-                                <a href="<?php echo get_permalink(); ?>">
-                                    <img src="<?php echo $url_img;?>" class="img-fluid">
-                                </a>
-                            </div>
-                            <!-- Product Image -->
-
-                            <!-- Product Context -->
-                            <div class="product-context text-center">
-                                <h4 class="product-name page-desc">
-                                    <a href="<?php echo site_url('/products'); ?>">
-                                        <?php echo get_field('product_name')?get_field('product_name'):get_the_title();?>
-                                    </a>
-                                </h4>
-                            </div>
-                            <!-- Product Context -->
-
-                        </div>
-                    </div><!-- Product Item -->
-
-                <?php endwhile; ?>
-            </div>
-        </div>
-
-    <?php endif; ?>
+    <?php get_template_part('template-parts/header', 'product-desktop'); ?>
 
 
     <!-- Fixed Position Sub Menu -->
@@ -207,54 +133,11 @@
         <ul class="nav light-gray-bg">
 
             <!-- Product Listing -->
-            <li class="nav-item with-sub-menu <?php if(is_page('/shops')) echo 'active'; ?>">
+            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
 
-                <?php if($productHeaderQuery->have_posts()): ?>
+                <?php get_template_part('template-parts/header', 'product-footer'); ?>
 
-                    <i class="fa fa-plus nav-trigger active" aria-hidden="true"></i>
-                    <ul class="nav-item__sub-menu">
-                        <?php while ($productHeaderQuery->have_posts()): ?>
-                            <?php $productHeaderQuery->the_post(); ?>
-
-                            <!-- Product Item -->
-                            <li class="product-item">
-                                <a href="<?php echo get_permalink(); ?>">
-                                    <?php $list_color_pro = get_field('product_colors'); ?>
-                                    <!-- Product image -->
-                                    <?php
-                                        $url_img = get_theme_file_uri('assets/img/product1.png');
-                                        if( has_post_thumbnail() ){
-                                            $url_img = get_the_post_thumbnail_url();
-                                        } else {
-                                            if( $list_color_pro AND $list_color_pro[0]['product_color_image']){
-                                                $url_img = $list_color_pro[0]['product_color_image'];
-                                            }
-                                        }
-                                    ?>
-                                    <img class="product-image" src="<?php echo $url_img; ?>">
-
-
-                                    <!-- Color Variation -->
-                                    <?php if(count($list_color_pro) > 0): ?>
-                                        <ul class="color-variations horizontal-list text-right pr-15">
-                                            <?php foreach ($list_color_pro as $color_item): ?>
-                                                <li class="color-variations__item <?php echo $color_item['product_color_name'];?> "></li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    <?php endif; ?>
-
-                                    <!-- Product Name -->
-                                    <h5 class="product-name text-center">
-                                        <?php echo get_field('product_name') ? get_field('product_name') : get_the_title(); ?>
-                                    </h5>
-                                </a>
-
-                            </li>
-                        <?php endwhile; ?>
-                    </ul>
-                <?php endif; ?>
-                <?php wp_reset_postdata(); ?>
             </li>
 
             <!-- Shop Searching Page -->

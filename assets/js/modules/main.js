@@ -121,6 +121,7 @@ export default class Main {
 
 
         /* ===== Image Holder Display Effect ===== */
+        $('.product-showcase__item__body .image-holder>img:first-child').addClass('active');
         this.$imageHolder.on('mouseenter', (e) => {
             if(!this.appStatus.imageHoverState) {
                 this.$imageHolderTarget = $(e.target)
@@ -137,6 +138,19 @@ export default class Main {
                 this.ActiveImageHover(false);
             }
         });
+
+
+        /* ==== Wordpress Admin Bar Adaptation === */
+        if($('body').hasClass('admin-bar') && window.innerWidth <= 600){
+            this.$pageHeader = $('#page-header');
+            $(window).on('scroll', () => {
+                if(window.pageYOffset > 20){
+                    this.$pageHeader.addClass('scroll-menu');
+                } else {
+                    this.$pageHeader.removeClass('scroll-menu');
+                }
+            });
+        }
     }
 
 
@@ -187,53 +201,58 @@ export default class Main {
     ActiveImageHover( active ){
         this.appStatus.imageHoverState = active;
         if(active){
-            this.imageHolderTimeout = setTimeout(() => {
-                if(this.$imageHolderTarget.hasClass('state-1')){
-                    this.$imageHolderTarget.removeClass('state-1');
-                    this.$imageHolderTarget.addClass('state-2');
-                } else {
-                    if(this.$imageHolderTarget.hasClass('state-2')) {
-                        this.$imageHolderTarget.removeClass('state-2');
-                        this.$imageHolderTarget.addClass('state-3');
-                    } else {
-                        this.$imageHolderTarget.removeClass('state-3');
-                        this.$imageHolderTarget.addClass('state-1');
-                    }
-                }
-
-                this.imageHolderInterval = setInterval(() => {
-                    if(this.$imageHolderTarget.hasClass('state-1')){
-                        this.$imageHolderTarget.removeClass('state-1');
-                        this.$imageHolderTarget.addClass('state-2');
-                    } else {
-                        if(this.$imageHolderTarget.hasClass('state-2')) {
-                            this.$imageHolderTarget.removeClass('state-2');
-                            this.$imageHolderTarget.addClass('state-3');
-                        } else {
-                            this.$imageHolderTarget.removeClass('state-3');
-                            this.$imageHolderTarget.addClass('state-1');
-                        }
-                    }
-                }, 2000);
-            }, 400);
+            console.log(this.$imageHolderTarget);
+            this.$imageList = this.$imageHolderTarget.find('.image-holder__item').toArray();
+            this.ImageCounter = 0;
+            this.DoAnimate(true);
+            console.log();
         } else {
-            this.$imageHolderTarget.removeClass('state-2 state-3');
-            if(!this.$imageHolderTarget.hasClass('state-1')){
-                this.$imageHolderTarget.addClass('state-1');
-            }
-            this.$imageHolderTarget = null;
-            clearInterval(this.imageHolderInterval);
-            clearTimeout(this.imageHolderTimeout);
-
-            this.imageHolderInterval = null;
-            this.imageHolderTimeout = null;
+            this.CleanUpImageHover();
         }
     }
 
-    CloseMbSubMenu(){
-        if(this.$subNavTrigger){
+    DoAnimate(firstTime = false){
+        let timeout_amount = 1700;
+        if(firstTime){
+            timeout_amount = 600
+        }
+        this.AnimateTimeout = setTimeout(() => {
+            $(this.$imageList[this.ImageCounter]).addClass('slide-away').removeClass('active');
+
+            setTimeout(() => {
+                $(this.$imageList[this.ImageCounter]).removeClass('slide-away');
+                if(this.ImageCounter === this.$imageList.length - 1){
+                    this.ImageCounter = 0;
+                } else {
+                    this.ImageCounter++;
+                }
+
+                setTimeout(() => {$(this.$imageList[this.ImageCounter]).addClass('active');}, 100)
+
+            }, 380);
+
+            this.DoAnimate();
+        }, timeout_amount);
+    }
+
+    CleanUpImageHover(){
+        var id = window.setTimeout(function() {}, 0);
+
+        while (id--) {
+            window.clearTimeout(id); // will do nothing if no timeout with id is present
+        }
+
+        this.ImageCounter = 0;
+        if(this.$imageHolderTarget.find('img.active').index() > 0){
+            this.$imageHolderTarget.find('img').removeClass('slide-away active');
+        }
+        $(this.$imageList[this.ImageCounter]).removeClass('slide-away').addClass('active');
+    }
+
+    CloseMbSubMenu() {
+        if (this.$subNavTrigger) {
             let $toggleTarget = this.$subNavTrigger.siblings('.nav-item__sub-menu');
-            if($toggleTarget){
+            if ($toggleTarget) {
                 $toggleTarget.slideUp('normal');
             }
 

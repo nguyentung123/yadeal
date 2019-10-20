@@ -83,19 +83,18 @@ function yadea_custom_posts_type(){
 
     // Product
     register_post_type('product', array(
-        'label'         => 'Products',
+        'label'         => 'Sản phẩm',
         'description'   => 'Yadea\'s Products',
         'labels'        => array(
-            'name'            => 'Products',
-            'singular_name'   => 'Product',
-            'add_new'         => 'Add New Product',
-            'add_new_item'    => 'Add New Product',
-            'edit_item'       => 'Edit Product',
-            'new_item'        => 'New Product',
-            'view_item'       => 'View Product',
-            'view_items'      => 'View Product',
-            'all_items'       => 'All Products',
-            'attributes'      => 'Series Attributes'
+            'name'            => 'Sản phẩm',
+            'singular_name'   => 'Sản phẩm',
+            'add_new'         => 'Thêm sản phẩm',
+            'add_new_item'    => 'Thêm sản phẩm',
+            'edit_item'       => 'Edit sản phẩm',
+            'new_item'        => 'Sản phẩm mới',
+            'view_item'       => 'Xem sản phẩm',
+            'view_items'      => 'Xem tất cả sản phẩm',
+            'all_items'       => 'Tất cả sản phẩm',
         ),
         'public'              => true,
         'show_ui'             => true,
@@ -103,7 +102,7 @@ function yadea_custom_posts_type(){
         'exclude_from_search' => false,
         'show_in_nav_menus'   => true,
         'menu_position'       => 5,
-        'menu_icon'           => 'dashicons-tag',
+        'menu_icon'           => 'dashicons-awards',
         'rewrite'             => array('slug' => 'chi-tiet'),
         'supports'            => array('title', 'thumbnail', 'custom-fields'),
     ));
@@ -127,7 +126,7 @@ function yadea_custom_posts_type(){
         'show_ui'             => true,
         'show_in_admin_bar'   => true,
         'exclude_from_search' => false,
-        'show_in_nav_menus'   => true,
+        'show_in_nav_menus'   => false,
         'menu_position'       => 5,
         'menu_icon'           => 'dashicons-tag',
         'supports'            => array('title','editor', 'thumbnail', 'custom-fields'),

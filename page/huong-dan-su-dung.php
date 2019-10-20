@@ -3,7 +3,11 @@
 get_header();
 ?>
 <main>
-<?php 
+    <!-- Support Head -->
+    <?php echo do_shortcode('[breadcrumbs]');?>
+    <!-- Support Head -->
+
+    <?php
     $args = array(
         "post_type" => 'huong-dan-su-dung',
         "post_status" => 'publish',
@@ -11,27 +15,27 @@ get_header();
     );
     $query = new WP_Query($args);
     if($query->have_posts()):
-?>
-    <section>
-        <div class="container">
-            <div class="list-question list-question-lp">
-                <?php while($query->have_posts()):$query->the_post();?>
-                <div class="question-item question-item-lp">
-                    <div class="question-item question-lp">
-                        <?php the_title();?>
-                        <span class="icon-hide-show-faq-lp">
+        ?>
+        <section>
+            <div class="container">
+                <div class="list-question list-question-lp">
+                    <?php while($query->have_posts()):$query->the_post();?>
+                        <div class="question-item question-item-lp">
+                            <div class="question-item question-lp">
+                                <p style="margin-bottom: 0;"><?php echo get_the_title();?></p>
+                                <span class="icon-hide-show-faq-lp">
                             <span class="fa fa-plus" aria-hidden="true"></span> 
                             <span class="fa fa-minus" aria-hidden="true"></span>
                         </span>
-                    </div>
-                    <div class="content-question content-question-item-lp">
-                        <?php the_content();?>
-                    </div>
+                            </div>
+                            <div class="content-question content-question-item-lp">
+                                <?php the_content();?>
+                            </div>
+                        </div>
+                    <?php endwhile;?>
                 </div>
-                <?php endwhile;?>
             </div>
-        </div>
-    </section>
+        </section>
     <?php endif?>
 </main>
 <style>

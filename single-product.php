@@ -20,7 +20,6 @@ $specifications = get_field('product_specs');
                                 <?php
                                 if(count($list_color_pro) > 0):
                                     foreach ($list_color_pro as $img_item):
-                                        var_dump($img_item);
                                         $name_color_img = $img_item['product_color_name'];
                                         $name_img = $img_item['product_color_image'];
 
@@ -84,7 +83,7 @@ $specifications = get_field('product_specs');
 
 
     <!-- Section parameter information-->
-    <?php if($specifications): ?>
+    <?php if($specifications['product_spec_size'] OR $specifications['product_spec_frame'] OR $specifications['product_spec_engine']): ?>
         <section class="param-detail" id="param-detail">
             <div class="container">
 
@@ -185,10 +184,55 @@ $specifications = get_field('product_specs');
 
 
     <!-- Section slide image reality-->
+    <?php
+    $productImageSet = get_field('product_image_real_set');
 
+    if($productImageSet AND count($productImageSet) >= 3): ?>
+        <!-- Section Real Image Slider -->
+        <section class="product-real-image-section" id="product-real-image-section">
+
+            <!-- Container -->
+            <div class="container">
+
+                <div class="heading">
+                    <h3 class="title">HÌNH ẢNH THỰC TẾ <?php echo strtoupper(get_the_title()); ?></h3>
+                </div>
+
+                <!-- Slider Holder -->
+                <div class="slider holder">
+                    <ul class="real-img-slider">
+
+                        <?php foreach($productImageSet as $image):?>
+                            <!-- Slide item -->
+                            <li class="slide-item">
+                                <a class="venobox" href="<?php echo $image['url'];?>">
+                                    <img draggable="false"
+                                         src="<?php echo $image['url'];?>"
+                                        style="width: 100%;">
+                                </a>
+                            </li>
+                        <?php endforeach;?>
+
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+        <!-- Section Real Image Slider - END -->
+    <?php endif; ?>
     <!-- Section slide image reality-->
 </main>
 
+<!-- Image Viewer Venobox Setup -->
+<link rel="stylesheet" href="<?php echo get_theme_file_uri('assets/css/vendors/venobox.css'); ?>">
+<script src="<?php echo get_theme_file_uri('assets/js/venobox.min.js'); ?>"></script>
+<script>
+    $(document).ready(function(){
+        $('.venobox').venobox({
+            framewidth: window.innerWidth * 0.75 + 'px',
+        });
+    });
+</script>
 <?php
 get_footer();
 ?>

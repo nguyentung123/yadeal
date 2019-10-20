@@ -49,34 +49,14 @@ export default class SliderDetail {
 
 
   SlideImageReality () {
-    $('.slide-image-reality .slide-content').slick({
-      centerMode: true,
-      centerPadding: '0px',
+    $('.real-img-slider').slick({
+      infinite: true,
       slidesToShow: 3,
-      arrows: true,
-      prevArrow: '<div class="arrow prev"><img src="./img/arrow-left.png" alt="left"></div>',
-      nextArrow:'<div class="arrow next"><img src="./img/arrow-right.png" alt="right"></div>',
-      dots: false,
-      responsive: [
-        {
-          breakpoint: 1025,
-          settings: {
-            arrows: false,
-            centerMode: true,
-          }
-        },
-        {
-          breakpoint: 769,
-          settings: {
-            arrows: false,
-            centerMode: false,
-            slidesToShow: 1,
-          }
-        }
-      ]
+      slidesToScroll: 1,
+      nextArrow: `<img class="real-img-control next-slide" src="${yadeaVietnamVariables.assets_url}img/arrow-right.png">`,
+      prevArrow: `<img class="real-img-control prev-slide" src="${yadeaVietnamVariables.assets_url}img/arrow-left.png">`,
     });
   }
-
 
   AddColorSlide () {
     for(let i=0 ; i< this.arrDots.length ; i++) {

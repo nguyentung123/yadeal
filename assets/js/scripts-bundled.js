@@ -17222,7 +17222,7 @@ var _support = _interopRequireDefault(__webpack_require__(8));
 
 var _sliderDetail = _interopRequireDefault(__webpack_require__(9));
 
-var _flipClock = _interopRequireDefault(__webpack_require__(10));
+var _flipClockCustom = _interopRequireDefault(__webpack_require__(10));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17254,7 +17254,7 @@ function () {
 
     this.sliderDetail = new _sliderDetail.default(); // Flip Clock Custom
 
-    this.flipClockCustom = new _flipClock.default();
+    this.flipClockCustom = new _flipClockCustom.default();
     this.bindEvents();
   }
   /* ===================================
@@ -17650,6 +17650,7 @@ function () {
       /* ===== Image Holder Display Effect ===== */
 
 
+      $('.product-showcase__item__body .image-holder>img:first-child').addClass('active');
       this.$imageHolder.on('mouseenter', function (e) {
         if (!_this.appStatus.imageHoverState) {
           _this.$imageHolderTarget = $(e.target);
@@ -17668,6 +17669,18 @@ function () {
           _this.ActiveImageHover(false);
         }
       });
+      /* ==== Wordpress Admin Bar Adaptation === */
+
+      if ($('body').hasClass('admin-bar') && window.innerWidth <= 600) {
+        this.$pageHeader = $('#page-header');
+        $(window).on('scroll', function () {
+          if (window.pageYOffset > 20) {
+            _this.$pageHeader.addClass('scroll-menu');
+          } else {
+            _this.$pageHeader.removeClass('scroll-menu');
+          }
+        });
+      }
     }
     /* ===================================
      *  METHODS
@@ -17722,59 +17735,65 @@ function () {
   }, {
     key: "ActiveImageHover",
     value: function ActiveImageHover(active) {
-      var _this3 = this;
-
       this.appStatus.imageHoverState = active;
 
       if (active) {
-        this.imageHolderTimeout = setTimeout(function () {
-          if (_this3.$imageHolderTarget.hasClass('state-1')) {
-            _this3.$imageHolderTarget.removeClass('state-1');
+        console.log(this.$imageHolderTarget);
+        this.$imageList = this.$imageHolderTarget.find('.image-holder__item').toArray();
+        this.ImageCounter = 0;
+        this.DoAnimate(true);
+        console.log();
+      } else {
+        this.CleanUpImageHover();
+      }
+    }
+  }, {
+    key: "DoAnimate",
+    value: function DoAnimate() {
+      var _this3 = this;
 
-            _this3.$imageHolderTarget.addClass('state-2');
+      var firstTime = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var timeout_amount = 1700;
+
+      if (firstTime) {
+        timeout_amount = 600;
+      }
+
+      this.AnimateTimeout = setTimeout(function () {
+        $(_this3.$imageList[_this3.ImageCounter]).addClass('slide-away').removeClass('active');
+        setTimeout(function () {
+          $(_this3.$imageList[_this3.ImageCounter]).removeClass('slide-away');
+
+          if (_this3.ImageCounter === _this3.$imageList.length - 1) {
+            _this3.ImageCounter = 0;
           } else {
-            if (_this3.$imageHolderTarget.hasClass('state-2')) {
-              _this3.$imageHolderTarget.removeClass('state-2');
-
-              _this3.$imageHolderTarget.addClass('state-3');
-            } else {
-              _this3.$imageHolderTarget.removeClass('state-3');
-
-              _this3.$imageHolderTarget.addClass('state-1');
-            }
+            _this3.ImageCounter++;
           }
 
-          _this3.imageHolderInterval = setInterval(function () {
-            if (_this3.$imageHolderTarget.hasClass('state-1')) {
-              _this3.$imageHolderTarget.removeClass('state-1');
+          setTimeout(function () {
+            $(_this3.$imageList[_this3.ImageCounter]).addClass('active');
+          }, 100);
+        }, 380);
 
-              _this3.$imageHolderTarget.addClass('state-2');
-            } else {
-              if (_this3.$imageHolderTarget.hasClass('state-2')) {
-                _this3.$imageHolderTarget.removeClass('state-2');
+        _this3.DoAnimate();
+      }, timeout_amount);
+    }
+  }, {
+    key: "CleanUpImageHover",
+    value: function CleanUpImageHover() {
+      var id = window.setTimeout(function () {}, 0);
 
-                _this3.$imageHolderTarget.addClass('state-3');
-              } else {
-                _this3.$imageHolderTarget.removeClass('state-3');
-
-                _this3.$imageHolderTarget.addClass('state-1');
-              }
-            }
-          }, 2000);
-        }, 400);
-      } else {
-        this.$imageHolderTarget.removeClass('state-2 state-3');
-
-        if (!this.$imageHolderTarget.hasClass('state-1')) {
-          this.$imageHolderTarget.addClass('state-1');
-        }
-
-        this.$imageHolderTarget = null;
-        clearInterval(this.imageHolderInterval);
-        clearTimeout(this.imageHolderTimeout);
-        this.imageHolderInterval = null;
-        this.imageHolderTimeout = null;
+      while (id--) {
+        window.clearTimeout(id); // will do nothing if no timeout with id is present
       }
+
+      this.ImageCounter = 0;
+
+      if (this.$imageHolderTarget.find('img.active').index() > 0) {
+        this.$imageHolderTarget.find('img').removeClass('slide-away active');
+      }
+
+      $(this.$imageList[this.ImageCounter]).removeClass('slide-away').addClass('active');
     }
   }, {
     key: "CloseMbSubMenu",
@@ -18115,28 +18134,12 @@ function () {
   }, {
     key: "SlideImageReality",
     value: function SlideImageReality() {
-      $('.slide-image-reality .slide-content').slick({
-        centerMode: true,
-        centerPadding: '0px',
+      $('.real-img-slider').slick({
+        infinite: true,
         slidesToShow: 3,
-        arrows: true,
-        prevArrow: '<div class="arrow prev"><img src="./img/arrow-left.png" alt="left"></div>',
-        nextArrow: '<div class="arrow next"><img src="./img/arrow-right.png" alt="right"></div>',
-        dots: false,
-        responsive: [{
-          breakpoint: 1025,
-          settings: {
-            arrows: false,
-            centerMode: true
-          }
-        }, {
-          breakpoint: 769,
-          settings: {
-            arrows: false,
-            centerMode: false,
-            slidesToShow: 1
-          }
-        }]
+        slidesToScroll: 1,
+        nextArrow: "<img class=\"real-img-control next-slide\" src=\"".concat(yadeaVietnamVariables.assets_url, "img/arrow-right.png\">"),
+        prevArrow: "<img class=\"real-img-control prev-slide\" src=\"".concat(yadeaVietnamVariables.assets_url, "img/arrow-left.png\">")
       });
     }
   }, {
@@ -18202,10 +18205,18 @@ function () {
     key: "bindEvents",
     value: function bindEvents() {
       this.CheckNameUnit();
+      this.oxygenStart = parseInt(yadeaVietnamVariables.oxygen_start);
+      this.oxygenEnd = parseInt(yadeaVietnamVariables.oxygen_end);
+      this.TIME_PER_WEEK = 604800;
+      var today = new Date();
+      var currentSecondOfTheWeek = today.getSeconds() + today.getDay() * 86400 + today.getHours() * 3600 + today.getMinutes() * 60;
+      this.thisWeekOxygenSpeed = 1000 / ((this.oxygenEnd - this.oxygenStart) / this.TIME_PER_WEEK);
+      this.weekProgress = Math.floor(this.oxygenEnd * currentSecondOfTheWeek / this.TIME_PER_WEEK);
+      console.log(this.thisWeekOxygenSpeed, this.weekProgress);
 
       if ($('#home-flip-clock').length > 0) {
-        this.NumberDecrease();
-        this.NumberIncrease();
+        this.NumberOxygen();
+        this.NumberTree();
       }
     }
     /* ===================================
@@ -18213,47 +18224,21 @@ function () {
      * =================================== */
 
   }, {
-    key: "NumberDecrease",
-    value: function NumberDecrease() {
+    key: "NumberOxygen",
+    value: function NumberOxygen() {
+      var _this = this;
+
       // Declare variable flip clock
-      var chars = [];
       var positions = [];
-      var numberDec = 55975444; // Create our number formatter.
-
-      var formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-      }); // format price into 1 000 000
-      // function formatter.format(number) => $1,000,00.00
-
-      var formatChar = formatter.format(numberDec).split('$').join('').split('.')[0].split(',').join(' '); // loop string and add each of char into array if char equal space <=> formatChar.charAt(i) === ' '
-
-      for (var i = 0; i < formatChar.length; i++) {
-        if (formatChar.charAt(i) === ' ') {
-          chars.push(i);
-        }
-      } // loop you just added to determine the correct position to margin
-
-
-      for (var i = 0; i < chars.length; i++) {
-        positions.push(chars[i] - i);
-      }
-      /*
-        * Example: formatChar = 1 000 000
-        * when you loop formatChar, chars = [1, 5]
-        * when you loop chars, positions = [1, 4]
-        * index of chars chars[0] = 1, chars[1] = 5 => chars[0] - 0 = 1 and chars[1] - 1 = 4
-        * add new value of array positions, => positions = [1, 4]
-        * */
-
-
-      var numberDecrease = $('.number-decrease').FlipClock(numberDec, {
+      var numberDec = this.weekProgress;
+      console.log(this.thisWeekOxygenSpeed);
+      this.numberOxygen = $('.number-decrease').FlipClock(numberDec, {
         clockFace: 'Counter'
       });
       setTimeout(function () {
         setInterval(function () {
-          numberDecrease.decrement();
-        }, 60000);
+          _this.numberOxygen.increment();
+        }, Math.ceil(_this.thisWeekOxygenSpeed));
       }); // detect of pos to margin
 
       $('.number-decrease .flip').each(function (i, value) {
@@ -18266,47 +18251,20 @@ function () {
       });
     }
   }, {
-    key: "NumberIncrease",
-    value: function NumberIncrease() {
+    key: "NumberTree",
+    value: function NumberTree() {
+      var _this2 = this;
+
       // Declare variable flip clock
-      var chars = [];
       var positions = [];
-      var numberInc = 5597672; // Create our number formatter.
-
-      var formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-      }); // format price into 1 000 000
-      // function formatter.format(number) => $1,000,00.00
-
-      var formatChar = formatter.format(numberInc).split('$').join('').split('.')[0].split(',').join(' '); // loop string and add each of char into array if char equal space <=> formatChar.charAt(i) === ' '
-
-      for (var i = 0; i < formatChar.length; i++) {
-        if (formatChar.charAt(i) === ' ') {
-          chars.push(i);
-        }
-      } // loop you just added to determine the correct position to margin
-
-
-      for (var i = 0; i < chars.length; i++) {
-        positions.push(chars[i] - i);
-      }
-      /*
-      * Example: formatChar = 1 000 000
-      * when you loop formatChar, chars = [1, 5]
-      * when you loop chars, positions = [1, 4]
-      * index of chars chars[0] = 1, chars[1] = 5 => chars[0] - 0 = 1 and chars[1] - 1 = 4
-      * add new value of array positions, => positions = [1, 4]
-      * */
-
-
-      var numberIncrease = $('.number-increase').FlipClock(numberInc, {
+      var numberInc = this.weekProgress * 1.25;
+      this.numberTree = $('.number-increase').FlipClock(numberInc, {
         clockFace: 'Counter'
       });
       setTimeout(function () {
         setInterval(function () {
-          numberIncrease.increment();
-        }, 60000);
+          _this2.numberTree.increment();
+        }, Math.ceil(_this2.thisWeekOxygenSpeed * 1.25));
       }); // detect of pos to margin
 
       $('.number-increase .flip').each(function (i, value) {

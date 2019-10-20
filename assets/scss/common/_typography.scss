@@ -73,7 +73,7 @@ h1,h2,h3,h4,h5,p{
     outline: none;
 
     @media #{$information-laptop} {
-      padding: 0 67px 1px;
+      padding: 0 62px 1px;
       height: 41px;
       line-height: 41px;
       border-radius: 21px;
@@ -81,7 +81,7 @@ h1,h2,h3,h4,h5,p{
     }
 
     @media #{$information-sm-laptop} {
-      padding: 0 65px 2px;
+      padding: 0 60px 2px;
       height: 38px;
       line-height: 38px;
       border-radius: 19px;

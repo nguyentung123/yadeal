@@ -5,6 +5,9 @@ function get_banner_1() {
         'post_type'        => 'banner_1',
         'post_status'      =>'publish',
         'posts_per_page'   => 5,
+        'orderby'        => 'meta_value_num',
+        'order'          => 'ASC',
+        'meta_key'       => 'banner_priority',
         'meta_query'       => array(
             array(
                 'key'     => 'choose_banner_show',
@@ -132,7 +135,7 @@ function get_banner_1() {
             </div><!-- Main Content -->
 
         </section>
-    <!-- Section Home Banner 1 - END -->
+        <!-- Section Home Banner 1 - END -->
     <?php endif;
     wp_reset_postdata();
 }
@@ -145,6 +148,9 @@ function get_banner_2()
         'post_type'      => 'banner_2',
         'post_status'    => 'publish',
         'posts_per_page' => 5,
+        'orderby'        => 'meta_value_num',
+        'order'          => 'ASC',
+        'meta_key'       => 'banner_priority',
         'meta_query'       => array(
             array(
                 'key'     => 'choose_banner_show',
@@ -205,16 +211,14 @@ function get_banner_2()
                             </div><!-- Product Context -->
 
                             <!-- Product Background -->
-                            <div class="product-slider__wrapper__item__bg">
-                                <?php
-                                    $placeHolder = get_theme_file_uri('assets/img/placeholder/image-placeholder.png');
-                                    $mbBg = get_field('banner_2_mobile_bg') ? get_field('banner_2_mobile_bg') : $placeHolder;
-                                    $mainBg = get_field('banner_2_desktop_bg') ? get_field('banner_2_desktop_bg') : $placeHolder;
 
-                                    echo '<img src="'.$mainBg.'" class="mb-hide">';
-                                    echo '<img src="'.$mbBg.'" class="mb-show-bl">';
-                                ?>
-                            </div>
+                            <?php
+                            $placeHolder = get_theme_file_uri('assets/img/placeholder/image-placeholder.png');
+                            $mbBg = get_field('banner_2_mobile_bg') ? get_field('banner_2_mobile_bg') : $placeHolder;
+                            $mainBg = get_field('banner_2_desktop_bg') ? get_field('banner_2_desktop_bg') : $placeHolder;
+                            ?>
+                            <div class="product-slider__wrapper__item__bg mb-hide" style="background-image: url( '<?php echo $mainBg; ?>' )">  </div>
+                            <div class="product-slider__wrapper__item__bg mb-show-bl" style="background-image: url( '<?php echo $mbBg; ?>' )">  </div>
                             <!-- Product Background -->
 
                         </div><!-- Slider item -->
@@ -243,6 +247,9 @@ function get_banner_3()
         'post_type' => 'banner_3',
         'post_status'=>'publish',
         'posts_per_page' => 5,
+        'orderby'        => 'meta_value_num',
+        'order'          => 'ASC',
+        'meta_key'       => 'banner_priority',
         'meta_query'       => array(
             array(
                 'key'     => 'choose_banner_show',
@@ -270,23 +277,23 @@ function get_banner_3()
                                     <?php echo acf_render('<h3 class="page-sub-title uppercase">',get_field('banner_subtitle'),'</h3>'); ?>
                                     <?php echo acf_render('<p class="desc">',get_field('banner_text'),'</p>'); ?>
                                     <?php
-                                        $link_read_more = get_field('banner_link');
-                                        $text_read_more = get_field('button_btn_text');
+                                    $link_read_more = get_field('banner_link');
+                                    $text_read_more = get_field('button_btn_text');
 
-                                        if($link_read_more):
-                                            $slug_title = str_replace(' ','-',strtolower(get_field('banner_title')));?>
+                                    if($link_read_more):
+                                        $slug_title = str_replace(' ','-',strtolower(get_field('banner_title')));?>
 
-                                            <a id="banner-3-<?php echo $slug_title;?>-cta-btn-click"
-                                               class="btn product-cta border-gray btn-trans effect effect-main mb-hide"
-                                               href="<?php echo $link_read_more;?>">
-                                                <span><?php echo $text_read_more;?></span>
-                                            </a>
+                                        <a id="banner-3-<?php echo $slug_title;?>-cta-btn-click"
+                                           class="btn product-cta border-gray btn-trans effect effect-main mb-hide"
+                                           href="<?php echo $link_read_more;?>">
+                                            <span><?php echo $text_read_more;?></span>
+                                        </a>
 
-                                            <a id="banner-3-<?php echo $slug_title;?>-cta-btn-click" c
-                                               class="btn product-cta mb-show-ib btn-grad"
-                                               href="<?php echo $link_read_more;?>">
-                                                <span><?php echo $text_read_more;?></span>
-                                            </a>
+                                        <a id="banner-3-<?php echo $slug_title;?>-cta-btn-click" c
+                                           class="btn product-cta mb-show-ib btn-grad"
+                                           href="<?php echo $link_read_more;?>">
+                                            <span><?php echo $text_read_more;?></span>
+                                        </a>
 
                                     <?php endif; ?>
                                 </div>
@@ -294,12 +301,12 @@ function get_banner_3()
                                 <!-- Slider Background -->
                                 <div class="col-lg-8 col-12 slider__item__image">
                                     <?php
-                                        $placeHolder = get_theme_file_uri('assets/img/placeholder/image-placeholder.png');
-                                        $mbBg = get_field('banner_3_mobile_bg') ? get_field('banner_3_mobile_bg') : $placeHolder;
-                                        $mainBg = get_field('banner_3_desktop_bg') ? get_field('banner_3_desktop_bg') : $placeHolder;
+                                    $placeHolder = get_theme_file_uri('assets/img/placeholder/image-placeholder.png');
+                                    $mbBg = get_field('banner_3_mobile_bg') ? get_field('banner_3_mobile_bg') : $placeHolder;
+                                    $mainBg = get_field('banner_3_desktop_bg') ? get_field('banner_3_desktop_bg') : $placeHolder;
 
-                                        echo '<img src="'.$mainBg.'" class="mb-hide img-fluid">';
-                                        echo '<img src="'.$mbBg.'" class="mb-show-bl img-fluid">';
+                                    echo '<img src="'.$mainBg.'" class="mb-hide img-fluid">';
+                                    echo '<img src="'.$mbBg.'" class="mb-show-bl img-fluid">';
                                     ?>
                                 </div>
                             </div>
@@ -322,7 +329,7 @@ function breadcrumbs() {
         echo '<section class="section light-gray-bg blog-heading" id="support-head">
                 <div class="container blog-heading__title"><h2 class="title">'.get_the_title().'</h2>
                     <ul class="blog-heading__breadcrumb horizontal-list">';
-        echo '<li><a href="' . home_url('/') . '">Home</a></li>';
+        echo '<li><a href="' . home_url('/') . '">Trang chủ</a></li>';
         if(is_category()) {
             $category = get_term_by('id', get_query_var('cat'), 'category');
             echo '<li aria-current="page">'.$category->name.'</li>';

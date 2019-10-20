@@ -5,7 +5,7 @@ import Main from './main';
 import Products from './products';
 import Supports from './support';
 import SliderDetail from './slider-detail';
-import FlipClockCustom from './flip-clock.-custom';
+import FlipClockCustom from './flip-clock-custom';
 
 export default class Home {
     /* ===================================

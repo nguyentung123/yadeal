@@ -7,8 +7,8 @@ add_action('customize_register', 'yadea_customizer_setting');
 function yadea_customizer_setting($wp_customize){
     //<editor-fold desc="Footer">
     // Create Social Links Section
-    $wp_customize->add_section('footer', array(
-      'title'    => 'Footer Contacts',
+    $wp_customize->add_section('company_contact', array(
+      'title'    => 'Thông tin công ty',
       'priority' => 30
     ));
 
@@ -20,7 +20,7 @@ function yadea_customizer_setting($wp_customize){
     ));
     $wp_customize->add_control('facebook_page', array(
        'label'    => 'Facebook Page',
-       'section'  => 'footer',
+       'section'  => 'company_contact',
        'settings' => 'facebook_page',
         'type' => 'url',
     ));
@@ -32,7 +32,7 @@ function yadea_customizer_setting($wp_customize){
     ));
     $wp_customize->add_control('youtube_page', array(
         'label'    => 'Youtube Page',
-        'section'  => 'footer',
+        'section'  => 'company_contact',
         'settings' => 'youtube_page',
         'type'     => 'url',
     ));
@@ -44,7 +44,7 @@ function yadea_customizer_setting($wp_customize){
     ));
     $wp_customize->add_control('insta_page', array(
         'label'    => 'Instagram Page',
-        'section'  => 'footer',
+        'section'  => 'company_contact',
         'settings' => 'insta_page',
         'type'     => 'url',
     ));
@@ -56,7 +56,7 @@ function yadea_customizer_setting($wp_customize){
     ));
     $wp_customize->add_control('footer_phone', array(
         'label'    => 'Phone Number',
-        'section'  => 'footer',
+        'section'  => 'company_contact',
         'settings' => 'footer_phone',
         'type'     => 'text',
     ));
@@ -68,7 +68,7 @@ function yadea_customizer_setting($wp_customize){
     ));
     $wp_customize->add_control('footer_email', array(
         'label'    => 'Email',
-        'section'  => 'footer',
+        'section'  => 'company_contact',
         'settings' => 'footer_email',
         'type'     => 'email',
     ));
@@ -80,29 +80,19 @@ function yadea_customizer_setting($wp_customize){
     ));
     $wp_customize->add_control('footer_copy_right', array(
         'label'    => 'Copy right',
-        'section'  => 'footer',
+        'section'  => 'company_contact',
         'settings' => 'footer_copy_right',
         'type'     => 'text',
     ));
-    //</editor-fold>
 
-
-    //<editor-fold desc="Support Page Customizer">
-    // Create Social Links Section
-    $wp_customize->add_section('support-page-detail', array(
-        'title'    => 'Support Page',
-        'priority' => 31
-    ));
-
-    // Add Setting That Belong To Social Link Section
-    /* ===== Phone Number ===== */
+    /* ===== Customer Service Phone Number ===== */
     $wp_customize->add_setting('contact_detail_phone', array(
         'default'     => 'Chăm sóc khách hàng: 0123456789',
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control('contact_detail_phone', array(
         'label'    => 'Điện thoại liên hệ',
-        'section'  => 'support-page-detail',
+        'section'  => 'company_contact',
         'settings' => 'contact_detail_phone',
         'type'     => 'textarea',
     ));
@@ -114,7 +104,7 @@ function yadea_customizer_setting($wp_customize){
     ));
     $wp_customize->add_control('contact_detail_address', array(
         'label'    => 'Địa chỉ liên hệ',
-        'section'  => 'support-page-detail',
+        'section'  => 'company_contact',
         'settings' => 'contact_detail_address',
         'type'     => 'textarea',
     ));
@@ -126,7 +116,7 @@ function yadea_customizer_setting($wp_customize){
     ));
     $wp_customize->add_control('contact_detail_email', array(
         'label'    => 'Email liên hệ',
-        'section'  => 'support-page-detail',
+        'section'  => 'company_contact',
         'settings' => 'contact_detail_email',
         'type'     => 'textarea',
     ));
@@ -147,21 +137,21 @@ function yadea_customizer_setting($wp_customize){
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control('oxygen_start', array(
-        'label'    => 'Số oxygen',
+        'label'    => 'Start Oxygen',
         'section'  => 'oxygen',
         'settings' => 'oxygen_start',
         'type'     => 'number'
     ));
 
     /* ===== number trees ===== */
-    $wp_customize->add_setting('number_trees', array(
+    $wp_customize->add_setting('oxygen_end', array(
         'default'     => 5597676,
         'transport'   => 'refresh',
     ));
-    $wp_customize->add_control('number_trees', array(
-        'label'    => 'Số cây xanh tương ứng',
+    $wp_customize->add_control('oxygen_end', array(
+        'label'    => 'End Oxygen',
         'section'  => 'oxygen',
-        'settings' => 'number_trees',
+        'settings' => 'oxygen_end',
         'type'     => 'number'
     ));
 
@@ -175,7 +165,7 @@ function yadea_customizer_setting($wp_customize){
         'taxonomy' => 'series',
         'hide_empty' => false,
         'orderby ' => 'id'
-    ) );
+    ));
     foreach ($terms as $term_item){
         /* ===== Physical Address ===== */
         $wp_customize->add_setting($term_item->slug, array(

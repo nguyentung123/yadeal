@@ -2,7 +2,7 @@
 /* Home Banner 1 */
 #home-banner-1{
   .main-content{
-    height: 600px;
+    height: 32.25vw;
     display: -webkit-flex;
     display: flex;
 
@@ -17,6 +17,17 @@
       &__wrapper{
         width: 90%;
         height: auto;
+
+        .title{
+          @media #{$information-laptop} {
+            font-size: 38px;
+            letter-spacing: 1px;
+          }
+          @media #{$information-sm-laptop} {
+            font-size: 37px;
+            letter-spacing: 0;
+          }
+        }
 
         .sub-title{
           margin-top: 15px;
@@ -37,13 +48,14 @@
 
     &__slider{
       width: 100%;
-      height: 600px;
+      height: 32.25vw;
       background-color: #AAA;
+      padding: 0;
       overflow: hidden;
 
       &__item{
         width: 100%;
-        height: 600px;
+        height: 32.25vw;
         position: relative;
 
         img{
@@ -62,35 +74,9 @@
 
   /* ===== Responsive ===== */
   @media #{$information-laptop} {
-    .main-content {
-      height: 560px;
-
-      &__context{}
-
-      &__slider{
-        height: 560px;
-
-        &__item {
-          height: 560px;
-        }
-      }
-    }
   }
 
   @media #{$information-sm-laptop} {
-    .main-content {
-      height: 530px;
-
-      &__context{}
-
-      &__slider{
-        height: 530px;
-
-        &__item {
-          height: 530px;
-        }
-      }
-    }
   }
 
   @media #{$information-lg-tablet} {
@@ -127,10 +113,21 @@
       &__slider{
         padding: 0 15px;
         background-color: $white;
-        height: 780px;
+        height: 800px;
 
         &__item{
-          height: 780px;
+          height: 800px;
+
+          &.slide-video{
+            video{
+              height: 780px;
+              width: auto;
+              max-width: none;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
         }
       }
     }
@@ -210,15 +207,13 @@
         }
 
         &__bg{
-          img{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            max-width: 143%;
-            max-height: 780px;
-          }
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-size: cover;
+          background-position: center;
         }
       }
     }
@@ -394,6 +389,7 @@
       &__top{
         padding: 50px 0 15px;
         cursor: pointer;
+
         @media #{$information-tablet} { padding: 45px 0 12px; }
         @media #{$information-phone} { padding: 45px 0 10px; }
         @media #{$information-md-phone} { padding: 40px 0 8px; }
@@ -463,12 +459,6 @@
           height: 340px;
           position: absolute;
           top: 0;
-
-          &__item{
-            position: absolute;
-            max-width: 65%;
-            max-height: 290px;
-          }
         }
 
         .product-detail{
@@ -489,10 +479,10 @@
           height: 400px;
 
           .image-holder {
-            height: 300px;
+            height: 310px;
 
             &__item {
-              max-height: 250px;
+              max-height: 280px;
             }
           }
         }
@@ -500,7 +490,23 @@
     }
   }
 
-  @media #{$information-sm-laptop} {}
+  @media #{$information-sm-laptop} {
+    .product-showcase {
+      &__item {
+        &__body {
+          height: 390px;
+
+          .image-holder {
+            height: 305px;
+
+            &__item {
+              max-height: 270px;
+            }
+          }
+        }
+      }
+    }
+  }
 
   @media #{$information-lg-tablet} {}
 
@@ -510,7 +516,7 @@
         padding: 0 15px;
 
         &__body {
-          height: 500px;
+          height: 480px;
 
           .image-holder {
             height: 400px;
@@ -525,6 +531,22 @@
   }
 
   @media #{$information-tablet} {}
+
+  @media (max-width: 660px) {
+    .product-showcase {
+      &__item {
+        &__body {
+          .image-holder {
+            height: 380px;
+
+            &__item {
+              max-height: 320px;
+            }
+          }
+        }
+      }
+    }
+  }
 
   @media #{$information-phone} {
     .product-showcase {

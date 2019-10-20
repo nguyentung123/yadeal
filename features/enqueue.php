@@ -45,7 +45,12 @@ function yadea_theme_scripts() {
 
     // Main Script
     wp_enqueue_script('yadea_main_script', get_theme_file_uri('assets/js/scripts-bundled.js'), array('yadea_jquery'), microtime(), true);
-
+    wp_localize_script('yadea_main_script', 'yadeaVietnamVariables', array(
+        'root_url'      => get_site_url(),
+        'assets_url'    => get_theme_file_uri() . '/assets/',
+        'oxygen_start'  => get_theme_mod('oxygen_start'),
+        'oxygen_end'    => get_theme_mod('oxygen_end')
+    ));
     /* ========== SCRIPTS - END ========== */
 }
 add_action( 'wp_enqueue_scripts', 'yadea_theme_scripts' );

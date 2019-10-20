@@ -88,7 +88,7 @@
             margin-bottom: 8px;
             font-size: 16px;
         }
-    
+
         input, textarea{
             width: 100%;
             resize: none;
@@ -113,16 +113,16 @@
             display: block;
         }
     }
-    
+
     @media #{$information-laptop} {
         .form-field{
             margin-bottom: 18px;
-    
+
             label{
                 margin-bottom: 7px;
                 font-size: 15px;
             }
-        
+
             input, textarea{
                 padding: 5px 12px;
                 border-radius: 3px;
@@ -134,12 +134,12 @@
     @media #{$information-sm-laptop} {
         .form-field{
             margin-bottom: 15px;
-    
+
             label{
                 margin-bottom: 5px;
                 font-size: 14px;
             }
-        
+
             input, textarea{
                 padding: 4px 10px;
                 border-radius: 3px;
@@ -150,4 +150,17 @@
     @media #{$information-lg-tablet} {}
     @media #{$information-hz-phone} {}
     @media #{$information-tablet} {}
+}
+
+/* Veno Box Custom Styling */
+.vbox-container{
+    overflow: hidden !important;
+}
+
+body{
+    &.admin-bar{
+        .vbox-close{
+            top: 32px !important;
+        }
+    }
 }

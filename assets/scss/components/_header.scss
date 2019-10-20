@@ -590,3 +590,18 @@ body{
     &.brown{ background-color: #e58e26; }
   }
 }
+
+body.admin-bar #page-header{
+  top: 32px;
+}
+
+@media screen and (max-width: 780px){
+  body.admin-bar #page-header{
+    top: 46px;
+
+    &.scroll-menu{
+      transition: all ease-out 130ms;
+      top: 0;
+    }
+  }
+}

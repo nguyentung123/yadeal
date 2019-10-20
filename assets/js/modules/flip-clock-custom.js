@@ -13,9 +13,21 @@ export default class FlipClockCustom {
    * =================================== */
   bindEvents(){
     this.CheckNameUnit();
+
+    this.oxygenStart = parseInt(yadeaVietnamVariables.oxygen_start);
+    this.oxygenEnd = parseInt(yadeaVietnamVariables.oxygen_end);
+
+    this.TIME_PER_WEEK = 604800;
+    let today = new Date();
+    let currentSecondOfTheWeek = today.getSeconds() + today.getDay() * 86400 + today.getHours() * 3600 + today.getMinutes() * 60;
+
+    this.thisWeekOxygenSpeed = 1000/((this.oxygenEnd - this.oxygenStart)/this.TIME_PER_WEEK);
+    this.weekProgress = Math.floor(this.oxygenEnd * currentSecondOfTheWeek/this.TIME_PER_WEEK);
+    console.log(this.thisWeekOxygenSpeed, this.weekProgress)
+
     if($('#home-flip-clock').length > 0) {
-      this.NumberDecrease();
-      this.NumberIncrease();
+      this.NumberOxygen();
+      this.NumberTree();
     }
   }
 
@@ -24,47 +36,21 @@ export default class FlipClockCustom {
   /* ===================================
    *  METHODS
    * =================================== */
-  NumberDecrease () {
+
+  NumberOxygen () {
     // Declare variable flip clock
-    let chars = [];
     let positions = [];
-    let numberDec = 55975444;
+    let numberDec = this.weekProgress;
+    console.log(this.thisWeekOxygenSpeed)
 
-    // Create our number formatter.
-    let formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    });
-
-    // format price into 1 000 000
-    // function formatter.format(number) => $1,000,00.00
-    let formatChar = formatter.format(numberDec).split('$').join('').split('.')[0].split(',').join(' ');
-
-    // loop string and add each of char into array if char equal space <=> formatChar.charAt(i) === ' '
-    for (var i = 0; i < formatChar.length; i++) {
-      if (formatChar.charAt(i) === ' ') {
-        chars.push(i)
-      }
-    }
-
-    // loop you just added to determine the correct position to margin
-    for (var i = 0; i < chars.length; i++) {
-      positions.push(chars[i] - i)
-    }
-    /*
-      * Example: formatChar = 1 000 000
-      * when you loop formatChar, chars = [1, 5]
-      * when you loop chars, positions = [1, 4]
-      * index of chars chars[0] = 1, chars[1] = 5 => chars[0] - 0 = 1 and chars[1] - 1 = 4
-      * add new value of array positions, => positions = [1, 4]
-      * */
-    var numberDecrease = $('.number-decrease').FlipClock(numberDec, {
+    this.numberOxygen = $('.number-decrease').FlipClock(numberDec, {
       clockFace: 'Counter',
     });
-    setTimeout(function() {
-      setInterval(function() {
-        numberDecrease.decrement();
-      }, 60000);
+
+    setTimeout(() => {
+      setInterval(() => {
+        this.numberOxygen.increment();
+      }, Math.ceil(this.thisWeekOxygenSpeed));
     });
 
     // detect of pos to margin
@@ -78,48 +64,19 @@ export default class FlipClockCustom {
     })
   }
 
-  NumberIncrease () {
+  NumberTree () {
     // Declare variable flip clock
-    let chars = [];
     let positions = [];
-    let numberInc = 5597672;
-    // Create our number formatter.
-    let formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    });
+    let numberInc = this.weekProgress * 1.25;
 
-    // format price into 1 000 000
-    // function formatter.format(number) => $1,000,00.00
-    let formatChar = formatter.format(numberInc).split('$').join('').split('.')[0].split(',').join(' ');
-
-    // loop string and add each of char into array if char equal space <=> formatChar.charAt(i) === ' '
-    for (var i = 0; i < formatChar.length; i++) {
-      if (formatChar.charAt(i) === ' ') {
-        chars.push(i)
-      }
-    }
-
-    // loop you just added to determine the correct position to margin
-    for (var i = 0; i < chars.length; i++) {
-      positions.push(chars[i] - i)
-    }
-
-    /*
-    * Example: formatChar = 1 000 000
-    * when you loop formatChar, chars = [1, 5]
-    * when you loop chars, positions = [1, 4]
-    * index of chars chars[0] = 1, chars[1] = 5 => chars[0] - 0 = 1 and chars[1] - 1 = 4
-    * add new value of array positions, => positions = [1, 4]
-    * */
-    var numberIncrease = $('.number-increase').FlipClock(numberInc, {
+    this.numberTree = $('.number-increase').FlipClock(numberInc, {
       clockFace: 'Counter',
     });
 
-    setTimeout(function() {
-      setInterval(function() {
-        numberIncrease.increment();
-      }, 60000);
+    setTimeout(() => {
+      setInterval(() => {
+        this.numberTree.increment();
+      },  Math.ceil(this.thisWeekOxygenSpeed * 1.25));
     });
 
     // detect of pos to margin
