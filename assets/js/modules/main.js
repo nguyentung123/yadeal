@@ -113,7 +113,13 @@ export default class Main {
 
                     let $toggleTarget = $(e.target).siblings('.nav-item__sub-menu');
                     if($toggleTarget){
-                        $toggleTarget.slideToggle('normal');
+                        $toggleTarget.slideToggle({
+                            start: function () {
+                                $(this).css({
+                                    display: "flex",
+                                })
+                            }
+                        });
                     }
                 }
             })

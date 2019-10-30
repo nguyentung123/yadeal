@@ -93,8 +93,11 @@ body, html{
   top: 0;
   left: 0;
   background-color: $white;
-  -webkit-animation: overlayLayer 300ms 1000ms ease-in forwards;
-  animation: overlayLayer 300ms 1000ms ease-in forwards;
+
+  &.hidden{
+    -webkit-animation: overlayLayer 300ms 800ms ease-in forwards;
+    animation: overlayLayer 300ms 800ms ease-in forwards;
+  }
 
   .loading-image{
     position: absolute;

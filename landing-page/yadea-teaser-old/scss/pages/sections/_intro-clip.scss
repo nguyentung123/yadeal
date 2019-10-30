@@ -1,0 +1,161 @@
+#yadea-teaser-page{
+  /* === DESKTOP === */
+  .section-intro-clip{
+    width: 100%;
+    position: relative;
+
+    .bg-holder{
+      width: 100%;
+
+      img{
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .main-content{
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .title{
+        color: #e2e2e2;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        margin-bottom: 0.75em;
+      }
+
+      .play-btn{
+        cursor: pointer;
+      }
+    }
+  }
+
+  // Casual Laptop 1368px to 1280px
+  @media #{$information-laptop} {}
+
+  // Casual Laptop 1280px and bellow
+  @media #{$information-sm-laptop} {}
+  /* === DESKTOP - END === */
+
+
+  /* === RESPONSIVE === */
+  // Tablet 768px to 480px
+  @media #{$information-tablet} {
+    .section-intro-clip{
+      width: 1280px;
+      margin-left: calc((100% - 1280px) / 2);
+
+      .main-content{
+        width: 100%;
+        top: 50%;
+
+        .title{
+          font-size: 2.3em;
+          letter-spacing: 0.3em;
+          margin-bottom: 1em;
+        }
+
+        .play-btn{
+          cursor: pointer;
+
+          img{
+            margin: auto;
+            width: 10vw;
+          }
+        }
+      }
+    }
+  }
+
+  // Special Milestones
+  @media (max-width: 660px){
+    .section-intro-clip{
+      width: 1080px;
+      margin-left: calc((100% - 1080px) / 2);
+
+      .main-content{
+        .title{
+          font-size: 2em;
+          letter-spacing: 0.3em;
+          margin-bottom: 1em;
+        }
+
+        .play-btn{
+          img{
+            width: 10vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 540px){
+    .section-intro-clip{
+      width: 980px;
+      margin-left: calc((100% - 980px) / 2);
+
+      .main-content{
+        .title{
+          font-size: 1.8em;
+          letter-spacing: 0.25em;
+          margin-bottom: 0.75em;
+        }
+
+        .play-btn{
+          img{
+            width: 10vw;
+          }
+        }
+      }
+    }
+  }
+
+  // Phone Screen From 480px to 360px
+  @media #{$information-phone} {
+    .section-intro-clip{
+      width: 720px;
+      margin-left: calc((100% - 720px) / 2);
+
+      .main-content{
+        .title{
+          font-size: 1.4em;
+          letter-spacing: 0.2em;
+          margin-bottom: 0.75em;
+        }
+
+        .play-btn{
+          img{
+            width: 14vw;
+          }
+        }
+      }
+    }
+  }
+
+  // Phone Screen Below 360px
+  @media #{$information-sm-phone} {
+    .section-intro-clip{
+      width: 680px;
+      margin-left: calc((100% - 680px) / 2);
+
+      .main-content{
+        .title{
+          font-size: 1.3em;
+          letter-spacing: 0.2em;
+          margin-bottom: 1em;
+        }
+
+        .play-btn{
+          img{
+            width: 15vw;
+          }
+        }
+      }
+    }
+  }
+  /* === RESPONSIVE - END === */
+}

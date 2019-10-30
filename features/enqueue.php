@@ -40,9 +40,6 @@ function yadea_theme_scripts() {
     // Slick
     wp_enqueue_script('slick_carousel', get_theme_file_uri('assets/js/slick.min.js'), array('yadea_jquery'), '1.0', true);
 
-    // Ajax
-    wp_enqueue_script('yadea_ajax', get_theme_file_uri('assets/js/ajax.js'), array('yadea_jquery'), microtime(), true);
-
     // Main Script
     wp_enqueue_script('yadea_main_script', get_theme_file_uri('assets/js/scripts-bundled.js'), array('yadea_jquery'), microtime(), true);
     wp_localize_script('yadea_main_script', 'yadeaVietnamVariables', array(

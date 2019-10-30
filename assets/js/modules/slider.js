@@ -16,7 +16,7 @@ export default class Slider {
         this.sliderOptions1 = {
             'arrows': false,
             'speed': 1500,
-            'autoplay': true,
+            'autoplay': false,
             'autoplaySpeed': 5000,
             'pauseOnFocus': false,
             'pauseOnHover': false
@@ -60,6 +60,10 @@ export default class Slider {
 
                 this.slider1TotalPage.html('0' + slick.slideCount);
                 this.slider1Paging.css('bottom', slick.slideCount * 25 + 15 + 'px');
+
+                if($('#loading-overlay').length > 0){
+                    $('#loading-overlay').addClass('hidden');
+                }
             });
 
             this.slider1.on('beforeChange', (e, slick, currentSlide, nextSlide) => {
@@ -80,11 +84,19 @@ export default class Slider {
                 }
             });
 
-            this.slider1OBJ = this.slider1.slick(Object.assign({'fade': true, asNavFor:'#slider-style-1-indicator', 'dots': true,}, this.sliderOptions1));
+            this.slider1OBJ = this.slider1.slick(Object.assign({
+                fade: true,
+                asNavFor:'#slider-style-1-indicator',
+                dots: true,
+            }, this.sliderOptions1));
 
 
             if(this.slider1Indicator.length > 0){
-                this.slider1Indicator.slick(Object.assign({'fade': true, asNavFor:'#slider-style-1'}, this.sliderOptions1));
+                this.slider1Indicator.slick(Object.assign({
+                    'fade': true,
+                    asNavFor:'#slider-style-1',
+                    autoplay: false
+                }, this.sliderOptions1));
             }
         }
         //</editor-fold>

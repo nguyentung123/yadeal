@@ -1,0 +1,613 @@
+#yadea-teaser-page{
+  /* === DESKTOP === */
+  .prize-detail{
+    background-color: #03060a;
+    color: #e2e2e2;
+    //height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 120px 0 180px;
+
+    .prize-heading{
+      padding: 0 0 50px;
+      margin-bottom: 40px;
+      position: relative;
+
+      .title{
+        text-transform: uppercase;
+        font-size: 1.667em;
+        line-height: 1.4em;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      &:after{
+        content: '';
+        width: 118px;
+        height: 3px;
+        background-color: #e2e2e2;
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 59px);
+      }
+    }
+
+    .prize-list-layout{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+
+      .prize-holder{
+        width: 100%;
+        position: relative;
+        height: 250px;
+
+        .img-holder{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+
+          img{
+            width: 100%;
+          }
+        }
+      }
+
+      .left-prize, .right-prize{
+        width: 25%;
+        flex-basis: 25%;
+        flex-shrink: 0;
+      }
+
+      .center-prize{
+        width: 50%;
+        flex-basis: 50%;
+        position: relative;
+        flex-shrink: 0;
+        z-index: 3;
+
+        .img-effect-holder{
+          position: absolute;
+          width: 79%;
+          top: 0;
+          left: 13%;
+
+          img{
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+
+      .left-prize{
+        .prize-holder{
+          .img-holder{
+            &.back{
+              width: 55%;
+              top: 3%;
+              right: 5%;
+            }
+
+            &.front{
+              width: 57%;
+              top: 0;
+              left: 17%;
+            }
+          }
+        }
+      }
+
+      .right-prize{
+        .prize-holder{
+          .img-holder{
+            &.back{
+              width: 59%;
+              top: 16%;
+              right: 37%;
+            }
+
+            &.front{
+              width: 60.5%;
+              top: 19%;
+              left: 22%;
+            }
+          }
+        }
+      }
+
+      .center-prize{
+        .img-holder{
+          top: 3.5%;
+          width: 92%;
+          left: 5%;
+        }
+      }
+
+      .detail{
+        text-align: center;
+        margin-top: 15px;
+
+        .context{
+          display: block;
+          letter-spacing: 0.04em;
+        }
+
+        .highlight{
+          font-size: 1.6em;
+          font-weight: 700;
+
+          &.small{
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+
+    .cta-holder{
+      text-align: center;
+
+      .cta{
+        height: 34px;
+        line-height: 34px;
+        border-radius: 17px;
+        padding: 1px;
+        font-weight: 400;
+        display: inline-block;
+        background-color: $main-color;
+        cursor:pointer;
+        background-image: linear-gradient(to right, #ed2024, #f36f21 85%);
+
+        .context{
+          height: 32px;
+          line-height: 32px;
+          background-color: rgba(#808183, 1);
+          display: block;
+          padding: 0 15px 0 18px;
+          border-radius: 16px;
+          transition: all ease-in 170ms;
+        }
+
+        &:hover{
+          .context{
+            transition: all ease-out 220ms;
+            background-color: rgba(#808183, 0);
+          }
+        }
+      }
+    }
+  }
+
+  // Casual Laptop 1368px to 1280px
+  @media #{$information-laptop} {}
+
+  // Casual Laptop 1280px and bellow
+  @media #{$information-sm-laptop} {}
+  /* === DESKTOP - END === */
+
+
+  /* === RESPONSIVE === */
+  // Tablet 768px to 480px
+  @media #{$information-tablet} {
+    .prize-detail{
+      padding: 40px 0;
+      margin-bottom: 35px;
+
+      .prize-heading{
+        padding: 50px 0 25px;
+        margin: 0 auto 20px;
+        width: 90%;
+        position: relative;
+
+        .title{
+          text-transform: uppercase;
+          font-size: 2.25em;
+          line-height: 1.4em;
+          font-weight: 700;
+          text-align: left;
+        }
+
+        &:after{
+          content: '';
+          width: 110px;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+        }
+      }
+
+      .prize-list-layout{
+        justify-content: space-between;
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40vw 40vw;
+
+        .detail{
+          display: none;
+        }
+
+        .center-prize{
+          grid-column: 1;
+          grid-row: 1 / span 2;
+          width: 77%;
+          margin: 0 auto;
+
+          .prize-holder{
+            height: 100%;
+
+            .img-effect-holder{
+              width: 91%;
+              top: 18%;
+              left: 6%;
+            }
+          }
+
+
+          .img-holder{
+            width: 92%;
+            display: flex;
+            align-items: center;
+
+            img{
+              width: 100%;
+            }
+          }
+        }
+
+        .left-prize, .right-prize{
+          width: 80%;
+          margin: auto;
+        }
+
+        .right-prize{
+          grid-row: 1;
+
+          .prize-holder{
+            .img-holder{
+              &.front{ left: 31%; width: 65%; top: 14.5%}
+              &.back{ right: 28%; width: 62%; top: 14.5%}
+            }
+          }
+        }
+
+        .left-prize{
+          .prize-holder{
+            .img-holder{
+              &.front{ width: 63%; left: 12%; }
+              &.back{ width: 60%; right: 3%;}
+            }
+          }
+        }
+      }
+
+      .cta-holder{
+        .cta{
+          height: 38px;
+          line-height: 38px;
+          border-radius: 19px;
+          padding: 1px;
+          background-image: linear-gradient(to right, #ed2024, #f36f21 85%);
+
+          .context{
+            height: 36px;
+            line-height: 36px;
+            padding: 0 15px 0 18px;
+            font-size: 1.1em;
+            border-radius: 18px;
+          }
+        }
+      }
+
+      .prize-detail-mb{
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 40px;
+
+        .context{
+          display: block;
+          letter-spacing: 0.04em;
+          margin: 0;
+          font-size: 1.4em;
+        }
+
+        .highlight{
+          font-size: 1.6em;
+          font-weight: 700;
+
+          &.small{
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+  }
+
+  // Special Milestones
+  @media (max-width: 540px){
+    .prize-detail{
+      padding-bottom: 40px;
+
+      .prize-heading{
+        padding: 40px 0 20px;
+        margin: 0 auto 20px;
+        width: 90%;
+
+        .title{
+          font-size: 2em;
+          line-height: 1.4em;
+          font-weight: 700;
+        }
+
+        &:after{
+          width: 100px;
+          height: 2px;
+        }
+      }
+
+      .prize-list-layout{
+        width: 94%;
+        margin: 0 auto 40px;
+        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-rows: 38vw 38vw;
+
+        .center-prize{
+          grid-column: 1;
+          grid-row: 1 / span 2;
+          width: 72%;
+
+          .prize-holder{
+            height: 100%;
+          }
+
+
+          .img-holder{
+            width: 100%;
+          }
+        }
+
+        .left-prize, .right-prize{
+          width: 86%;
+        }
+
+        .right-prize{
+          .prize-holder{
+            .img-holder{
+              &.front{ left: 28%; width: 70%; top: 14.5%}
+              &.back{ right: 27%; width: 67%; top: 14.5%}
+            }
+          }
+        }
+
+        .left-prize{
+          .prize-holder{
+            .img-holder{
+              &.front{ width: 63%; left: 12%; top: 7%}
+              &.back{ width: 60%; right: 3%; top: 9%}
+            }
+          }
+        }
+      }
+
+      .cta-holder{
+        .cta{
+          height: 38px;
+          line-height: 38px;
+          border-radius: 19px;
+
+          .context{
+            height: 36px;
+            line-height: 36px;
+            padding: 0 15px 0 18px;
+            font-size: 1.15em;
+            border-radius: 18px;
+          }
+        }
+      }
+
+      .prize-detail-mb{
+        margin-top: 15px;
+        margin-bottom: 35px;
+
+        .context{
+          letter-spacing: 0.04em;
+          font-size: 1.3em;
+        }
+
+        .highlight{
+          font-size: 1.6em;
+
+          &.small{
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+  }
+
+  // Phone Screen From 480px to 360px
+  @media #{$information-phone} {
+    .prize-detail{
+      padding: 25px 0;
+
+      .prize-heading{
+        padding: 35px 0 15px;
+        margin: 0 auto 15px;
+        width: 92%;
+
+        .title{
+          font-size: 1.5em;
+          white-space: nowrap;
+          line-height: 1.5em;
+        }
+
+        &:after{
+          width: 80px;
+          height: 2px;
+        }
+      }
+
+      .prize-list-layout{
+        width: 96%;
+        margin: 0 auto 35px;
+        grid-template-columns: 1.05fr 0.95fr;
+        grid-row-gap: 15px;
+        grid-template-rows: 38vw 38vw;
+
+        .center-prize{
+          grid-column: 1;
+          grid-row: 1 / span 2;
+          width: 78%;
+        }
+
+        .left-prize, .right-prize{
+          width: 100%;
+        }
+
+        .right-prize{
+          .prize-holder{
+            .img-holder{
+              &.front{ left: 28%; width: 70%; top: 11%}
+              &.back{ right: 27%; width: 67%; top: 11%}
+            }
+          }
+        }
+
+        .left-prize{
+          .prize-holder{
+            .img-holder{
+              &.front{ width: 63%; left: 12%; top: 7%}
+              &.back{ width: 60%; right: 3%; top: 9%}
+            }
+          }
+        }
+      }
+
+      .cta-holder{
+        .cta{
+          height: 35px;
+          line-height: 35px;
+          border-radius: 19px;
+
+          .context{
+            height: 33px;
+            line-height: 33px;
+            padding: 0 15px 0 18px;
+            font-size: 1em;
+            border-radius: 16px;
+          }
+        }
+      }
+
+      .prize-detail-mb{
+        margin-top: 15px;
+        margin-bottom: 32px;
+        white-space: nowrap;
+
+        .context{
+          letter-spacing: 0.04em;
+          font-size: 1.15em;
+        }
+
+        .highlight{
+          font-size: 1.55em;
+
+          &.small{
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+  }
+
+  // Phone Screen Below 360px
+  @media #{$information-sm-phone} {
+    .prize-detail{
+      padding-bottom: 25px;
+
+      .prize-heading{
+        padding: 35px 0 15px;
+        margin: 0 auto 15px;
+        width: 98%;
+
+        .title{
+          font-size: 1.3em;
+          line-height: 1.5em;
+        }
+
+        &:after{
+          width: 60px;
+          height: 1px;
+        }
+      }
+
+      .prize-list-layout{
+        width: 100%;
+        margin: 0 auto 35px;
+        grid-row-gap: 13px;
+        grid-template-rows: 38vw 38vw;
+
+        .center-prize{
+          width: 75%;
+        }
+
+        .left-prize, .right-prize{
+          width: 100%;
+        }
+
+        .right-prize{
+          .prize-holder{
+            .img-holder{
+              &.front{ left: 28%; width: 70%; top: 11%}
+              &.back{ right: 27%; width: 67%; top: 11%}
+            }
+          }
+        }
+
+        .left-prize{
+          .prize-holder{
+            .img-holder{
+              &.front{ width: 60%; left: 12%; top: 2%}
+              &.back{ width: 57%; right: 6%; top: 5%}
+            }
+          }
+        }
+      }
+
+      .cta-holder{
+        .cta{
+          height: 34px;
+          line-height: 34px;
+          border-radius: 19px;
+
+          .context{
+            height: 32px;
+            line-height: 32px;
+            padding: 0 13px 0 16px;
+            font-size: 0.95em;
+            border-radius: 16px;
+          }
+        }
+      }
+
+      .prize-detail-mb{
+        margin-top: 13px;
+        margin-bottom: 25px;
+
+        .context{
+          letter-spacing: 0.04em;
+          font-size: 1.075em;
+        }
+
+        .highlight{
+          font-size: 1.4em;
+
+          &.small{
+            font-size: 1.15em;
+          }
+        }
+      }
+    }
+  }
+  /* === RESPONSIVE - END === */
+}

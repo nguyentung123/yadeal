@@ -136,7 +136,7 @@
             <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
 
-                <?php get_template_part('template-parts/header', 'product-footer'); ?>
+                <?php get_template_part('template-parts/header', 'product-mobile'); ?>
 
             </li>
 

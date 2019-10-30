@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <!-- === MAIN CONTENT === -->
-<main>
+<main class="no-overlay">
     <!-- Support Head -->
     <?php echo do_shortcode('[breadcrumbs]');?>
     <!-- Support Head -->
@@ -111,35 +111,62 @@ get_header();
 
 <!-- === MODAL ===-->
 <div class="modal" id="signup-as-shop">
+    <?php
+        $yadea_apply_shop_form = wp_create_nonce( 'yadea_apply_shop_form_nonce' );
+    ?>
+
     <div class="modal-overlay close-modal"></div>
     <div class="modal-content">
         <a class="close-modal">&times;</a>
-        <form id="signup-as-shop-form" onsubmit="return false;">
+        <form id="signup-as-shop-form"
+              action="https://script.google.com/macros/s/AKfycbzuEn-S39FTFxywlYFlnTZ_GA6rPJBvTStj8LelAK-shCql6bc/exec"
+              method="post">
+
+            <input type="hidden" name="status" value="Pending">
+            <input type="hidden" name="submit_date" value="<?php echo date("d/m/Y G:i"); ?>">
+
+            <!-- Name Field -->
             <div class="form-field">
                 <label for="name">Họ và tên <span class="txt-main">*</span></label>
-                <input id="name" name="name" type="text" placeholder="Họ và tên người đăng ký">
+                <input id="name" name="applicant_name" type="text" placeholder="Họ và tên người đăng ký">
             </div>
+
+            <!-- Email -->
             <div class="form-field">
                 <label for="email">Email <span class="txt-main">*</span></label>
-                <input id="email" name="email" type="email" placeholder="Email liên hệ">
+                <input id="email" name="applicant_email" type="email" placeholder="Email liên hệ">
             </div>
+
+            <!-- Company Name -->
             <div class="form-field">
                 <label for="company-name">Tên công ty</label>
-                <input id="company-name" name="company-name" type="text" placeholder="Tên công ty">
+                <input id="company-name" name="applicant_company_name" type="text" placeholder="Tên công ty">
             </div>
+
+            <!-- Website -->
             <div class="form-field">
                 <label for="website">Website</label>
-                <input id="website" name="website" type="text" placeholder="Họ và tên người đăng ký">
+                <input id="website" name="applicant_website" type="text" placeholder="Họ và tên người đăng ký">
             </div>
+
+            <!-- Message -->
             <div class="form-field">
                 <label for="message">Lời nhắn</label>
-                <textarea id="message" resize="none" name="message" type="text" placeholder="Lời nhắn"></textarea>
+                <textarea id="message" resize="none" name="applicant_message" type="text" placeholder="Lời nhắn"></textarea>
             </div>
+
+            <!-- Finish Message -->
             <div class="form-field">
-                <button type="submit" class="btn product-cta btn-grad btn-sh effect effect-main">
+                <p class="submit-feedback"></p>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-field">
+                <button type="submit"
+                        class="btn product-cta btn-grad btn-sh effect effect-main">
                     <span>Đăng ký</span>
                 </button>
-                <span class="loading-form">
+                <span class="loading-form" style="display: none;">
                     <svg class="lds-spinner" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="shape-rendering: auto;animation-play-state: running;animation-delay: 0s;background: none;width: 38px;height: 38px;display: inline-block;margin-bottom: -15px;"><g transform="rotate(0 50 50)" style="animation-play-state: running; animation-delay: 0s;">
                         <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#f05125" style="animation-play-state: running; animation-delay: 0s;">
                             <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>

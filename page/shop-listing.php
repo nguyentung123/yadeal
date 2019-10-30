@@ -4,9 +4,23 @@ get_header();
 ?>
 
 <!-- === MAIN CONTENT === -->
-<main>
+<main class="no-overlay">
+    <!-- Support Head -->
+    <?php echo do_shortcode('[breadcrumbs]');?>
+    <!-- Support Head -->
 
+    <section class="section section-shop-listing" id="shop-listing">
+        <div class="container">
+            <div id='storemapper' style='width:100%;'>
+                <p>Store Locator is loading from <a href='https://www.storemapper.co'>Storemapper</a>...</p>
+            </div>
+        </div>
+    </section>
 </main>
+
+<script data-storemapper-start='2019,04,16' data-storemapper-id='5847'>
+    (function() {var script = document.createElement('script');script.type  = 'text/javascript';script.async = true;script.src = document.location.protocol + '//www.storemapper.co/js/widget.js'; var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry);}());
+</script>
 <!-- === MAIN CONTENT - END === -->
 
 

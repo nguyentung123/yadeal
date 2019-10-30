@@ -131,24 +131,6 @@ function yadea_custom_posts_type(){
         'menu_icon'           => 'dashicons-tag',
         'supports'            => array('title','editor', 'thumbnail', 'custom-fields'),
     ));
-
-    // Applicant
-    register_post_type('applicant', array(
-        'label'         => 'Applicant',
-        'description'   => 'Apply To Be Yadea Shop',
-        'labels'        => array(
-            'name'            => 'Applicants',
-            'singular_name'   => 'Applicant',
-        ),
-        'public'              => false,
-        'show_ui'             => true,
-        'show_in_admin_bar'   => true,
-        'exclude_from_search' => true,
-        'show_in_nav_menus'   => true,
-        'menu_position'       => 5,
-        'menu_icon'           => 'dashicons-welcome-write-blog',
-        'supports'            => array('title', 'thumbnail', 'custom-fields','editor')
-    ));
 }
 add_action( 'init', 'yadea_custom_posts_type' );
 

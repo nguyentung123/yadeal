@@ -2,7 +2,7 @@
 //* Template Name: Hướng dẫn sử dụng
 get_header();
 ?>
-<main>
+<main class="no-overlay">
     <!-- Support Head -->
     <?php echo do_shortcode('[breadcrumbs]');?>
     <!-- Support Head -->

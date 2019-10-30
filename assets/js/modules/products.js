@@ -16,7 +16,7 @@ export default class Products {
             current: 'all',
             allowSwitchState: true,
             context: 'Tất cả'
-        },
+        }
 
         this.bindEvents();
     }
@@ -120,12 +120,13 @@ export default class Products {
             result = afixURL;
         }
 
-        console.log(result);
-
         switch (result){
             // Nothing Special, keep default filter all
             case 'all':
             case '':
+                if($('#loading-overlay').length > 0){
+                    $('#loading-overlay').addClass('hidden');
+                }
             break;
 
             // Filter with special input
@@ -135,7 +136,11 @@ export default class Products {
 
                 // Reproduce the context of result ('l-series' => 'l series')
                 this.DoFilter(result, result.replace('-', ' '));
-                this.mobileControl.html(this.filterStatus.context + this.mobileCaret)
+                this.mobileControl.html(this.filterStatus.context + this.mobileCaret);
+
+                if($('#loading-overlay').length > 0){
+                    $('#loading-overlay').addClass('hidden');
+                }
                 break;
         }
     }

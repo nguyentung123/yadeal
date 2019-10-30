@@ -5,7 +5,7 @@ get_header();
 
 <!-- === MAIN CONTENT === -->
 <main style="overflow: hidden">
-    <div class="yadea-child-page about-page">
+    <div class="yadea-child-page about-page no-overlay">
 
         <!-- Main Banner -->
         <section class="banner"

@@ -1,0 +1,26 @@
+/* =======================================
+ * COLOR
+ /* ======================================= */
+$white: #FFF;
+$main-color: #f36d21;
+$main-gradient: 'linear-gradient(to right, #ed2024, #f5811f)';
+
+
+/* =======================================
+ * OTHERS
+ /* ======================================= */
+
+
+/* =======================================
+ * RESPONSIVE MARK
+ /* ======================================= */
+$information-lg-screen: "only screen and (max-width : 1920px)";
+$information-laptop: "only screen and (max-width : 1368px)";
+$information-sm-laptop: "only screen and (max-width : 1280px)";
+$information-tablet: "only screen and (max-width : 768px)";
+$information-phone: "only screen and (max-width : 480px)";
+$information-sm-phone: "only screen and (max-width : 360px)";
+
+/* USAGE */
+@media #{$information-sm-laptop}{}
+

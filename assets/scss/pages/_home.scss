@@ -2,7 +2,7 @@
 /* Home Banner 1 */
 #home-banner-1{
   .main-content{
-    height: 32.25vw;
+    height: 38vw;
     display: -webkit-flex;
     display: flex;
 
@@ -13,6 +13,7 @@
       justify-content: center;
       align-items: center;
       flex: 1;
+      height: 38vw;
 
       &__wrapper{
         width: 90%;
@@ -48,14 +49,19 @@
 
     &__slider{
       width: 100%;
-      height: 32.25vw;
+      height: 38vw;
+      position: relative;
       background-color: #AAA;
       padding: 0;
       overflow: hidden;
 
+      .slick-slider{
+        height: 38vw;
+      }
+
       &__item{
         width: 100%;
-        height: 32.25vw;
+        height: 38vw;
         position: relative;
 
         img{
@@ -68,7 +74,32 @@
           left: 50%;
           transform: translate(-50%, -50%);
         }
+
+        &.slide-video{
+          .video-holder{
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            video{
+              width: auto;
+              height: auto;
+              min-width: 100%;
+              min-height: 100%;
+              max-width: 135%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
       }
+    }
+
+    .slider-paging{
+      position: absolute;
     }
   }
 
@@ -100,6 +131,9 @@
   }
 
   @media #{$information-hz-phone} {
+  }
+
+  @media #{$information-tablet}{
     .main-content{
       height: auto;
 
@@ -115,17 +149,21 @@
         background-color: $white;
         height: 800px;
 
+        .slick-slider{
+          height: 800px;
+        }
+
         &__item{
           height: 800px;
 
           &.slide-video{
-            video{
-              height: 780px;
-              width: auto;
-              max-width: none;
-              position: absolute;
-              left: 50%;
-              transform: translateX(-50%);
+            .video-holder{
+              video{
+                min-height: 100%;
+                height: auto;
+                width: auto;
+                max-width: 200%;
+              }
             }
           }
         }
@@ -133,23 +171,38 @@
     }
   }
 
-  @media #{$information-tablet}{}
-
   @media #{$information-phone} {
     .main-content{
 
       &__context{
+        height: auto;
+
         &__wrapper{
-          padding: 25px 0;
+          padding: 30px 0;
         }
       }
 
       &__slider{
         padding: 0 10px;
-        height: 115vw;
+        height: 110vw;
+
+        .slick-slider{
+          height: 110vw;
+        }
 
         &__item{
-          height: 115vw;
+          height: 110vw;
+
+          &.slide-video {
+            .video-holder {
+              video {
+                min-height: 100%;
+                height: auto;
+                width: auto;
+                max-width: 220%;
+              }
+            }
+          }
         }
       }
     }
@@ -159,7 +212,7 @@
     .main-content{
       &__context{
         &__wrapper{
-          padding: 10px 0;
+          padding: 25px 0;
         }
       }
 
@@ -172,12 +225,12 @@
   @media #{$information-sm-phone} {}
 }
 
-
 /* Home Banner 2 */
 #home-banner-2{
   .product-slider{
     height: 780px;
     overflow: hidden;
+    position: relative;
 
     &__wrapper{
       height: 780px;

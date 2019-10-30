@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <!-- === MAIN CONTENT === -->
-<main>
+<main class="no-overlay">
     <div class="yadea-child-page supplier-page">
         <section class="banner" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/about/partner/Yadea Partner Cover.jpg');">
             <div class="text">

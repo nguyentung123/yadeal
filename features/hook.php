@@ -58,7 +58,7 @@ function get_banner_1() {
                                             $slug_title = str_replace(' ','-',strtolower(get_field('banner_title')));
                                             ?>
                                             <a id="banner-1-<?php echo $slug_title;?>-cta-btn-click"
-                                               class="btn product-cta btn-trans border-gray effect effect-black mb-hide"
+                                               class="btn product-cta border-gray btn-trans effect effect-main mb-hide"
                                                href="<?php echo get_field('banner_link'); ?>">
                                                 <span><?php echo get_field('button_btn_text'); ?></span>
                                             </a>

@@ -527,7 +527,7 @@ h1,h2,h3,h4,h5,p{
   }
 
   @media #{$information-md-phone} {
-    font-size: 23px;
+    font-size: 24px;
   }
 }
 
@@ -546,15 +546,15 @@ h1,h2,h3,h4,h5,p{
   }
 
   @media #{$information-lg-tablet} {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   @media #{$information-tablet} {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   @media #{$information-phone} {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -570,7 +570,9 @@ h1,h2,h3,h4,h5,p{
     font-size: 14px;
   }
 
-  @media #{$information-phone} {}
+  @media #{$information-phone} {
+    font-size: 18px;
+  }
 }
 
 .page-desc{

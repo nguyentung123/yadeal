@@ -1,0 +1,307 @@
+.apply-g5-event-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+
+  // Original State
+  visibility: hidden;
+
+  .modal-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.45);
+
+    // Original State
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in 150ms 175ms;
+  }
+
+  .apply-g5-content{
+    position: relative;
+    color: $main-color;
+    width: 680px;
+    max-width: 93%;
+    height: 390px;
+    padding-top: 5px;
+    border-radius: 50px;
+    background-color: #e2e2e2;
+    display: flex;
+    align-items: center;
+
+    // Original State
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+    transition: all ease-in 250ms;
+
+    .close-apply-modal{
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      font-size: 40px;
+      width: 44px;
+      height: 44px;
+      border-radius: 22px;
+      border: 2px solid $main-color;
+      line-height: 40px;
+      text-align: center;
+      cursor:pointer;
+      transition: all ease-in 100ms;
+
+      &:hover{
+        background-color: $main-color;
+        color: $white;
+        transition: all ease-out 150ms;
+      }
+    }
+
+    .main-content{
+      width: 75%;
+      margin: auto;
+
+      .modal-title{
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: 0.1em;
+        font-size: 1.6875em;
+      }
+
+      .form-row{
+        display: flex;
+        font-size: 1.25em;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        margin-bottom: 5px;
+
+        label{
+          margin-right: 5px;
+        }
+
+        .input-control{
+          background-color: transparent;
+          height: 1.6em;
+          line-height: 1.5em;
+          padding: 0 0.4em;
+          flex: 1;
+          border: none;
+          outline: none;
+          color: $main-color;
+          font-weight: 600;
+
+          &:focus{
+            border-bottom: 1px solid $main-color;
+          }
+        }
+      }
+
+      .submit-holder{
+        text-align: center;
+        margin-top: 30px;
+
+        .submit-btn{
+          font-size: 1em;
+          background-color: transparent;
+          border: 1px solid $main-color;
+          height: 32px;
+          border-radius: 16px;
+          padding: 0 22px;
+          letter-spacing: 0.05em;
+          color: $main-color;
+          cursor: pointer;
+          transition: all ease-in 100ms;
+          outline: none;
+
+          &:hover{
+            background-color: $main-color;
+            color: $white;
+            transition: all ease-out 150ms;
+          }
+        }
+      }
+
+      .submit-feedback{
+        display: none;
+
+        &.success, .error{
+          display: block;
+        }
+
+        &.success{
+          color: $main-color;
+        }
+
+        &.error{
+          color: #ff2222;
+        }
+      }
+    }
+  }
+
+  &.active{
+    visibility: visible;
+
+    .modal-overlay{
+      opacity: 1;
+      visibility: visible;
+      transition: all ease-out 220ms 10ms;
+    }
+
+    .apply-g5-content{
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      transition: all ease-out 300ms 170ms;
+    }
+  }
+
+  @media #{$information-tablet}{
+    .apply-g5-content{
+      max-width: 70%;
+      height: 44vw;
+      padding-top: 5px;
+      border-radius: 30px;
+
+      .close-apply-modal{
+        top: 20px;
+        right: 25px;
+        font-size: 38px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        border: 2px solid $main-color;
+        line-height: 38px;
+      }
+    }
+  }
+
+  @media (max-width: 540px){
+    .apply-g5-content{
+      max-width: 80%;
+      height: 52vw;
+      padding-top: 5px;
+      border-radius: 25px;
+
+      .close-apply-modal{
+        top: 20px;
+        right: 25px;
+        font-size: 34px;
+        width: 36px;
+        height: 36px;
+        border-radius: 20px;
+        border: 2px solid $main-color;
+        line-height: 32px;
+      }
+
+      .main-content{
+        width: 80%;
+
+        .modal-title{
+          margin-bottom: 13px;
+          letter-spacing: 0.1em;
+          font-size: 1.5em;
+        }
+
+        .form-row{
+          font-size: 1.15em;
+          letter-spacing: 0.14em;
+          margin-bottom: 5px;
+
+          label{
+            margin-right: 5px;
+          }
+
+          .input-control{
+            height: 1.55em;
+            line-height: 1.5em;
+            padding: 0 0.4em;
+          }
+        }
+
+        .submit-holder{
+          margin-top: 20px;
+
+          .submit-btn{
+            font-size: 1em;
+            height: 32px;
+            border-radius: 16px;
+            padding: 0 22px;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone}{
+    .apply-g5-content{
+      max-width: 80%;
+      height: 65vw;
+      padding-top: 15px;
+      border-radius: 20px;
+
+      .close-apply-modal{
+        top: 10px;
+        right: 15px;
+        font-size: 25px;
+        width: 28px;
+        height: 28px;
+        border-radius: 20px;
+        line-height: 25px;
+      }
+
+      .main-content{
+        width: 85%;
+
+        .modal-title{
+          margin-bottom: 10px;
+          letter-spacing: 0.1em;
+          font-size: 1.35em;
+        }
+
+        .form-row{
+          font-size: 1.15em;
+          letter-spacing: 0.14em;
+          margin-bottom: 5px;
+          flex-wrap: nowrap;
+
+          label{
+            margin-right: 5px;
+            white-space: nowrap;
+            letter-spacing: 0;
+          }
+
+          .input-control{
+            height: 1.55em;
+            line-height: 1.5em;
+            padding: 0 0.4em;
+            min-width: 0;
+          }
+        }
+
+        .submit-holder{
+          margin-top: 15px;
+
+          .submit-btn{
+            font-size: 1em;
+            height: 32px;
+            border-radius: 16px;
+            padding: 0 22px;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+    }
+  }
+}

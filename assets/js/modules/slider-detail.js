@@ -45,6 +45,12 @@ export default class SliderDetail {
       cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
       touchThreshold: 100
     });
+
+    $('.slide-detail .slide-content').on('init reInit', () => {
+      if($('#loading-overlay').length > 0){
+        $('#loading-overlay').addClass('hidden');
+      }
+    })
   }
 
 

@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <!-- === MAIN CONTENT === -->
-<main style="overflow: hidden">
+<main style="overflow: hidden" class="no-overlay">
 
     <div class="yadea-child-page course-page">
         <section class="banner" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/about/history/Yadea History Cover.jpg');">

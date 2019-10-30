@@ -2,7 +2,7 @@
     //*Template Name: Chính sách bảo hành
 get_header();
 ?>
-<main>
+<main class="no-overlay">
     <!-- Common Head -->
     <section class="section light-gray-bg blog-heading" id="support-head">
         <div class="container blog-heading__title">

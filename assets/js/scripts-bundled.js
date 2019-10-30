@@ -60,11 +60,979 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _home = _interopRequireDefault(__webpack_require__(1));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+$(document).ready(function () {
+  var demo = new _home.default();
+});
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _slider = _interopRequireDefault(__webpack_require__(2));
+
+var _main = _interopRequireDefault(__webpack_require__(3));
+
+var _products = _interopRequireDefault(__webpack_require__(4));
+
+var _support = _interopRequireDefault(__webpack_require__(5));
+
+var _sliderDetail = _interopRequireDefault(__webpack_require__(6));
+
+var _flipClockCustom = _interopRequireDefault(__webpack_require__(10));
+
+var _submitApplyForm = _interopRequireDefault(__webpack_require__(11));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Home =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function Home() {
+    _classCallCheck(this, Home);
+
+    // Slider
+    this.slider = new _slider.default(); // Default Behavior
+
+    this.main = new _main.default(); // Products Page
+
+    this.products = new _products.default(); // Supports Page
+
+    this.supports = new _support.default(); // Slider detail page
+
+    this.sliderDetail = new _sliderDetail.default(); // Flip Clock Custom
+
+    this.flipClockCustom = new _flipClockCustom.default();
+
+    if ($('#signup-as-shop-form').length > 0) {
+      var submitApplyForm = new _submitApplyForm.default();
+    }
+
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(Home, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      // Page without any special content takes time to load
+      if ($('.no-overlay').length > 0) {
+        if ($('#loading-overlay').length > 0) {
+          $('#loading-overlay').addClass('hidden');
+        }
+      }
+
+      setTimeout(function () {
+        if ($('#loading-overlay').length > 0 && !$('#loading-overlay').hasClass('hidden')) {
+          $('#loading-overlay').addClass('hidden');
+        }
+      }, 3000);
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }]);
+
+  return Home;
+}();
+
+exports.default = Home;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Slider =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function Slider() {
+    _classCallCheck(this, Slider);
+
+    this.sliderOptions = {
+      'arrows': false,
+      'speed': 1200,
+      'autoplay': true,
+      'autoplaySpeed': 5000,
+      'pauseOnFocus': false,
+      'pauseOnHover': false
+    };
+    this.sliderOptions1 = {
+      'arrows': false,
+      'speed': 1500,
+      'autoplay': false,
+      'autoplaySpeed': 5000,
+      'pauseOnFocus': false,
+      'pauseOnHover': false
+    };
+    this.videoPlayerArray = [];
+    this.indexRefVideoArray = [];
+    this.slider1VideoSlides = [];
+    this.slider1 = $('#slider-style-1');
+    this.slider1Paging = $('#slider-style-1-paging');
+    this.slider1CurrentPage = this.slider1Paging.find('.current-page');
+    this.slider1TotalPage = this.slider1Paging.find('.all-page');
+    this.slider1Indicator = $('#slider-style-1-indicator');
+    this.slider2 = $('#slider-style-2');
+    this.slider2Paging = $('#slider-style-2-paging');
+    this.slider2CurrentPage = this.slider2Paging.find('.current-page');
+    this.slider2TotalPage = this.slider2Paging.find('.all-page');
+    this.slider3 = $('#slider-style-3');
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(Slider, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      var _this = this;
+
+      /* ===== Sliders ===== */
+
+      /* Slider 1 Init */
+      //<editor-fold desc="Slider 1">
+      if (this.slider1.length > 0) {
+        this.slider1.on('init reInit', function (e, slick) {
+          var $currentPage = _this.slider1Paging.find('.current-page.active');
+
+          $currentPage.html('01');
+
+          _this.slider1TotalPage.html('0' + slick.slideCount);
+
+          _this.slider1Paging.css('bottom', slick.slideCount * 25 + 15 + 'px');
+
+          if ($('#loading-overlay').length > 0) {
+            $('#loading-overlay').addClass('hidden');
+          }
+        });
+        this.slider1.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
+          var $currentPage = _this.slider1Paging.find('.current-page.active');
+
+          var $nextPage = _this.slider1Paging.find('.current-page.inactive');
+
+          var i = nextSlide + 1;
+          $currentPage.removeClass('active').addClass('removed');
+          $nextPage.html('0' + i).removeClass('inactive').addClass('active');
+        });
+        this.slider1.on('afterChange', function () {
+          var $removedPage = _this.slider1Paging.find('.current-page.removed');
+
+          if ($removedPage) {
+            $removedPage.removeClass('removed').addClass('inactive');
+          }
+        });
+        this.slider1OBJ = this.slider1.slick(Object.assign({
+          fade: true,
+          asNavFor: '#slider-style-1-indicator',
+          dots: true
+        }, this.sliderOptions1));
+
+        if (this.slider1Indicator.length > 0) {
+          this.slider1Indicator.slick(Object.assign({
+            'fade': true,
+            asNavFor: '#slider-style-1',
+            autoplay: false
+          }, this.sliderOptions1));
+        }
+      } //</editor-fold>
+
+      /* Slider 2 Init */
+      //<editor-fold desc="Slider 2">
+
+
+      this.slider2.on('init reInit', function (e, slick) {
+        var $currentPage = _this.slider2Paging.find('.current-page.active');
+
+        $currentPage.html('01');
+
+        _this.slider2TotalPage.html('0' + slick.slideCount);
+
+        _this.slider2Paging.css('bottom', slick.slideCount * 25 + 15 + 'px');
+      });
+      this.slider2.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
+        var $currentPage = _this.slider2Paging.find('.current-page.active');
+
+        var $nextPage = _this.slider2Paging.find('.current-page.inactive');
+
+        var i = nextSlide + 1;
+        $currentPage.removeClass('active').addClass('removed');
+        $nextPage.html('0' + i).removeClass('inactive').addClass('active');
+      });
+      this.slider2.on('afterChange', function () {
+        var $removedPage = _this.slider2Paging.find('.current-page.removed');
+
+        if ($removedPage) {
+          $removedPage.removeClass('removed').addClass('inactive');
+        }
+      });
+
+      if (this.slider2) {
+        this.slider2.slick(Object.assign({
+          'fade': true,
+          'dots': true
+        }, this.sliderOptions));
+      } //</editor-fold>
+
+      /* Slider 3 Init */
+      //<editor-fold desc="Slider 3">
+
+
+      if (this.slider3) {
+        this.slider3.slick(Object.assign({
+          'fade': true,
+          'dots': false
+        }, this.sliderOptions));
+      } //</editor-fold>
+
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }]);
+
+  return Slider;
+}();
+
+exports.default = Slider;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Main =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function Main() {
+    _classCallCheck(this, Main);
+
+    // Elements Variable
+    this.$subMenuTrigger = $('#sub-menu-trigger');
+    this.$subMenu = $('#page-sub-menu');
+    this.$aboutusMenuTrigger = $('#about-us-sub-menu-trigger');
+    this.$aboutusSubMenu = $('#about-us-sub-menu');
+    this.$imageHolder = $('.image-holder');
+    this.$imageHolderTarget = null;
+    this.imageHolderInterval = null;
+    this.imageHolderTimeout = null; // Mobile Menu
+
+    this.$mobileMenu = $('#mobile-menu');
+    this.$mobileMenuControl = $('#mobile-menu-ctrl');
+    this.$mobileMenuOverlay = this.$mobileMenu.find('.mobile-menu__overlay');
+    this.$subNavTrigger = this.$mobileMenu.find('.nav-trigger');
+    this.appStatus = {
+      showSubMenu: false,
+      imageHoverState: false,
+      showMbMenu: false,
+      allowClickMbMenu: true,
+      showSmallMenu: false,
+      showAboutSubMenu: false
+    };
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(Main, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      var _this = this;
+
+      /* ===== Sub Menu Effect Display ===== */
+      this.$subMenuTrigger.on('mouseenter', function (e) {
+        e.preventDefault();
+
+        if (!_this.appStatus.showSubMenu) {
+          _this.ToggleAboutSubMenu(false);
+
+          _this.ToggleSubMenu(true);
+        }
+
+        if (_this.appStatus.showAboutSubMenu) {
+          _this.ToggleAboutSubMenu(false);
+        }
+      });
+      this.$subMenu.on('mouseleave', function (e) {
+        if (_this.appStatus.showSubMenu) {
+          _this.ToggleSubMenu(false);
+        }
+      });
+      /* ===== Aboutus Sub Menu Effect Display ===== */
+
+      this.$aboutusMenuTrigger.on('mouseenter', function (e) {
+        e.preventDefault();
+
+        if (!_this.appStatus.showAboutSubMenu) {
+          _this.ToggleAboutSubMenu(true);
+        }
+
+        if (_this.appStatus.showSubMenu) {
+          _this.ToggleSubMenu(false);
+        }
+      });
+      this.$aboutusSubMenu.on('mouseleave', function (e) {
+        if (_this.appStatus.showAboutSubMenu) {
+          _this.ToggleAboutSubMenu(false);
+        }
+      });
+      /* ===== Mobile Menu Effect ===== */
+
+      this.CloseMbSubMenu();
+      this.$mobileMenuControl.on('click', function (e) {
+        if (_this.appStatus.allowClickMbMenu) {
+          if (!_this.appStatus.showMbMenu) {
+            _this.appStatus.allowClickMbMenu = false;
+
+            _this.ToggleMobileMenu(true);
+          } else {
+            _this.appStatus.allowClickMbMenu = false;
+
+            _this.ToggleMobileMenu(false);
+          }
+        }
+      });
+      this.$mobileMenuOverlay.on('click', function (e) {
+        if (_this.appStatus.allowClickMbMenu) {
+          if (_this.appStatus.showMbMenu) {
+            _this.ToggleMobileMenu(false);
+          }
+        }
+      });
+
+      if (this.$subNavTrigger) {
+        this.$subNavTrigger.on('click', function (e) {
+          if (_this.appStatus.allowClickMbMenu) {
+            _this.appStatus.allowClickMbMenu = false;
+            setTimeout(function () {
+              return _this.appStatus.allowClickMbMenu = true;
+            }, 200);
+
+            if ($(e.target).hasClass('active')) {
+              $(e.target).removeClass('active');
+            } else {
+              $(e.target).addClass('active');
+            }
+
+            var $toggleTarget = $(e.target).siblings('.nav-item__sub-menu');
+
+            if ($toggleTarget) {
+              $toggleTarget.slideToggle({
+                start: function start() {
+                  $(this).css({
+                    display: "flex"
+                  });
+                }
+              });
+            }
+          }
+        });
+      }
+      /* ===== Image Holder Display Effect ===== */
+
+
+      $('.product-showcase__item__body .image-holder>img:first-child').addClass('active');
+      this.$imageHolder.on('mouseenter', function (e) {
+        if (!_this.appStatus.imageHoverState) {
+          _this.$imageHolderTarget = $(e.target);
+
+          _this.ActiveImageHover(true);
+        } else {
+          _this.ActiveImageHover(false);
+
+          _this.$imageHolderTarget = $(e.target);
+
+          _this.ActiveImageHover(true);
+        }
+      });
+      this.$imageHolder.on('mouseleave', function (e) {
+        if (_this.appStatus.imageHoverState) {
+          _this.ActiveImageHover(false);
+        }
+      });
+      /* ==== Wordpress Admin Bar Adaptation === */
+
+      if ($('body').hasClass('admin-bar') && window.innerWidth <= 600) {
+        this.$pageHeader = $('#page-header');
+        $(window).on('scroll', function () {
+          if (window.pageYOffset > 20) {
+            _this.$pageHeader.addClass('scroll-menu');
+          } else {
+            _this.$pageHeader.removeClass('scroll-menu');
+          }
+        });
+      }
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "ToggleSubMenu",
+    value: function ToggleSubMenu(show) {
+      this.appStatus.showSubMenu = show;
+
+      if (show) {
+        this.$subMenu.addClass('active');
+      } else {
+        this.$subMenu.removeClass('active');
+      }
+    }
+  }, {
+    key: "ToggleAboutSubMenu",
+    value: function ToggleAboutSubMenu(show) {
+      this.appStatus.showAboutSubMenu = show;
+
+      if (show) {
+        this.$aboutusSubMenu.addClass('active');
+      } else {
+        this.$aboutusSubMenu.removeClass('active');
+      }
+    }
+  }, {
+    key: "ToggleMobileMenu",
+    value: function ToggleMobileMenu(show) {
+      var _this2 = this;
+
+      setTimeout(function () {
+        _this2.appStatus.allowClickMbMenu = true;
+      }, 200);
+      this.appStatus.showMbMenu = show;
+
+      if (show) {
+        if (this.$mobileMenu && this.$mobileMenuControl) {
+          this.$mobileMenu.addClass('active');
+          this.$mobileMenuControl.addClass('show-menu');
+        }
+      } else {
+        if (this.$mobileMenu && this.$mobileMenuControl) {
+          this.$mobileMenu.removeClass('active');
+          this.$mobileMenuControl.removeClass('show-menu');
+        }
+
+        this.CloseMbSubMenu();
+      }
+    }
+  }, {
+    key: "ActiveImageHover",
+    value: function ActiveImageHover(active) {
+      this.appStatus.imageHoverState = active;
+
+      if (active) {
+        console.log(this.$imageHolderTarget);
+        this.$imageList = this.$imageHolderTarget.find('.image-holder__item').toArray();
+        this.ImageCounter = 0;
+        this.DoAnimate(true);
+        console.log();
+      } else {
+        this.CleanUpImageHover();
+      }
+    }
+  }, {
+    key: "DoAnimate",
+    value: function DoAnimate() {
+      var _this3 = this;
+
+      var firstTime = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var timeout_amount = 1700;
+
+      if (firstTime) {
+        timeout_amount = 600;
+      }
+
+      this.AnimateTimeout = setTimeout(function () {
+        $(_this3.$imageList[_this3.ImageCounter]).addClass('slide-away').removeClass('active');
+        setTimeout(function () {
+          $(_this3.$imageList[_this3.ImageCounter]).removeClass('slide-away');
+
+          if (_this3.ImageCounter === _this3.$imageList.length - 1) {
+            _this3.ImageCounter = 0;
+          } else {
+            _this3.ImageCounter++;
+          }
+
+          setTimeout(function () {
+            $(_this3.$imageList[_this3.ImageCounter]).addClass('active');
+          }, 100);
+        }, 380);
+
+        _this3.DoAnimate();
+      }, timeout_amount);
+    }
+  }, {
+    key: "CleanUpImageHover",
+    value: function CleanUpImageHover() {
+      var id = window.setTimeout(function () {}, 0);
+
+      while (id--) {
+        window.clearTimeout(id); // will do nothing if no timeout with id is present
+      }
+
+      this.ImageCounter = 0;
+
+      if (this.$imageHolderTarget.find('img.active').index() > 0) {
+        this.$imageHolderTarget.find('img').removeClass('slide-away active');
+      }
+
+      $(this.$imageList[this.ImageCounter]).removeClass('slide-away').addClass('active');
+    }
+  }, {
+    key: "CloseMbSubMenu",
+    value: function CloseMbSubMenu() {
+      if (this.$subNavTrigger) {
+        var $toggleTarget = this.$subNavTrigger.siblings('.nav-item__sub-menu');
+
+        if ($toggleTarget) {
+          $toggleTarget.slideUp('normal');
+        }
+
+        this.$subNavTrigger.removeClass('active');
+      }
+    }
+  }]);
+
+  return Main;
+}();
+
+exports.default = Main;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Products =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function Products() {
+    _classCallCheck(this, Products);
+
+    // Elements Variable
+    this.$productsControlFilter = $('.products-control__item');
+    this.$productControl = $('.products-control');
+    this.mobileCaret = '<i class="fa fa-caret-down" aria-hidden="true"></i>';
+    this.mobileControl = $('.products-control-mb .action-holder');
+    this.mobileControlList = $('#mobile-control-list');
+    this.filterStatus = {
+      current: 'all',
+      allowSwitchState: true,
+      context: 'Tất cả'
+    };
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(Products, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      var _this = this;
+
+      if (this.$productsControlFilter.length > 0) {
+        this.DoFirstFilter();
+      }
+
+      if (this.$productsControlFilter) {
+        this.$productsControlFilter.on('click', function (e) {
+          var filterValue = $(e.target).data('target');
+          var context = '';
+
+          if ($(e.target).hasClass('product-control__item__link')) {
+            context = $(e.target).html();
+          } else {
+            context = $(e.target).find('.product-control__item__link').html();
+          }
+
+          var $currentActive = _this.$productControl.find('.products-control__item.active');
+
+          if (filterValue !== _this.filterStatus.current && _this.filterStatus.allowSwitchState) {
+            $currentActive.removeClass('active');
+            $('[data-target=' + filterValue + ']').addClass('active'); // Do Filter When State Need To Change
+
+            _this.DoFilter(filterValue, context);
+
+            _this.mobileControlList.slideUp('normal');
+
+            _this.mobileControl.html(_this.filterStatus.context + _this.mobileCaret);
+          }
+        });
+      } // Toggle Controller
+
+
+      if (this.mobileControl) {
+        this.mobileControl.on('click', function (e) {
+          _this.mobileControlList.slideToggle('normal');
+        });
+      }
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "DoFilter",
+    value: function DoFilter(value, context) {
+      var _this2 = this;
+
+      this.filterStatus.current = value;
+      this.filterStatus.context = context;
+
+      switch (value) {
+        case 'all':
+          var $allElem = $('.series__block'); // Fake Effect
+
+          $allElem.fadeOut('normal', function (e) {
+            setTimeout(function () {
+              $allElem.fadeIn('normal', function (e) {
+                _this2.filterStatus.allowSwitchState = true;
+              });
+            }, 500);
+          });
+          break;
+
+        default:
+          var $others = $('.series__block');
+          var $target = $('.series__block[data-value=' + value + ']');
+          $others.fadeOut('normal', function (e) {});
+          setTimeout(function () {
+            $target.fadeIn('normal', function (e) {
+              _this2.filterStatus.allowSwitchState = true;
+            });
+          }, 500);
+          break;
+      }
+    }
+  }, {
+    key: "DoFirstFilter",
+    value: function DoFirstFilter() {
+      console.log('window.location.href: ' + window.location.href); // Get URL
+
+      var url = window.location.href; // Get after main URL link
+
+      var afixURL = '';
+
+      if (url.lastIndexOf('#') > -1) {
+        afixURL = url.substring(url.lastIndexOf('#') + 1);
+      } // Get the index of content after the #[ID]
+
+
+      var firstVarIndex = afixURL.indexOf('?'); // Define Result to Filter
+
+      var result = '';
+
+      if (firstVarIndex > 0) {
+        result = afixURL.substring(0, firstVarIndex);
+      } else {
+        result = afixURL;
+      }
+
+      switch (result) {
+        // Nothing Special, keep default filter all
+        case 'all':
+        case '':
+          if ($('#loading-overlay').length > 0) {
+            $('#loading-overlay').addClass('hidden');
+          }
+
+          break;
+        // Filter with special input
+
+        default:
+          $('.products-control__item.active').removeClass('active');
+          $('[data-target = ' + result + ']').addClass('active'); // Reproduce the context of result ('l-series' => 'l series')
+
+          this.DoFilter(result, result.replace('-', ' '));
+          this.mobileControl.html(this.filterStatus.context + this.mobileCaret);
+
+          if ($('#loading-overlay').length > 0) {
+            $('#loading-overlay').addClass('hidden');
+          }
+
+          break;
+      }
+    }
+  }]);
+
+  return Products;
+}();
+
+exports.default = Products;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Supports =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function Supports() {
+    _classCallCheck(this, Supports);
+
+    // Elements Variable
+    this.$modalElem = $('.modal');
+    this.$modalOverlay = this.$modalElem.find('.modal-overlay');
+    this.$closeModal = $('.close-modal');
+    this.$openModal = $('#trigger-as-shop');
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(Supports, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      var _this = this;
+
+      this.$closeModal.on('click', function () {
+        _this.CloseModal();
+      });
+      this.$openModal.on('click', function () {
+        _this.OpenModal();
+      });
+      console.log('Bind Event');
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "CloseModal",
+    value: function CloseModal() {
+      this.$modalElem.removeClass('active');
+    }
+  }, {
+    key: "OpenModal",
+    value: function OpenModal() {
+      this.$modalElem.addClass('active');
+    }
+  }]);
+
+  return Supports;
+}();
+
+exports.default = Supports;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _ = _interopRequireWildcard(__webpack_require__(7));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SliderDetail =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function SliderDetail() {
+    _classCallCheck(this, SliderDetail);
+
+    // Elements Variable
+    this.arrSlideDetail = $('.slide-content .slide-item');
+    this.arrLiTag = $('.slide-dots-custom li');
+    this.arrDots = $('.slide-dots-custom li button');
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(SliderDetail, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      // Slick carousel product detail
+      this.SlideDetailPage(); // Slick carousel center mod image reality
+
+      this.SlideImageReality();
+      this.AddColorSlide();
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "SlideDetailPage",
+    value: function SlideDetailPage() {
+      $('.slide-detail .slide-content').slick({
+        draggable: true,
+        arrows: false,
+        dots: false,
+        fade: true,
+        speed: 900,
+        infinite: true,
+        // autoplay:true,
+        // autoplaySpeed:5000,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        touchThreshold: 100
+      });
+      $('.slide-detail .slide-content').on('init reInit', function () {
+        if ($('#loading-overlay').length > 0) {
+          $('#loading-overlay').addClass('hidden');
+        }
+      });
+    }
+  }, {
+    key: "SlideImageReality",
+    value: function SlideImageReality() {
+      $('.real-img-slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        nextArrow: "<img class=\"real-img-control next-slide\" src=\"".concat(yadeaVietnamVariables.assets_url, "img/arrow-right.png\">"),
+        prevArrow: "<img class=\"real-img-control prev-slide\" src=\"".concat(yadeaVietnamVariables.assets_url, "img/arrow-left.png\">")
+      });
+    }
+  }, {
+    key: "AddColorSlide",
+    value: function AddColorSlide() {
+      var _this = this;
+
+      var _loop = function _loop(i) {
+        $(_this.arrDots[i]).on('click', function (e) {
+          $('.slide-detail .slide-content').slick('slickGoTo', i);
+          $('.slide-dots-custom li.active-color').removeClass('active-color');
+          $(e.target).parents('li').addClass('active-color');
+        });
+      };
+
+      for (var i = 0; i < this.arrDots.length; i++) {
+        _loop(i);
+      }
+    }
+  }]);
+
+  return SliderDetail;
+}();
+
+exports.default = SliderDetail;
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -17181,103 +18149,10 @@
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(4)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(9)(module)))
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _home = _interopRequireDefault(__webpack_require__(2));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-$(document).ready(function () {
-  var demo = new _home.default();
-});
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _ = _interopRequireWildcard(__webpack_require__(0));
-
-var _slider = _interopRequireDefault(__webpack_require__(5));
-
-var _main = _interopRequireDefault(__webpack_require__(6));
-
-var _products = _interopRequireDefault(__webpack_require__(7));
-
-var _support = _interopRequireDefault(__webpack_require__(8));
-
-var _sliderDetail = _interopRequireDefault(__webpack_require__(9));
-
-var _flipClockCustom = _interopRequireDefault(__webpack_require__(10));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Home =
-/*#__PURE__*/
-function () {
-  /* ===================================
-   *  CONSTRUCTOR
-   * =================================== */
-  function Home() {
-    _classCallCheck(this, Home);
-
-    // Slider
-    this.slider = new _slider.default(); // Default Behavior
-
-    this.main = new _main.default(); // Products Page
-
-    this.products = new _products.default(); // Supports Page
-
-    this.supports = new _support.default(); // Slider detail page
-
-    this.sliderDetail = new _sliderDetail.default(); // Flip Clock Custom
-
-    this.flipClockCustom = new _flipClockCustom.default();
-    this.bindEvents();
-  }
-  /* ===================================
-   *  EVENTS
-   * =================================== */
-
-
-  _createClass(Home, [{
-    key: "bindEvents",
-    value: function bindEvents() {}
-    /* ===================================
-     *  METHODS
-     * =================================== */
-
-  }]);
-
-  return Home;
-}();
-
-exports.default = Home;
-
-/***/ }),
-/* 3 */
+/* 8 */
 /***/ (function(module, exports) {
 
 var g;
@@ -17304,7 +18179,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 4 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -17330,841 +18205,6 @@ module.exports = function(module) {
 	return module;
 };
 
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Slider =
-/*#__PURE__*/
-function () {
-  /* ===================================
-   *  CONSTRUCTOR
-   * =================================== */
-  function Slider() {
-    _classCallCheck(this, Slider);
-
-    this.sliderOptions = {
-      'arrows': false,
-      'speed': 1200,
-      'autoplay': true,
-      'autoplaySpeed': 5000,
-      'pauseOnFocus': false,
-      'pauseOnHover': false
-    };
-    this.sliderOptions1 = {
-      'arrows': false,
-      'speed': 1500,
-      'autoplay': true,
-      'autoplaySpeed': 5000,
-      'pauseOnFocus': false,
-      'pauseOnHover': false
-    };
-    this.videoPlayerArray = [];
-    this.indexRefVideoArray = [];
-    this.slider1VideoSlides = [];
-    this.slider1 = $('#slider-style-1');
-    this.slider1Paging = $('#slider-style-1-paging');
-    this.slider1CurrentPage = this.slider1Paging.find('.current-page');
-    this.slider1TotalPage = this.slider1Paging.find('.all-page');
-    this.slider1Indicator = $('#slider-style-1-indicator');
-    this.slider2 = $('#slider-style-2');
-    this.slider2Paging = $('#slider-style-2-paging');
-    this.slider2CurrentPage = this.slider2Paging.find('.current-page');
-    this.slider2TotalPage = this.slider2Paging.find('.all-page');
-    this.slider3 = $('#slider-style-3');
-    this.bindEvents();
-  }
-  /* ===================================
-   *  EVENTS
-   * =================================== */
-
-
-  _createClass(Slider, [{
-    key: "bindEvents",
-    value: function bindEvents() {
-      var _this = this;
-
-      /* ===== Sliders ===== */
-
-      /* Slider 1 Init */
-      //<editor-fold desc="Slider 1">
-      if (this.slider1.length > 0) {
-        this.slider1.on('init reInit', function (e, slick) {
-          var $currentPage = _this.slider1Paging.find('.current-page.active');
-
-          $currentPage.html('01');
-
-          _this.slider1TotalPage.html('0' + slick.slideCount);
-
-          _this.slider1Paging.css('bottom', slick.slideCount * 25 + 15 + 'px');
-        });
-        this.slider1.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
-          var $currentPage = _this.slider1Paging.find('.current-page.active');
-
-          var $nextPage = _this.slider1Paging.find('.current-page.inactive');
-
-          var i = nextSlide + 1;
-          $currentPage.removeClass('active').addClass('removed');
-          $nextPage.html('0' + i).removeClass('inactive').addClass('active');
-        });
-        this.slider1.on('afterChange', function () {
-          var $removedPage = _this.slider1Paging.find('.current-page.removed');
-
-          if ($removedPage) {
-            $removedPage.removeClass('removed').addClass('inactive');
-          }
-        });
-        this.slider1OBJ = this.slider1.slick(Object.assign({
-          'fade': true,
-          asNavFor: '#slider-style-1-indicator',
-          'dots': true
-        }, this.sliderOptions1));
-
-        if (this.slider1Indicator.length > 0) {
-          this.slider1Indicator.slick(Object.assign({
-            'fade': true,
-            asNavFor: '#slider-style-1'
-          }, this.sliderOptions1));
-        }
-      } //</editor-fold>
-
-      /* Slider 2 Init */
-      //<editor-fold desc="Slider 2">
-
-
-      this.slider2.on('init reInit', function (e, slick) {
-        var $currentPage = _this.slider2Paging.find('.current-page.active');
-
-        $currentPage.html('01');
-
-        _this.slider2TotalPage.html('0' + slick.slideCount);
-
-        _this.slider2Paging.css('bottom', slick.slideCount * 25 + 15 + 'px');
-      });
-      this.slider2.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
-        var $currentPage = _this.slider2Paging.find('.current-page.active');
-
-        var $nextPage = _this.slider2Paging.find('.current-page.inactive');
-
-        var i = nextSlide + 1;
-        $currentPage.removeClass('active').addClass('removed');
-        $nextPage.html('0' + i).removeClass('inactive').addClass('active');
-      });
-      this.slider2.on('afterChange', function () {
-        var $removedPage = _this.slider2Paging.find('.current-page.removed');
-
-        if ($removedPage) {
-          $removedPage.removeClass('removed').addClass('inactive');
-        }
-      });
-
-      if (this.slider2) {
-        this.slider2.slick(Object.assign({
-          'fade': true,
-          'dots': true
-        }, this.sliderOptions));
-      } //</editor-fold>
-
-      /* Slider 3 Init */
-      //<editor-fold desc="Slider 3">
-
-
-      if (this.slider3) {
-        this.slider3.slick(Object.assign({
-          'fade': true,
-          'dots': false
-        }, this.sliderOptions));
-      } //</editor-fold>
-
-    }
-    /* ===================================
-     *  METHODS
-     * =================================== */
-
-  }]);
-
-  return Slider;
-}();
-
-exports.default = Slider;
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Main =
-/*#__PURE__*/
-function () {
-  /* ===================================
-   *  CONSTRUCTOR
-   * =================================== */
-  function Main() {
-    _classCallCheck(this, Main);
-
-    // Elements Variable
-    this.$subMenuTrigger = $('#sub-menu-trigger');
-    this.$subMenu = $('#page-sub-menu');
-    this.$aboutusMenuTrigger = $('#about-us-sub-menu-trigger');
-    this.$aboutusSubMenu = $('#about-us-sub-menu');
-    this.$imageHolder = $('.image-holder');
-    this.$imageHolderTarget = null;
-    this.imageHolderInterval = null;
-    this.imageHolderTimeout = null; // Mobile Menu
-
-    this.$mobileMenu = $('#mobile-menu');
-    this.$mobileMenuControl = $('#mobile-menu-ctrl');
-    this.$mobileMenuOverlay = this.$mobileMenu.find('.mobile-menu__overlay');
-    this.$subNavTrigger = this.$mobileMenu.find('.nav-trigger');
-    this.appStatus = {
-      showSubMenu: false,
-      imageHoverState: false,
-      showMbMenu: false,
-      allowClickMbMenu: true,
-      showSmallMenu: false,
-      showAboutSubMenu: false
-    };
-    this.bindEvents();
-  }
-  /* ===================================
-   *  EVENTS
-   * =================================== */
-
-
-  _createClass(Main, [{
-    key: "bindEvents",
-    value: function bindEvents() {
-      var _this = this;
-
-      /* ===== Sub Menu Effect Display ===== */
-      this.$subMenuTrigger.on('mouseenter', function (e) {
-        e.preventDefault();
-
-        if (!_this.appStatus.showSubMenu) {
-          _this.ToggleAboutSubMenu(false);
-
-          _this.ToggleSubMenu(true);
-        }
-
-        if (_this.appStatus.showAboutSubMenu) {
-          _this.ToggleAboutSubMenu(false);
-        }
-      });
-      this.$subMenu.on('mouseleave', function (e) {
-        if (_this.appStatus.showSubMenu) {
-          _this.ToggleSubMenu(false);
-        }
-      });
-      /* ===== Aboutus Sub Menu Effect Display ===== */
-
-      this.$aboutusMenuTrigger.on('mouseenter', function (e) {
-        e.preventDefault();
-
-        if (!_this.appStatus.showAboutSubMenu) {
-          _this.ToggleAboutSubMenu(true);
-        }
-
-        if (_this.appStatus.showSubMenu) {
-          _this.ToggleSubMenu(false);
-        }
-      });
-      this.$aboutusSubMenu.on('mouseleave', function (e) {
-        if (_this.appStatus.showAboutSubMenu) {
-          _this.ToggleAboutSubMenu(false);
-        }
-      });
-      /* ===== Mobile Menu Effect ===== */
-
-      this.CloseMbSubMenu();
-      this.$mobileMenuControl.on('click', function (e) {
-        if (_this.appStatus.allowClickMbMenu) {
-          if (!_this.appStatus.showMbMenu) {
-            _this.appStatus.allowClickMbMenu = false;
-
-            _this.ToggleMobileMenu(true);
-          } else {
-            _this.appStatus.allowClickMbMenu = false;
-
-            _this.ToggleMobileMenu(false);
-          }
-        }
-      });
-      this.$mobileMenuOverlay.on('click', function (e) {
-        if (_this.appStatus.allowClickMbMenu) {
-          if (_this.appStatus.showMbMenu) {
-            _this.ToggleMobileMenu(false);
-          }
-        }
-      });
-
-      if (this.$subNavTrigger) {
-        this.$subNavTrigger.on('click', function (e) {
-          if (_this.appStatus.allowClickMbMenu) {
-            _this.appStatus.allowClickMbMenu = false;
-            setTimeout(function () {
-              return _this.appStatus.allowClickMbMenu = true;
-            }, 200);
-
-            if ($(e.target).hasClass('active')) {
-              $(e.target).removeClass('active');
-            } else {
-              $(e.target).addClass('active');
-            }
-
-            var $toggleTarget = $(e.target).siblings('.nav-item__sub-menu');
-
-            if ($toggleTarget) {
-              $toggleTarget.slideToggle('normal');
-            }
-          }
-        });
-      }
-      /* ===== Image Holder Display Effect ===== */
-
-
-      $('.product-showcase__item__body .image-holder>img:first-child').addClass('active');
-      this.$imageHolder.on('mouseenter', function (e) {
-        if (!_this.appStatus.imageHoverState) {
-          _this.$imageHolderTarget = $(e.target);
-
-          _this.ActiveImageHover(true);
-        } else {
-          _this.ActiveImageHover(false);
-
-          _this.$imageHolderTarget = $(e.target);
-
-          _this.ActiveImageHover(true);
-        }
-      });
-      this.$imageHolder.on('mouseleave', function (e) {
-        if (_this.appStatus.imageHoverState) {
-          _this.ActiveImageHover(false);
-        }
-      });
-      /* ==== Wordpress Admin Bar Adaptation === */
-
-      if ($('body').hasClass('admin-bar') && window.innerWidth <= 600) {
-        this.$pageHeader = $('#page-header');
-        $(window).on('scroll', function () {
-          if (window.pageYOffset > 20) {
-            _this.$pageHeader.addClass('scroll-menu');
-          } else {
-            _this.$pageHeader.removeClass('scroll-menu');
-          }
-        });
-      }
-    }
-    /* ===================================
-     *  METHODS
-     * =================================== */
-
-  }, {
-    key: "ToggleSubMenu",
-    value: function ToggleSubMenu(show) {
-      this.appStatus.showSubMenu = show;
-
-      if (show) {
-        this.$subMenu.addClass('active');
-      } else {
-        this.$subMenu.removeClass('active');
-      }
-    }
-  }, {
-    key: "ToggleAboutSubMenu",
-    value: function ToggleAboutSubMenu(show) {
-      this.appStatus.showAboutSubMenu = show;
-
-      if (show) {
-        this.$aboutusSubMenu.addClass('active');
-      } else {
-        this.$aboutusSubMenu.removeClass('active');
-      }
-    }
-  }, {
-    key: "ToggleMobileMenu",
-    value: function ToggleMobileMenu(show) {
-      var _this2 = this;
-
-      setTimeout(function () {
-        _this2.appStatus.allowClickMbMenu = true;
-      }, 200);
-      this.appStatus.showMbMenu = show;
-
-      if (show) {
-        if (this.$mobileMenu && this.$mobileMenuControl) {
-          this.$mobileMenu.addClass('active');
-          this.$mobileMenuControl.addClass('show-menu');
-        }
-      } else {
-        if (this.$mobileMenu && this.$mobileMenuControl) {
-          this.$mobileMenu.removeClass('active');
-          this.$mobileMenuControl.removeClass('show-menu');
-        }
-
-        this.CloseMbSubMenu();
-      }
-    }
-  }, {
-    key: "ActiveImageHover",
-    value: function ActiveImageHover(active) {
-      this.appStatus.imageHoverState = active;
-
-      if (active) {
-        console.log(this.$imageHolderTarget);
-        this.$imageList = this.$imageHolderTarget.find('.image-holder__item').toArray();
-        this.ImageCounter = 0;
-        this.DoAnimate(true);
-        console.log();
-      } else {
-        this.CleanUpImageHover();
-      }
-    }
-  }, {
-    key: "DoAnimate",
-    value: function DoAnimate() {
-      var _this3 = this;
-
-      var firstTime = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-      var timeout_amount = 1700;
-
-      if (firstTime) {
-        timeout_amount = 600;
-      }
-
-      this.AnimateTimeout = setTimeout(function () {
-        $(_this3.$imageList[_this3.ImageCounter]).addClass('slide-away').removeClass('active');
-        setTimeout(function () {
-          $(_this3.$imageList[_this3.ImageCounter]).removeClass('slide-away');
-
-          if (_this3.ImageCounter === _this3.$imageList.length - 1) {
-            _this3.ImageCounter = 0;
-          } else {
-            _this3.ImageCounter++;
-          }
-
-          setTimeout(function () {
-            $(_this3.$imageList[_this3.ImageCounter]).addClass('active');
-          }, 100);
-        }, 380);
-
-        _this3.DoAnimate();
-      }, timeout_amount);
-    }
-  }, {
-    key: "CleanUpImageHover",
-    value: function CleanUpImageHover() {
-      var id = window.setTimeout(function () {}, 0);
-
-      while (id--) {
-        window.clearTimeout(id); // will do nothing if no timeout with id is present
-      }
-
-      this.ImageCounter = 0;
-
-      if (this.$imageHolderTarget.find('img.active').index() > 0) {
-        this.$imageHolderTarget.find('img').removeClass('slide-away active');
-      }
-
-      $(this.$imageList[this.ImageCounter]).removeClass('slide-away').addClass('active');
-    }
-  }, {
-    key: "CloseMbSubMenu",
-    value: function CloseMbSubMenu() {
-      if (this.$subNavTrigger) {
-        var $toggleTarget = this.$subNavTrigger.siblings('.nav-item__sub-menu');
-
-        if ($toggleTarget) {
-          $toggleTarget.slideUp('normal');
-        }
-
-        this.$subNavTrigger.removeClass('active');
-      }
-    }
-  }]);
-
-  return Main;
-}();
-
-exports.default = Main;
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Products =
-/*#__PURE__*/
-function () {
-  /* ===================================
-   *  CONSTRUCTOR
-   * =================================== */
-  function Products() {
-    _classCallCheck(this, Products);
-
-    // Elements Variable
-    this.$productsControlFilter = $('.products-control__item');
-    this.$productControl = $('.products-control');
-    this.mobileCaret = '<i class="fa fa-caret-down" aria-hidden="true"></i>';
-    this.mobileControl = $('.products-control-mb .action-holder');
-    this.mobileControlList = $('#mobile-control-list');
-    this.filterStatus = {
-      current: 'all',
-      allowSwitchState: true,
-      context: 'Tất cả'
-    }, this.bindEvents();
-  }
-  /* ===================================
-   *  EVENTS
-   * =================================== */
-
-
-  _createClass(Products, [{
-    key: "bindEvents",
-    value: function bindEvents() {
-      var _this = this;
-
-      if (this.$productsControlFilter.length > 0) {
-        this.DoFirstFilter();
-      }
-
-      if (this.$productsControlFilter) {
-        this.$productsControlFilter.on('click', function (e) {
-          var filterValue = $(e.target).data('target');
-          var context = '';
-
-          if ($(e.target).hasClass('product-control__item__link')) {
-            context = $(e.target).html();
-          } else {
-            context = $(e.target).find('.product-control__item__link').html();
-          }
-
-          var $currentActive = _this.$productControl.find('.products-control__item.active');
-
-          if (filterValue !== _this.filterStatus.current && _this.filterStatus.allowSwitchState) {
-            $currentActive.removeClass('active');
-            $('[data-target=' + filterValue + ']').addClass('active'); // Do Filter When State Need To Change
-
-            _this.DoFilter(filterValue, context);
-
-            _this.mobileControlList.slideUp('normal');
-
-            _this.mobileControl.html(_this.filterStatus.context + _this.mobileCaret);
-          }
-        });
-      } // Toggle Controller
-
-
-      if (this.mobileControl) {
-        this.mobileControl.on('click', function (e) {
-          _this.mobileControlList.slideToggle('normal');
-        });
-      }
-    }
-    /* ===================================
-     *  METHODS
-     * =================================== */
-
-  }, {
-    key: "DoFilter",
-    value: function DoFilter(value, context) {
-      var _this2 = this;
-
-      this.filterStatus.current = value;
-      this.filterStatus.context = context;
-
-      switch (value) {
-        case 'all':
-          var $allElem = $('.series__block'); // Fake Effect
-
-          $allElem.fadeOut('normal', function (e) {
-            setTimeout(function () {
-              $allElem.fadeIn('normal', function (e) {
-                _this2.filterStatus.allowSwitchState = true;
-              });
-            }, 500);
-          });
-          break;
-
-        default:
-          var $others = $('.series__block');
-          var $target = $('.series__block[data-value=' + value + ']');
-          $others.fadeOut('normal', function (e) {});
-          setTimeout(function () {
-            $target.fadeIn('normal', function (e) {
-              _this2.filterStatus.allowSwitchState = true;
-            });
-          }, 500);
-          break;
-      }
-    }
-  }, {
-    key: "DoFirstFilter",
-    value: function DoFirstFilter() {
-      console.log('window.location.href: ' + window.location.href); // Get URL
-
-      var url = window.location.href; // Get after main URL link
-
-      var afixURL = '';
-
-      if (url.lastIndexOf('#') > -1) {
-        afixURL = url.substring(url.lastIndexOf('#') + 1);
-      } // Get the index of content after the #[ID]
-
-
-      var firstVarIndex = afixURL.indexOf('?'); // Define Result to Filter
-
-      var result = '';
-
-      if (firstVarIndex > 0) {
-        result = afixURL.substring(0, firstVarIndex);
-      } else {
-        result = afixURL;
-      }
-
-      console.log(result);
-
-      switch (result) {
-        // Nothing Special, keep default filter all
-        case 'all':
-        case '':
-          break;
-        // Filter with special input
-
-        default:
-          $('.products-control__item.active').removeClass('active');
-          $('[data-target = ' + result + ']').addClass('active'); // Reproduce the context of result ('l-series' => 'l series')
-
-          this.DoFilter(result, result.replace('-', ' '));
-          this.mobileControl.html(this.filterStatus.context + this.mobileCaret);
-          break;
-      }
-    }
-  }]);
-
-  return Products;
-}();
-
-exports.default = Products;
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Supports =
-/*#__PURE__*/
-function () {
-  /* ===================================
-   *  CONSTRUCTOR
-   * =================================== */
-  function Supports() {
-    _classCallCheck(this, Supports);
-
-    // Elements Variable
-    this.$modalElem = $('.modal');
-    this.$modalOverlay = this.$modalElem.find('.modal-overlay');
-    this.$closeModal = $('.close-modal');
-    this.$openModal = $('#trigger-as-shop');
-    this.bindEvents();
-  }
-  /* ===================================
-   *  EVENTS
-   * =================================== */
-
-
-  _createClass(Supports, [{
-    key: "bindEvents",
-    value: function bindEvents() {
-      var _this = this;
-
-      this.$closeModal.on('click', function () {
-        _this.CloseModal();
-      });
-      this.$openModal.on('click', function () {
-        _this.OpenModal();
-      });
-      console.log('Bind Event');
-    }
-    /* ===================================
-     *  METHODS
-     * =================================== */
-
-  }, {
-    key: "CloseModal",
-    value: function CloseModal() {
-      this.$modalElem.removeClass('active');
-    }
-  }, {
-    key: "OpenModal",
-    value: function OpenModal() {
-      this.$modalElem.addClass('active');
-    }
-  }]);
-
-  return Supports;
-}();
-
-exports.default = Supports;
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _ = _interopRequireWildcard(__webpack_require__(0));
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var SliderDetail =
-/*#__PURE__*/
-function () {
-  /* ===================================
-   *  CONSTRUCTOR
-   * =================================== */
-  function SliderDetail() {
-    _classCallCheck(this, SliderDetail);
-
-    // Elements Variable
-    this.arrSlideDetail = $('.slide-content .slide-item');
-    this.arrLiTag = $('.slide-dots-custom li');
-    this.arrDots = $('.slide-dots-custom li button');
-    this.bindEvents();
-  }
-  /* ===================================
-   *  EVENTS
-   * =================================== */
-
-
-  _createClass(SliderDetail, [{
-    key: "bindEvents",
-    value: function bindEvents() {
-      // Slick carousel product detail
-      this.SlideDetailPage(); // Slick carousel center mod image reality
-
-      this.SlideImageReality();
-      this.AddColorSlide();
-    }
-    /* ===================================
-     *  METHODS
-     * =================================== */
-
-  }, {
-    key: "SlideDetailPage",
-    value: function SlideDetailPage() {
-      $('.slide-detail .slide-content').slick({
-        draggable: true,
-        arrows: false,
-        dots: false,
-        fade: true,
-        speed: 900,
-        infinite: true,
-        // autoplay:true,
-        // autoplaySpeed:5000,
-        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
-        touchThreshold: 100
-      });
-    }
-  }, {
-    key: "SlideImageReality",
-    value: function SlideImageReality() {
-      $('.real-img-slider').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        nextArrow: "<img class=\"real-img-control next-slide\" src=\"".concat(yadeaVietnamVariables.assets_url, "img/arrow-right.png\">"),
-        prevArrow: "<img class=\"real-img-control prev-slide\" src=\"".concat(yadeaVietnamVariables.assets_url, "img/arrow-left.png\">")
-      });
-    }
-  }, {
-    key: "AddColorSlide",
-    value: function AddColorSlide() {
-      var _this = this;
-
-      var _loop = function _loop(i) {
-        $(_this.arrDots[i]).on('click', function (e) {
-          $('.slide-detail .slide-content').slick('slickGoTo', i);
-          $('.slide-dots-custom li.active-color').removeClass('active-color');
-          $(e.target).parents('li').addClass('active-color');
-        });
-      };
-
-      for (var i = 0; i < this.arrDots.length; i++) {
-        _loop(i);
-      }
-    }
-  }]);
-
-  return SliderDetail;
-}();
-
-exports.default = SliderDetail;
 
 /***/ }),
 /* 10 */
@@ -18290,6 +18330,91 @@ function () {
 }();
 
 exports.default = FlipClockCustom;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// Import Lodash As Demo
+var SubmitApplyForm =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function SubmitApplyForm() {
+    _classCallCheck(this, SubmitApplyForm);
+
+    // Elements Variable
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(SubmitApplyForm, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      this.$applyShopForm = $('#signup-as-shop-form');
+      this.SetupAJAXSubmitForm(this.$applyShopForm);
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "SetupAJAXSubmitForm",
+    value: function SetupAJAXSubmitForm(formElement) {
+      var $submitFeedback = formElement.find('.submit-feedback');
+      var action = formElement.attr('action');
+      var $loadingIcon = formElement.find('.loading-form');
+      formElement.on('submit', function (e) {
+        e.preventDefault();
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        formElement.find('input[name=submit_date]').val(date + ' ' + time);
+        var data = formElement.serialize();
+        $loadingIcon.show();
+        $.ajax({
+          type: 'GET',
+          url: action,
+          dataType: 'json',
+          crossDomain: true,
+          data: data,
+          success: function success(data) {
+            $loadingIcon.hide();
+
+            if (data == 'false') {
+              $submitFeedback.removeClass('success').addClass('error').html('Đăng ký thông tin không thành công, quý khách vui lòng thử lại');
+            } else {
+              $submitFeedback.removeClass('error').addClass('success').html('Đăng ký nhận thông tin thành công, Yadea sẽ liên hệ lại với bạn');
+            }
+          }
+        });
+      });
+    }
+  }]);
+
+  return SubmitApplyForm;
+}();
+
+exports.default = SubmitApplyForm;
 
 /***/ })
 /******/ ]);
