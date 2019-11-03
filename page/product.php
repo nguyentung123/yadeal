@@ -5,8 +5,6 @@ get_header();
 
 <!-- === MAIN CONTENT === -->
 <main>
-
-
     <!-- Product Header Control -->
     <section class="section light-gray-bg" id="products-head">
 
@@ -153,14 +151,22 @@ get_header();
                                         <?php endif;?>
 
                                         <?php echo acf_render('<p class="desc">', get_field('product_slogan'),'</p>');?>
-                                        <a href="<?php the_permalink();?>"
+
+                                        <?php
+                                        $productLandingPage = get_permalink();
+                                        if( get_field('product_landing_page') ){
+                                            $productLandingPage = get_field('product_landing_page');
+                                        }
+                                        ?>
+
+                                        <a href="<?php echo $productLandingPage; ?>"
                                            class="btn product-cta btn-grad btn-sh effect effect-main">
-                                            <span>Read More</span>
+                                            <span>TÌM HIỂU THÊM</span>
                                         </a>
 
                                         <a href="<?php echo site_url('/support/tim-cua-hang/');?>"
                                            class="btn product-cta btn-trans border-gray btn-sh effect effect-main">
-                                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy now</span>
+                                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> MUA NGAY</span>
                                         </a>
                                     </div>
                                 </div><!-- Row - Product Item -->

@@ -1,16 +1,3 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Yadea_Theme
- */
-
-?>
-
 <!-- === FOOTER === -->
 <footer class="footer light-gray-bg pt-90" id="page-footer">
 
@@ -126,11 +113,3 @@
 
 </footer>
 <!-- === FOOTER - END === -->
-<script type="text/javascript">
-    const ajax_url = '<?php echo admin_url('admin-ajax.php');?>';
-    const url_website = '<?php echo get_home_url();?>';
-</script>
-<?php wp_footer(); ?>
-
-</body>
-</html>

@@ -204,16 +204,16 @@ export default class Main {
         }
     }
 
-    ActiveImageHover( active ){
-        this.appStatus.imageHoverState = active;
-        if(active){
-            console.log(this.$imageHolderTarget);
-            this.$imageList = this.$imageHolderTarget.find('.image-holder__item').toArray();
-            this.ImageCounter = 0;
-            this.DoAnimate(true);
-            console.log();
-        } else {
-            this.CleanUpImageHover();
+    ActiveImageHover( active ) {
+        if (this.$imageHolderTarget.find('.image-holder__item').length > 1) {
+            this.appStatus.imageHoverState = active;
+            if (active) {
+                this.$imageList = this.$imageHolderTarget.find('.image-holder__item').toArray();
+                this.ImageCounter = 0;
+                this.DoAnimate(true);
+            } else {
+                this.CleanUpImageHover();
+            }
         }
     }
 
@@ -242,14 +242,15 @@ export default class Main {
     }
 
     CleanUpImageHover(){
-        var id = window.setTimeout(function() {}, 0);
+        var id = window.setTimeout(function () {
+        }, 0);
 
         while (id--) {
             window.clearTimeout(id); // will do nothing if no timeout with id is present
         }
 
         this.ImageCounter = 0;
-        if(this.$imageHolderTarget.find('img.active').index() > 0){
+        if (this.$imageHolderTarget.find('img.active').index() > 0) {
             this.$imageHolderTarget.find('img').removeClass('slide-away active');
         }
         $(this.$imageList[this.ImageCounter]).removeClass('slide-away').addClass('active');

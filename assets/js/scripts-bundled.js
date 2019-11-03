@@ -587,16 +587,16 @@ function () {
   }, {
     key: "ActiveImageHover",
     value: function ActiveImageHover(active) {
-      this.appStatus.imageHoverState = active;
+      if (this.$imageHolderTarget.find('.image-holder__item').length > 1) {
+        this.appStatus.imageHoverState = active;
 
-      if (active) {
-        console.log(this.$imageHolderTarget);
-        this.$imageList = this.$imageHolderTarget.find('.image-holder__item').toArray();
-        this.ImageCounter = 0;
-        this.DoAnimate(true);
-        console.log();
-      } else {
-        this.CleanUpImageHover();
+        if (active) {
+          this.$imageList = this.$imageHolderTarget.find('.image-holder__item').toArray();
+          this.ImageCounter = 0;
+          this.DoAnimate(true);
+        } else {
+          this.CleanUpImageHover();
+        }
       }
     }
   }, {
@@ -18297,14 +18297,14 @@ function () {
 
       // Declare variable flip clock
       var positions = [];
-      var numberInc = this.weekProgress * 1.25;
+      var numberInc = this.weekProgress / 21.7;
       this.numberTree = $('.number-increase').FlipClock(numberInc, {
         clockFace: 'Counter'
       });
       setTimeout(function () {
         setInterval(function () {
           _this2.numberTree.increment();
-        }, Math.ceil(_this2.thisWeekOxygenSpeed * 1.25));
+        }, Math.ceil(_this2.thisWeekOxygenSpeed * 21.7));
       }); // detect of pos to margin
 
       $('.number-increase .flip').each(function (i, value) {

@@ -27,25 +27,13 @@ function yadea_customizer_setting($wp_customize){
 
     /* ===== Youtube ===== */
     $wp_customize->add_setting('youtube_page', array(
-        'default'     => 'https://www.youtube.com/channel/UC5fgsCayf-viU_GD_f9xA7g',
+        'default'     => 'https://www.youtube.com/channel/UCwNqzgb1QFon3ZP2jbI71Tg?view_as=subscriber',
         'transport'   => 'refresh',
     ));
     $wp_customize->add_control('youtube_page', array(
         'label'    => 'Youtube Page',
         'section'  => 'company_contact',
         'settings' => 'youtube_page',
-        'type'     => 'url',
-    ));
-
-    /* ===== Instagram ===== */
-    $wp_customize->add_setting('insta_page', array(
-        'default'     => 'https://www.facebook.com/yadeabrand/',
-        'transport'   => 'refresh',
-    ));
-    $wp_customize->add_control('insta_page', array(
-        'label'    => 'Instagram Page',
-        'section'  => 'company_contact',
-        'settings' => 'insta_page',
         'type'     => 'url',
     ));
 
@@ -155,32 +143,157 @@ function yadea_customizer_setting($wp_customize){
         'type'     => 'number'
     ));
 
-    //add all serie check show home
-    $wp_customize->add_section('show-series', array(
-        'title'    => 'Show Series trang chủ',
+    /* ===== Banner Management ===== */
+    $wp_customize->add_section('banner_management', array(
+        'title'    => 'Quản lý Banner',
         'priority' => 36
     ));
 
-    $terms = get_terms( array(
-        'taxonomy' => 'series',
-        'hide_empty' => false,
-        'orderby ' => 'id'
+    // Banner 1 Priority
+    $wp_customize->add_setting('banner_1_priority', array(
+        'default'     => 4,
+        'transport'   => 'refresh',
     ));
-    foreach ($terms as $term_item){
-        /* ===== Physical Address ===== */
-        $wp_customize->add_setting($term_item->slug, array(
-            'default'     => '',
-            'transport'   => 'refresh',
-        ));
-        $wp_customize->add_control($term_item->slug, array(
-            'label'    => $term_item->name,
-            'section'  => 'show-series',
-            'settings' => $term_item->slug,
-            'type'     => 'checkbox'
-        ));
-    }
+    $wp_customize->add_control('banner_1_priority', array(
+        'label'        => 'Độ ưu tiên Banner 1',
+        'description'  => 'Độ ưu tiên nhỏ sẽ xuất hiện trước',
+        'section'      => 'banner_management',
+        'settings'     => 'banner_1_priority',
+        'type'         => 'number',
+        'input_attrs'  => array(
+            'min' => 1,
+            'max' => 5
+        ),
+    ));
 
+    // Banner 1 Show / Hide
+    $wp_customize->add_setting('banner_1_show', array(
+        'default'     => 1,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('banner_1_show', array(
+        'label'        => 'Ẩn / Hiện banner',
+        'section'      => 'banner_management',
+        'settings'     => 'banner_1_show',
+        'type'         => 'checkbox'
+    ));
 
+    // Banner 2 Priority
+    $wp_customize->add_setting('banner_2_priority', array(
+        'default'     => 3,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('banner_2_priority', array(
+        'label'        => 'Độ ưu tiên Banner 2',
+        'description'  => 'Độ ưu tiên nhỏ sẽ xuất hiện trước',
+        'section'      => 'banner_management',
+        'settings'     => 'banner_2_priority',
+        'type'         => 'number',
+        'input_attrs'  => array(
+            'min' => 1,
+            'max' => 5
+        ),
+    ));
+
+    // Banner 2 Show / Hide
+    $wp_customize->add_setting('banner_2_show', array(
+        'default'     => 1,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('banner_2_show', array(
+        'label'        => 'Ẩn / Hiện banner',
+        'section'      => 'banner_management',
+        'settings'     => 'banner_2_show',
+        'type'         => 'checkbox'
+    ));
+
+    // Banner 3 Priority
+    $wp_customize->add_setting('banner_3_priority', array(
+        'default'     => 1,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('banner_3_priority', array(
+        'label'        => 'Độ ưu tiên Banner 3',
+        'description'  => 'Độ ưu tiên nhỏ sẽ xuất hiện trước',
+        'section'      => 'banner_management',
+        'settings'     => 'banner_3_priority',
+        'type'         => 'number',
+        'input_attrs'  => array(
+            'min' => 1,
+            'max' => 5
+        ),
+    ));
+
+    // Banner 3 Show / Hide
+    $wp_customize->add_setting('banner_3_show', array(
+        'default'     => 1,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('banner_3_show', array(
+        'label'        => 'Ẩn / Hiện banner',
+        'section'      => 'banner_management',
+        'settings'     => 'banner_3_show',
+        'type'         => 'checkbox'
+    ));
+
+    // Series Banner 1 Priority
+    $wp_customize->add_setting('series_banner_1_priority', array(
+        'default'     => 1,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('series_banner_1_priority', array(
+        'label'        => 'Độ ưu tiên Series Banner 1',
+        'description'  => 'Độ ưu tiên nhỏ sẽ xuất hiện trước',
+        'section'      => 'banner_management',
+        'settings'     => 'series_banner_1_priority',
+        'type'         => 'number',
+        'input_attrs'  => array(
+            'min' => 1,
+            'max' => 5
+        ),
+
+    ));
+
+    // Series Banner 1 Show / Hide
+    $wp_customize->add_setting('series_banner_1_show', array(
+        'default'     => 1,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('series_banner_1_show', array(
+        'label'        => 'Ẩn / Hiện banner',
+        'section'      => 'banner_management',
+        'settings'     => 'series_banner_1_show',
+        'type'         => 'checkbox'
+    ));
+
+    // Oxygen Banner Priority
+    $wp_customize->add_setting('oxygen_banner_priority', array(
+        'default'     => 5,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('oxygen_banner_priority', array(
+        'label'        => 'Độ ưu tiên Section Oxygen',
+        'description'  => 'Độ ưu tiên nhỏ sẽ xuất hiện trước',
+        'section'      => 'banner_management',
+        'settings'     => 'oxygen_banner_priority',
+        'type'         => 'number',
+        'input_attrs'  => array(
+            'min' => 1,
+            'max' => 5
+        ),
+    ));
+
+    // Oxygen Banner Show / Hide
+    $wp_customize->add_setting('oxygen_banner_priority_show', array(
+        'default'     => 1,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('oxygen_banner_priority_show', array(
+        'label'        => 'Ẩn / Hiện banner',
+        'section'      => 'banner_management',
+        'settings'     => 'oxygen_banner_priority_show',
+        'type'         => 'checkbox',
+    ));
 }
 
 // Enqueue Live Preview

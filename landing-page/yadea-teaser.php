@@ -6,11 +6,21 @@ Template Name: Yadea G5 Teaser
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Yadea Teaser Page</title>
-
-    <!-- META DATA -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>YADEA G5 | Bật thông minh lướt phong cách | Xe máy điện thông minh</title>
+
+    <!-- META DATA -->
+    <meta name="description" content="Xe máy điện thông minh YADEA G5, xem thông tin thông số kĩ thuật xe điện, so sánh xe điện, xem giá xe máy điện YADEA G5, hình ảnh thực tế xe G5">
+    <meta name="keyword" content="yadea g5, g5, xe g5, xe yadea g5, xe máy điện yadea g5, xe điện yadea g5, xe máy điện g5, so sánh yadea g5, đánh giá yadea g5, giá yadea g5, hình ảnh yadea g5, thông số yadea g5, so sánh g5, đánh giá g5, giá g5, hình ảnh g5, thông số g5, xe máy điện thông minh, xe điện thông minh, xe máy điện, xe điện.">
+    <meta property="og:url" content="https://yadeavietnam.vn/teaser">
+
+    <meta property="og:image" content="<?php echo get_theme_file_uri('landing-page/yadea-teaser/img/fbshare.jpg'); ?>">
+    <meta property="og:image:secure_url" content="<?php echo get_theme_file_uri('landing-page/yadea-teaser/img/fbshare.jpg'); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YADEA G5 | Bật thông minh lướt phong cách | Xe máy điện thông minh">
+    <meta property="og:description" content="Xe máy điện thông minh YADEA G5, xem thông tin thông số kĩ thuật xe điện, so sánh xe điện, xem giá xe máy điện YADEA G5, hình ảnh thực tế xe G5">
+
     <base href="<?php echo get_theme_file_uri('landing-page/yadea-teaser/'); ?>" target="_blank">
     <!-- META DATA - END -->
 
@@ -32,191 +42,45 @@ Template Name: Yadea G5 Teaser
     <!-- STYLESHEET - END -->
 
     <!-- TRACKING CODE -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PM2J8PG');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '528659447702850');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=528659447702850&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
     <!-- TRACKING CODE - END -->
 </head>
 <body class="show-overlay">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PM2J8PG"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=972749199527382&autoLogAppEvents=1"></script>
 
 <!-- === HEADER === -->
-<header id="page-header">
-
-    <!-- Container -->
-    <div class="container header">
-        <!-- Desktop Menu Row -->
-        <div class="row">
-
-            <!-- Header Logo -->
-            <div class="col-lg-2 col-6 header__logo">
-                <a href="index.html">
-                    <img draggable=false draggable="false" src="img/logo.png"
-                         class="header__logo__image">
-                </a>
-            </div><!-- Header Logo -->
-
-            <!-- Header Menu Wrapper -->
-            <div class="col-lg-10 col-6 header__menu">
-                <ul class="nav justify-content-end mb-hide">
-                    <li class="nav-item" id="sub-menu-trigger">
-                        <a class="nav-link" href="products.html">Sản phẩm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop-listing.html">Cửa hàng</a>
-                    </li>
-                    <li class="nav-item" id="about-us-sub-menu-trigger">
-                        <a class="nav-link" href="about.html">Về chúng tôi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="support.html">Hỗ trợ</a>
-                    </li>
-                </ul>
-
-                <div class="header__menu__btn mb-show-bl" id="mobile-menu-ctrl">
-                    <i class="fa fa-bars" aria-hidden="true" id="open-menu-btn"></i>
-                    <i class="fa fa-times" aria-hidden="true" id="close-menu-btn"></i>
-                </div>
-            </div><!-- Header Menu Wrapper -->
-
-
-        </div><!-- Desktop Menu Row -->
-
-    </div><!-- Container -->
-
-    <!-- Fixed Position Sub Menu -->
-    <div class="container sub-menu" id="about-us-sub-menu">
-        <!-- Row - About Wrapper -->
-        <div class="sub-menu__wrapper row">
-            <!-- About Item -->
-            <div class="col-md-4 col-6 sub-menu__wrapper__item">
-
-                <!-- About Detail Wrapper -->
-                <div class="sub-menu__wrapper__item__detail">
-                    <a href="about.html">
-                        <div class="about-us__thumbnail">
-                            <img draggable=false draggable="false" class="img-fluid" src="img/about-thumbnail.jpg">
-                        </div>
-                        <p class="sub-title">Giới thiệu Yadea</p>
-                        <p class="txt-gray desc">Công ty TNHH Xe Máy Điện Thông Minh YADEA</p>
-                        <div class="line"></div>
-                    </a>
-                </div>
-            </div><!-- About Item -->
-
-            <!-- About Item -->
-            <div class="col-md-4 col-6 sub-menu__wrapper__item">
-                <!-- About Detail Wrapper -->
-                <div class="sub-menu__wrapper__item__detail">
-                    <a href="course.html">
-                        <div class="about-us__thumbnail">
-                            <img draggable=false draggable="false" class="img-fluid" src="img/history-thumbnail.jpg">
-                        </div>
-                        <p class="sub-title">Quá trình phát triển</p>
-                        <p class="txt-gray desc">Lịch sử hình thành - quá trình phát triển của YADEA</p>
-                        <div class="line"></div>
-                    </a>
-                </div>
-            </div><!-- About Item -->
-
-            <!-- About Item -->
-            <div class="col-md-4 col-6 sub-menu__wrapper__item">
-
-                <!-- About Detail Wrapper -->
-                <div class="sub-menu__wrapper__item__detail">
-                    <a href="supplier.html">
-                        <div class="about-us__thumbnail">
-                            <img draggable=false draggable="false" class="img-fluid" src="img/supplier-thumbnail.jpg">
-                        </div>
-                        <p class="sub-title">Đối tác hàng đầu</p>
-                        <p class="txt-gray desc">Đối tác hàng đầu của chúng tôi</p>
-                        <div class="line"></div>
-                    </a>
-                </div>
-            </div><!-- About Item -->
-        </div>
-    </div>
-
-    <!-- Mobile Drop Down Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu__overlay"></div>
-        <ul class="nav light-gray-bg">
-            <li class="nav-item">
-                <a class="nav-link">Sản phẩm</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="products.html">Cửa hàng</a>
-            </li>
-            <li class="nav-item with-sub-menu active">
-                <a class="nav-link">Về chúng tôi</a>
-                <i class="fa fa-plus nav-trigger active" aria-hidden="true"></i>
-                <ul class="nav-item__sub-menu">
-                    <!-- About Item -->
-                    <li class="about-item">
-                        <a href="about.html">
-                            <p class="sub-title">Giới thiệu Yadea</p>
-                        </a>
-                    </li>
-
-                    <!-- About Item -->
-                    <li class="about-item">
-                        <a href="course.html">
-                            <p class="sub-title">Quá trình phát triển</p>
-                        </a>
-                    </li>
-
-                    <!-- About Item -->
-                    <li class="about-item">
-                        <a href="supplier.html">
-                            <p class="sub-title">Đối tác hàng đầu</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="support.html">Hỗ trợ</a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Sub Menu -->
-    <section class="sub-header">
-        <!-- Container -->
-        <div class="container">
-
-            <!-- Price Row -->
-            <div class="sub-menu-row">
-
-                <!-- Features List -->
-                <span class="mb-show sub-menu-toggler">
-                    <i class="fa fa-bars" aria-hidden="true" id="open-sub-menu-btn"></i>
-                    <i class="fa fa-times" aria-hidden="true" id="close-sub-menu-btn"></i>
-                </span>
-
-                <!-- overlay -->
-                <div class="close-sub-menu sub-menu-overlay"></div>
-
-                <ul class="sub-menu-main">
-                    <li class="close-sub-menu">
-                        <a href="#section-product-info">Thông tin sản phẩm</a>
-                    </li>
-                    <li class="close-sub-menu">
-                        <a href="#follow-event-section">Sự kiện ra mắt</a>
-                    </li>
-                    <li class="close-sub-menu">
-                        <a href="#specs-section">Thông số kỹ thuật</a>
-                    </li>
-                </ul>
-
-                <!-- Price CTA -->
-                <div class="cta-wrapper">
-                    <a class="cta" href="#">MUA NGAY</a>
-                </div>
-                <!-- Price CTA -->
-            </div><!-- Price Row -->
-
-        </div>
-        <!-- Container -->
-    </section>
-</header>
+<?php get_template_part('template-parts/header', 'main-teaser'); ?>
 <!-- === HEADER - END === -->
 
 <!-- === PAGE OVERLAY === -->
@@ -998,38 +862,168 @@ Template Name: Yadea G5 Teaser
                 <div class="spec-list">
                     <!-- Spec Item -->
                     <div class="spec-row">
-                        <span class="label">Generated</span>
-                        <span class="value">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"</span>
+                        <span class="label">Dài X rộng X cao</span>
+                        <span class="value">
+                            1810×700×1160mm
+                        </span>
                     </div>
 
                     <!-- Spec Item -->
                     <div class="spec-row">
-                        <span class="label">Generated</span>
-                        <span class="value">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"</span>
+                        <span class="label">Độ cao yên</span>
+                        <span class="value">
+                            730mm
+                        </span>
                     </div>
 
                     <!-- Spec Item -->
                     <div class="spec-row">
-                        <span class="label">Generated</span>
-                        <span class="value">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"</span>
+                        <span class="label">
+                            Khoảng cách trục bánh xe
+                        </span>
+                        <span class="value">
+                            1270mm
+                        </span>
                     </div>
 
                     <!-- Spec Item -->
                     <div class="spec-row">
-                        <span class="label">Generated</span>
-                        <span class="value">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"</span>
+                        <span class="label">
+                            Khoảng sáng gầm xe
+                        </span>
+                        <span class="value">
+                            130mm
+                        </span>
                     </div>
 
                     <!-- Spec Item -->
                     <div class="spec-row">
-                        <span class="label">Generated</span>
-                        <span class="value">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"</span>
+                        <span class="label">
+                            Trọng lượng tổng thể
+                        </span>
+                        <span class="value">
+                            86kg
+                        </span>
                     </div>
 
                     <!-- Spec Item -->
                     <div class="spec-row">
-                        <span class="label">Generated</span>
-                        <span class="value">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"</span>
+                        <span class="label">
+                            Khối lượng tải định mức
+                        </span>
+                        <span class="value">
+                            150kg
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Dung tích cốp
+                        </span>
+                        <span class="value">
+                            26L
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Loại phanh  (trước/sau)
+                        </span>
+                        <span class="value">
+                            Đĩa trước/đĩa sau
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Loại vành  (trước/sau)
+                        </span>
+                        <span class="value">
+                            Trước 2.15-12/Sau 2.15-12
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Thông số lốp  (trước/sau)
+                        </span>
+                        <span class="value">
+                            Trước 90/90-12/Sau100/80-12
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Model động cơ
+                        </span>
+                        <span class="value">
+                            GTR 3.0
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Loại động cơ
+                        </span>
+                        <span class="value">
+                            Động cơ DC không chổi than
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Loại Ắc-quy
+                        </span>
+                        <span class="value">
+                            Ắc-quy Lithium
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            100 km tiêu thụ điện
+                        </span>
+                        <span class="value">
+                            2.6kw.h/100km
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Tốc độ tối đa
+                        </span>
+                        <span class="value">
+                            52km/h
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Độ dài quãng đường
+                        </span>
+                        <span class="value">
+                            ≥55km
+                        </span>
+                    </div>
+
+                    <!-- Spec Item -->
+                    <div class="spec-row">
+                        <span class="label">
+                            Khả năng leo dốc
+                        </span>
+                        <span class="value">
+                            12°
+                        </span>
                     </div>
                 </div>
 
@@ -1043,7 +1037,7 @@ Template Name: Yadea G5 Teaser
 
 
     <!-- News Slider -->
-    <section class="section section-news-slider">
+    <section class="section section-news-slider" style="display: none;">
 
         <!-- Container -->
         <div class="container">
@@ -1164,117 +1158,7 @@ Template Name: Yadea G5 Teaser
     </section>
     <!-- Social Comments - END -->
 
-    <!-- === FOOTER === -->
-    <footer class="footer light-gray-bg pt-90" id="page-footer">
-
-        <!-- Container -->
-        <div class="container footer__body">
-
-            <!-- Row -->
-            <div class="row main-content">
-
-                <!-- Footer Content Column -->
-                <div class="col-lg-3 col-12">
-
-                    <!-- Footer Column Title -->
-                    <h3 class="footer__body__col-title">
-                        Xe máy điện thông minh
-                    </h3><!-- Footer Column Title -->
-
-                    <!-- Footer Link List -->
-                    <div class="menu-xe-may-dien-thong-minh-container"><ul id="menu-xe-may-dien-thong-minh" class="footer__body__links"><li id="menu-item-407" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-407 footer__body__links__item"><a href="https://nihato2.com/chi-tiet/yadea-g5/">Yadea G5</a></li>
-                            <li id="menu-item-408" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-408 footer__body__links__item"><a href="https://nihato2.com/chi-tiet/yadea-eb128/">Yadea EB128</a></li>
-                            <li id="menu-item-409" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-409 footer__body__links__item"><a href="https://nihato2.com/chi-tiet/yadea-c-umi/">Yadea C-Umi</a></li>
-                            <li id="menu-item-410" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-410 footer__body__links__item"><a href="https://nihato2.com/chi-tiet/yadea-z3/">Yadea Z3</a></li>
-                        </ul></div>                <!-- Footer Link List -->
-
-                </div><!-- Footer Content Column -->
-
-                <!-- Footer Content Column -->
-                <div class="col-lg-3 col-12">
-
-                    <!-- Footer Column Title -->
-                    <h3 class="footer__body__col-title">
-                        Hỗ trợ
-                    </h3><!-- Footer Column Title -->
-
-                    <!-- Footer Links List -->
-                    <div class="menu-menu-footer-support-container"><ul id="menu-menu-footer-support" class="footer__body__links"><li id="menu-item-142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-142 footer__body__links__item"><a href="https://nihato2.com/support/tim-cua-hang/">Tìm cửa hàng</a></li>
-                            <li id="menu-item-143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143 footer__body__links__item"><a href="https://nihato2.com/support/bao-hanh/">Bảo hành</a></li>
-                            <li id="menu-item-144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-144 footer__body__links__item"><a href="https://nihato2.com/support/huong-dan-su-dung/">Hướng dẫn sử dụng</a></li>
-                        </ul></div>                <!-- Footer Links List -->
-
-                </div><!-- Footer Content Column -->
-
-                <!-- Footer Content Column -->
-                <div class="col-lg-3 col-12">
-
-                    <!-- Footer Column Title -->
-                    <h3 class="footer__body__col-title">
-                        Theo dõi Yadea tại
-                    </h3><!-- Footer Column Title -->
-
-                    <!-- Footer Link List -->
-                    <ul class="footer__body__links horizontal-list">
-                        <li class="footer__body__links__social">
-                            <a href="https://www.instagram.com/" target="_blank" class="social__link-insta">
-                                <img draggable=false src="https://nihato2.com/wp-content/themes/yadea-theme/assets/img/icons/instagram.png">
-                            </a>
-                        </li>
-                        <li class="footer__body__links__social">
-                            <a href="https://www.youtube.com/channel/UC5fgsCayf-viU_GD_f9xA7g" target="_blank" class="social__link-youtube">
-                                <img draggable=false src="https://nihato2.com/wp-content/themes/yadea-theme/assets/img/icons/youtube.png">
-                            </a>
-                        </li>
-                        <li class="footer__body__links__social">
-                            <a href="https://www.facebook.com/yadeabrand/" target="_blank" class="social__link-facebook">
-                                <img draggable=false src="https://nihato2.com/wp-content/themes/yadea-theme/assets/img/icons/facebook.png">
-                            </a>
-                        </li>
-                    </ul><!-- Footer Link List -->
-
-                </div><!-- Footer Content Column -->
-
-                <!-- Footer Content Column -->
-                <div class="col-lg-3 col-12">
-
-                    <!-- Footer Column Title -->
-                    <h3 class="footer__body__col-title">
-                        Liên hệ
-                    </h3><!-- Footer Column Title -->
-
-                    <!-- Footer Link List -->
-                    <ul class="footer__body__links">
-                        <li class="footer__body__links__item">
-                            <span class="footer__phone">SDT: 0909310376</span>
-                        </li>
-                        <li class="footer__body__links__item">
-                                <span>Email:
-                                    <a href="mailto:abcc@gmail.com" class="footer__email">
-                                        abcc"gmail.com
-                                    </a>
-                                </span>
-                        </li>
-                    </ul><!-- Footer Link List -->
-
-                </div><!-- Footer Content Column -->
-
-
-            </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer__bottom text-center mt-60">
-
-            <!-- Footer Copyright -->
-            <p class="footer__bottom__copyright text-center txt-gray">
-                Copyright ©2019 All Rights Reversed
-            </p><!-- Footer Copyright -->
-
-        </div> <!-- Footer Bottom -->
-
-    </footer>
-    <!-- === FOOTER - END === -->
+    <?php get_template_part('template-parts/footer', 'main'); ?>
 </div>
 <!-- ====== MAIN CONTENT - END ====== -->
 

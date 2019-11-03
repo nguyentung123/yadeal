@@ -10,7 +10,20 @@ Template Name: Yadea G5 Product Landing Page
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Yadea - YADEA G5</title>
+    <title>YADEA G5 | Bật thông minh lướt phong cách | Xe máy điện thông minh</title>
+
+    <!-- META DATA -->
+    <meta name="description" content="Xe máy điện thông minh YADEA G5, xem thông tin thông số kĩ thuật xe điện, so sánh xe điện, xem giá xe máy điện YADEA G5, hình ảnh thực tế xe G5">
+    <meta name="keyword" content="yadea g5, g5, xe g5, xe yadea g5, xe máy điện yadea g5, xe điện yadea g5, xe máy điện g5, so sánh yadea g5, đánh giá yadea g5, giá yadea g5, hình ảnh yadea g5, thông số yadea g5, so sánh g5, đánh giá g5, giá g5, hình ảnh g5, thông số g5, xe máy điện thông minh, xe điện thông minh, xe máy điện, xe điện.">
+    <meta property="og:url" content="https://yadeavietnam.vn/yadea-g5">
+
+    <meta property="og:image" content="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/fbshare.jpg'); ?>">
+    <meta property="og:image:secure_url" content="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/fbshare.jpg'); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YADEA G5 | Bật thông minh lướt phong cách | Xe máy điện thông minh">
+    <meta property="og:description" content="Xe máy điện thông minh YADEA G5, xem thông tin thông số kĩ thuật xe điện, so sánh xe điện, xem giá xe máy điện YADEA G5, hình ảnh thực tế xe G5">
+    <!-- META DATA - END -->
+
 
     <!-- Bootstrap Stylesheet Reference -->
     <link rel="stylesheet"
@@ -37,201 +50,7 @@ Template Name: Yadea G5 Product Landing Page
 <!-- ====== MAIN CONTENT ====== -->
 
 <!-- === HEADER === -->
-<header id="page-header">
-
-    <!-- Container -->
-    <div class="container header">
-        <!-- Desktop Menu Row -->
-        <div class="row">
-
-            <!-- Header Logo -->
-            <div class="col-lg-2 col-6 header__logo">
-                <a href="<?php echo site_url(); ?>">
-                    <img draggable="false" src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/logo.png'); ?>"
-                         class="header__logo__image">
-                </a>
-            </div><!-- Header Logo -->
-
-            <!-- Header Menu Wrapper -->
-            <div class="col-lg-10 col-6 header__menu">
-                <ul class="nav justify-content-end mb-hide">
-                    <li class="nav-item" id="sub-menu-trigger">
-                        <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('/shops'); ?>">Cửa hàng</a>
-                    </li>
-                    <li class="nav-item" id="about-us-sub-menu-trigger">
-                        <a class="nav-link" href="<?php echo site_url('/about'); ?>">Về chúng tôi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('/support');?>">Hỗ trợ</a>
-                    </li>
-                </ul>
-
-                <div class="header__menu__btn mb-show-bl" id="mobile-menu-ctrl">
-                    <i class="fa fa-bars" aria-hidden="true" id="open-menu-btn"></i>
-                    <i class="fa fa-times" aria-hidden="true" id="close-menu-btn"></i>
-                </div>
-            </div><!-- Header Menu Wrapper -->
-
-
-        </div><!-- Desktop Menu Row -->
-
-    </div><!-- Container -->
-
-    <!-- Fixed Position Sub Menu -->
-    <?php get_template_part('template-parts/header', 'product-desktop'); ?>
-
-    <!-- Fixed Position Sub Menu -->
-    <div class="container sub-menu" id="about-us-sub-menu">
-        <!-- Row - About Wrapper -->
-        <div class="sub-menu__wrapper row">
-            <!-- About Item -->
-            <div class="col-md-4 col-6 sub-menu__wrapper__item">
-
-                <!-- About Detail Wrapper -->
-                <div class="sub-menu__wrapper__item__detail">
-                    <a href="about.html">
-                        <div class="about-us__thumbnail">
-                            <img draggable="false" class="img-fluid" src="img/about-thumbnail.jpg">
-                        </div>
-                        <p class="sub-title">Giới thiệu Yadea</p>
-                        <p class="txt-gray desc">Công ty TNHH Xe Máy Điện Thông Minh YADEA</p>
-                        <div class="line"></div>
-                    </a>
-                </div>
-            </div><!-- About Item -->
-
-            <!-- About Item -->
-            <div class="col-md-4 col-6 sub-menu__wrapper__item">
-                <!-- About Detail Wrapper -->
-                <div class="sub-menu__wrapper__item__detail">
-                    <a href="course.html">
-                        <div class="about-us__thumbnail">
-                            <img draggable="false" class="img-fluid" src="img/history-thumbnail.jpg">
-                        </div>
-                        <p class="sub-title">Quá trình phát triển</p>
-                        <p class="txt-gray desc">Lịch sử hình thành - quá trình phát triển của YADEA</p>
-                        <div class="line"></div>
-                    </a>
-                </div>
-            </div><!-- About Item -->
-
-            <!-- About Item -->
-            <div class="col-md-4 col-6 sub-menu__wrapper__item">
-
-                <!-- About Detail Wrapper -->
-                <div class="sub-menu__wrapper__item__detail">
-                    <a href="supplier.html">
-                        <div class="about-us__thumbnail">
-                            <img draggable="false" class="img-fluid" src="img/supplier-thumbnail.jpg">
-                        </div>
-                        <p class="sub-title">Đối tác hàng đầu</p>
-                        <p class="txt-gray desc">Đối tác hàng đầu của chúng tôi</p>
-                        <div class="line"></div>
-                    </a>
-                </div>
-            </div><!-- About Item -->
-        </div>
-    </div>
-
-
-    <!-- Mobile Drop Down Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-
-        <!-- Overlay -->
-        <div class="mobile-menu__overlay"></div>
-
-        <!-- Main Mobile Dropdown Menu -->
-        <ul class="nav light-gray-bg">
-
-            <!-- Product Listing -->
-            <li class="nav-item with-sub-menu">
-                <a class="nav-link">Sản phẩm</a>
-                <i class="fa fa-plus nav-trigger" aria-hidden="true"></i>
-                <?php get_template_part('template-parts/header', 'product-mobile'); ?>
-            </li>
-
-            <!-- Shop Searching Page -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
-            </li>
-
-            <!-- About Us -->
-            <li class="nav-item with-sub-menu active">
-                <a class="nav-link">Về chúng tôi</a>
-                <i class="fa fa-plus nav-trigger active" aria-hidden="true"></i>
-                <ul class="nav-item__sub-menu">
-                    <!-- About Item -->
-                    <li class="about-item">
-                        <a href="<?php echo site_url('/about'); ?>">
-                            <p class="sub-title">Giới thiệu Yadea</p>
-                        </a>
-                    </li>
-
-                    <!-- About Item -->
-                    <li class="about-item">
-                        <a href="<?php echo site_url('/course'); ?>">
-                            <p class="sub-title">Quá trình phát triển</p>
-                        </a>
-                    </li>
-
-                    <!-- About Item -->
-                    <li class="about-item">
-                        <a href="<?php echo site_url('/supplier'); ?>">
-                            <p class="sub-title">Đối tác hàng đầu</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('/support') ?>">Hỗ trợ</a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Price Tag -->
-    <section class="price-tag">
-        <!-- Container -->
-        <div class="container">
-
-            <!-- Price Row -->
-            <div class="price-row">
-
-                <!-- Features List -->
-                <span class="mb-show g5-price-tag-menu">
-                    <i class="fa fa-bars open-g5-menu" aria-hidden="true" id="open-g5-menu-btn"></i>
-                    <i class="fa fa-times close-g5-menu" aria-hidden="true" id="close-g5-menu-btn"></i>
-                </span>
-
-                <ul class="features-list">
-                    <li class="feature-item close-g5-menu">
-                        <a href="#">Sản phẩm</a>
-                    </li>
-                    <li class="feature-item close-g5-menu">
-                        <a href="#">Giá & Thông số</a>
-                    </li>
-                    <li class="feature-item close-g5-menu">
-                        <a href="#">Đánh giá, so sánh</a>
-                    </li>
-                    <li class="overlay close-g5-menu"></li>
-                </ul>
-
-                <!-- Price CTA -->
-                <div class="price-cta-wrapper">
-                    <p class="price-holder">
-                        Giá: <span class="price-value">35 000 000 VNĐ</span>
-                    </p>
-                    <a class="price-cta" href="<?php echo site_url('/shops') ?>">MUA NGAY</a>
-                </div>
-                <!-- Price CTA -->
-            </div><!-- Price Row -->
-
-        </div>
-        <!-- Container -->
-    </section>
-</header>
+<?php get_template_part('template-parts/header', 'main-g5') ?>
 <!-- === HEADER - END === -->
 
 <!-- === MAIN CONTENT === -->
@@ -1879,122 +1698,7 @@ Template Name: Yadea G5 Product Landing Page
 
 
 <!-- === FOOTER === -->
-<footer class="footer light-gray-bg" id="page-footer">
-
-    <!-- Container -->
-    <div class="container footer__body">
-
-        <!-- Row -->
-        <div class="row main-content">
-
-            <!-- Footer Content Column -->
-            <div class="col-lg-3 col-12">
-
-                <!-- Footer Column Title -->
-                <h3 class="footer__body__col-title">
-                    Xe máy điện thông minh
-                </h3><!-- Footer Column Title -->
-
-                <!-- Footer Link List -->
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'footerMenuLocation1',
-                    'menu_class'     => 'footer__body__links',
-                    'fallback_cb'    => false,
-                    'add_li_class'  => 'footer__body__links__item'
-                ) );
-                ?>
-                <!-- Footer Link List -->
-
-            </div><!-- Footer Content Column -->
-
-            <!-- Footer Content Column -->
-            <div class="col-lg-3 col-12">
-
-                <!-- Footer Column Title -->
-                <h3 class="footer__body__col-title">
-                    Hỗ trợ
-                </h3><!-- Footer Column Title -->
-
-                <!-- Footer Links List -->
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'footerMenuLocation2',
-                    'menu_class'     => 'footer__body__links',
-                    'fallback_cb'    => false,
-                    'add_li_class'  => 'footer__body__links__item'
-                ) );
-                ?>
-                <!-- Footer Links List -->
-
-            </div><!-- Footer Content Column -->
-
-            <!-- Footer Content Column -->
-            <div class="col-lg-3 col-12">
-
-                <!-- Footer Column Title -->
-                <h3 class="footer__body__col-title">
-                    Theo dõi Yadea tại
-                </h3><!-- Footer Column Title -->
-
-                <!-- Footer Link List -->
-                <ul class="footer__body__links horizontal-list">
-                    <li class="footer__body__links__social">
-                        <a href="<?php echo get_theme_mod('insta_page', 'https://www.facebook.com/'); ?>" target="_blank" class="social__link-insta">
-                            <img src="<?php echo get_theme_file_uri('assets/img/icons/instagram.png'); ?>">
-                        </a>
-                    </li>
-                    <li class="footer__body__links__social">
-                        <a href="<?php echo get_theme_mod('youtube_page', 'https://www.youtube.com/'); ?>" target="_blank" class="social__link-youtube">
-                            <img src="<?php echo get_theme_file_uri('assets/img/icons/youtube.png'); ?>">
-                        </a>
-                    </li>
-                    <li class="footer__body__links__social">
-                        <a href="<?php echo get_theme_mod('facebook_page', 'https://www.facebook.com/'); ?>" target="_blank" class="social__link-facebook">
-                            <img src="<?php echo get_theme_file_uri('assets/img/icons/facebook.png'); ?>">
-                        </a>
-                    </li>
-                </ul><!-- Footer Link List -->
-
-            </div><!-- Footer Content Column -->
-
-            <!-- Footer Content Column -->
-            <div class="col-lg-3 col-12">
-
-                <!-- Footer Column Title -->
-                <h3 class="footer__body__col-title">
-                    Liên hệ
-                </h3><!-- Footer Column Title -->
-
-                <!-- Footer Link List -->
-                <ul class="footer__body__links">
-                    <li class="footer__body__links__item">
-                        <span class="footer__phone">SDT: <?php echo get_theme_mod('footer_phone', ''); ?></span>
-                    </li>
-                    <li class="footer__body__links__item">
-                        <span>Email:
-                            <a href="mailto:<?php echo get_theme_mod('footer_email', 'tmnhat1993@gmail.com'); ?>" class="footer__email">
-                                <?php echo get_theme_mod('footer_email', 'tmnhat1993@gmail.com'); ?>
-                            </a>
-                        </span>
-                    </li>
-                </ul><!-- Footer Link List -->
-
-            </div><!-- Footer Content Column -->
-        </div>
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="footer__bottom text-center mt-60">
-
-        <!-- Footer Copyright -->
-        <p class="footer__bottom__copyright text-center txt-gray">
-            <?php echo get_theme_mod('footer_copy_right','Copyright ©2019 All Rights Reversed');?>
-        </p><!-- Footer Copyright -->
-
-    </div> <!-- Footer Bottom -->
-
-</footer>
+<?php get_template_part('template-parts/footer', 'main') ?>
 <!-- === FOOTER - END === -->
 
 

@@ -67,7 +67,7 @@ export default class FlipClockCustom {
   NumberTree () {
     // Declare variable flip clock
     let positions = [];
-    let numberInc = this.weekProgress * 1.25;
+    let numberInc = this.weekProgress / 21.7;
 
     this.numberTree = $('.number-increase').FlipClock(numberInc, {
       clockFace: 'Counter',
@@ -76,7 +76,7 @@ export default class FlipClockCustom {
     setTimeout(() => {
       setInterval(() => {
         this.numberTree.increment();
-      },  Math.ceil(this.thisWeekOxygenSpeed * 1.25));
+      },  Math.ceil(this.thisWeekOxygenSpeed * 21.7));
     });
 
     // detect of pos to margin

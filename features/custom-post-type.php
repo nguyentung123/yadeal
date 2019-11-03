@@ -81,6 +81,32 @@ function yadea_custom_posts_type(){
 		'supports'            => array('title', 'thumbnail', 'custom-fields'),
 	));
 
+	// Banner Seires 1
+    register_post_type('banner_series_1', array(
+        'label'         => 'Banner Series 1',
+        'description'   => 'Banner Series With 3 Column Layout',
+        'labels'        => array(
+            'name'            => 'Banner Series 1',
+            'singular_name'   => 'Banner Series 1',
+            'add_new'         => 'Add New Banner',
+            'add_new_item'    => 'Add New Banner',
+            'edit_item'       => 'Edit Banner',
+            'new_item'        => 'New Banner',
+            'view_item'       => 'View Banner',
+            'view_items'      => 'View Banners',
+            'all_items'       => 'All Banner',
+            'attributes'      => 'Banner Attributes'
+        ),
+        'public'              => false,
+        'show_ui'             => true,
+        'show_in_admin_bar'   => true,
+        'exclude_from_search' => true,
+        'show_in_nav_menus'   => true,
+        'menu_position'       => 10,
+        'menu_icon'           => 'dashicons-images-alt',
+        'supports'            => array('title', 'thumbnail', 'custom-fields'),
+    ));
+
     // Product
     register_post_type('product', array(
         'label'         => 'Sản phẩm',
