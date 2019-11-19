@@ -2,8 +2,10 @@
 /*
 Template Name: Yadea G5 Product Landing Page
 */
-wp_redirect('yadea-g5/teaser');
-exit;
+if(is_user_logged_in()){
+    wp_redirect('yadea-g5/teaser');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,8 +49,44 @@ exit;
     <link rel="stylesheet" href="<?php echo get_theme_file_uri('landing-page/yadea-g5/css/g5-styles.css'); ?>">
     <!-- Main stylesheet Reference -->
 
+    <!-- Yadea G5 Style -->
+    <link rel="stylesheet" href="<?php echo get_theme_file_uri('landing-page/yadea-g5/css/styles.css'); ?>">
+    <!-- Main stylesheet Reference -->
+
+    <!-- TRACKING CODE -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PM2J8PG');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '528659447702850');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=528659447702850&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- TRACKING CODE - END -->
 </head>
 <body class="with-overlay">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PM2J8PG"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ====== MAIN CONTENT ====== -->
 
@@ -100,12 +138,12 @@ exit;
 
         <!-- Main Content -->
         <div class="video-main-content">
-            <img draggable="false" class="play-clip play-modal-video" data-video-id="BnRxdYVE6KA"
+            <img draggable="false" class="play-clip play-modal-video" data-video-id="2S6Z57j30Vs"
                  src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/button-play.png'); ?>">
             <p class="intro-cta">
                 <img draggable="false" class="btn-border"
                      src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/border-gradient.svg'); ?>">
-                <span class="btn-text">Xem thêm về YADEA</span>
+                <a class="btn-text" href="<?php echo ('/about'); ?>">Xem thêm về YADEA</a>
             </p>
         </div>
     </section>
@@ -141,7 +179,7 @@ exit;
                     Đầu tiên tại Việt Nam
                 </h4>
                 <p class="feature-content">
-                    Màn hình màu LCD TFT 7inches mang đến trải nghiệm hình ảnh sắc nét, sinh động. Vừa di chuyển, bạn vừa có thể<br>
+                    Màn hình LCD TFT 7 inch mang đến trải nghiệm hình ảnh sắc nét, sinh động. Vừa di chuyển, bạn vừa có thể<br>
                     quan sát các thông số xe ngay trong tầm mắt
                 </p>
             </div>
@@ -166,8 +204,8 @@ exit;
 
                 <div class="feature-detail is-active detail-2">
                     <div class="feature-detail-context">
-                        <p class="title">TỰ ĐỘNG ĐIỀU TIẾT ÁNH SÁNG 2</p>
-                        <p class="desc">Tùy chỉnh theo môi trường: Ban ngày sáng rõ, ban đêm không lo chói mắt</p>
+                        <p class="title">MÀN HÌNH LỚN 7 INCHES</p>
+                        <p class="desc">Thông tin nhiều hơn, dễ dàng quan sát trong nháy mắt.</p>
                     </div>
                     <div class="pointer">
                         <div class="mark-holder mark-2">
@@ -199,7 +237,7 @@ exit;
                 </h4>
                 <p class="feature-content">
                     Lướt đi nhẹ nhàng và hãy để cả thế giới chiêm ngưỡng thần thái sang chảnh của bạn. Bạn sẽ hoàn toàn hài lòng với dáng vẻ<br>
-                    sang trọng bậc nhất của chiếc Yadea G5. Đâu sẽ là sắc màu độc đáo khẳng định phong cách của bạn:
+                    sang trọng bậc nhất của chiếc YADEA G5. Đâu sẽ là sắc màu độc đáo khẳng định phong cách của bạn:
                 </p>
             </div>
 
@@ -237,7 +275,7 @@ exit;
                             <!-- Color Name -->
                             <div class="name black">
                                 <div class="background"></div>
-                                <span class="context">Đen nhám mạnh mẽ</span>
+                                <span class="context">Đen tuyền mạnh mẽ</span>
                             </div>
 
                             <!-- Play related video -->
@@ -331,7 +369,7 @@ exit;
                             <!-- Color Name -->
                             <div class="name black">
                                 <div class="background"></div>
-                                <span class="context">Đen nhám mạnh mẽ</span>
+                                <span class="context">Đen tuyền mạnh mẽ</span>
                             </div>
 
                             <!-- Play related video -->
@@ -408,29 +446,41 @@ exit;
                 <ul class="leading-slider">
                     <!-- Slide Item - Duplicate later -->
                     <li class="slide-item">
-                        <div class="img-holder"
+                        <div class="img-holder mb-hide"
                              style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-01.jpg');?> ')">
+                        </div>
+                        <div class="img-holder mb-show"
+                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-01-mb.jpg');?> ')">
                         </div>
                     </li>
 
                     <!-- Slide Item - Duplicate later -->
                     <li class="slide-item">
-                        <div class="img-holder"
-                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-01.jpg');?> ')">
+                        <div class="img-holder mb-hide"
+                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-02.jpg');?> ')">
+                        </div>
+                        <div class="img-holder mb-show"
+                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-02-mb.jpg');?> ')">
                         </div>
                     </li>
 
                     <!-- Slide Item - Duplicate later -->
                     <li class="slide-item">
-                        <div class="img-holder"
-                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-01.jpg');?> ')">
+                        <div class="img-holder mb-hide"
+                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-03.jpg');?> ')">
+                        </div>
+                        <div class="img-holder mb-show"
+                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-03-mb.jpg');?> ')">
                         </div>
                     </li>
 
                     <!-- Slide Item - Duplicate later -->
                     <li class="slide-item">
-                        <div class="img-holder"
-                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-01.jpg'); ?> ')">
+                        <div class="img-holder mb-hide"
+                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-04.jpg'); ?> ')">
+                        </div>
+                        <div class="img-holder mb-show"
+                             style="background-image: url('<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/banner-slide-04-mb.jpg'); ?> ')">
                         </div>
                     </li>
                 </ul>
@@ -459,7 +509,7 @@ exit;
                     Chất lượng ánh sáng tuyệt hảo
                 </h4>
                 <p class="feature-content">
-                    YADEA G5 trang bị hệ thống đèn LED cao cấp toàn xe, từ đèn chính, đèn xi nhan đến đèn định vị ban ngày mang đến khả năng chiếu sáng vượt <br>
+                    YADEA G5 trang bị hệ thống đèn LED cao cấp toàn xe: từ đèn chính, đèn xi nhan đến đèn định vị ban ngày mang đến khả năng chiếu sáng vượt <br>
                     trội, bền bỉ theo thời gian, tiết kiệm năng lượng hiệu quả. Dù đi qua ngày nắng chói chang hay đêm đen tối mịt, YADEA G5 cùa bạn vẫn thật nổi bật <br>
                     và phong cách
                 </p>
@@ -505,7 +555,7 @@ exit;
                     cốp xe chứa được hàng tá đồ dùng cá nhân. YADEA G5<br>
                     sẵn sàng cùng bạn xuống phố với chiếc cốp SIÊU<br>
                     RỘNG, dung tích lên tới 26 lít - Dung tích lớn nhất<br>
-                    trên xe máy điện hiện tại ở Việt Nam
+                    trên các dòng xe máy điện hiện tại tại Việt Nam
                 </p>
 
                 <span class="grad-line"></span>
@@ -541,9 +591,9 @@ exit;
                 </h4>
                 <p class="feature-content">
                     Điều khiển xe dễ dàng hơn, chủ động với sự <br>
-                    an toàn của bạn. Các nút bấm được lắp đặt<br>
-                    đèn nền, giúp bạn theo tác linh hoạt ngay cả <br>
-                    trong điều kiện thiếu sáng.
+                    an toàn của bạn. Các nút bấm được được bố trí <br>
+                    khoa học theo phản xạ và thói quen của người <br>
+                    dùng, giúp tối ưu trải nghiệm lái xe của bạn.
                 </p>
                 <span class="grad-line"></span>
             </div>
@@ -575,7 +625,7 @@ exit;
                             <p>Chuyển chế độ lái</p>
                         </div>
 
-                        <div class="detail-item parking">
+                        <div class="detail-item parking" >
                             <p>Đỗ xe</p>
                         </div>
                     </div>
@@ -606,7 +656,7 @@ exit;
                             <p>Kèn</p>
                         </div>
 
-                        <div class="detail-item container-open">
+                        <div class="detail-item container-open" style="display: none">
                             <p>Mở cốp xe</p>
                         </div>
                     </div>
@@ -667,7 +717,7 @@ exit;
                         <p>Kèn</p>
                     </div>
 
-                    <div class="detail-item container-open">
+                    <div class="detail-item container-open" style="display: none">
                         <p>Mở cốp xe</p>
                     </div>
                 </div>
@@ -838,7 +888,7 @@ exit;
                     Lướt đi trơn tru. Tốc độ mượt mà
                 </h4>
                 <p class="feature-content">
-                    Tốc độ tối đa lên tới 53km/h. Bộ điều khiển FOC công suất cao 12 ống giúp quản lý và tiết kiệm năng lượng hiệu quả. Hãy ngồi xuống, nhấn ga,<br>
+                    Tốc độ tối đa lên tới 52km/h. Bộ điều khiển FOC công suất cao 12 ống giúp quản lý và tiết kiệm năng lượng hiệu quả. Hãy ngồi xuống, nhấn ga,<br>
                     tận hưởng cảm giác lái xe thoải mái, lắng nghe tiếng động cơ êm như gió
                 </p>
             </div>
@@ -849,15 +899,15 @@ exit;
                 <ul class="feature-list">
                     <li class="feature-item">
                         <span class="name">Tốc độ</span>
-                        <span class="value">53km/h</span>
+                        <span class="value">52km/h</span>
                     </li>
                     <li class="feature-item">
                         <span class="name">Leo dốc</span>
-                        <span class="value">11 độ</span>
+                        <span class="value">12 độ</span>
                     </li>
                     <li class="feature-item">
                         <span class="name">Công suất</span>
-                        <span class="value">1500w</span>
+                        <span class="value">1200w</span>
                     </li>
                     <li class="feature-item">
                         <span class="name">Hiệu suất chuyển hao</span>
@@ -882,7 +932,7 @@ exit;
                     Giảm sóc thủy lực
                 </h3>
                 <h4 class="feature-sub-title">
-                    Êm ai trên mọi chặng đường
+                    Êm ái trên mọi chặng đường
                 </h4>
                 <p class="feature-content">
                     Chất lượng tương đương với các dòng xe máy cao cấp. Lò xo thép<br>
@@ -973,52 +1023,28 @@ exit;
             <div class="effect-holder">
                 <div class="main-info">
                     <span class="value" >
-                        <span id="battery-spped">0</span>km
+                        <span class="small">&#8805;</span><span id="battery-spped">0</span>km
                     </span>
                 </div>
 
                 <div class="mode-selectors">
-                    <div class="selector-block mode">
-                        <div class="select-block name">Chế độ</div>
-                        <div class="selection">
-                            <span class="value">70</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5">
-                                <path class="cls-1" d="M644,12126l-4.993-5h9.986Z" fill="#989b9d" transform="translate(-639 -12121)"/>
-                            </svg>
-                            <ul class="select-list">
-                                <li class="data active">70</li>
-                                <li class="data">80</li>
-                                <li class="data">90</li>
-                            </ul>
-                        </div>
-                    </div>
                     <div class="selector-block weight">
-                        <div class="select-block name">Trọng lượng</div>
+                        <div class="select-block name">Vận tốc</div>
                         <div class="selection">
-                            <span class="value">32</span>
+                            <span class="value">38 km/h</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5">
                                 <path class="cls-1" d="M644,12126l-4.993-5h9.986Z" fill="#989b9d" transform="translate(-639 -12121)"/>
                             </svg>
                             <ul class="select-list">
-                                <li class="data active">32</li>
-                                <li class="data">42</li>
-                                <li class="data">52</li>
+                                <li class="data active" data-value="65">38 km/h</li>
+                                <li class="data" data-value="55">52 km/h</li>
                             </ul>
                         </div>
                     </div>
                     <div class="selector-block heat">
-                        <div class="name">Nhiệt độ</div>
+                        <div class="name">Tải trọng</div>
                         <div class="selection">
-                            <span class="value">100</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5">
-                                <path class="cls-1" d="M644,12126l-4.993-5h9.986Z" fill="#989b9d" transform="translate(-639 -12121)"/>
-                            </svg>
-
-                            <ul class="select-list">
-                                <li class="data active">100</li>
-                                <li class="data">80</li>
-                                <li class="data">70</li>
-                            </ul>
+                            <span class="value">86 kg</span>
                         </div>
                     </div>
                 </div>
@@ -1058,7 +1084,7 @@ exit;
                     </li>
                     <li class="feature-item">
                         <span class="name">Sạc đầy trong</span>
-                        <span class="value">7- 8 tiếng</span>
+                        <span class="value">3-4 tiếng</span>
                     </li>
                 </ul>
             </div>
@@ -1207,9 +1233,10 @@ exit;
                     <div class="detail closed">
                         <p class="title">TÌNH TRẠNG PIN</p>
                         <p class="desc">
-                            Thiết lập hàng rào điện tử<br>
-                            bảo vệ xe và mức báo động <br>
-                            lượng Pin còn lại</p>
+                            Theo dõi và kiểm tra tình <br>
+                            trạng PIN mọi lúc mọi nơi <br>
+                            ngay trên ứng dụng của YADEA
+                        </p>
                     </div>
                     <div class="icon">
                         <img draggable="false" src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/icon-08.png'); ?>">
@@ -1225,9 +1252,10 @@ exit;
                     <div class="detail closed">
                         <p class="title">NHẬT KÝ HÀNH TRÌNH</p>
                         <p class="desc">
-                            Thiết lập hàng rào điện tử <br>
-                            bảo vệ xe và mức báo động <br>
-                            lượng pin còn lại</p>
+                            Giúp bạn lưu lại chi tiết <br>
+                            về quãng đường trên mọi hành<br>
+                            trình di chuyển
+                        </p>
                     </div>
                     <div class="icon">
                         <img draggable="false" src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/icon-09.png'); ?>">
@@ -1255,7 +1283,7 @@ exit;
                     Theo dõi chính xác
                 </h4>
                 <p class="feature-content">
-                    Hệ thống định vị được xây dựng trên 3 nền tảng hiện đại: GLONASS, GPS và Bắc Đẩu, giúp xác định vị trí của YADEA G5 mọi <br>
+                    Hệ thống định vị GPS tích hợp công nghệ hiện đại, giúp xác định vị trí của YADEA G5 mọi <br>
                     lúc mọi nơi ngay trên Smartphone. Chuông báo động sẽ phát tín hiệu tức thì khi xe bị di chuyển và gửi ngay thông báo qua <br> app cho bạn
                 </p>
             </div>
@@ -1478,13 +1506,13 @@ exit;
                     CHỐNG NƯỚC CHUẨN IP57
                 </h3>
                 <h4 class="feature-sub-title">
-                    Chịu ngập lên đến 30cm
+                    Chịu ngập lên đến 50cm
                 </h4>
                 <p class="feature-content">
                     Để thích ứng với điều kiện khí hậu Việt Nam,  YADEA G5 được thiết kế với khả năng
                     chống bụi, chống nước toàn xe: từ bo mạch điện tử, mạng lưới dây điện cho đến pin
-                    Lithium, động cơ GTR 4.0. Trong điều kiện ngập nước, YADEA có thể di chuyển 30 phút,
-                    chịu mức nước tối đa lên tới 30cm.
+                    Lithium, động cơ GTR 4.0. Trong điều kiện ngập nước, YADEA G5 có thể lội xuống mực
+                    nước sâu 50 cm.
                 </p>
             </div>
             <!-- Context Block - END -->
@@ -1597,8 +1625,9 @@ exit;
             <div class="container">
                 <h2 class="title">YÊN TÂM VỚI DỊCH VỤ CHĂM SÓC TỪ YADEA</h2>
                 <p>
-                    Pin Lithium Panasonic 18650 cao cấp nhỏ gọm với trọng lương chỉ 10,5kg, cho công suất, hiệu suất cao và bền bỉ.<br class="mb-hide">
-                    Với 1 lần sạc, YADEA G5 có thể đi quãng đường lên tới 80km. Cả ngày mặc sức lượn khắp thành phố mà chẳng lo hết pin
+                    Với đội ngũ nhân viên hướng dẫn tận tình, chuyên nghiệp sẽ giúp cập nhật đầy đủ thông tin về bảo <br class="mb-hide">
+                    hành bảo dưỡng của YADEA. Nếu có bất kỳ thắc mắc nào, hãy gọi ngay tới số đường dây nóng 18006959. <br class="mb-hide">
+                    Trung tâm Chăm sóc khách hàng của YADEA  hoạt động 24/7, luôn sẵn sàng phục vụ quý khách.
                 </p>
                 <a class="cta service-cta">
                     TÌM HIỂU THÊM

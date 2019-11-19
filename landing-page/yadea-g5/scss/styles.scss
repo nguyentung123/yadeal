@@ -1,1 +1,30 @@
-@import "g5-fix/index";
+.g5-leading-section {
+  .slider-holder {
+    .leading-slider{
+      .slide-item{
+        height: 55vw;
+        display: none;
+
+        .img-holder{
+          height: 55vw;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px){
+    .slider-holder {
+      .leading-slider{
+        .slide-item{
+          height: 190vw;
+          display: none;
+
+          .img-holder{
+            height: 190vw;
+            background-position: center bottom;
+          }
+        }
+      }
+    }
+  }
+}

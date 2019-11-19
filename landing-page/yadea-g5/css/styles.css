@@ -1,0 +1,13 @@
+.g5-leading-section .slider-holder .leading-slider .slide-item {
+  height: 55vw;
+  display: none; }
+  .g5-leading-section .slider-holder .leading-slider .slide-item .img-holder {
+    height: 55vw; }
+
+@media (max-width: 768px) {
+  .g5-leading-section .slider-holder .leading-slider .slide-item {
+    height: 190vw;
+    display: none; }
+    .g5-leading-section .slider-holder .leading-slider .slide-item .img-holder {
+      height: 190vw;
+      background-position: center bottom; } }

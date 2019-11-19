@@ -81,8 +81,8 @@ export default class DriveMode {
                 this.$ecoIcon.addClass('active');
                 this.$sportIcon.removeClass('active');
 
-                let demo2 = new CountUp('max-speed-value', 40, {
-                    duration: 1, startVal: 60, useEasing: false,
+                let demo2 = new CountUp('max-speed-value', 38, {
+                    duration: 1, startVal: 52, useEasing: false,
                 });
                 if (!demo2.error) {
                     demo2.start();
@@ -103,8 +103,8 @@ export default class DriveMode {
                 this.$ecoIcon.removeClass('active');
                 this.$sportIcon.addClass('active');
 
-                let demo1 = new CountUp('max-speed-value', 60, {
-                    duration: 1, startVal: 40, useEasing: false,
+                let demo1 = new CountUp('max-speed-value', 52, {
+                    duration: 1, startVal: 38, useEasing: false,
                 });
                 if (!demo1.error) {
                     demo1.start();

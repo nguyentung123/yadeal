@@ -30,7 +30,7 @@ export default class Home {
      * =================================== */
     SetupVideoPlayer(){
         this.playerYT = YouTubePlayer('video-modal-video', {
-            videoId: 'BnRxdYVE6KA', // Default Clip
+            videoId: '2S6Z57j30Vs', // Default Clip
             playerVars: {
                 disablekb: 1,
                 fs: 0,

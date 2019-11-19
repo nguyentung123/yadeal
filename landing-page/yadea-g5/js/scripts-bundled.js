@@ -345,8 +345,8 @@ function () {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        nextArrow: "<img class=\"real-img-control next-slide\" src=\"".concat(g5_assets_route ? g5_assets_route : '', "img/g5/next-slide.png\">"),
-        prevArrow: "<img class=\"real-img-control prev-slide\" src=\"".concat(g5_assets_route ? g5_assets_route : '', "img/g5/prev-slide.png\">")
+        nextArrow: '<img class="real-img-control next-slide" src="img/g5/next-slide.png">',
+        prevArrow: '<img class="real-img-control prev-slide" src="img/g5/prev-slide.png">'
       });
       var venoScreen = window.innerWidth;
 
@@ -576,7 +576,7 @@ function () {
       var _this = this;
 
       this.playerYT = (0, _youtubePlayer.default)('video-modal-video', {
-        videoId: 'BnRxdYVE6KA',
+        videoId: '2S6Z57j30Vs',
         // Default Clip
         playerVars: {
           disablekb: 1,
@@ -3084,9 +3084,9 @@ function () {
           this.$sportDetail.removeClass('active');
           this.$ecoIcon.addClass('active');
           this.$sportIcon.removeClass('active');
-          var demo2 = new _countup.CountUp('max-speed-value', 40, {
+          var demo2 = new _countup.CountUp('max-speed-value', 38, {
             duration: 1,
-            startVal: 60,
+            startVal: 52,
             useEasing: false
           });
 
@@ -3107,9 +3107,9 @@ function () {
           this.$ecoDetail.removeClass('active');
           this.$ecoIcon.removeClass('active');
           this.$sportIcon.addClass('active');
-          var demo1 = new _countup.CountUp('max-speed-value', 60, {
+          var demo1 = new _countup.CountUp('max-speed-value', 52, {
             duration: 1,
-            startVal: 40,
+            startVal: 38,
             useEasing: false
           });
 
@@ -3289,13 +3289,7 @@ function () {
     this.$context = $('.g5-lithium-battery-section');
     this.$mainInfo = this.$context.find('.main-info');
     this.$selectGroup = this.$context.find('.mode-selectors');
-    this.minSpeed = 60;
-    this.batterySetting = {
-      mode: [5, 10, 15],
-      weight: [10, 15, 20],
-      heat: [5, 10, 15]
-    };
-    this.activeLevel = [0, 0, 0];
+    this.currentSpeed = 65;
     this.bindEvents();
   }
   /* ===================================
@@ -3311,7 +3305,6 @@ function () {
       (0, _utils.contextInit)(this.$context, [this.$mainInfo, this.$selectGroup]);
       g5Listener.on('lithium-anim', function () {
         (0, _utils.contextFadeIn)(_this.$context, function () {
-          _this.currentSpeed = _this.CalculateSpeed(_this.activeLevel);
           var demo = new _countup.CountUp('battery-spped', _this.currentSpeed, {
             duration: 1.5,
             startVal: 0,
@@ -3333,15 +3326,9 @@ function () {
      * =================================== */
 
   }, {
-    key: "CalculateSpeed",
-    value: function CalculateSpeed(levelSetting) {
-      return this.minSpeed + this.batterySetting.mode[levelSetting[0]] + this.batterySetting.weight[levelSetting[1]] + this.batterySetting.heat[levelSetting[2]];
-    }
-  }, {
     key: "RenderSpeed",
-    value: function RenderSpeed() {
-      var getTargetSpeed = this.CalculateSpeed(this.activeLevel);
-      var demo = new _countup.CountUp('battery-spped', getTargetSpeed, {
+    value: function RenderSpeed(nextSpeed) {
+      var demo = new _countup.CountUp('battery-spped', nextSpeed, {
         duration: 0.65,
         startVal: this.currentSpeed,
         useEasing: false
@@ -3353,19 +3340,13 @@ function () {
         console.error(demo.error);
       }
 
-      this.currentSpeed = getTargetSpeed;
+      this.currentSpeed = nextSpeed;
     }
   }, {
     key: "SelectBoxToggleSetup",
     value: function SelectBoxToggleSetup() {
-      $('.selector-block.heat .selection').on('click', function (e) {
-        $('.selector-block.heat .selection').toggleClass('show-select');
-      });
       $('.selector-block.weight .selection').on('click', function (e) {
         $('.selector-block.weight .selection').toggleClass('show-select');
-      });
-      $('.selector-block.mode .selection').on('click', function (e) {
-        $('.selector-block.mode .selection').toggleClass('show-select');
       });
     }
   }, {
@@ -3374,46 +3355,21 @@ function () {
       var _this2 = this;
 
       this.SelectBoxToggleSetup();
-      this.$modeList = this.$context.find('.selector-block.mode .select-list li');
       this.$weightList = this.$context.find('.selector-block.weight .select-list li');
-      this.$heatList = this.$context.find('.selector-block.heat .select-list li');
-      this.$heatList.on('click', function (e) {
-        e.stopPropagation();
-        $('.selector-block.heat .selection').removeClass('show-select');
-
-        if (!$(e.target).hasClass('active')) {
-          _this2.$heatList.removeClass('active');
-
-          $(e.target).addClass('active');
-          _this2.activeLevel[2] = $(e.target).index();
-
-          _this2.RenderSpeed();
-        }
-      });
-      this.$modeList.on('click', function (e) {
-        e.stopPropagation();
-        $('.selector-block.mode .selection').removeClass('show-select');
-
-        if (!$(e.target).hasClass('active')) {
-          _this2.$modeList.removeClass('active');
-
-          $(e.target).addClass('active');
-          _this2.activeLevel[0] = $(e.target).index();
-
-          _this2.RenderSpeed();
-        }
-      });
+      this.$weightValue = this.$context.find('.selector-block.weight .selection .value');
       this.$weightList.on('click', function (e) {
         e.stopPropagation();
         $('.selector-block.weight .selection').removeClass('show-select');
 
         if (!$(e.target).hasClass('active')) {
+          _this2.$weightValue.html($(e.target).html());
+
           _this2.$weightList.removeClass('active');
 
           $(e.target).addClass('active');
-          _this2.activeLevel[1] = $(e.target).index();
+          var speedValue = $(e.target).data('value');
 
-          _this2.RenderSpeed();
+          _this2.RenderSpeed(speedValue);
         }
       });
     }
