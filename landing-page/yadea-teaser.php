@@ -187,7 +187,7 @@ Template Name: Yadea G5 Teaser
 
             <!-- Apply Information -->
             <div class="apply-information-form">
-                <a class="apply-info-modal">
+                <a class="apply-info-modal track-this-button" id="apply-information-yadea-g5-banner-section">
                     ĐĂNG KÝ NHẬN THÔNG TIN <i class="fa fa-caret-right" aria-hidden="true"></i>
                 </a>
                 <a class="more-detail">
@@ -213,7 +213,7 @@ Template Name: Yadea G5 Teaser
 
         <!-- Background Holder -->
         <div class="bg-holder">
-            <img draggable=false src="img/video-thumbnail.jpg" alt="">
+            <img draggable=false src="img/video-thumbnail.jpg" alt="" style="filter: brightness(25%); -webkit-filter: brightness(25%)">
         </div>
         <!-- Background Holder END -->
 
@@ -222,7 +222,7 @@ Template Name: Yadea G5 Teaser
             <h3 class="title">
                 KHÁM PHÁ ĐIỀU BẤT NGỜ
             </h3>
-            <a class="play-btn play-modal-video" data-video-id="L3GTusyCP-Y">
+            <a class="play-btn play-modal-video" data-video-id="CnTz1qffL_A">
                 <img draggable=false src="img/icons/play-icon.png" class="mb-hide">
                 <img draggable=false src="img/icons/play-icon2.png" class="mb-show">
             </a>
@@ -284,7 +284,7 @@ Template Name: Yadea G5 Teaser
                     <!-- Right -->
                     <div class="right">
                         <span class="column-label">
-                            Đen LED Toàn Xe
+                            Đèn LED Toàn Xe
                         </span>
                         <div class="img-holder">
                             <div class="bike-holder">
@@ -314,7 +314,7 @@ Template Name: Yadea G5 Teaser
                     <!-- Left -->
                     <div class="left">
                         <span class="column-label">
-                            Mở Khóa cảm Ứng ITO 1 Chạm
+                            Mở Khóa Cảm Ứng ITO 1 Chạm
                         </span>
                         <div class="img-holder">
                             <img draggable=false src="img/intro/left-lock2.png">
@@ -325,7 +325,7 @@ Template Name: Yadea G5 Teaser
                     <div class="center">
                         <div class="clip-wrapper">
                             <span class="column-label">
-                                Định vị GPS
+                                Định Vị GPS
                             </span>
                             <div class="img-holder">
                                 <div class="map-holder">
@@ -366,7 +366,7 @@ Template Name: Yadea G5 Teaser
                     <!-- Left -->
                     <div class="left">
                         <span class="column-label">
-                            Động cơ độc quyền GTR 3.0
+                            Động Cơ Độc quyền GTR 4.0
                         </span>
                         <div class="img-holder">
                             <div class="bike-holder">
@@ -398,7 +398,7 @@ Template Name: Yadea G5 Teaser
                     <!-- Right -->
                     <div class="right">
                         <span class="column-label">
-                            Chống nước IPX7
+                            Chống Nước IPX7
                         </span>
                         <div class="img-holder">
                             <img draggable=false src="img/intro/right-water.png">
@@ -418,7 +418,7 @@ Template Name: Yadea G5 Teaser
                 <!-- Main Content -->
                 <div class="main-content">
                     <h3 class="line-1">
-                        Thông tin chi tiết sẽ có vào ngày
+                        Thông tin chi tiết YADEA G5 sẽ có vào ngày
                     </h3>
                     <h4 class="line-2">
                         20.11.2019
@@ -465,7 +465,7 @@ Template Name: Yadea G5 Teaser
                     <div class="center">
                         <div class="clip-wrapper">
                             <span class="column-label">
-                                Động cơ độc quyền <br>GTR 3.0
+                                Động Cơ Độc Quyền <br>GTR 4.0
                             </span>
                             <div class="img-holder">
                                 <div class="bike-holder">
@@ -481,7 +481,7 @@ Template Name: Yadea G5 Teaser
                     <!-- Right -->
                     <div class="right">
                         <span class="column-label">
-                            Chống nước IPX7
+                            Chống Nước IPX7
                         </span>
                         <div class="img-holder">
                             <img draggable=false src="img/intro/right-water.png">
@@ -510,7 +510,7 @@ Template Name: Yadea G5 Teaser
                     <!-- Left -->
                     <div class="left">
                         <span class="column-label">
-                            Mở Khóa cảm Ứng ITO<br> 1 Chạm
+                            Mở Khóa Cảm Ứng ITO<br> 1 Chạm
                         </span>
                         <div class="img-holder">
                             <img draggable=false src="img/intro/left-lock.png">
@@ -521,7 +521,7 @@ Template Name: Yadea G5 Teaser
                     <div class="center">
                         <div class="clip-wrapper">
                             <span class="column-label">
-                                Định vị GPS
+                                Định Vị GPS
                             </span>
                             <div class="img-holder">
                                 <div class="map-holder">
@@ -587,7 +587,7 @@ Template Name: Yadea G5 Teaser
                     <!-- Right -->
                     <div class="right">
                         <span class="column-label">
-                            Đen LED Toàn Xe
+                            Đèn LED Toàn Xe
                         </span>
                         <div class="img-holder">
                             <div class="bike-holder">
@@ -611,10 +611,10 @@ Template Name: Yadea G5 Teaser
                 <!-- Main Content -->
                 <div class="main-content">
                     <h3 class="line-1">
-                        Thông tin chi tiết sẽ có vào ngày
+                        Thông tin chi tiết YADEA G5 <br>sẽ có vào ngày
                     </h3>
                     <h4 class="line-2">
-                        00.00.2019
+                        20.11.2019
                     </h4>
                 </div>
             </div>
@@ -636,7 +636,7 @@ Template Name: Yadea G5 Teaser
 
 
     <!-- Follow Event -->
-    <section class="section section-follow-event" id="follow-event-section">
+    <section class="section section-follow-event" id="follow-event-section" style="display: none;">
 
         <!-- Background Holder -->
         <div class="bg-holder">
@@ -669,8 +669,7 @@ Template Name: Yadea G5 Teaser
             <!-- Heading -->
             <div class="prize-heading">
                 <h3 class="title">
-                    XEM LIVESTREAM CHỤP HÌNH G5<br>
-                    NHẬN NGAY QUÀ KHỦNG
+                    XEM LIVESTREAM ẤN CHỤP NHANH <br>RINH NGAY QUÀ KHỦNG
                 </h3>
             </div>
             <!-- Heading - END -->
@@ -697,10 +696,10 @@ Template Name: Yadea G5 Teaser
                     <!-- Detail -->
                     <div class="detail">
                         <span class="context">
-                            <span class="highlight">50</span> phiếu mua hàng
+                            <span class="highlight">3</span> phiếu mua hàng
                         </span>
                         <span class="context">
-                            trị giá <span class="highlight small">5.000.000 đ</span>
+                            tổng trị giá đến <span class="highlight small">9.000.000 đ</span>
                         </span>
                     </div>
                     <!-- Detail -->
@@ -715,13 +714,11 @@ Template Name: Yadea G5 Teaser
                     <!-- Prize Image Holder -->
                     <div class="prize-holder">
                         <div class="img-holder">
-                            <img draggable=false src="img/oppo-reno2.png" class="mb-hide">
-                            <img draggable=false src="img/oppo-reno-mb2.png" class="mb-show">
+                            <img draggable=false src="img/oppo-reno2.png">
                         </div>
 
                         <div class="img-effect-holder">
-                            <img draggable=false src="img/live-event2.jpg" class="mb-hide">
-                            <img draggable=false src="img/live-event2-mb.jpg" class="mb-show">
+                            <img draggable=false src="img/live-event2.jpg">
                         </div>
                     </div>
                     <!-- Prize Holder -->
@@ -729,7 +726,7 @@ Template Name: Yadea G5 Teaser
                     <!-- Detail -->
                     <div class="detail">
                         <span class="context">
-                            <span class="highlight">10</span> OPPO RENO2
+                            <span class="highlight">1</span> OPPO RENO 2F
                         </span>
                     </div>
                     <!-- Detail END -->
@@ -755,7 +752,7 @@ Template Name: Yadea G5 Teaser
                     <!-- Detail -->
                     <div class="detail">
                         <span class="context">
-                            <span class="highlight">50</span> cặp vé xem phim CGV
+                            <span class="highlight">5</span> cặp vé xem phim CGV
                         </span>
                     </div>
                     <!-- Detail -->
@@ -770,21 +767,23 @@ Template Name: Yadea G5 Teaser
             <!-- Prize Detail On Mobile -->
             <div class="mb-show prize-detail-mb">
                 <p class="context">
-                    <span class="highlight">10</span> OPPO RENO2
+                    <span class="highlight">1</span> OPPO RENO 2F
                 </p>
 
                 <p class="context">
-                    <span class="highlight">50</span>
-                    phiếu mua hàng trị giá <span class="highlight small">5.000.000 đ</span>
+                    <span class="highlight">3</span>
+                    phiếu mua hàng tổng trị giá đến  <span class="highlight small">9.000.000 đ</span>
                 </p>
                 <p class="context">
-                    <span class="highlight">50</span> cặp vé xem phim CGV
+                    <span class="highlight">5</span> cặp vé xem phim CGV
                 </p>
             </div>
 
             <!-- CTA Holder -->
             <div class="cta-holder txt-center">
-                <a class="cta">
+                <a class="cta track-this-button"
+                   id="watch-livestream-facebook-event"
+                   href="https://www.facebook.com/yadeabrand/posts/776961556096648?comment_id=778030662656404&notif_id=1573727698513615&notif_t=feed_comment">
                     <span class="context">
                         Xem thể lệ và tham gia ngay <span class="arrow-entity">&#8811;</span>
                     </span>
@@ -811,26 +810,22 @@ Template Name: Yadea G5 Teaser
 
                     <!-- Color Item -->
                     <li class="g5-color-item gray">
-                        <img draggable=false src="img/bike-gray.png">
-                        <div class="shadow-effect"></div>
+                        <img draggable=false src="img/bike-gray-new.png">
                     </li>
 
                     <!-- Color Item -->
                     <li class="g5-color-item black">
-                        <img draggable=false src="img/bike-black.png">
-                        <div class="shadow-effect"></div>
+                        <img draggable=false src="img/bike-black-new.png">
                     </li>
 
                     <!-- Color Item -->
                     <li class="g5-color-item white">
-                        <img draggable=false src="img/bike-white.png">
-                        <div class="shadow-effect"></div>
+                        <img draggable=false src="img/bike-white-new.png">
                     </li>
 
                     <!-- Color Item -->
                     <li class="g5-color-item red">
-                        <img draggable=false src="img/bike-red.png">
-                        <div class="shadow-effect"></div>
+                        <img draggable=false src="img/bike-red-new.png">
                     </li>
 
                 </ul>
@@ -846,7 +841,7 @@ Template Name: Yadea G5 Teaser
             <!-- Color Slider Holder - END -->
 
             <!-- Prize Estimation -->
-            <div class="prize-estimation">
+            <div class="prize-estimation" style="display: none;">
                 <a class="price-holder">
                     Giá dự kiến: <span class="highlight">00.000.000 <span class="small">vnđ</span></span>
                 </a>
@@ -962,7 +957,7 @@ Template Name: Yadea G5 Teaser
                             Model động cơ
                         </span>
                         <span class="value">
-                            GTR 3.0
+                            GTR 4.0
                         </span>
                     </div>
 
@@ -1015,16 +1010,6 @@ Template Name: Yadea G5 Teaser
                             ≥55km
                         </span>
                     </div>
-
-                    <!-- Spec Item -->
-                    <div class="spec-row">
-                        <span class="label">
-                            Khả năng leo dốc
-                        </span>
-                        <span class="value">
-                            12°
-                        </span>
-                    </div>
                 </div>
 
 
@@ -1037,7 +1022,7 @@ Template Name: Yadea G5 Teaser
 
 
     <!-- News Slider -->
-    <section class="section section-news-slider" style="display: none;">
+    <section class="section section-news-slider">
 
         <!-- Container -->
         <div class="container">
@@ -1053,18 +1038,20 @@ Template Name: Yadea G5 Teaser
                         <div class="content-holder">
                             <!-- Thumbnail -->
                             <div class="thumbnail-holder">
-                                <a class="news-link-wrapper">
-                                    <img draggable=false src="img/news-thumnail.jpg">
+                                <a class="news-link-wrapper" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center"
+                                   href="https://autopro.com.vn/yadea-ong-lon-trong-nganh-xe-dien-sap-tien-vao-thi-truong-viet-nam-la-ai-2019110617031325.chn?fbclid=IwAR2FJk6Ve-dywSnDeiGx9myX4JZFFpIsTAIlRU3ruIyK-AGZmMF-erp_Wjo">
+                                    <img draggable=false src="img/pr/1.jpg">
                                 </a>
                             </div>
 
                             <!-- Context -->
                             <div class="context">
-                                <a class="news-link-wrapper">
+                                <a class="news-link-wrapper"
+                                   href="https://autopro.com.vn/yadea-ong-lon-trong-nganh-xe-dien-sap-tien-vao-thi-truong-viet-nam-la-ai-2019110617031325.chn?fbclid=IwAR2FJk6Ve-dywSnDeiGx9myX4JZFFpIsTAIlRU3ruIyK-AGZmMF-erp_Wjo">
                                     <h3 class="title">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        YADEA ông lớn ngành xe điện sắp vào Việt nam <br>là ai?
                                     </h3>
+                                    <p class="desc">Thông tin từ EICMA 2019 tại Milan - Ý, hãng xe máy điện doanh số lớn nhất TG năm 2018 sẽ tiến vào Việt Nam vào cuối tháng 11/2019.</p>
                                 </a>
                             </div>
                         </div>
@@ -1075,18 +1062,22 @@ Template Name: Yadea G5 Teaser
                         <div class="content-holder">
                             <!-- Thumbnail -->
                             <div class="thumbnail-holder">
-                                <a class="news-link-wrapper">
-                                    <img draggable=false src="img/news-thumnail.jpg">
+                                <a class="news-link-wrapper" style="width: 120%; height: 120%; display: flex; align-items: center; justify-content: center"
+                                    href="https://offb.vn/yadea-thuong-hieu-xe-dien-ban-chay-nhat-the-gioi-se-do-bo-vao-thi-truong-viet-nam-thang-11-doi-dau-truc-tiep-voi-vinfast-klara_10132.html?utm_source=zalo&utm_medium=zalo&utm_campaign=zalo&zarsrc=31&fbclid=IwAR3nfKel_5TN2lcTBP8xXsJCxQyicZr2PHXsebVBHbPFcDHA4MioAvEIu9o">
+                                    <img draggable=false src="img/pr/2.jpg">
                                 </a>
                             </div>
 
                             <!-- Context -->
                             <div class="context">
-                                <a class="news-link-wrapper">
+                                <a class="news-link-wrapper"
+                                    href="https://offb.vn/yadea-thuong-hieu-xe-dien-ban-chay-nhat-the-gioi-se-do-bo-vao-thi-truong-viet-nam-thang-11-doi-dau-truc-tiep-voi-vinfast-klara_10132.html?utm_source=zalo&utm_medium=zalo&utm_campaign=zalo&zarsrc=31&fbclid=IwAR3nfKel_5TN2lcTBP8xXsJCxQyicZr2PHXsebVBHbPFcDHA4MioAvEIu9o">
                                     <h3 class="title">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        Thương hiệu xe điện sẽ  đối đầu trực tiếp với Vinfast Klara
                                     </h3>
+                                    <p class="desc">
+                                        YADEA sẽ chính thức đổ bộ vào thị trường Việt Nam với doanh số đứng đầu TG 2018, trở thành đối thủ trực tiếp với Vinfast Klara và MBigo
+                                    </p>
                                 </a>
                             </div>
                         </div>
@@ -1097,18 +1088,22 @@ Template Name: Yadea G5 Teaser
                         <div class="content-holder">
                             <!-- Thumbnail -->
                             <div class="thumbnail-holder">
-                                <a class="news-link-wrapper">
-                                    <img draggable=false src="img/news-thumnail.jpg">
+                                <a class="news-link-wrapper" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center"
+                                    href="https://saostar.vn/giai-tri/phuong-ly-va-rhymastics-up-mo-ve-nhan-vat-chinh-xuat-hien-trong-mv-sap-trinh-lang-6394546.html">
+                                    <img draggable=false src="img/pr/3.jpg">
                                 </a>
                             </div>
 
                             <!-- Context -->
                             <div class="context">
-                                <a class="news-link-wrapper">
+                                <a class="news-link-wrapper"
+                                    href="https://saostar.vn/giai-tri/phuong-ly-va-rhymastics-up-mo-ve-nhan-vat-chinh-xuat-hien-trong-mv-sap-trinh-lang-6394546.html">
                                     <h3 class="title">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        Phương Ly và Rhymastics 'úp mở' về nhân vật chính trong MV mới
                                     </h3>
+                                    <p class="desc">
+                                        Cả hai ca sĩ đồng loạt đăng đàn “thả thính” cho dự án ca nhạc mới với hình ảnh chụp với chiếc xe có thiết kế lạ và hashtag #RideyourLife
+                                    </p>
                                 </a>
                             </div>
                         </div>
@@ -1119,18 +1114,23 @@ Template Name: Yadea G5 Teaser
                         <div class="content-holder">
                             <!-- Thumbnail -->
                             <div class="thumbnail-holder">
-                                <a class="news-link-wrapper">
-                                    <img draggable=false src="img/news-thumnail.jpg">
+                                <a class="news-link-wrapper" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center"
+                                    href="https://dantri.com.vn/kinh-doanh/ong-lon-trong-nganh-xe-dien-sap-tien-vao-thi-truong-viet-nam-la-ai-20191106152347787.htm">
+                                    <img draggable=false src="img/pr/4.jpg"
+                                        style="min-width: 100%; max-width: 80%; max-height: none;">
                                 </a>
                             </div>
 
                             <!-- Context -->
                             <div class="context">
-                                <a class="news-link-wrapper">
+                                <a class="news-link-wrapper"
+                                    href="https://dantri.com.vn/kinh-doanh/ong-lon-trong-nganh-xe-dien-sap-tien-vao-thi-truong-viet-nam-la-ai-20191106152347787.htm">
                                     <h3 class="title">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        Sự xuất hiện của ông lớn ngành xe điện thế giới ở Việt Nam
                                     </h3>
+                                    <p class="desc">
+                                        Theo thống kê của Reuters, 2017 YADEA chiếm tới 11,7% thị phần xe máy điện thế giới. Doanh số đạt 5,03 triệu xe bán ra trong năm 2018
+                                    </p>
                                 </a>
                             </div>
                         </div>
@@ -1211,7 +1211,7 @@ Template Name: Yadea G5 Teaser
                 <p class="submit-feedback"></p>
 
                 <div class="submit-holder">
-                    <button class="submit-btn" type="submit">Đăng ký</button>
+                    <button class="submit-btn track-this-button" type="submit" id="submit-applicant-yadea-g5--form">Đăng ký</button>
                 </div>
             </form>
         </div>

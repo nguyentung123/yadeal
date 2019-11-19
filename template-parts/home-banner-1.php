@@ -41,7 +41,7 @@ if ($banner1Query->have_posts()): ?>
                                     </h1>
 
                                     <?php if (get_field('banner_subtitle')): ?>
-                                        <h3 class="sub-title uppercase txt-gray">
+                                        <h3 class="sub-title txt-gray">
                                             <?php echo get_field('banner_subtitle'); ?>
                                         </h3>
                                     <?php endif; ?>

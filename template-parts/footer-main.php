@@ -69,6 +69,11 @@
                             <img src="<?php echo get_theme_file_uri('assets/img/icons/facebook.png'); ?>">
                         </a>
                     </li>
+                    <li class="footer__body__links__social">
+                        <a href="<?php echo get_theme_mod('instagram_page', 'https://www.instagram.com/yadeavietnam/'); ?>" target="_blank" class="social__link-instagram">
+                            <img src="<?php echo get_theme_file_uri('assets/img/icons/instagram.png'); ?>">
+                        </a>
+                    </li>
                 </ul><!-- Footer Link List -->
 
             </div><!-- Footer Content Column -->

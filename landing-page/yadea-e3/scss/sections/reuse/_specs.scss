@@ -1,0 +1,182 @@
+#yadea-e3-page{
+  .section-spec-slider{
+    padding: 80px 0;
+    background-color: #f8f2f2;
+
+    .custom-container{
+      width: 780px;
+      margin: auto;
+      max-width: 100%;
+    }
+
+    // Bike Color Slider
+    .color-slider-holder{
+
+      .color-listing{
+
+        .bike-color-item{
+          width: 100%;
+
+          img{
+            display: block;
+            max-width: 90%;
+            margin: auto;
+          }
+        }
+      }
+
+      // Slider Controller
+      .custom-button{
+        display: flex;
+        justify-content: center;
+        padding: 15px 0 40px;
+
+        .slider-button{
+          width: 40px;
+          height: 40px;
+          border: 1px solid #222;
+          display: block;
+          margin: 0 7px;
+          border-radius: 20px;
+          position: relative;
+          cursor: pointer;
+
+          &:after{
+            content: '';
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            left: 7px;
+            top: 7px;
+            position: absolute;
+            background-color: rgba(255,255,255, 0.5);
+            opacity: 0;
+          }
+
+          &.button-white{
+            background-color: #FFF;
+
+            &:after{
+              background-color: rgba(0,0,0,0.15);
+            }
+          }
+
+          &.button-red{
+            background-color: #d72620;
+          }
+
+          &.button-black{
+            background-color: #35363a;
+          }
+
+          &.active{
+            &:after{
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    // Price Estimation
+    .prize-estimation{
+      text-align: center;
+
+      .price-holder{
+        color: $white;
+        background-color: $main-color;
+        height: 50px;
+        display: inline-block;
+        border-radius: 25px;
+        padding: 0 40px;
+        line-height: 50px;
+        font-size: 1.25em;
+        margin-bottom: 40px;
+
+        .highlight{
+          font-size: 1.25em;
+          font-weight: 700;
+        }
+      }
+    }
+
+    // Specs Table
+    .spec-estimation{
+      .spec-title{
+        font-size: 1.875em;
+        padding-bottom: 30px;
+        position: relative;
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 40px;
+
+        &:after{
+          content: '';
+          width: 125px;
+          height: 2px;
+          background-color: #181818;
+          left: calc(50% - 67.5px);
+          bottom: 0;
+          position: absolute;
+        }
+      }
+
+      .spec-list{
+        .spec-row{
+          display: flex;
+          padding: 0 20px;
+          min-height: 40px;
+          line-height: 22px;
+          margin-bottom: 10px;
+
+          .label{
+            width: 30%;
+            flex-shrink: 0;
+            font-weight: 700;
+            padding-right: 15px;
+          }
+
+          .value{
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-laptop}{
+    .section-spec-slider {
+      padding: 60px 0;
+
+      // Bike Color Slider
+      .color-slider-holder {
+        width: 80%;
+        margin: auto;
+      }
+    }
+  }
+
+  @media #{$information-sm-laptop}{
+    .section-spec-slider {
+      padding: 40px 0;
+
+      // Bike Color Slider
+      .color-slider-holder {
+        width: 75%;
+        margin: auto;
+      }
+    }
+  }
+
+  /* === RESPONSIVE === */
+  @media #{$information-phone}{
+    .section-spec-slider {
+      padding: 30px 0;
+
+      // Bike Color Slider
+      .color-slider-holder {
+        width: 90%;
+      }
+    }
+  }
+}

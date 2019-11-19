@@ -7836,15 +7836,16 @@ function () {
       this.allowChangeColor = true;
       $('.g5-color-listing').slick({
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
-        speed: 450,
-        fade: true
+        speed: 200,
+        fade: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
       });
       $('.g5-color-listing').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         $('.color-slider-holder .custom-button .slider-button.active').removeClass('active');
         $('.color-slider-holder .custom-button .slider-button:nth-child(' + (nextSlide + 1) + ')').addClass('active');
-        console.log(nextSlide);
       });
       $('.color-slider-holder .custom-button').on('click', function (e) {
         if (!$(e.target).hasClass('active') && _this.allowChangeColor) {
@@ -7887,25 +7888,22 @@ function () {
   }, {
     key: "NewsSliderSetup",
     value: function NewsSliderSetup() {
+      var slideToShow = 3;
+
+      if (window.innerWidth <= 768 && window.innerWidth > 480) {
+        slideToShow = 2;
+      } else {
+        if (window.innerWidth < 480) {
+          slideToShow = 1;
+        }
+      }
+
       $('.news-list').slick({
-        slidesToShow: 3,
+        slidesToShow: slideToShow,
         slidesToScroll: 1,
         autoplay: true,
         nextArrow: "<a class=\"news-slider-control slide-next\"></a>",
-        prevArrow: "<a class=\"news-slider-control slide-prev\"></a>",
-        responsive: [{
-          breakpoint: 769,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        }, {
-          breakpoint: 481,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }]
+        prevArrow: "<a class=\"news-slider-control slide-prev\"></a>"
       });
     } // Mobile Menu Toggle
 
@@ -10904,8 +10902,7 @@ function () {
         });
       } else {
         _gsap.default.set(this.$liveImage, {
-          scale: 4,
-          transformOrigin: '20% 50%'
+          scale: 4
         });
       }
 

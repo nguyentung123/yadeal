@@ -2,6 +2,8 @@
 /*
 Template Name: Yadea G5 Product Landing Page
 */
+wp_redirect('yadea-g5/teaser');
+exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +13,7 @@ Template Name: Yadea G5 Product Landing Page
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <title>YADEA G5 | Bật thông minh lướt phong cách | Xe máy điện thông minh</title>
+    <meta property="fb:app_id" content="575722139842209" />
 
     <!-- META DATA -->
     <meta name="description" content="Xe máy điện thông minh YADEA G5, xem thông tin thông số kĩ thuật xe điện, so sánh xe điện, xem giá xe máy điện YADEA G5, hình ảnh thực tế xe G5">

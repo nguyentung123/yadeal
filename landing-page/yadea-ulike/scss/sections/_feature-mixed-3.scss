@@ -1,0 +1,510 @@
+#yadea-ulike-page {
+  .feature-mixed-3 {
+    height: 2386px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #8fc9ff;
+
+    .mixed-effect{
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      // Mixed Layer Effect
+      .mixed-layer{
+        left: 0;
+        top: 0;
+        right: 0;
+        position: relative;
+        background-color: #b4ddff;
+        height: 850px;
+
+        svg{
+          position: absolute;
+          top: calc(100% - 1px);
+          left: 0;
+          right: 0;
+
+          polygon{
+            fill: #b4ddff;
+          }
+        }
+      }
+    }
+
+    // engine feature
+    .engine-feature{
+      position: absolute;
+      height: 800px;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 2;
+
+      .main-content{
+        position: absolute;
+        width: 620px;
+        left: 46%;
+        top: 168px;
+      }
+
+      .effect-holder{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 950px;
+        min-width: 40%;
+
+        .img-holder{
+          img{
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    // Anti Thief
+    .anti-thief-feature{
+      left: 0;
+      right: 0;
+      top: 562px;
+      position: absolute;
+      height: 840px;
+      z-index: 2;
+
+      .main-content{
+        width: 540px;
+        left: 21.875%;
+        top: 220px;
+        position: absolute;
+      }
+
+      .effect-holder{
+        position: absolute;
+        width: 34vw;
+        left: 55%;
+        top: 3%;
+        height: 35.5vw;
+
+        .bike-img{
+          width: 100%;
+          height: 100%;
+          position: relative;
+
+          img{
+            width: 100%;
+          }
+
+          .main-bike, .bike-shadow{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+          }
+
+          .main-bike{
+            z-index: 2;
+          }
+
+          .bike-shadow{
+            &.shadow-1{
+              top: 0%;
+              left: -3%;
+              z-index: 1;
+              width: 102%;
+            }
+
+            &.shadow-2{
+              top: 4%;
+              left: 1%;
+              z-index: 0;
+              width: 98%;
+            }
+          }
+        }
+
+        .ring-img, .light-img, .sound-img{
+          position: absolute;
+          z-index: 4;
+
+          img{
+            width: 100%;
+          }
+        }
+
+        .ring-img{
+          width: 6.4%;
+          top: 18%;
+          left: 26%;
+
+          img{
+            &.wave{
+              position: absolute;
+              top: 10%;
+              left: 0;
+              width: 100%;
+            }
+          }
+        }
+
+        .light-img{
+          width: 28%;
+          top: 36%;
+          left: 58%;
+        }
+
+        .sound-img{
+          &.sound-1{
+            width: 8%;
+            top: 27%;
+            left: 6%;
+          }
+
+          &.sound-2{
+            width: 6.4%;
+            top: 33%;
+            left: 33%;
+          }
+        }
+      }
+    }
+
+    // Water Resistance
+    .water-resistance{
+      z-index: 0;
+      top: 840px;
+      height: 1546px;
+      left: 0;
+      right: 0;
+      position: absolute;
+
+      .main-content{
+        width: 530px;
+        left: 52%;
+        top: 740px;
+        color: $white;
+        position: absolute;
+      }
+
+      .effect-holder{
+        position: absolute;
+        top: 18vw;
+        left: 9vw;
+        width: 33vw;
+
+        .bike-img, .water-splash{
+          img{
+            display: block;
+            width: 100%;
+          }
+        }
+
+        .bike-img{
+          width: 100%;
+          top: 23%;
+          left: 0;
+        }
+
+        .water-splash{
+          position: absolute;
+          bottom: 0;
+          left: -10%;
+          right: -10%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1920px){
+    .feature-mixed-3 {
+      width: 1920px;
+      margin-left: calc((100% - 1920px) / 2);
+
+      // Water Resistance
+      .water-resistance{
+
+        .main-content{
+          width: 530px;
+          left: 52%;
+          top: 740px;
+        }
+
+        .effect-holder{
+          top: 18%;
+          left: 9%;
+          width: 43%;
+        }
+      }
+    }
+  }
+
+  @media #{$information-laptop}{
+    .feature-mixed-3 {
+      height: 2200px;
+    }
+  }
+
+  /* === RESPONSIVE === */
+  @media #{$information-tablet}{
+    .feature-mixed-3 {
+      height: 485.333vw;
+      width: 100%;
+      margin-left: 0;
+
+      .mixed-effect{
+        // Mixed Layer Effect
+        .mixed-layer{
+          height: 284.667vw;
+        }
+      }
+
+      // engine feature
+      .engine-feature{
+        height: 138.667vw;
+        left: 0;
+        right: 0;
+        top: 0;
+
+        .main-content{
+          width: 100%;
+          left: 0;
+          top: auto;
+          bottom: 30vw;
+        }
+
+        .effect-holder{
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: auto;
+          width: 84.8vw;
+          min-width: 40%;
+
+          .img-holder{
+            img{
+              display: block;
+              width: 100%;
+            }
+          }
+
+          .extra-content{
+            position: absolute;
+            top: 110%;
+            width: 80%;
+            left: 0;
+            display: flex !important;
+            justify-content: space-around;
+
+            .content-item{
+              font-size: 2.5em;
+
+              .label, .value{
+                display: block;
+                margin: auto;
+                text-align: center;
+              }
+
+              .value{
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+
+      // Anti Thief
+      .anti-thief-feature{
+        top: 138.667vw;
+        height: 162.667vw;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+
+        .main-content{
+          width: 100%;
+          left: 0;
+          position: static;
+        }
+
+        .effect-holder{
+          position: relative;
+          margin-top: 0;
+          width: 90%;
+          left: 8%;
+          top: 0;
+          height: auto;
+
+          .bike-img{
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            img{
+              width: 100%;
+            }
+
+            .main-bike{
+              position: relative;
+            }
+
+            .main-bike, .bike-shadow{
+              width: 100%;
+              top: 0;
+              left: 0;
+            }
+
+            .main-bike{
+              z-index: 2;
+            }
+
+            .bike-shadow{
+              &.shadow-1{
+                top: 0;
+                left: 0;
+                z-index: 1;
+              }
+
+              &.shadow-2{
+                top: 0;
+                left: 0;
+                z-index: 0;
+              }
+            }
+          }
+
+          .ring-img{
+            width: 6.4%;
+            top: 18%;
+            left: 26%;
+
+            img{
+              &.wave{
+                top: 10%;
+                left: 0;
+                width: 100%;
+              }
+            }
+          }
+
+          .light-img{
+            width: 28%;
+            top: 36%;
+            left: 58%;
+          }
+
+          .sound-img{
+            &.sound-1{
+              width: 8%;
+              top: 27%;
+              left: 6%;
+            }
+
+            &.sound-2{
+              width: 6.4%;
+              top: 33%;
+              left: 33%;
+            }
+          }
+        }
+      }
+
+      // Water Resistance
+      .water-resistance{
+        z-index: 0;
+        top: auto;
+        bottom: 0;
+        height: 201vw;
+
+        .main-content{
+          width: 100%;
+          left: 0;
+          top: auto;
+          bottom: 0;
+          padding-bottom: 10vw;
+          color: $white;
+          position: absolute;
+        }
+
+        .effect-holder{
+          top: 10vw;
+          left: -9vw;
+          width: 120vw;
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone}{
+    .feature-mixed-3 {
+      height: 485.333vw;
+
+      // engine feature
+      .engine-feature{
+        .main-content{
+          bottom: 20vw;
+        }
+
+        .effect-holder{
+          width: 84.8vw;
+
+          .extra-content{
+            top: 110%;
+            width: 90%;
+            left: 0;
+
+            .content-item{
+              font-size: 1.35em;
+            }
+          }
+        }
+      }
+
+      // Anti Thief
+      .anti-thief-feature{
+        top: 138.667vw;
+        height: 162.667vw;
+
+        .effect-holder{
+          margin-top: 0;
+          width: 94%;
+          left: 7%;
+          top: 0;
+        }
+      }
+
+      // Water Resistance
+      .water-resistance{
+        z-index: 0;
+        top: auto;
+        bottom: 0;
+        height: 201vw;
+
+        .main-content{
+          width: 100%;
+          left: 0;
+          top: auto;
+          bottom: 0;
+          padding-bottom: 5vw;
+          color: $white;
+          position: absolute;
+        }
+
+        .effect-holder{
+          top: 10vw;
+          left: -9vw;
+          width: 120vw;
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone}{
+
+  }
+}

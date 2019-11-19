@@ -1,0 +1,147 @@
+#yadea-e3-page{
+  .section-banner{
+    width: 100%;
+    min-width: 1920px;
+    height: 39.05vw; // Screen Bigger than 1920
+    min-height: 750px; // 1920ps and bellow
+    position: relative;
+
+    .bg-holder{
+      width: 100%;
+
+      img{
+        width: 100%;
+      }
+    }
+
+    .bike-img{
+      position: absolute;
+      top: 17.3%;
+      left: 55.2%;
+      width: 20.315%;
+
+      img{
+        width: 100%;
+      }
+    }
+
+    .main-content{
+      position: absolute;
+      top: 20%;
+      left: 25.52%;
+      width: 20.05%;
+
+      .logo-img{
+        width: 100%;
+        margin-bottom: 15px;
+
+        img{
+          width: 100%;
+        }
+      }
+
+      .cta-holder{
+        border: 2px solid #fec934;
+        background-color: $white;
+        height: 32px;
+        line-height: 30px;
+        padding: 0 16px;
+        border-radius: 16px;
+        display: inline-block;
+        color: #fec934;
+        font-weight: 700;
+        cursor:pointer;
+        transition: all ease-in 150ms;
+
+        &:hover{
+          color: $white;
+          background-color: #fec934;
+          transition: all ease-out 220ms;
+
+          .fa{
+            animation: arrowAnimation infinite 800ms;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1920px){
+    .section-banner{
+      margin-left: calc((100% - 1920px) / 2);
+      width: 1920px;
+    }
+  }
+
+  @media #{$information-tablet}{
+    .section-banner {
+      height: 180vw;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+
+      .bike-img{
+        position: absolute;
+        top: 46.14%;
+        left: 18%;
+        width: 65%;
+
+        img{
+          width: 100%;
+        }
+      }
+
+      .main-content{
+        top: 17.8%;
+        left: 7.33%;
+        width: 72%;
+
+        .logo-img{
+          margin-bottom: 15px;
+        }
+
+        .cta-holder{
+          height: 40px;
+          line-height: 38px;
+          font-size: 1.25em;
+          padding: 0 26px;
+          border-radius: 20px;
+
+          &:hover{
+            color: $white;
+            background-color: #fec934;
+            transition: all ease-out 220ms;
+
+            .fa{
+              animation: arrowAnimation infinite 800ms;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone}{
+    .section-banner {
+      min-height: 0;
+    }
+  }
+}
+
+@keyframes arrowAnimation {
+  0%{
+    transform: translateX(0);
+  }
+  25%{
+    transform: translateX(-1px);
+  }
+  50%{
+    transform: translateX(0);
+  }
+  75%{
+    transform: translateX(1px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}

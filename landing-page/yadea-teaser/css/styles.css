@@ -3480,8 +3480,8 @@ body.stop-scroll {
     #yadea-teaser-page .banner-section .apply-information-form {
       width: 100%;
       left: 0;
-      height: 113.5vw;
-      bottom: 0;
+      height: 110vw;
+      bottom: 5vw;
       padding-bottom: 30px; }
       #yadea-teaser-page .banner-section .apply-information-form .apply-info-modal {
         height: 38px;
@@ -3494,9 +3494,7 @@ body.stop-scroll {
           top: 0.05em; }
       #yadea-teaser-page .banner-section .apply-information-form .more-detail {
         color: #FFF;
-        font-size: 1.5em; }
-    #yadea-teaser-page .banner-section .arrow-effect {
-      display: none; } }
+        font-size: 1.5em; } }
   @media (max-width: 660px) {
     #yadea-teaser-page .banner-section .screen-wrapper {
       height: 240vw;
@@ -3525,8 +3523,8 @@ body.stop-scroll {
         margin-top: 0.5em;
         padding-left: 0.15em; }
     #yadea-teaser-page .banner-section .apply-information-form {
-      height: 120vw;
-      padding-bottom: 30px; }
+      height: 117vw;
+      bottom: 3vw; }
       #yadea-teaser-page .banner-section .apply-information-form .apply-info-modal {
         height: 38px;
         line-height: 38px;
@@ -3562,7 +3560,7 @@ body.stop-scroll {
         padding-left: 0.15em; }
     #yadea-teaser-page .banner-section .apply-information-form {
       height: 137vw;
-      padding-bottom: 25px; }
+      bottom: 4vw; }
       #yadea-teaser-page .banner-section .apply-information-form .apply-info-modal {
         height: 38px;
         line-height: 38px;
@@ -3601,7 +3599,7 @@ body.stop-scroll {
         padding-left: 0.1em; }
     #yadea-teaser-page .banner-section .apply-information-form {
       height: 178vw;
-      padding-bottom: 15px; }
+      bottom: 4vw; }
       #yadea-teaser-page .banner-section .apply-information-form .apply-info-modal {
         height: 32px;
         line-height: 33px;
@@ -3612,7 +3610,12 @@ body.stop-scroll {
           font-size: 1.2em;
           top: 0.05em; }
       #yadea-teaser-page .banner-section .apply-information-form .more-detail {
-        font-size: 1.25em; } }
+        font-size: 1.25em; }
+    #yadea-teaser-page .banner-section .arrow-effect {
+      bottom: 5px;
+      left: calc(50% - 10px); }
+      #yadea-teaser-page .banner-section .arrow-effect img {
+        width: 20px; } }
   @media only screen and (max-width: 360px) {
     #yadea-teaser-page .banner-section .banner-heading {
       width: 100%;
@@ -4032,9 +4035,11 @@ body.stop-scroll {
     left: 32%; }
     #yadea-teaser-page .three-column-layout .layout-item.smart-layout .center .img-holder .pin-holder img {
       opacity: 0;
+      -webkit-transform: translateY(-7px);
       transform: translateY(-7px); }
       #yadea-teaser-page .three-column-layout .layout-item.smart-layout .center .img-holder .pin-holder img.animating {
         opacity: 1;
+        -webkit-transform: translateY(0);
         transform: translateY(0);
         transition: all ease-out 350ms 50ms;
         animation: pinToggle 1.25s 400ms linear infinite; }
@@ -4304,9 +4309,11 @@ body.stop-scroll {
             top: 49%; }
             .three-column-layout-mb .layout-item.smart-layout .center .img-holder .pin-holder img {
               opacity: 0;
+              -webkit-transform: translateY(-5px);
               transform: translateY(-5px); }
               .three-column-layout-mb .layout-item.smart-layout .center .img-holder .pin-holder img.animating {
                 opacity: 1;
+                -webkit-transform: translateY(0);
                 transform: translateY(0);
                 transition: all ease-out 350ms 50ms;
                 animation: pinToggle 1.25s 400ms linear infinite; }
@@ -4810,9 +4817,9 @@ body.stop-scroll {
         z-index: 3; }
         #yadea-teaser-page .prize-detail .prize-list-layout .center-prize .img-effect-holder {
           position: absolute;
-          width: 84%;
-          top: 2.75%;
-          left: 11.5%; }
+          width: 84.3%;
+          top: 3.8%;
+          left: 10.5%; }
           #yadea-teaser-page .prize-detail .prize-list-layout .center-prize .img-effect-holder img {
             display: block;
             width: 100%; }
@@ -4900,16 +4907,16 @@ body.stop-scroll {
         #yadea-teaser-page .prize-detail .prize-list-layout .detail {
           display: none; }
         #yadea-teaser-page .prize-detail .prize-list-layout .center-prize {
-          grid-column: 1;
-          grid-row: 1 / span 2;
+          grid-column: 1 / span 2;
+          grid-row: 1;
           width: 77%;
           margin: 0 auto; }
           #yadea-teaser-page .prize-detail .prize-list-layout .center-prize .prize-holder {
             height: 100%; }
             #yadea-teaser-page .prize-detail .prize-list-layout .center-prize .prize-holder .img-effect-holder {
-              width: 95%;
-              top: 10.2%;
-              left: 8%; }
+              width: 84%;
+              top: 16.2%;
+              left: 10.9%; }
           #yadea-teaser-page .prize-detail .prize-list-layout .center-prize .img-holder {
             width: 92%;
             display: flex;
@@ -4920,7 +4927,7 @@ body.stop-scroll {
           width: 80%;
           margin: auto; }
         #yadea-teaser-page .prize-detail .prize-list-layout .right-prize {
-          grid-row: 1; }
+          grid-row: 2; }
           #yadea-teaser-page .prize-detail .prize-list-layout .right-prize .prize-holder .img-holder.front {
             left: 31%;
             width: 65%;
@@ -5179,8 +5186,7 @@ body.stop-scroll {
           display: block;
           margin: auto;
           position: relative;
-          z-index: 2;
-          opacity: 0; }
+          z-index: 2; }
         #yadea-teaser-page .section-spec-slider .color-slider-holder .g5-color-item .shadow-effect {
           position: absolute;
           width: 60%;
@@ -5193,8 +5199,7 @@ body.stop-scroll {
           transform: scale(0.45);
           -webkit-transform: scale(0.45); }
       #yadea-teaser-page .section-spec-slider .color-slider-holder .slick-active .g5-color-item img {
-        opacity: 1;
-        transition: all ease-out 800ms; }
+        opacity: 1; }
       #yadea-teaser-page .section-spec-slider .color-slider-holder .slick-active .g5-color-item .shadow-effect {
         transition: all ease-out 500ms;
         opacity: 0.8;
@@ -5350,7 +5355,8 @@ body.stop-scroll {
         #yadea-teaser-page .section-spec-slider .spec-estimation .spec-list .spec-row {
           padding: 6px 0; }
           #yadea-teaser-page .section-spec-slider .spec-estimation .spec-list .spec-row .label {
-            width: 33.33%; } }
+            width: 36%;
+            padding-right: 12px; } }
   @media (max-width: 540px) {
     #yadea-teaser-page .section-spec-slider {
       padding-top: 50px; }
@@ -5358,7 +5364,8 @@ body.stop-scroll {
         width: 100%; }
         #yadea-teaser-page .section-spec-slider .color-slider-holder:before, #yadea-teaser-page .section-spec-slider .color-slider-holder:after {
           width: 13%;
-          height: 100%; }
+          height: 100%;
+          display: none; }
         #yadea-teaser-page .section-spec-slider .color-slider-holder .g5-color-item img {
           width: 100%; }
         #yadea-teaser-page .section-spec-slider .color-slider-holder .g5-color-item .shadow-effect {
@@ -5517,16 +5524,19 @@ body.stop-scroll {
           #yadea-teaser-page .section-news-slider .news-layout-holder .news-item .content-holder .context {
             color: #070d15;
             font-size: 1em;
-            letter-spacing: 0.04em;
             line-height: 2em;
-            margin: 35px 0 40px;
-            max-height: 130px;
-            overflow: hidden;
-            text-align: center; }
+            margin: 25px 0 20px;
+            max-height: 150px;
+            overflow: hidden; }
             #yadea-teaser-page .section-news-slider .news-layout-holder .news-item .content-holder .context .title {
-              font-size: 1em;
-              letter-spacing: 0.04em;
-              line-height: 2em; }
+              font-size: 0.95em;
+              line-height: 1.25em;
+              margin-bottom: 8px;
+              font-weight: 600;
+              letter-spacing: 0; }
+            #yadea-teaser-page .section-news-slider .news-layout-holder .news-item .content-holder .context .desc {
+              font-size: 0.9em;
+              line-height: 1.25em; }
       #yadea-teaser-page .section-news-slider .news-layout-holder .news-slider-control {
         position: absolute;
         border: 5px solid #070d15;
@@ -5572,12 +5582,11 @@ body.stop-scroll {
               font-size: 1.1em;
               letter-spacing: 0.04em;
               line-height: 1.8em;
-              margin: 35px 0 40px;
-              max-height: 110px; }
+              margin: 15px 0 20px;
+              max-height: 140px; }
               #yadea-teaser-page .section-news-slider .news-layout-holder .news-item .content-holder .context .title {
-                font-size: 1em;
-                letter-spacing: 0.04em;
-                line-height: 2em; }
+                font-size: 0.95em;
+                line-height: 1.25em; }
         #yadea-teaser-page .section-news-slider .news-layout-holder .news-slider-control {
           border: 5px solid #070d15;
           border-radius: 4px;
@@ -5612,12 +5621,10 @@ body.stop-scroll {
               font-size: 1.1em;
               letter-spacing: 0.04em;
               line-height: 1.8em;
-              margin: 30px 0 30px;
+              margin: 15px 0 13px;
               max-height: 110px; }
               #yadea-teaser-page .section-news-slider .news-layout-holder .news-item .content-holder .context .title {
-                font-size: 1em;
-                letter-spacing: 0.04em;
-                line-height: 2em; }
+                font-size: 0.95em; }
         #yadea-teaser-page .section-news-slider .news-layout-holder .news-slider-control {
           width: 28px;
           height: 28px;
@@ -5647,12 +5654,12 @@ body.stop-scroll {
             font-size: 1em;
             letter-spacing: 0.04em;
             line-height: 1.8em;
-            margin: 20px 0 20px;
+            margin: 10px 0 10px;
             max-height: 95px; }
             #yadea-teaser-page .section-news-slider .news-layout-holder .news-item .content-holder .context .title {
-              font-size: 1em;
-              letter-spacing: 0.04em;
-              line-height: 2em; }
+              font-size: 0.9em; }
+            #yadea-teaser-page .section-news-slider .news-layout-holder .news-item .content-holder .context .desc {
+              font-size: 0.85em; }
       #yadea-teaser-page .section-news-slider .news-layout-holder .news-slider-control {
         width: 24px;
         height: 24px;

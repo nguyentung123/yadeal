@@ -1,0 +1,21 @@
+#page-footer {
+  /* === DESKTOP === */
+  // Casual Laptop 1368px to 1280px
+  @media #{$information-laptop} {}
+
+  // Casual Laptop 1280px and bellow
+  @media #{$information-sm-laptop} {}
+  /* === DESKTOP - END === */
+
+
+  /* === RESPONSIVE === */
+  // Tablet 768px to 480px
+  @media #{$information-tablet} {}
+
+  // Phone Screen From 480px to 360px
+  @media #{$information-phone} {}
+
+  // Phone Screen Below 360px
+  @media #{$information-sm-phone} {}
+  /* === RESPONSIVE - END === */
+}

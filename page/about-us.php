@@ -132,7 +132,7 @@ get_header();
                         </div>
                         <div class="text">
                             <p>
-                                Để sản phẩm có độ hoàn thiện và khả năng chống ăn mòn tốt nhất, nhà máy sử dụng công nghệ tự động hóa với robot lập trình quốc tế cho quy trình hàn kết dính, cùng với lựa . Cùng với đó là việc chọn những nhà cung cấp linh kiện tiêu chuẩn hàng đầu thế giới.<br />
+                                Để sản phẩm có độ hoàn thiện và khả năng chống ăn mòn tốt nhất, nhà máy sử dụng công nghệ tự động hóa với robot lập trình quốc tế cho quy trình hàn kết dính. Cùng với đó là việc chọn những nhà cung cấp linh kiện tiêu chuẩn hàng đầu thế giới.<br />
                             </p>
                             <p>
                                 YADEA là công ty đầu tiên trong ngành áp dụng hệ thống sản xuất YPS (Toyota Lean Production System), nhằm kiểm soát quy trình sản xuất cũng như giám sát chất lượng chặt chẽ nhất.

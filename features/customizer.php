@@ -37,6 +37,18 @@ function yadea_customizer_setting($wp_customize){
         'type'     => 'url',
     ));
 
+    /* ===== Youtube ===== */
+    $wp_customize->add_setting('instagram_page', array(
+        'default'     => 'https://www.instagram.com/yadeavietnam/',
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('instagra,_page', array(
+        'label'    => 'Instagram Page',
+        'section'  => 'company_contact',
+        'settings' => 'instagram_page',
+        'type'     => 'url',
+    ));
+
     /* ===== Phone Number ===== */
     $wp_customize->add_setting('footer_phone', array(
         'default'     => 'SDT: 0909310376',

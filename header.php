@@ -4,8 +4,70 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta property="fb:app_id" content="575722139842209" />
 
     <?php wp_head(); ?>
+
+    <!-- META DATA -->
+    <?php if(is_page()): ?>
+        <?php if(get_field('page_meta_title')): ?>
+            <title><?php echo get_field('page_meta_title'); ?></title>
+            <meta property="og:title" content="<?php echo get_field('page_meta_title'); ?>">
+        <?php else: ?>
+            <title><?php echo get_the_title() . ' | YADEA - ' .  get_bloginfo( 'description'); ?></title>
+            <meta property="og:title" content="<?php echo get_the_title() . ' | YADEA - ' .  get_bloginfo( 'description'); ?>">
+        <?php endif; ?>
+        <meta property="og:type" content="website">
+        <?php if(get_field('page_description')): ?>
+            <meta name="description" content="<?php echo get_field('page_description'); ?>">
+            <meta property="og:description" content="<?php echo get_field('page_description'); ?>">
+        <?php endif; ?>
+
+        <?php if(get_field('page_keywords')): ?>
+            <meta name="keyword" content="<?php echo get_field('page_keywords'); ?>">
+        <?php endif; ?>
+
+        <meta property="og:url" content="<?php echo get_permalink(); ?>">
+
+        <?php if(has_post_thumbnail()): ?>
+            <meta property="og:image" content="<?php echo get_the_post_thumbnail_url(); ?>">
+            <meta property="og:image:secure_url" content="<?php echo get_the_post_thumbnail_url(); ?>">
+        <?php else: ?>
+            <meta property="og:image" content="<?php echo get_theme_file_uri('assets/img/fbshare.png'); ?>">
+            <meta property="og:image:secure_url" content="<?php echo get_theme_file_uri('assets/img/fbshare.png'); ?>">
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <?php if(is_singular('product')): ?>
+        <title><?php echo get_the_title() . ' | YADEA - ' .  get_bloginfo( 'description'); ?></title>
+        <meta property="og:title" content="<?php echo get_the_title() . ' | YADEA - ' .  get_bloginfo( 'description'); ?>">
+
+        <?php if(get_field('product_description')): ?>
+            <meta name="description" content="<?php echo get_field('product_description'); ?>">
+            <meta property="og:description" content="<?php echo get_field('product_description'); ?>">
+        <?php endif; ?>
+
+        <?php if(get_field('product_keywords')): ?>
+            <meta name="keyword" content="<?php echo get_field('product_keywords'); ?>">
+        <?php endif; ?>
+
+        <?php if(has_post_thumbnail()): ?>
+            <meta property="og:image" content="<?php echo get_the_post_thumbnail_url(); ?>">
+            <meta property="og:image:secure_url" content="<?php echo get_the_post_thumbnail_url(); ?>">
+        <?php else: ?>
+            <meta property="og:image" content="<?php echo get_theme_file_uri('assets/img/fbshare.png'); ?>">
+            <meta property="og:image:secure_url" content="<?php echo get_theme_file_uri('assets/img/fbshare.png'); ?>">
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <?php if(is_404()): ?>
+        <title><?php echo 'Không tìm thấy trang | YADEA - ' .  get_bloginfo( 'description'); ?></title>
+        <meta property="og:title" content="<?php echo 'Không tìm thấy trang | YADEA - ' .  get_bloginfo( 'description'); ?>">
+        <meta property="og:image" content="<?php echo get_theme_file_uri('assets/img/fbshare.png'); ?>">
+        <meta property="og:image:secure_url" content="<?php echo get_theme_file_uri('assets/img/fbshare.png'); ?>">
+    <?php endif; ?>
+
+    <!-- META DATA -->
 
     <!-- TRACKING CODE -->
     <!-- Google Tag Manager -->
@@ -69,10 +131,10 @@
 
                 <!-- Header Main Menu -->
                 <ul class="nav justify-content-end mb-hide">
-                    <li class="nav-item <?php if(is_page('products')) echo 'active'; ?>" id="sub-menu-trigger">
+                    <li class="nav-item <?php if(is_page('products')) echo 'active'; ?>" id="sub-menu-trigger" style="display: none;">
                         <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
                     </li>
-                    <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
+                    <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>" style="display: none;">
                         <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
                     </li>
                     <li id="about-us-sub-menu-trigger" class="nav-item <?php if(is_page('/about-us')) echo 'active'; ?>">
@@ -165,7 +227,7 @@
         <ul class="nav light-gray-bg">
 
             <!-- Product Listing -->
-            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>">
+            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>" style="display: none;">
                 <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
 
                 <?php get_template_part('template-parts/header', 'product-mobile'); ?>
@@ -173,13 +235,13 @@
             </li>
 
             <!-- Shop Searching Page -->
-            <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
+            <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>" style="display: none;">
                 <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
             </li>
 
             <!-- About Us -->
             <li class="nav-item with-sub-menu">
-                <a class="nav-link">Về chúng tôi</a>
+                <a class="nav-link" href="<?php echo site_url('/about') ?>">Về chúng tôi</a>
                 <i class="fa fa-plus nav-trigger active" aria-hidden="true"></i>
                 <ul class="nav-item__sub-menu" style="">
                     <!-- About Item -->

@@ -20,7 +20,7 @@ get_header();
             <div class="row support-type text-center">
 
                 <!-- Support Item -->
-                <div class="support-type__item col-lg-3 col-6">
+                <div class="support-type__item col-lg-3 col-6" style="display: none;">
                     <div class="support-type__item__image">
                         <img src="<?php echo get_template_directory_uri();?>/assets/img/icons/shield-main.png">
                     </div>
@@ -31,7 +31,7 @@ get_header();
                 </div>
 
                 <!-- Support Item -->
-                <div class="support-type__item col-lg-3 col-6">
+                <div class="support-type__item col-lg-3 col-6" style="display: none;">
                     <div class="support-type__item__image">
                         <img src="<?php echo get_template_directory_uri();?>/assets/img/icons/pin-main.png">
                     </div>
@@ -42,7 +42,7 @@ get_header();
                 </div>
 
                 <!-- Support Item -->
-                <div class="support-type__item col-lg-3 col-6">
+                <div class="support-type__item col-lg-3 col-6" style="display: none;">
                     <div class="support-type__item__image">
                         <img src="<?php echo get_template_directory_uri();?>/assets/img/icons/envelop-main.png">
                     </div>
@@ -53,7 +53,7 @@ get_header();
                 </div>
 
                 <!-- Support Item -->
-                <div class="support-type__item col-lg-3 col-6" id="trigger-as-shop">
+                <div class="support-type__item col-lg-3 col-12" id="trigger-as-shop">
                     <div class="support-type__item__image">
                         <img src="<?php echo get_template_directory_uri();?>/assets/img/icons/shield-main.png">
                     </div>

@@ -18,10 +18,10 @@
 
                 <!-- Header Main Menu -->
                 <ul class="nav justify-content-end mb-hide">
-                    <li class="nav-item <?php if(is_page('products')) echo 'active'; ?>" id="sub-menu-trigger">
+                    <li class="nav-item <?php if(is_page('products')) echo 'active'; ?>" id="sub-menu-trigger" style="display: none;">
                         <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
                     </li>
-                    <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
+                    <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>" style="display: none;">
                         <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
                     </li>
                     <li id="about-us-sub-menu-trigger" class="nav-item <?php if(is_page('/about-us')) echo 'active'; ?>">
@@ -114,7 +114,7 @@
         <ul class="nav light-gray-bg">
 
             <!-- Product Listing -->
-            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>">
+            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>" style="display: none;">
                 <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
 
                 <?php get_template_part('template-parts/header', 'product-mobile'); ?>
@@ -122,13 +122,13 @@
             </li>
 
             <!-- Shop Searching Page -->
-            <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
+            <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>" style="display: none;">
                 <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
             </li>
 
             <!-- About Us -->
             <li class="nav-item with-sub-menu">
-                <a class="nav-link">Về chúng tôi</a>
+                <a class="nav-link" href="<?php echo site_url('/about') ?>">Về chúng tôi</a>
                 <i class="fa fa-plus nav-trigger active" aria-hidden="true"></i>
                 <ul class="nav-item__sub-menu" style="">
                     <!-- About Item -->
@@ -183,19 +183,19 @@
 
                 <ul class="sub-menu-main">
                     <li class="close-sub-menu">
-                        <a href="#section-product-info">Thông tin sản phẩm</a>
+                        <a href="https://yadeavietnam.vn/yadea-g5/teaser/#section-product-info">Thông tin sản phẩm</a>
+                    </li>
+                    <li class="close-sub-menu" style="display: none;">
+                        <a href="https://yadeavietnam.vn/yadea-g5/teaser/#follow-event-section">Sự kiện ra mắt</a>
                     </li>
                     <li class="close-sub-menu">
-                        <a href="#follow-event-section">Sự kiện ra mắt</a>
-                    </li>
-                    <li class="close-sub-menu">
-                        <a href="#specs-section">Thông số kỹ thuật</a>
+                        <a href="https://yadeavietnam.vn/yadea-g5/teaser/#specs-section">Thông số kỹ thuật</a>
                     </li>
                 </ul>
 
                 <!-- Price CTA -->
                 <div class="cta-wrapper">
-                    <a class="cta" href="#">MUA NGAY</a>
+                    <a class="cta apply-info-modal track-this-button" id="apply-information-yadea-g5-header-section">ĐĂNG KÝ</a>
                 </div>
                 <!-- Price CTA -->
             </div><!-- Price Row -->

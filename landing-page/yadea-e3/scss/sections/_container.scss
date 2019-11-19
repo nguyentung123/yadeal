@@ -1,0 +1,90 @@
+#yadea-e3-page{
+  .section-bike-container{
+    position: relative;
+    background-color: #F8F2F2;
+    height: 47.91vw;
+
+    .main-content{
+      position: absolute;
+      top: 34.78%;
+      left: 52.08%;
+      width: 26.3%;
+    }
+
+    .effect-holder{
+      position: absolute;
+      bottom: 0;
+      left: 10.935%;
+      width: 39.0625%;
+
+      .container-img{
+        img{
+          width: 100%;
+        }
+      }
+
+      .inside-img{
+        position: absolute;
+        top: 29.1%;
+        left: 8.4%;
+        width: 60%;
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1920px){
+    .section-bike-container {
+      width: 1920px;
+      height: 920px;
+      margin-left: calc((100% - 1920px) / 2);
+    }
+  }
+
+  /* === RESPONSIVE === */
+  @media #{$information-tablet}{
+    .section-bike-container{
+      height: 162.26vw;
+      width: 100%;
+      margin: 0;
+
+      .main-content{
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 100%;
+      }
+
+      .effect-holder{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        .inside-img{
+          position: absolute;
+          top: 30.5%;
+          left: 12.45%;
+          width: 59%;
+          transform: rotate(8deg);
+
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone}{
+    .section-bike-container{
+      height: 150vw;
+
+      .main-content{
+        top: 3%;
+      }
+    }
+  }
+}
