@@ -164,40 +164,39 @@
     </div>
     <!-- Mobile Drop Down Menu - END -->
 
-    <!-- Price Tag -->
-    <section class="price-tag">
+    <!-- Sub Menu -->
+    <section class="sub-header">
         <!-- Container -->
         <div class="container">
 
             <!-- Price Row -->
-            <div class="price-row">
+            <div class="sub-menu-row">
 
                 <!-- Features List -->
-                <span class="mb-show g5-price-tag-menu">
-                    <i class="fa fa-bars open-g5-menu" aria-hidden="true" id="open-g5-menu-btn"></i>
-                    <i class="fa fa-times close-g5-menu" aria-hidden="true" id="close-g5-menu-btn"></i>
+                <span class="mb-show sub-menu-toggler">
+                    <i class="fa fa-bars" aria-hidden="true" id="open-sub-menu-btn"></i>
+                    <i class="fa fa-times" aria-hidden="true" id="close-sub-menu-btn"></i>
                 </span>
 
-                <ul class="features-list">
-                    <li class="feature-item close-g5-menu">
-                        <a href="http://yadeavietnam.vn/yadea-g5/">Sản phẩm</a>
+                <!-- overlay -->
+                <div class="close-sub-menu sub-menu-overlay"></div>
+
+                <ul class="sub-menu-main">
+                    <li class="close-sub-menu">
+                        <a href="https://yadeavietnam.vn/yadea-e3#section-e3-design">Thông tin sản phẩm</a>
                     </li>
-                    <li class="feature-item close-g5-menu">
-                        <a href="http://yadeavietnam.vn/yadea-g5/">Giá & Thông số</a>
+<!--                    <li class="close-sub-menu" style="display: none;">-->
+<!--                        <a href="https://yadeavietnam.vn/yadea-g5/teaser/#follow-event-section">Sự kiện ra mắt</a>-->
+<!--                    </li>-->
+                    <li class="close-sub-menu">
+                        <a href="https://yadeavietnam.vn/yadea-e3#specs-section">Thông số kỹ thuật</a>
                     </li>
-                    <li class="feature-item close-g5-menu" style="display: none">
-                        <a href="#">Đánh giá, so sánh</a>
-                    </li>
-                    <li class="overlay close-g5-menu"></li>
                 </ul>
 
                 <!-- Price CTA -->
-                <div class="price-cta-wrapper" style="display: none;">
-                    <p class="price-holder">
-                        Giá: <span class="price-value">35 000 000 VNĐ</span>
-                    </p>
-                    <a class="price-cta" href="<?php echo site_url('/shops') ?>">MUA NGAY</a>
-                </div>
+<!--                <div class="cta-wrapper">-->
+<!--                    <a class="cta apply-info-modal track-this-button" id="apply-information-yadea-g5-header-section">ĐĂNG KÝ</a>-->
+<!--                </div>-->
                 <!-- Price CTA -->
             </div><!-- Price Row -->
 

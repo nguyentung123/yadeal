@@ -1640,7 +1640,7 @@ if(is_user_logged_in()){
 
 
     <!-- Section Real Image Slider -->
-    <section class="product-real-image-section" id="product-real-image-section">
+    <section class="product-real-image-section" id="product-real-image-section" style="display: none;">
 
         <!-- Container -->
         <div class="container">
@@ -1698,7 +1698,7 @@ if(is_user_logged_in()){
 
 
     <!-- Product Other Information -->
-    <section class="product-other-information" id="product-other-information">
+    <section class="product-other-information" id="product-other-information" style="display: none;">
 
         <!-- Left Page Information -->
         <div class="info-item left-info">
@@ -1723,7 +1723,13 @@ if(is_user_logged_in()){
 
 
     <!-- Social Comment Section -->
-    <div class="social-comment"></div>
+    <div class="social-comment">
+        <!-- Container -->
+        <div class="container small">
+            <div class="fb-comments" data-href="https://yadeavietnam.vn/yadea-g5" data-width="100%" data-numposts="5"></div>
+        </div>
+        <!-- Container -->
+    </div>
     <!-- Social Comment Section -->
 </div>
 <!-- ====== MAIN CONTENT - END ====== -->

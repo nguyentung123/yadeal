@@ -9,11 +9,20 @@ Template Name: Yadea Ulike Product Landing Page
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>Yadea U-Like</title>
+    <title>YADEA ULIKE | Không ngại đường xa | Xe máy điện thông minh</title>
     <base href="<?php echo get_theme_file_uri('landing-page/yadea-ulike/'); ?>" target="_blank">
-
+    <meta property="fb:app_id" content="575722139842209" />
 
     <!-- META DATA -->
+    <meta name="description" content="Xe máy điện thông minh YADEA ULIKE, Quãng đường xa 80km thiết kế mạnh mẽ phù hợp học sinh sinh viên nhân viên văn phòng, xem thông tin thông số kĩ thuật xe điện, so sánh xe điện, xem giá xe máy điện YADEA ULIKE, hình ảnh thực tế xe ULIKE">
+    <meta name="keyword" content="yadea Ulike, Ulike, xe Ulike, xe yadea Ulike, xe máy điện yadea Ulike, xe điện yadea Ulike, xe máy điện Ulike, so sánh yadea Ulike, đánh giá yadea Ulike, giá yadea Ulike, hình ảnh yadea Ulike, thông số yadea Ulike, so sánh Ulike, đánh giá Ulike, giá Ulike, hình ảnh Ulike, thông số Ulike, xe máy điện thông minh, xe điện thông minh, xe máy điện, xe điện.">
+    <meta property="og:url" content="https://yadeavietnam.vn/yadea-ulike">
+
+    <meta property="og:image" content="<?php echo get_theme_file_uri('landing-page/yadea-ulike/img/fbshare.jpg'); ?>">
+    <meta property="og:image:secure_url" content="<?php echo get_theme_file_uri('landing-page/yadea-ulike/img/fbshare.jpg'); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YADEA ULIKE | Không ngại đường xa | Xe máy điện thông minh">
+    <meta property="og:description" content="Xe máy điện thông minh YADEA ULIKE, Quãng đường xa 80km thiết kế mạnh mẽ phù hợp học sinh sinh viên nhân viên văn phòng, xem thông tin thông số kĩ thuật xe điện, so sánh xe điện, xem giá xe máy điện YADEA ULIKE, hình ảnh thực tế xe ULIKE">
     <!-- META DATA - END -->
 
     <!-- STYLESHEET -->
@@ -157,7 +166,7 @@ Template Name: Yadea Ulike Product Landing Page
 
     <!-- Section Divider -->
     <section class="section section-divider"
-             style="background-image: url('img/bg1.jpg'); ">
+             style="background-image: url('img/bg1.jpg'); " id="section-ulike-feature">
 
         <!-- Background Holder -->
         <div class="bg-holder"></div>
@@ -1284,7 +1293,7 @@ Template Name: Yadea Ulike Product Landing Page
             <!-- Color Slider Holder - END -->
 
             <!-- Prize Estimation -->
-            <div class="prize-estimation">
+            <div class="prize-estimation" style="display: none;">
                 <p class="price-holder">
                     Giá dự kiến: <span class="highlight">00.000.000 <span class="small">vnđ</span></span>
                 </p>
@@ -1293,7 +1302,7 @@ Template Name: Yadea Ulike Product Landing Page
 
 
             <!-- Spec Estimation -->
-            <div class="spec-estimation">
+            <div class="spec-estimation" style="display: none;">
                 <h2 class="spec-title">THÔNG SỐ DỰ KIẾN <br class="mb-show">YADEA G5</h2>
 
                 <!-- Spec List -->
@@ -1345,7 +1354,7 @@ Template Name: Yadea Ulike Product Landing Page
 
 
     <!-- News Slider -->
-    <section class="section section-news-slider">
+    <section class="section section-news-slider" style="display: none;">
 
         <!-- Container -->
         <div class="container">
@@ -1487,7 +1496,7 @@ Template Name: Yadea Ulike Product Landing Page
     <section class="social-comment">
         <!-- Container -->
         <div class="container small">
-            <div class="fb-comments" data-href="https://yadeavietnam.vn/" data-width="100%" data-numposts="5"></div>
+            <div class="fb-comments" data-href="https://yadeavietnam.vn/yadea-ulike" data-width="100%" data-numposts="5"></div>
         </div>
         <!-- Container -->
     </section>

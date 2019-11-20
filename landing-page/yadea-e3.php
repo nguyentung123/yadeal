@@ -11,9 +11,21 @@ Template Name: Yadea E3 Product Landing Page
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta property="fb:app_id" content="575722139842209" />
 
-    <title>Yadea E3</title>
+    <title>YADEA E3 | Phong cách của tôi | Xe máy điện thông minh</title>
     <base href="<?php echo get_theme_file_uri('landing-page/yadea-e3/'); ?>" target="_blank">
+    <meta property="fb:app_id" content="575722139842209" />
 
+    <!-- META DATA -->
+    <meta name="description" content="Xe máy điện thông minh YADEA E3 phong cách trẻ trung phù hợp học sinh sinh viên nhân viên văn phòng, Quãng đường dài phù hợp học sinh, xem thông tin thông số kĩ thuật xe điện, so sánh xe điện, xem giá xe máy điện YADEA E3, hình ảnh thực tế xe E3">
+    <meta name="keyword" content="yadea E3, E3, xe E3, xe yadea E3, xe máy điện yadea E3, xe điện yadea E3, xe máy điện E3, so sánh yadea E3, đánh giá yadea E3, giá yadea E3, hình ảnh yadea E3, thông số yadea E3, so sánh E3, đánh giá E3, giá E3, hình ảnh E3, thông số E3, xe máy điện thông minh, xe điện thông minh, xe máy điện, xe điện.">
+    <meta property="og:url" content="https://yadeavietnam.vn/yadea-e3">
+
+    <meta property="og:image" content="<?php echo get_theme_file_uri('landing-page/yadea-e3/img/fbshare.jpg'); ?>">
+    <meta property="og:image:secure_url" content="<?php echo get_theme_file_uri('landing-page/yadea-e3/img/fbshare.jpg'); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YADEA E3 | Phong cách của tôi | Xe máy điện thông minh">
+    <meta property="og:description" content="Xe máy điện thông minh YADEA E3 phong cách trẻ trung phù hợp học sinh sinh viên nhân viên văn phòng, Quãng đường dài phù hợp học sinh, xem thông tin thông số kĩ thuật xe điện, so sánh xe điện, xem giá xe máy điện YADEA E3, hình ảnh thực tế xe E3">
+    <!-- META DATA - END -->
     <!-- META DATA -->
     <!-- META DATA - END -->
 
@@ -131,7 +143,7 @@ Template Name: Yadea E3 Product Landing Page
 
 
     <!-- Section Design Intro -->
-    <section class="section section-design-intro">
+    <section class="section section-design-intro" id="section-e3-design">
 
         <!-- Custom Container -->
         <div class="custom-container">
@@ -960,7 +972,7 @@ Template Name: Yadea E3 Product Landing Page
             <!-- Color Slider Holder - END -->
 
             <!-- Prize Estimation -->
-            <div class="prize-estimation">
+            <div class="prize-estimation" style="display: none">
                 <p class="price-holder">
                     Giá dự kiến: <span class="highlight">00.000.000 <span class="small">vnđ</span></span>
                 </p>
@@ -969,8 +981,8 @@ Template Name: Yadea E3 Product Landing Page
 
 
             <!-- Spec Estimation -->
-            <div class="spec-estimation">
-                <h2 class="spec-title">THÔNG SỐ DỰ KIẾN <br class="mb-show">YADEA G5</h2>
+            <div class="spec-estimation" style="display: none">
+                <h2 class="spec-title">THÔNG SỐ DỰ KIẾN <br class="mb-show">YADEA E3</h2>
 
                 <!-- Spec List -->
                 <div class="spec-list">
@@ -1021,7 +1033,7 @@ Template Name: Yadea E3 Product Landing Page
 
 
     <!-- News Slider -->
-    <section class="section section-news-slider">
+    <section class="section section-news-slider" style="display: none;">
 
         <!-- Container -->
         <div class="container">
@@ -1163,7 +1175,7 @@ Template Name: Yadea E3 Product Landing Page
     <section class="social-comment">
         <!-- Container -->
         <div class="container small">
-            <div class="fb-comments" data-href="https://yadeavietnam.vn/" data-width="100%" data-numposts="5"></div>
+            <div class="fb-comments" data-href="https://yadeavietnam.vn/yadea-e3" data-width="100%" data-numposts="5"></div>
         </div>
         <!-- Container -->
     </section>
