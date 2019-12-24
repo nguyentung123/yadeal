@@ -1,0 +1,215 @@
+#yadea-e3-page {
+  padding-top: 120px;
+
+  .section {
+    display: block;
+
+    .main-content {
+      font-family: 'Encode Sans Semi Expanded', sans-serif;
+      color: #2c2c2c;
+
+      .title {
+        font-size: 2em;
+        line-height: 1.615em;
+        letter-spacing: 0.004em;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .sub-title {
+        font-size: 1.5em;
+        line-height: 1.75em;
+        letter-spacing: 0.004em;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .desc {
+        font-size: 1em;
+        line-height: 1.375em;
+        letter-spacing: 0.006em;
+      }
+
+      .extra-content{
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+
+        .content-item{
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+
+          span{
+            line-height: 1.375em;
+          }
+
+          .value{
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    @media #{$information-laptop}{
+      .main-content {
+        .title {
+          font-size: 1.7em;
+          line-height: 1.5em;
+          letter-spacing: 0.003em;
+        }
+
+        .sub-title {
+          font-size: 1.4em;
+          line-height: 1.7em;
+          letter-spacing: 0.003em;
+        }
+
+        .desc {
+          font-size: 0.95em;
+          line-height: 1.37em;
+          letter-spacing: 0.005em;
+        }
+      }
+    }
+
+    @media #{$information-sm-laptop}{
+      .main-content {
+        .title {
+          font-size: 1.7em;
+          line-height: 1.5em;
+          letter-spacing: 0.003em;
+        }
+
+        .sub-title {
+          font-size: 1.3em;
+          line-height: 1.65em;
+          letter-spacing: 0.003em;
+        }
+
+        .desc {
+          font-size: 0.92em;
+          line-height: 1.32em;
+          letter-spacing: 0.005em;
+        }
+      }
+    }
+
+    /* === RESPONSIVE === */
+    @media #{$information-tablet}{
+      .main-content{
+        padding: 0 30px;
+
+        .title {
+          font-size: 2.25em;
+        }
+
+        .sub-title {
+          font-size: 1.75em;
+          line-height: 1.75em;
+        }
+
+        .desc {
+          font-size: 1.25em;
+          line-height: 1.375em;
+        }
+      }
+    }
+
+    @media #{$information-phone}{
+      .main-content {
+        padding: 0 20px;
+
+        .title {
+          font-size: 1.5em;
+          line-height: 1.35em;
+          letter-spacing: 0.002em;
+        }
+
+        .sub-title {
+          font-size: 1.25em;
+          line-height: 1.7em;
+          letter-spacing: 0.002em;
+        }
+
+        .desc {
+          font-size: 0.95em;
+          line-height: 1.2em;
+          letter-spacing: 0.004em;
+        }
+      }
+    }
+
+    @media #{$information-sm-phone}{
+      .main-content {
+        padding: 0 15px;
+
+        .title {
+          font-size: 1.4em;
+          line-height: 1.35em;
+          letter-spacing: 0.002em;
+        }
+
+        .sub-title {
+          font-size: 1.2em;
+          line-height: 1.5em;
+          letter-spacing: 0.002em;
+        }
+
+        .desc {
+          font-size: 0.9em;
+          line-height: 1.2em;
+          letter-spacing: 0.004em;
+        }
+      }
+    }
+  }
+
+  .section-divider{
+    height: 16.66vw;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    min-height: 320px;
+    position: relative;
+    width: 100%;
+    background-color: #AAA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .img-holder{
+      max-width: 70%;
+      margin: auto;
+
+      img{
+        width: 100%;
+      }
+    }
+
+    /* === RESPONSIVE === */
+    @media #{$information-tablet}{
+      min-height: 280px;
+    }
+
+    @media #{$information-phone}{
+      min-height: 180px;
+
+      .img-holder{
+        max-width: 85%;
+      }
+    }
+
+    @media #{$information-sm-phone}{
+      min-height: 160px;
+
+      .img-holder{
+        max-width: 90%;
+      }
+    }
+  }
+
+  @media #{$information-phone}{
+    padding-top: 110px;
+  }
+}

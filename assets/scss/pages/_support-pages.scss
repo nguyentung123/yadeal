@@ -1,0 +1,34 @@
+.support-pages{
+  .common-banner{
+    position: relative;
+    height: 31.25vw;
+    background-color: #fcfbfb;
+    overflow: hidden;
+
+    .bg-holder{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      &#support-maintain-banner-bg{
+        img{
+          width: 100%;
+        }
+      }
+    }
+
+    .container{
+      display: flex;
+      height: 100%;
+      align-items: center;
+
+      .main-content{
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+}

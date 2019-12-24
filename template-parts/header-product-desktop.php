@@ -41,15 +41,20 @@ if($productHeaderQuery->have_posts()): ?>
                         <div class="product-image">
                             <?php
                             $url_img = get_theme_file_uri('assets/img/product1.png');
-                            if( has_post_thumbnail() ){
-                                $url_img = get_the_post_thumbnail_url();
-                            } else {
-                                if( $list_color_pro AND $list_color_pro[0]['product_color_image']){
-                                    $url_img = $list_color_pro[0]['product_color_image'];
-                                }
+
+                            if( $list_color_pro AND $list_color_pro[0]['product_color_image']){
+                                $url_img = $list_color_pro[0]['product_color_image'];
                             }
                             ?>
-                            <a href="<?php echo get_permalink(); ?>">
+
+                            <?php
+                                $productLandingPage = get_permalink();
+                                if( get_field('product_landing_page') ){
+                                    $productLandingPage = get_field('product_landing_page');
+                                }
+                            ?>
+
+                            <a href="<?php echo $productLandingPage; ?>">
                                 <img src="<?php echo $url_img;?>" class="img-fluid">
                             </a>
                         </div>
@@ -58,9 +63,11 @@ if($productHeaderQuery->have_posts()): ?>
                         <!-- Product Context -->
                         <div class="product-context text-center">
                             <h4 class="product-name page-desc">
-                                <a href="<?php echo site_url('/products'); ?>">
-                                    <?php echo get_field('product_name')?get_field('product_name'):get_the_title();?>
-                                </a>
+                                <b>
+                                    <a href="<?php echo $productLandingPage; ?>">
+                                        <?php echo get_field('product_name')?get_field('product_name'):get_the_title();?>
+                                    </a>
+                                </b>
                             </h4>
                         </div>
                         <!-- Product Context -->

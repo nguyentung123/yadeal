@@ -11,3 +11,691 @@
     .g5-leading-section .slider-holder .leading-slider .slide-item .img-holder {
       height: 190vw;
       background-position: center bottom; } }
+
+/* === DESKTOP === */
+#yadea-g5-page {
+  /* === DESKTOP - END === */
+  /* === RESPONSIVE === */
+  /* === RESPONSIVE - END === */ }
+  #yadea-g5-page .section-news-slider {
+    background-color: #ebebeb;
+    padding: 75px 0 40px; }
+    #yadea-g5-page .section-news-slider .news-layout-holder {
+      margin: auto;
+      padding: 0 30px;
+      position: relative; }
+      #yadea-g5-page .section-news-slider .news-layout-holder .news-list {
+        list-style: none;
+        padding: 0;
+        margin: 0; }
+      #yadea-g5-page .section-news-slider .news-layout-holder .news-item {
+        padding: 20px; }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder {
+          border-radius: 30px;
+          padding: 20px;
+          background-color: #f3f3f3; }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .thumbnail-holder {
+            width: 100%;
+            height: 210px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            overflow: hidden; }
+            #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .thumbnail-holder img {
+              min-height: 100%;
+              max-height: 125%;
+              object-fit: cover; }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .context {
+            color: #070d15;
+            font-size: 1em;
+            letter-spacing: 0.04em;
+            line-height: 1.65em;
+            margin: 35px 0 40px;
+            height: 180px;
+            overflow: hidden;
+            text-align: center; }
+            #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .context .title {
+              font-size: 1em;
+              letter-spacing: 0.04em;
+              line-height: 1.42em;
+              margin-bottom: 5px; }
+            #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .context .desc {
+              font-size: 0.9em; }
+      #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control {
+        position: absolute;
+        border: 5px solid #070d15;
+        width: 40px;
+        height: 40px;
+        z-index: 2;
+        top: calc(50% - 22px);
+        -webkit-transform: translateX(0) rotate(45deg);
+        transform: translateX(0) rotate(45deg);
+        cursor: pointer; }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control.slide-next {
+          right: -20px;
+          border-bottom: none;
+          border-left: none;
+          animation: sliderArrow 800ms infinite linear; }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control.slide-prev {
+          left: -20px;
+          border-top: none;
+          border-right: none;
+          animation: sliderArrow 800ms 400ms infinite linear; }
+  @media only screen and (max-width: 768px) {
+    #yadea-g5-page .section-news-slider {
+      background-color: #ebebeb;
+      padding: 65px 0 40px; }
+      #yadea-g5-page .section-news-slider .news-layout-holder {
+        width: 100%;
+        padding: 0 25px; }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-item {
+          padding: 18px; }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder {
+            border-radius: 26px;
+            padding: 18px;
+            background-color: #f3f3f3; }
+            #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .thumbnail-holder {
+              width: 100%;
+              height: 180px;
+              border-radius: 26px; }
+              #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .thumbnail-holder img {
+                min-height: 100%;
+                max-height: 120%; }
+            #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .context {
+              font-size: 1.1em;
+              letter-spacing: 0.04em;
+              line-height: 1.8em;
+              margin: 35px 0 40px;
+              max-height: 170px; }
+              #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .context .title {
+                font-size: 1em;
+                letter-spacing: 0.04em;
+                line-height: 2em; }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control {
+          border: 5px solid #070d15;
+          border-radius: 4px;
+          width: 32px;
+          height: 32px;
+          z-index: 2;
+          top: calc(50% - 16px); }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control.slide-next {
+            right: -16px; }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control.slide-prev {
+            left: -16px; } }
+  @media only screen and (max-width: 480px) {
+    #yadea-g5-page .section-news-slider {
+      padding: 30px 0 20px; }
+      #yadea-g5-page .section-news-slider .news-layout-holder {
+        width: 100%;
+        padding: 0 10px; }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-item {
+          padding: 15px; }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder {
+            border-radius: 22px;
+            padding: 15px;
+            background-color: #f3f3f3; }
+            #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .thumbnail-holder {
+              width: 100%;
+              height: 180px;
+              border-radius: 22px; }
+              #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .thumbnail-holder img {
+                min-height: 100%;
+                max-height: 120%; }
+            #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .context {
+              font-size: 1.1em;
+              letter-spacing: 0.04em;
+              line-height: 1.8em;
+              margin: 30px 0 30px;
+              max-height: 170px; }
+              #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .context .title {
+                font-size: 1em;
+                letter-spacing: 0.04em;
+                line-height: 2em; }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control {
+          width: 28px;
+          height: 28px;
+          z-index: 2;
+          top: calc(50% - 14px); }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control.slide-next {
+            right: -12px; }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control.slide-prev {
+            left: -12px; } }
+  @media only screen and (max-width: 360px) {
+    #yadea-g5-page .section-news-slider {
+      padding: 15px 0 15px; }
+      #yadea-g5-page .section-news-slider .news-layout-holder .news-item {
+        padding: 10px; }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder {
+          border-radius: 18px;
+          padding: 10px;
+          background-color: #f3f3f3; }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .thumbnail-holder {
+            width: 100%;
+            height: 180px;
+            border-radius: 18px; }
+            #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .thumbnail-holder img {
+              min-height: 100%;
+              max-height: 120%; }
+          #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .context {
+            font-size: 1em;
+            letter-spacing: 0.04em;
+            line-height: 1.8em;
+            margin: 20px 0 20px;
+            max-height: 140px; }
+            #yadea-g5-page .section-news-slider .news-layout-holder .news-item .content-holder .context .title {
+              font-size: 1em;
+              letter-spacing: 0.04em;
+              line-height: 2em; }
+      #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control {
+        width: 24px;
+        height: 24px;
+        z-index: 2;
+        top: calc(50% - 12px); }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control.slide-next {
+          right: -10px; }
+        #yadea-g5-page .section-news-slider .news-layout-holder .news-slider-control.slide-prev {
+          left: -10px; } }
+
+.g5-leading-section .slider-holder .leading-slider .slide-item {
+  height: 55vw; }
+  @media only screen and (max-width: 768px) {
+    .g5-leading-section .slider-holder .leading-slider .slide-item {
+      height: 190vw; } }
+
+.yadea-g5-banner .tra-gop-img {
+  width: 100%;
+  text-align: center;
+  padding-left: 5%;
+  opacity: 0; }
+  .yadea-g5-banner .tra-gop-img .img-holder {
+    margin: auto;
+    width: 70%; }
+    .yadea-g5-banner .tra-gop-img .img-holder img {
+      width: 100%; }
+  .yadea-g5-banner .tra-gop-img .tragop-line1, .yadea-g5-banner .tra-gop-img .tragop-line2 {
+    margin: 0;
+    text-align: center; }
+  .yadea-g5-banner .tra-gop-img .tragop-line1 {
+    color: #fff; }
+  .yadea-g5-banner .tra-gop-img .tragop-line2 {
+    color: #b95015;
+    cursor: pointer;
+    transition: all ease-in 100ms; }
+    .yadea-g5-banner .tra-gop-img .tragop-line2:hover {
+      color: #F36E22;
+      transition: all ease-out 150ms; }
+
+@media only screen and (max-width: 768px) {
+  .yadea-g5-banner .tra-gop-img {
+    width: 80%;
+    margin: auto; }
+    .yadea-g5-banner .tra-gop-img .img-holder {
+      margin: auto;
+      width: 50%; }
+      .yadea-g5-banner .tra-gop-img .img-holder img {
+        width: 100%; }
+    .yadea-g5-banner .tra-gop-img .tragop-line1, .yadea-g5-banner .tra-gop-img .tragop-line2 {
+      font-size: 1.5em; } }
+
+@media only screen and (max-width: 480px) {
+  .yadea-g5-banner .bike-image {
+    bottom: 2.3%;
+    left: -7%;
+    width: 110%;
+    opacity: 0; }
+  .yadea-g5-banner .banner-content {
+    top: 28%; }
+    .yadea-g5-banner .banner-content .product-name img {
+      width: 50%; }
+  .yadea-g5-banner .tra-gop-img {
+    width: 100%;
+    margin: auto;
+    margin-top: -0.25em;
+    padding: 0; }
+    .yadea-g5-banner .tra-gop-img .img-holder {
+      margin: auto;
+      width: 52%; }
+      .yadea-g5-banner .tra-gop-img .img-holder img {
+        width: 100%; }
+    .yadea-g5-banner .tra-gop-img .tragop-line1, .yadea-g5-banner .tra-gop-img .tragop-line2 {
+      font-size: 1.25em;
+      white-space: nowrap; } }
+
+.signup-info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in 10ms 300ms;
+  /* === RESPONSIVE === */ }
+  .signup-info-modal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all ease-in 200ms 150ms; }
+  .signup-info-modal .signup-info-modal-dialog {
+    position: relative;
+    background-color: #FFF;
+    width: 850px;
+    height: 500px;
+    max-width: 100%;
+    max-height: 100vh;
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.35);
+    display: flex;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all ease-in 250ms; }
+    .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      z-index: 3; }
+    .signup-info-modal .signup-info-modal-dialog .left-content {
+      background-color: #fabb88;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      flex-shrink: 0; }
+      .signup-info-modal .signup-info-modal-dialog .left-content > * {
+        width: 75%; }
+      .signup-info-modal .signup-info-modal-dialog .left-content .popup-title, .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+        text-align: justify;
+        white-space: nowrap;
+        margin: 0; }
+      .signup-info-modal .signup-info-modal-dialog .left-content .popup-title {
+        font-size: 2.2em;
+        font-weight: 600; }
+      .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+        font-size: 1.05em;
+        letter-spacing: 0.025em;
+        font-weight: 100; }
+      .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form {
+        padding: 2em 0 0.25em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder {
+          border: 2px solid #fff;
+          padding: 5px 9px;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder label {
+            margin: 0;
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-right: 6px; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder input {
+            flex: 1;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: #666;
+            font-weight: bold;
+            min-width: 0; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder {
+          text-align: center;
+          padding: 0.5em 0; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a {
+            border: 2px solid #FFF;
+            background-color: transparent;
+            color: #FFF;
+            padding: 5px 9px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all ease-in 100ms; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button.track-this-button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a.track-this-button {
+              position: relative; }
+              .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button.track-this-button:after, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a.track-this-button:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button .fa, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a .fa {
+              margin-left: 3px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button:hover, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a:hover {
+              background-color: #FFF;
+              color: #F36E22;
+              transition: all ease-out 150ms; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button .loading-context, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a .loading-context {
+              display: none; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder .submit-feedback {
+            opacity: 0;
+            transition: all ease-out 150ms;
+            font-weight: 600; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder .submit-feedback.success {
+              color: #00b894;
+              opacity: 1; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder .submit-feedback.error {
+              color: #ff2222;
+              opacity: 1; }
+    .signup-info-modal .signup-info-modal-dialog .right-content {
+      width: 50%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      text-align: center;
+      padding: 2em 1em;
+      color: #ff7c13; }
+      .signup-info-modal .signup-info-modal-dialog .right-content .right-title {
+        margin: 1.75em 0 1em;
+        font-weight: 700;
+        font-size: 2em; }
+      .signup-info-modal .signup-info-modal-dialog .right-content .right-cta {
+        text-align: left;
+        padding: 0.55em 1em;
+        font-size: 2.5em;
+        font-weight: 700;
+        white-space: nowrap;
+        border: 2px solid #ff7c13;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all ease-in 100ms; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-cta:hover {
+          color: #FFF;
+          background-color: #ff7c13;
+          transition: all ease-out 150ms; }
+      .signup-info-modal .signup-info-modal-dialog .right-content .right-bg {
+        position: absolute;
+        width: 40%;
+        bottom: 2%;
+        left: 5%; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-bg img {
+          width: 100%; }
+  .signup-info-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all ease-in 10ms; }
+    .signup-info-modal.active .overlay {
+      opacity: 1;
+      transition: all ease-out 150ms; }
+    .signup-info-modal.active .signup-info-modal-dialog {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all ease-out 300ms 100ms; }
+  @media only screen and (max-width: 768px) {
+    .signup-info-modal .signup-info-modal-dialog {
+      width: 90%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100vh;
+      flex-wrap: wrap; }
+      .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal {
+        top: 2vw;
+        right: 2vw;
+        width: 6vw; }
+        .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal img {
+          width: 100%; }
+      .signup-info-modal .signup-info-modal-dialog .left-content {
+        background-color: #fabb88;
+        color: #FFF;
+        width: 100%;
+        flex-shrink: 0;
+        padding: 3em 2em 2em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content > * {
+          width: 75%; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-title, .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+          text-align: justify;
+          white-space: nowrap;
+          margin: 0; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-title {
+          font-size: 2.2em;
+          text-align: center; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+          font-size: 1.05em;
+          letter-spacing: 0.025em;
+          text-align: center; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form {
+          padding: 2em 0 0.25em; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder {
+            border: 2px solid #FFF;
+            padding: 5px 12px;
+            border-radius: 8px;
+            margin-bottom: 20px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder label {
+              font-size: 1.35em;
+              margin-right: 6px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder input {
+              flex: 1;
+              height: 40px;
+              line-height: 40px;
+              font-size: 1.35em; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder {
+            padding: 0.5em 0; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a {
+              padding: 10px 20px;
+              border-radius: 8px;
+              font-size: 1.35em; }
+              .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button .fa, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a .fa {
+                margin-left: 5px; }
+      .signup-info-modal .signup-info-modal-dialog .right-content {
+        width: 100%;
+        padding: 1em 1em 12vw;
+        justify-content: flex-start;
+        align-items: center; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-title {
+          margin: 1em 0;
+          font-size: 2em; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-cta {
+          padding: 0.25em 1em;
+          font-size: 2em;
+          border: 2px solid #ff7c13;
+          border-radius: 10px;
+          width: auto;
+          display: inline-block;
+          z-index: 2; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-bg {
+          width: 28%;
+          bottom: 2%;
+          left: 5%; } }
+  @media only screen and (max-width: 480px) {
+    .signup-info-modal .signup-info-modal-dialog {
+      width: 90%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100vh; }
+      .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal {
+        top: 3vw;
+        right: 3vw;
+        width: 8vw; }
+      .signup-info-modal .signup-info-modal-dialog .left-content {
+        padding: 2.5em 1em 1.25em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-title {
+          font-size: 1.8em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+          font-size: 1em;
+          letter-spacing: 0.02em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form {
+          padding: 1.5em 0 0.2em; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder {
+            border: 2px solid #FFF;
+            padding: 5px 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            height: 42px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder label {
+              font-size: 1em;
+              margin-right: 6px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder input {
+              height: 36px;
+              line-height: 36px;
+              font-size: 1em; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder {
+            padding: 0.5em 0; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a {
+              padding: 5px 18px;
+              border-radius: 8px;
+              font-size: 1em; }
+      .signup-info-modal .signup-info-modal-dialog .right-content {
+        width: 100%;
+        padding: 1em 1em 16vw;
+        justify-content: flex-start;
+        align-items: center; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-title {
+          margin: 0.75em 0;
+          font-size: 1.5em; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-cta {
+          padding: 0.25em 1em;
+          font-size: 1.75em;
+          border: 2px solid #ff7c13;
+          border-radius: 7px;
+          z-index: 2; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-bg {
+          width: 32%;
+          bottom: 2%;
+          left: 5%; } }
+
+.tra-gop-information-modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  transition: all 10ms 350ms ease-out;
+  /* Responsive */ }
+  .tra-gop-information-modal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0; }
+  .tra-gop-information-modal .tragop-dialog {
+    width: 1200px;
+    max-width: 95%;
+    border-radius: 22px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 3em 2.5em 1.5em;
+    margin: auto;
+    max-height: 70vh;
+    position: relative;
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+    transition: all ease-in 200ms 10ms; }
+    .tra-gop-information-modal .tragop-dialog .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #333;
+      border: 2px solid #333;
+      font-size: 28px;
+      width: 34px;
+      height: 34px;
+      border-radius: 17px;
+      text-align: center;
+      line-height: 31px;
+      cursor: pointer; }
+    .tra-gop-information-modal .tragop-dialog .tragop-main-content {
+      color: #333;
+      overflow: auto;
+      max-width: 100%;
+      max-height: 55vh;
+      padding-right: 1.5em; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content .title {
+        text-align: center;
+        font-size: 1.55em;
+        font-weight: 600;
+        letter-spacing: 0;
+        margin-bottom: 1em; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content .desc {
+        font-size: 1em;
+        line-height: 1.65em;
+        margin-bottom: 0.75em; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content .value {
+        margin: 0; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table {
+        margin: 10px 0; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row {
+          border: 1px solid #999;
+          margin: 0 !important; }
+          .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row:first-child {
+            border-bottom: none; }
+          .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div {
+            padding: 0 !important;
+            border-right: 1px solid #999;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center; }
+            .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div:last-child {
+              border: none; }
+            .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div hr {
+              width: 100%;
+              flex-basis: 100%;
+              background-color: #999;
+              border-color: #999;
+              margin: 0; }
+            .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div .value {
+              text-align: center;
+              padding: 8px 5px;
+              width: 100%;
+              flex-basis: 100%; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content ul {
+        margin-top: -0.75em; }
+  .tra-gop-information-modal.active {
+    transition: visibility 10s ease-out;
+    visibility: visible; }
+    .tra-gop-information-modal.active .overlay {
+      opacity: 1;
+      transition: all ease-out 150ms; }
+    .tra-gop-information-modal.active .tragop-dialog {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+      transition: all ease-out 220ms 100ms; }
+  @media only screen and (max-width: 480px) {
+    .tra-gop-information-modal .tragop-dialog {
+      border-radius: 18px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 2.5em 1.75em 1.25em;
+      max-height: 70vh; }
+      .tra-gop-information-modal .tragop-dialog .close-btn {
+        top: 12px;
+        right: 12px;
+        font-size: 28px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        line-height: 28px; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content {
+        max-height: 52vh;
+        padding-right: 1em; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content .title {
+          font-size: 1.35em;
+          margin-bottom: 0.75em; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content .desc {
+          font-size: 0.9em;
+          line-height: 1.55em;
+          margin-bottom: 0.7em; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table {
+          margin: 8px 0; }
+          .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row .value {
+            padding: 5px 3px;
+            font-size: 0.8em;
+            font-weight: 500; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content ul {
+          margin-top: -0.7em; } }

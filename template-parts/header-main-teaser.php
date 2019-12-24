@@ -183,13 +183,13 @@
 
                 <ul class="sub-menu-main">
                     <li class="close-sub-menu">
-                        <a href="https://yadeavietnam.vn/yadea-g5/teaser/#section-product-info">Thông tin sản phẩm</a>
+                        <a href="<?=site_url('/yadea-g5/teaser/#section-product-info');?>">Thông tin sản phẩm</a>
                     </li>
                     <li class="close-sub-menu" style="display: none;">
-                        <a href="https://yadeavietnam.vn/yadea-g5/teaser/#follow-event-section">Sự kiện ra mắt</a>
+                        <a href="<?=site_url('/yadea-g5/teaser/#follow-event-section')?>">Sự kiện ra mắt</a>
                     </li>
                     <li class="close-sub-menu">
-                        <a href="https://yadeavietnam.vn/yadea-g5/teaser/#specs-section">Thông số kỹ thuật</a>
+                        <a href="<?=site_url('/yadea-g5/teaser/#specs-section')?>">Thông số kỹ thuật</a>
                     </li>
                 </ul>
 

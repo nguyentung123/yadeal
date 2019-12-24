@@ -301,7 +301,7 @@
 
                 <!-- Price CTA -->
                 <div class="cta-wrapper">
-                    <a class="cta apply-info-modal track-this-button" id="apply-information-yadea-g5-header-section">ĐĂNG KÝ</a>
+                    <a class="cta apply-info-modal track-this-button open-signup-info-modal">ĐĂNG KÝ</a>
                 </div>
                 <!-- Price CTA -->
             </div><!-- Price Row -->
@@ -848,6 +848,7 @@
                         Cốp rộng dung tích 20L
                     </h4>
                     <p class="desc">
+                        Như một ngôi nhà thứ hai của bạn, với chiều rộng lên<br class="mb-hide">
                         Như một ngôi nhà thứ hai của bạn, với chiều rộng lên<br class="mb-hide">
                         tới 310 mm, chiếc cốp siêu rộng của YADEA ULIKE có<br class="mb-hide">
                         thể đựng vừa 2 chiếc mũ bảo hiểm và rất nhiều đồ <br class="mb-hide">
@@ -1511,6 +1512,12 @@
                         <div class="shadow-effect"></div>
                     </li>
 
+                    <!-- Color Item -->
+                    <li class="bike-color-item yellow">
+                        <img draggable=false src="img/bike-yellow.png">
+                        <div class="shadow-effect"></div>
+                    </li>
+
                 </ul>
                 <!-- Color Variation Slider -->
 
@@ -1518,6 +1525,7 @@
                     <li class="slider-button button-white active"></li>
                     <li class="slider-button button-red"></li>
                     <li class="slider-button button-black"></li>
+                    <li class="slider-button button-yellow"></li>
                 </div>
             </div>
             <!-- Color Slider Holder - END -->
@@ -1852,6 +1860,63 @@
     _ Use For Modal, Chat Blog, Elements That Are Shared Among Pages
     _ Those Reusable Element is not inside the main content of the page
 -->
+<div class="signup-info-modal">
+    <!-- Overlay -->
+    <div class="overlay close-signup-info-modal"></div>
+
+    <!-- Main Dialog -->
+    <div class="signup-info-modal-dialog">
+        <div class="close-signup-info-modal">
+            <img src="img/popup/close-btn.jpg">
+        </div>
+
+        <!-- Left Signup Form Content -->
+        <div class="left-content">
+            <h3 class="popup-title">ĐĂNG KÝ MUA XE</h3>
+            <h4 class="popup-sub-title">(ĐỂ ĐƯỢC NHÂN VIÊN GỌI TƯ VẤN)</h4>
+
+            <!-- Signup Form -->
+            <form class="signup-information-form"
+                  method="GET"
+                  action="https://script.google.com/macros/s/AKfycbwXBPuXcNA0vtLMvizQ0ZGtjsfG8qfanzSxQ7kVfWUxtvz6BJk/exec">
+                <input type="hidden" name="bike-type" value="yadea-ulike">
+                <input type="hidden" name="registered_day" value="20/11/2019">
+                <div class="input-holder">
+                    <label for="user-name">Họ và tên:</label>
+                    <input type="text" name="user-name" required>
+                </div>
+                <div class="input-holder">
+                    <label for="user-phone-number">Số điện thoại:</label>
+                    <input type="text" name="user-phone-number" class="" required minlength="9" maxlength="11">
+                </div>
+                <div class="input-holder">
+                    <label for="user-email">Email:</label>
+                    <input type="email" name="user-email">
+                </div>
+                <div class="submit-holder">
+                    <button type="submit">
+                        <span class="btn-context">
+                           Đăng ký <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                        <span class="loading-context">
+                            <i class="fa fa-spinner fa-spin fa-fw"></i>
+                        </span>
+                    </button>
+                    <p class="submit-feedback"> </p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Right Search Shop Content -->
+        <div class="right-content">
+            <h3 class="right-title">HOẶC</h3>
+            <a class="right-cta">TÌM CỬA HÀNG <br>GẦN NHẤT <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            <div class="right-bg">
+                <img src="img/popup/shop-img.jpg">
+            </div>
+        </div>
+    </div>
+</div>
 <!-- === REUSABLE - END === -->
 
 

@@ -249,6 +249,8 @@ var _accessories = _interopRequireDefault(__webpack_require__(37));
 
 var _TweenMax = __webpack_require__(38);
 
+var _signupInfo = _interopRequireDefault(__webpack_require__(40));
+
 var _utils = __webpack_require__(0);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -268,7 +270,6 @@ function () {
   function Home() {
     _classCallCheck(this, Home);
 
-    window.TweenMax = _TweenMax.TweenMax;
     this.$lcd = $('.g5-screen-section');
     this.$color = $('.g5-style-section');
     this.$trend = $('.g5-leading-section');
@@ -331,6 +332,7 @@ function () {
     var water = new _water.default();
     var frame = new _frame.default();
     var acc = new _accessories.default();
+    var signup = new _signupInfo.default();
     this.bindEvents();
   }
   /* ===================================
@@ -561,6 +563,8 @@ function () {
       this.SetupVideoPlayer();
       this.SmoothScrollingSetup();
       this.PriceTagScroll();
+      this.NewsSliderSetup();
+      this.PayModalSetup();
 
       if (window.innerWidth <= 768) {
         this.SetupPriceTagMenu();
@@ -698,6 +702,48 @@ function () {
         _this4.$priceTagMenu.slideUp('normal');
 
         _this4.$iconHolder.removeClass('is-showing');
+      });
+    } // News Slider
+
+  }, {
+    key: "NewsSliderSetup",
+    value: function NewsSliderSetup() {
+      var slideToShow = 3;
+
+      if (window.innerWidth <= 768 && window.innerWidth > 480) {
+        slideToShow = 2;
+      } else {
+        if (window.innerWidth < 480) {
+          slideToShow = 1;
+        }
+      }
+
+      $('.news-list').slick({
+        slidesToShow: slideToShow,
+        slidesToScroll: 1,
+        autoplay: true,
+        nextArrow: "<a class=\"news-slider-control slide-next\"></a>",
+        prevArrow: "<a class=\"news-slider-control slide-prev\"></a>"
+      });
+    } // Tragop Modal
+
+  }, {
+    key: "PayModalSetup",
+    value: function PayModalSetup() {
+      var _this5 = this;
+
+      this.$payModal = $('.tra-gop-information-modal');
+      this.$openPayModalBtn = $('.open-tragop-modal');
+      this.$closePayModalBtn = $('.close-tragop-modal');
+      this.$openPayModalBtn.on('click', function () {
+        $('body').addClass('show-modal');
+
+        _this5.$payModal.addClass('active');
+      });
+      this.$closePayModalBtn.on('click', function () {
+        $('body').removeClass('active');
+
+        _this5.$payModal.removeClass('active');
       });
     }
   }]);
@@ -2079,7 +2125,8 @@ function () {
     this.$bannerBG = $('.yadea-g5-banner .banner-bg');
     this.$bikeImg = $('.yadea-g5-banner .bike-image');
     this.$g5Name = $('.yadea-g5-banner .banner-content .product-name');
-    this.$g5Slogan = $('.yadea-g5-banner .banner-content .g5-product-slogan'); // Main Timeline Item
+    this.$g5Slogan = $('.yadea-g5-banner .banner-content .g5-product-slogan');
+    this.$tragopContent = $('.yadea-g5-banner .banner-content .tra-gop-img'); // Main Timeline Item
 
     this.bannerTimeline = null;
     this.bindEvents();
@@ -2111,6 +2158,10 @@ function () {
       TweenMax.set(this.$g5Slogan, {
         y: 40
       });
+      TweenMax.set(this.$tragopContent, {
+        y: 40,
+        opacity: 0
+      });
     }
   }, {
     key: "DoBannerAnimation",
@@ -2129,6 +2180,9 @@ function () {
         y: 0,
         opacity: 1
       }), TweenMax.to(this.$g5Slogan, 0.7, {
+        y: 0,
+        opacity: 1
+      }), TweenMax.to(this.$tragopContent, 0.7, {
         y: 0,
         opacity: 1
       })], '+=0.1', 'sequence', -0.15);
@@ -2213,11 +2267,7 @@ function () {
       var _this = this;
 
       g5Listener.on('lcd-anim', function () {
-        (0, _utils.contextFadeIn)(_this.$context, function () {
-          _this.SetupMarkerClick();
-
-          _this.SetupToggleLCD();
-        }, [_this.$effectHolder]);
+        (0, _utils.contextFadeIn)(_this.$context, function () {}, [_this.$effectHolder]);
       });
     }
   }]);
@@ -3038,7 +3088,7 @@ function () {
 
           _this.$speedWave.addClass('is-animating');
 
-          var demo = new _countup.CountUp('max-speed-value', 40, {
+          var demo = new _countup.CountUp('max-speed-value', 38, {
             duration: 1.5,
             startVal: 0,
             useEasing: false
@@ -12281,6 +12331,106 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SignupInfo =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function SignupInfo() {
+    _classCallCheck(this, SignupInfo);
+
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(SignupInfo, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      var _this = this;
+
+      this.$openModalBtn = $('.open-signup-info-modal');
+      this.$closeModalBtn = $('.close-signup-info-modal');
+      this.$signupInfoModal = $('.signup-info-modal');
+      this.$openModalBtn.on('click', function () {
+        _this.$signupInfoModal.addClass('active');
+      });
+      this.$closeModalBtn.on('click', function () {
+        _this.$signupInfoModal.removeClass('active');
+      });
+      this.$signupBuyBikeForm = $('.signup-information-form');
+      this.FormSetup(this.$signupBuyBikeForm);
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "FormSetup",
+    value: function FormSetup(formElement) {
+      var $submitFeedback = formElement.find('.submit-feedback');
+      var action = formElement.attr('action');
+      var $loadingIcon = formElement.find('.loading-context');
+      var $buttonContext = formElement.find('.btn-context');
+      var $submitBtn = formElement.find('[type=submit]');
+      formElement.on('submit', function (e) {
+        e.preventDefault();
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        formElement.find('input[name=registered_day]').val(date + ' ' + time);
+        var data = formElement.serialize();
+        $loadingIcon.show();
+        $buttonContext.hide();
+        $.ajax({
+          type: 'GET',
+          url: action,
+          dataType: 'json',
+          crossDomain: true,
+          data: data,
+          success: function success(data) {
+            $loadingIcon.hide();
+
+            if (data == 'false') {
+              $buttonContext.show();
+              $loadingIcon.hide();
+              $submitFeedback.removeClass('success').addClass('error').html('Đăng ký mua xe không thành công, quý khách vui lòng thử lại');
+            } else {
+              $submitBtn.hide();
+              $submitFeedback.removeClass('error').addClass('success').html('Đăng ký mua xe thành công, Yadea sẽ liên hệ lại với bạn');
+            }
+          }
+        });
+      });
+    }
+  }]);
+
+  return SignupInfo;
+}();
+
+exports.default = SignupInfo;
 
 /***/ })
 /******/ ]);

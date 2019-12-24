@@ -17,17 +17,21 @@ if($productHeaderQuery->have_posts()): ?>
 
             <!-- Product Item -->
             <li class="product-item">
-                <a href="<?php echo get_permalink(); ?>">
+
+                <?php
+                    $productLandingPage = get_permalink();
+                    if( get_field('product_landing_page') ){
+                        $productLandingPage = get_field('product_landing_page');
+                    }
+                ?>
+
+                <a href="<?php echo $productLandingPage; ?>">
                     <?php $list_color_pro = get_field('product_colors'); ?>
                     <!-- Product image -->
                     <?php
                     $url_img = get_theme_file_uri('assets/img/product1.png');
-                    if( has_post_thumbnail() ){
-                        $url_img = get_the_post_thumbnail_url();
-                    } else {
-                        if( $list_color_pro AND $list_color_pro[0]['product_color_image']){
-                            $url_img = $list_color_pro[0]['product_color_image'];
-                        }
+                    if( $list_color_pro AND $list_color_pro[0]['product_color_image']){
+                        $url_img = $list_color_pro[0]['product_color_image'];
                     }
                     ?>
                     <img class="product-image" src="<?php echo $url_img; ?>">
@@ -44,7 +48,9 @@ if($productHeaderQuery->have_posts()): ?>
 
                     <!-- Product Name -->
                     <h5 class="product-name text-center">
-                        <?php echo get_field('product_name') ? get_field('product_name') : get_the_title(); ?>
+                        <b>
+                            <?php echo get_field('product_name') ? get_field('product_name') : get_the_title(); ?>
+                        </b>
                     </h5>
                 </a>
 

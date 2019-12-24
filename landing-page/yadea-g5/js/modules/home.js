@@ -23,6 +23,8 @@ import Frame from './sections/frame';
 import Acc from './sections/accessories';
 import { TweenMax } from "gsap/TweenMax";
 
+import SignupInfo from "./sections/_signup-info"
+
 
 import { contextAnimation, contextInit, reachSection, pageListener } from './sections/utils';
 
@@ -31,8 +33,6 @@ export default class Home {
      *  CONSTRUCTOR
      * =================================== */
     constructor(){
-        window.TweenMax = TweenMax;
-
         this.$lcd =  $('.g5-screen-section');
         this.$color =  $('.g5-style-section');
         this.$trend =  $('.g5-leading-section');
@@ -98,6 +98,7 @@ export default class Home {
         let water = new Water();
         let frame = new Frame();
         let acc = new Acc();
+        let signup = new SignupInfo();
 
         this.bindEvents();
     }

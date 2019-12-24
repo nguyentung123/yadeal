@@ -6,6 +6,7 @@ import Supports from './support';
 import SliderDetail from './slider-detail';
 import FlipClockCustom from './flip-clock-custom';
 import SubmitApplyForm from './submit-apply-form';
+import SignupInfo from './_signup-info';
 
 export default class Home {
     /* ===================================
@@ -32,6 +33,10 @@ export default class Home {
 
         if($('#signup-as-shop-form').length > 0){
             let submitApplyForm = new SubmitApplyForm();
+        }
+
+        if($('.signup-info-modal').length > 0){
+            let signupBuyBike = new SignupInfo();
         }
 
         this.bindEvents();

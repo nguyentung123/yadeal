@@ -104,6 +104,8 @@ var _flipClockCustom = _interopRequireDefault(__webpack_require__(10));
 
 var _submitApplyForm = _interopRequireDefault(__webpack_require__(11));
 
+var _signupInfo = _interopRequireDefault(__webpack_require__(12));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -136,6 +138,10 @@ function () {
 
     if ($('#signup-as-shop-form').length > 0) {
       var submitApplyForm = new _submitApplyForm.default();
+    }
+
+    if ($('.signup-info-modal').length > 0) {
+      var signupBuyBike = new _signupInfo.default();
     }
 
     this.bindEvents();
@@ -18415,6 +18421,106 @@ function () {
 }();
 
 exports.default = SubmitApplyForm;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SignupInfo =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function SignupInfo() {
+    _classCallCheck(this, SignupInfo);
+
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(SignupInfo, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      var _this = this;
+
+      this.$openModalBtn = $('.open-signup-info-modal');
+      this.$closeModalBtn = $('.close-signup-info-modal');
+      this.$signupInfoModal = $('.signup-info-modal');
+      this.$openModalBtn.on('click', function () {
+        _this.$signupInfoModal.addClass('active');
+      });
+      this.$closeModalBtn.on('click', function () {
+        _this.$signupInfoModal.removeClass('active');
+      });
+      this.$signupBuyBikeForm = $('.signup-information-form');
+      this.FormSetup(this.$signupBuyBikeForm);
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "FormSetup",
+    value: function FormSetup(formElement) {
+      var $submitFeedback = formElement.find('.submit-feedback');
+      var action = formElement.attr('action');
+      var $loadingIcon = formElement.find('.loading-context');
+      var $buttonContext = formElement.find('.btn-context');
+      var $submitBtn = formElement.find('[type=submit]');
+      formElement.on('submit', function (e) {
+        e.preventDefault();
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        formElement.find('input[name=registered_day]').val(date + ' ' + time);
+        var data = formElement.serialize();
+        $loadingIcon.show();
+        $buttonContext.hide();
+        $.ajax({
+          type: 'GET',
+          url: action,
+          dataType: 'json',
+          crossDomain: true,
+          data: data,
+          success: function success(data) {
+            $loadingIcon.hide();
+
+            if (data == 'false') {
+              $buttonContext.show();
+              $loadingIcon.hide();
+              $submitFeedback.removeClass('success').addClass('error').html('Đăng ký mua xe không thành công, quý khách vui lòng thử lại');
+            } else {
+              $submitBtn.hide();
+              $submitFeedback.removeClass('error').addClass('success').html('Đăng ký mua xe thành công, Yadea sẽ liên hệ lại với bạn');
+            }
+          }
+        });
+      });
+    }
+  }]);
+
+  return SignupInfo;
+}();
+
+exports.default = SignupInfo;
 
 /***/ })
 /******/ ]);

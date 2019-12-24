@@ -15,11 +15,13 @@
 @import 'components/common';
 @import 'components/sliders';
 @import 'components/modal';
+@import 'components/signup-info-modal';
 
 // pages
 @import 'pages/home';
 @import 'pages/products';
 @import 'pages/support';
+@import 'pages/support-pages';
 @import 'pages/blank';
 @import 'pages/shop';
 @import "pages/about";
@@ -28,3 +30,4 @@
 @import "pages/detail";
 
 @import "pages/shop-listing";
+@import "pages/chatbox";

@@ -80,22 +80,22 @@
 
 
     <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '528659447702850');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-                   src="https://www.facebook.com/tr?id=528659447702850&ev=PageView&noscript=1"
-        /></noscript>
-    <!-- End Facebook Pixel Code -->
+	<script>
+	  !function(f,b,e,v,n,t,s)
+	  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	  n.queue=[];t=b.createElement(e);t.async=!0;
+	  t.src=v;s=b.getElementsByTagName(e)[0];
+	  s.parentNode.insertBefore(t,s)}(window, document,'script',
+	  'https://connect.facebook.net/en_US/fbevents.js');
+	  fbq('init', '1226207694210608');
+	  fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	  src="https://www.facebook.com/tr?id=1226207694210608&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- End Facebook Pixel Code -->
     <!-- TRACKING CODE - END -->
 </head>
 <body <?php body_class("fixed-header with-overlay"); ?>>
@@ -103,6 +103,36 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PM2J8PG"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+<!-- Facebook Customer Chat -->
+<div id="fb-root"></div>
+<div class="fb-customerchat" attribution=setup_tool page_id="586286351830837" theme_color="#ff7e29" logged_in_greeting="YADEA có thể giúp gì cho bạn?" logged_out_greeting="YADEA có thể giúp gì cho bạn?">
+</div>
+
+<!-- CHAT PLUGIN -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml: true,
+      version: 'v5.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Zalo Customer  Chat -->
+<div class="zalo-chat-widget" data-oaid="3358660728590406874" data-welcome-message="YADEA có thể hỗ trợ gì cho bạn?" data-autopopup="0" data-width="350" data-height="420"></div>
+<!-- Zalo plugin -->
+<script src="https://sp.zalo.me/plugins/sdk.js" async></script>
+<!-- CHAT PLUGIN - END -->
 
 <!-- ====== LOADING OVERLAY ===== -->
 <div id="loading-overlay">
@@ -131,10 +161,10 @@
 
                 <!-- Header Main Menu -->
                 <ul class="nav justify-content-end mb-hide">
-                    <li class="nav-item <?php if(is_page('products')) echo 'active'; ?>" id="sub-menu-trigger" style="display: none;">
+                    <li class="nav-item <?php if(is_page('products')) echo 'active'; ?>" id="sub-menu-trigger">
                         <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
                     </li>
-                    <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>" style="display: none;">
+                    <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
                         <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
                     </li>
                     <li id="about-us-sub-menu-trigger" class="nav-item <?php if(is_page('/about-us')) echo 'active'; ?>">
@@ -227,7 +257,7 @@
         <ul class="nav light-gray-bg">
 
             <!-- Product Listing -->
-            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>" style="display: none;">
+            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
 
                 <?php get_template_part('template-parts/header', 'product-mobile'); ?>
@@ -235,7 +265,7 @@
             </li>
 
             <!-- Shop Searching Page -->
-            <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>" style="display: none;">
+            <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
             </li>
 

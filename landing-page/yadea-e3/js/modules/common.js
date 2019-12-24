@@ -98,13 +98,13 @@ export default class Common {
 
                 // Red
                 if($(e.target).hasClass('button-red')){
-                    $('.color-slider-holder .custom-button .slider-button.active').removeClass('active');
+                    $('.color-slider-holder .custom-button .sl watchjider-button.active').removeClass('active');
                     this.$bikeColorSlider.slick('slickGoTo', 1);
                     $(e.target).addClass('active');
                 }
 
                 // Black
-                if($(e.target).hasClass('button-black')){
+                if($(e.target).hasClass('button-blue')){
                     $('.color-slider-holder .custom-button .slider-button.active').removeClass('active');
                     this.$bikeColorSlider.slick('slickGoTo', 2);
                     $(e.target).addClass('active');

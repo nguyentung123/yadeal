@@ -8,7 +8,7 @@
 
             <!-- Header Logo -->
             <div class="col-lg-2 col-6 header__logo">
-                <a href="<?php echo site_url(); ?>">
+                <a  href="<?php echo site_url(); ?>">
                     <img src="<?php echo get_theme_file_uri('assets/img/logo.png'); ?>" class="header__logo__image">
                 </a>
             </div><!-- Header Logo -->
@@ -18,17 +18,17 @@
 
                 <!-- Header Main Menu -->
                 <ul class="nav justify-content-end mb-hide">
-                    <li class="nav-item <?php if(is_page('products')) echo 'active'; ?>" id="sub-menu-trigger" style="display: none;">
-                        <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
+                    <li class="nav-item <?php if(is_page('products')) echo 'active'; ?>" id="sub-menu-trigger">
+                        <a  class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
                     </li>
-                    <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>" style="display: none;">
-                        <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
+                    <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
+                        <a  class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
                     </li>
                     <li id="about-us-sub-menu-trigger" class="nav-item <?php if(is_page('/about-us')) echo 'active'; ?>">
-                        <a class="nav-link" href="<?php echo site_url('/about') ?>">Về chúng tôi</a>
+                        <a  class="nav-link" href="<?php echo site_url('/about') ?>">Về chúng tôi</a>
                     </li>
                     <li class="nav-item <?php if(is_page('support')) echo 'active'; ?>">
-                        <a class="nav-link" href="<?php echo site_url('/support') ?>">Hỗ trợ</a>
+                        <a  class="nav-link" href="<?php echo site_url('/support') ?>">Hỗ trợ</a>
                     </li>
                 </ul>
                 <!-- Header Main Menu -->
@@ -60,7 +60,7 @@
 
                 <!-- About Detail Wrapper -->
                 <div class="sub-menu__wrapper__item__detail">
-                    <a href="<?php echo site_url('/about'); ?>">
+                    <a  href="<?php echo site_url('/about'); ?>">
                         <div class="about-us__thumbnail">
                             <img class="img-fluid" src="<?php echo get_theme_file_uri('assets/img/about-thumbnail.jpg'); ?>">
                         </div>
@@ -75,7 +75,7 @@
             <div class="col-md-4 col-6 sub-menu__wrapper__item">
                 <!-- About Detail Wrapper -->
                 <div class="sub-menu__wrapper__item__detail">
-                    <a href="<?php echo site_url('/course'); ?>">
+                    <a  href="<?php echo site_url('/course'); ?>">
                         <div class="about-us__thumbnail">
                             <img class="img-fluid" src="<?php echo get_theme_file_uri('assets/img/history-thumbnail.jpg'); ?>">
                         </div>
@@ -91,7 +91,7 @@
 
                 <!-- About Detail Wrapper -->
                 <div class="sub-menu__wrapper__item__detail">
-                    <a href="<?php echo site_url('/supplier'); ?>">
+                    <a  href="<?php echo site_url('/supplier'); ?>">
                         <div class="about-us__thumbnail">
                             <img class="img-fluid" src="<?php echo get_theme_file_uri('assets/img/supplier-thumbnail.jpg'); ?>">
                         </div>
@@ -111,43 +111,43 @@
         <div class="mobile-menu__overlay"></div>
 
         <!-- Main Mobile Dropdown Menu -->
-        <ul class="nav light-gray-bg">
+        <ul class="nav light-gray-bg" style="z-index: 3;">
 
             <!-- Product Listing -->
-            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>" style="display: none;">
-                <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
+            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>">
+                <a  class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
 
                 <?php get_template_part('template-parts/header', 'product-mobile'); ?>
 
             </li>
 
             <!-- Shop Searching Page -->
-            <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>" style="display: none;">
-                <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
+            <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
+                <a  class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
             </li>
 
             <!-- About Us -->
             <li class="nav-item with-sub-menu">
-                <a class="nav-link" href="<?php echo site_url('/about') ?>">Về chúng tôi</a>
+                <a  class="nav-link" href="<?php echo site_url('/about') ?>">Về chúng tôi</a>
                 <i class="fa fa-plus nav-trigger active" aria-hidden="true"></i>
                 <ul class="nav-item__sub-menu" style="">
                     <!-- About Item -->
                     <li class="about-item">
-                        <a href="<?php echo site_url('/about') ?>">
+                        <a  href="<?php echo site_url('/about') ?>">
                             <p class="sub-title">Giới thiệu Yadea</p>
                         </a>
                     </li>
 
                     <!-- About Item -->
                     <li class="about-item">
-                        <a href="<?php echo site_url('/course') ?>">
+                        <a  href="<?php echo site_url('/course') ?>">
                             <p class="sub-title">Quá trình phát triển</p>
                         </a>
                     </li>
 
                     <!-- About Item -->
                     <li class="about-item">
-                        <a href="<?php echo site_url('/supplier') ?>">
+                        <a  href="<?php echo site_url('/supplier') ?>">
                             <p class="sub-title">Đối tác hàng đầu</p>
                         </a>
                     </li>
@@ -156,7 +156,7 @@
 
             <!-- Support -->
             <li class="nav-item <?php if(is_page('support')) echo 'active'; ?>">
-                <a class="nav-link" href="<?php echo site_url('/support') ?>">Hỗ trợ</a>
+                <a  class="nav-link" href="<?php echo site_url('/support') ?>">Hỗ trợ</a>
             </li>
         </ul>
         <!-- Main Mobile Dropdown Menu - END -->
@@ -183,20 +183,25 @@
 
                 <ul class="sub-menu-main">
                     <li class="close-sub-menu">
-                        <a href="https://yadeavietnam.vn/yadea-e3#section-e3-design">Thông tin sản phẩm</a>
+                        <a  href="<?=site_url('/yadea-e3/#section-e3-design')?>">Thông tin sản phẩm</a>
                     </li>
-<!--                    <li class="close-sub-menu" style="display: none;">-->
-<!--                        <a href="https://yadeavietnam.vn/yadea-g5/teaser/#follow-event-section">Sự kiện ra mắt</a>-->
-<!--                    </li>-->
                     <li class="close-sub-menu">
-                        <a href="https://yadeavietnam.vn/yadea-e3#specs-section">Thông số kỹ thuật</a>
+                        <a  href="<?=site_url('/chi-tiet/yadea-e3/')?>">Thông số kỹ thuật</a>
+                    </li>
+                    <li class="close-sub-menu">
+                        <a >Giá: <b>15,990,000 VND</b></a>
                     </li>
                 </ul>
 
                 <!-- Price CTA -->
-<!--                <div class="cta-wrapper">-->
-<!--                    <a class="cta apply-info-modal track-this-button" id="apply-information-yadea-g5-header-section">ĐĂNG KÝ</a>-->
-<!--                </div>-->
+                <div class="cta-wrapper">
+                  <p class="price-holder mb-show" style="margin: 0 10px;">
+                    Giá: <b>15,990,000 VND</b>
+                  </p>
+                  <a  class="cta open-signup-info-modal track-this-button" 
+					 id="header-buynow-e3-button"
+					 style="cursor:pointer;">MUA NGAY</a>
+                </div>
                 <!-- Price CTA -->
             </div><!-- Price Row -->
 

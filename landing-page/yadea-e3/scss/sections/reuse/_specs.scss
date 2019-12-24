@@ -69,6 +69,10 @@
             background-color: #35363a;
           }
 
+          &.button-blue{
+            background-color: #1e9aed;
+          }
+
           &.active{
             &:after{
               opacity: 1;

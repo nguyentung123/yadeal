@@ -6,7 +6,7 @@
  *
  * @package Yadea_Theme
  */
-wp_redirect(home_url());
+wp_redirect( site_url() );
 exit;
 get_header();
 ?>

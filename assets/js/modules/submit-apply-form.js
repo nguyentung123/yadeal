@@ -13,7 +13,6 @@ export default class SubmitApplyForm {
      *  EVENTS
      * =================================== */
     bindEvents(){
-
         this.$applyShopForm = $('#signup-as-shop-form');
         this.SetupAJAXSubmitForm(this.$applyShopForm);
     }

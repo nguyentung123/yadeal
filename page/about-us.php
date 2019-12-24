@@ -119,7 +119,7 @@ get_header();
                         </div>
                         <div class="text">
                             <p>
-                                Để cùng nghiên cứu & sản xuất sản phẩm cao cấp, YADEA đã ký kết hợp tác chiến lược với Lightning Motors, nhà sản xuất xe điện hai bánh tiên tiến tại Mỹ . Sản xuất ra chế tạo thành công chiếc xe máy điện nhanh nhất thế giới LS-218 đạtvới tốc độ 358km/h
+                                Để cùng nghiên cứu & sản xuất sản phẩm cao cấp, YADEA đã ký kết hợp tác chiến lược với Lightning Motors, nhà sản xuất xe điện hai bánh tiên tiến tại Mỹ. Sản xuất ra chế tạo thành công chiếc xe máy điện nhanh nhất thế giới LS-218 đạt với tốc độ 358km/h
                             </p>
                         </div>
                     </div>
@@ -161,7 +161,7 @@ get_header();
                         </div>
                         <div class="text">
                             <p>
-                                Sản phẩm xuất hiện có mặt trên 77 quốc gia, dẫn đầu doanh số ngành suốt 12 năm, với hơn 20 triệu người dùng trên thế giới, giá trị thương hiệu đạt hơn 10 tỷ USD. YADEA đã và sẽ tiếp tục phát triển những thế mạnh của mình, trở thành thương hiệu xe điện công nghệ cao toàn cầu.
+                                Sản phẩm xuất hiện trên 77 quốc gia, dẫn đầu doanh số ngành suốt 12 năm, với hơn 20 triệu người dùng trên thế giới, giá trị thương hiệu đạt hơn 10 tỷ USD. YADEA đã và sẽ tiếp tục phát triển những thế mạnh của mình, trở thành thương hiệu xe điện công nghệ cao toàn cầu.
                             </p>
                         </div>
                     </div>

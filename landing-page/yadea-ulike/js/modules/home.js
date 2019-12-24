@@ -13,7 +13,7 @@ import WaterResistance from "./water-resistance";
 import Accessories from "./accessories";
 import Features from "./feature";
 import BikeController from "./bike-controller";
-
+import SignupInfo from "./_signup-info";
 import ColorFeature from "./color-feature";
 
 import { reachSection, pageListener } from './utils';
@@ -44,6 +44,7 @@ export default class Home {
         let accessories = new Accessories();
         let features = new Features();
         let disatance = new Distance();
+        let signupInfo = new SignupInfo();
 
         let colorFeature = new ColorFeature();
 

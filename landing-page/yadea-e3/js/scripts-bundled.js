@@ -15747,7 +15747,9 @@ var _savingEnergy = _interopRequireDefault(__webpack_require__(28));
 
 var _features = _interopRequireDefault(__webpack_require__(29));
 
-var _utils = __webpack_require__(30);
+var _signupInfo = _interopRequireDefault(__webpack_require__(30));
+
+var _utils = __webpack_require__(31);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15781,6 +15783,7 @@ function () {
     var antiThief = new _antiThief.default();
     var savingEnergy1 = new _savingEnergy.default();
     var features = new _features.default();
+    var signupInfo = new _signupInfo.default();
     var common = new _common.default();
     this.pageSections = {
       $banner: $('#yadea-e3-page .section-banner'),
@@ -16070,7 +16073,7 @@ function () {
 
 
           if ($(e.target).hasClass('button-red')) {
-            $('.color-slider-holder .custom-button .slider-button.active').removeClass('active');
+            $('.color-slider-holder .custom-button .sl watchjider-button.active').removeClass('active');
 
             _this2.$bikeColorSlider.slick('slickGoTo', 1);
 
@@ -16078,7 +16081,7 @@ function () {
           } // Black
 
 
-          if ($(e.target).hasClass('button-black')) {
+          if ($(e.target).hasClass('button-blue')) {
             $('.color-slider-holder .custom-button .slider-button.active').removeClass('active');
 
             _this2.$bikeColorSlider.slick('slickGoTo', 2);
@@ -18540,6 +18543,106 @@ exports.default = Features;
 
 /***/ }),
 /* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SignupInfo =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function SignupInfo() {
+    _classCallCheck(this, SignupInfo);
+
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(SignupInfo, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      var _this = this;
+
+      this.$openModalBtn = $('.open-signup-info-modal');
+      this.$closeModalBtn = $('.close-signup-info-modal');
+      this.$signupInfoModal = $('.signup-info-modal');
+      this.$openModalBtn.on('click', function () {
+        _this.$signupInfoModal.addClass('active');
+      });
+      this.$closeModalBtn.on('click', function () {
+        _this.$signupInfoModal.removeClass('active');
+      });
+      this.$signupBuyBikeForm = $('.signup-information-form');
+      this.FormSetup(this.$signupBuyBikeForm);
+    }
+    /* ===================================
+     *  METHODS
+     * =================================== */
+
+  }, {
+    key: "FormSetup",
+    value: function FormSetup(formElement) {
+      var $submitFeedback = formElement.find('.submit-feedback');
+      var action = formElement.attr('action');
+      var $loadingIcon = formElement.find('.loading-context');
+      var $buttonContext = formElement.find('.btn-context');
+      var $submitBtn = formElement.find('[type=submit]');
+      formElement.on('submit', function (e) {
+        e.preventDefault();
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        formElement.find('input[name=registered_day]').val(date + ' ' + time);
+        var data = formElement.serialize();
+        $loadingIcon.show();
+        $buttonContext.hide();
+        $.ajax({
+          type: 'GET',
+          url: action,
+          dataType: 'json',
+          crossDomain: true,
+          data: data,
+          success: function success(data) {
+            $loadingIcon.hide();
+
+            if (data == 'false') {
+              $buttonContext.show();
+              $loadingIcon.hide();
+              $submitFeedback.removeClass('success').addClass('error').html('Đăng ký mua xe không thành công, quý khách vui lòng thử lại');
+            } else {
+              $submitBtn.hide();
+              $submitFeedback.removeClass('error').addClass('success').html('Đăng ký mua xe thành công, Yadea sẽ liên hệ lại với bạn');
+            }
+          }
+        });
+      });
+    }
+  }]);
+
+  return SignupInfo;
+}();
+
+exports.default = SignupInfo;
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

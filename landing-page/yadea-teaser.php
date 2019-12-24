@@ -25,6 +25,9 @@ Template Name: Yadea G5 Teaser
     <!-- META DATA - END -->
 
     <!-- STYLESHEET -->
+	<link rel="icon" href="<?=site_url()?>/wp-content/uploads/2019/11/cropped-logo-1-32x32.png" sizes="32x32" />
+	<link rel="icon" href="<?=site_url()?>/wp-content/uploads/2019/11/cropped-logo-1-192x192.png" sizes="192x192" />
+	<link rel="apple-touch-icon-precomposed" href="<?=site_url()?>/wp-content/uploads/2019/11/cropped-logo-1-180x180.png" />
     <!-- Vendor -->
     <!-- Bootstrap Stylesheet -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">

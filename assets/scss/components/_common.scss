@@ -81,3 +81,17 @@
     padding: 45px 0 40px;
   }
 }
+
+.mb-hide{
+  @media #{$information-tablet}{
+    display: none;
+  }
+}
+
+.mb-show{
+  display: none;
+
+  @media #{$information-tablet}{
+    display: block !important;
+  }
+}

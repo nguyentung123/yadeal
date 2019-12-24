@@ -129,12 +129,8 @@ get_header();
                                         // Choose 1 Image To Show On The Page
                                         $url_img_pro = get_theme_file_uri('assets/img/placeholder/image-placeholder.png');
 
-                                        if(has_post_thumbnail()){
-                                            $url_img_pro = get_the_post_thumbnail_url();
-                                        } else {
-                                            if(count(get_field('product_colors')) > 0){
-                                                $url_img_pro = get_field('product_colors')[0]['product_color_image'];
-                                            }
+                                        if(count(get_field('product_colors')) > 0){
+                                            $url_img_pro = get_field('product_colors')[0]['product_color_image'];
                                         }
                                         ?>
                                         <img src="<?php echo $url_img_pro; ?>">
@@ -146,11 +142,12 @@ get_header();
                                         if($price_pro):
                                             ?>
                                             <h4 class="price">
-                                                <?php echo $price_pro;?> VND
+                                                <?php echo number_format($price_pro);?> VND
                                             </h4>
                                         <?php endif;?>
 
-                                        <?php echo acf_render('<p class="desc">', get_field('product_slogan'),'</p>');?>
+                                        <p class="desc"><?php echo get_field('product_slogan'); ?></p>
+                                        <?php echo get_field('product_intro'); ?>
 
                                         <?php
                                         $productLandingPage = get_permalink();
@@ -164,7 +161,7 @@ get_header();
                                             <span>TÌM HIỂU THÊM</span>
                                         </a>
 
-                                        <a href="<?php echo site_url('/support/tim-cua-hang/');?>"
+                                        <a href="<?php echo site_url('/support/tim-cua-hang/');?>" style="display: none;"
                                            class="btn product-cta btn-trans border-gray btn-sh effect effect-main">
                                             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> MUA NGAY</span>
                                         </a>

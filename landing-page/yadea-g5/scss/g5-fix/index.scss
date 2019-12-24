@@ -1,3 +1,103 @@
 .g5-leading-section .slider-holder .leading-slider .slide-item{
   height: 55vw;
+
+  @media #{$information-tablet}{
+    height: 190vw;
+  }
+}
+
+.yadea-g5-banner{
+  .tra-gop-img{
+    width: 100%;
+    text-align: center;
+    padding-left: 5%;
+
+    // original state
+    opacity: 0;
+
+    .img-holder{
+      margin: auto;
+      width: 70%;
+
+      img{
+        width: 100%;
+      }
+    }
+
+    .tragop-line1,.tragop-line2{
+      margin: 0;
+      text-align: center;
+    }
+
+    .tragop-line1{ color: #fff; }
+
+    .tragop-line2{
+      color: #b95015;
+      cursor:pointer;
+      transition: all ease-in 100ms;
+
+      &:hover{
+        color: #F36E22;
+        transition: all ease-out 150ms;
+      }
+    }
+  }
+
+  @media #{$information-tablet}{
+    .tra-gop-img{
+      width: 80%;
+      margin: auto;
+
+      .img-holder{
+        margin: auto;
+        width: 50%;
+
+        img{
+          width: 100%;
+        }
+      }
+
+      .tragop-line1,.tragop-line2{
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  @media #{$information-phone}{
+    .bike-image {
+      bottom: 2.3%;
+      left: -7%;
+      width: 110%;
+      opacity: 0;
+    }
+
+    .banner-content {
+      top: 28%;
+
+      .product-name img {
+        width: 50%;
+      }
+    }
+
+    .tra-gop-img{
+      width: 100%;
+      margin: auto;
+      margin-top: -0.25em;
+      padding: 0;
+
+      .img-holder{
+        margin: auto;
+        width: 52%;
+
+        img{
+          width: 100%;
+        }
+      }
+
+      .tragop-line1,.tragop-line2{
+        font-size: 1.25em;
+        white-space: nowrap;
+      }
+    }
+  }
 }

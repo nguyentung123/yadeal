@@ -1,0 +1,445 @@
+.signup-info-modal{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Original State
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in 10ms 300ms;
+
+  .overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+
+    // Original State
+    opacity: 0;
+    transition: all ease-in 200ms 150ms;
+  }
+
+  .signup-info-modal-dialog{
+    position: relative;
+    background-color: #FFF;
+    width: 850px;
+    height: 500px;
+    max-width: 100%;
+    max-height: 100vh;
+    box-shadow: 0 0 22px rgba(0,0,0,0.35);
+    display: flex;
+
+    // Original State
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all ease-in 250ms;
+
+    .close-signup-info-modal{
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    // Left Side Content
+    .left-content{
+      background-color: #fabb88;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      flex-shrink: 0;
+
+      &>*{
+        width: 75%;
+      }
+
+      .popup-title,.popup-sub-title {
+        text-align: justify;
+        white-space: nowrap;
+        margin: 0;
+      }
+
+      .popup-title{
+        font-size: 2.2em;
+        font-weight: 600;
+      }
+
+      .popup-sub-title{
+        font-size: 1.05em;
+        letter-spacing: 0.025em;
+        font-weight: 100;
+      }
+
+      .signup-information-form{
+        padding: 2em 0 0.25em;
+
+        .input-holder{
+          border: 2px solid #fff;
+          padding: 5px 9px;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+
+          label{
+            margin: 0;
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-right: 6px;
+          }
+
+          input{
+            flex: 1;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: #666;
+            font-weight: bold;
+            min-width: 0;
+          }
+        }
+
+        .submit-holder{
+          text-align: center;
+          padding: 0.5em 0;
+
+          button, a{
+            border: 2px solid #FFF;
+            background-color: transparent;
+            color: #FFF;
+            padding: 5px 9px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all ease-in 100ms;
+
+            &.track-this-button{
+              position: relative;
+
+              &:after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+              }
+            }
+
+            .fa{
+              margin-left: 3px;
+            }
+
+            &:hover{
+              background-color: #FFF;
+              color: #F36E22;
+              transition: all ease-out 150ms;
+            }
+
+            .loading-context{
+              display: none;
+            }
+          }
+
+          .submit-feedback{
+            opacity: 0;
+            transition: all ease-out 150ms;
+            font-weight: 600;
+
+            &.success{
+              color: #00b894;
+              opacity: 1;
+            }
+
+            &.error{
+              color: #ff2222;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    // Right Side Content
+    .right-content{
+      width: 50%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      text-align: center;
+      padding: 2em 1em;
+      color: #ff7c13;
+
+      .right-title{
+        margin: 1.75em 0 1em;
+        font-weight: 700;
+        font-size: 2em;
+      }
+
+      .right-cta{
+        text-align: left;
+        padding: 0.55em 1em;
+        font-size: 2.5em;
+        font-weight: 700;
+        white-space: nowrap;
+        border: 2px solid #ff7c13;
+        border-radius: 10px;
+        cursor:pointer;
+        transition: all ease-in 100ms;
+
+        &:hover{
+          color: #FFF;
+          background-color: #ff7c13;
+          transition: all ease-out 150ms;
+        }
+      }
+
+      .right-bg{
+        position: absolute;
+        width: 40%;
+        bottom: 2%;
+        left: 5%;
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &.active{
+    opacity: 1;
+    visibility: visible;
+    transition: all ease-in 10ms;
+
+    .overlay{
+      opacity: 1;
+      transition: all ease-out 150ms;
+    }
+
+    .signup-info-modal-dialog{
+      opacity: 1;
+      transform: translateY(0);
+      transition: all ease-out 300ms 100ms;
+    }
+  }
+
+  /* === RESPONSIVE === */
+  @media #{$information-tablet}{
+    .signup-info-modal-dialog{
+      width: 90%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100vh;
+      flex-wrap: wrap;
+
+      .close-signup-info-modal{
+        top: 2vw;
+        right: 2vw;
+        width: 6vw;
+
+        img{
+          width: 100%;
+        }
+      }
+
+      // Left Side Content
+      .left-content{
+        background-color: #fabb88;
+        color: #FFF;
+        width: 100%;
+        flex-shrink: 0;
+        padding: 3em 2em 2em;
+
+        &>*{
+          width: 75%;
+        }
+
+        .popup-title,.popup-sub-title {
+          text-align: justify;
+          white-space: nowrap;
+          margin: 0;
+        }
+
+        .popup-title{
+          font-size: 2.2em;
+          text-align: center;
+        }
+
+        .popup-sub-title{
+          font-size: 1.05em;
+          letter-spacing: 0.025em;
+          text-align: center;
+        }
+
+        .signup-information-form{
+          padding: 2em 0 0.25em;
+
+          .input-holder{
+            border: 2px solid #FFF;
+            padding: 5px 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+
+            label{
+              font-size: 1.35em;
+              margin-right: 6px;
+            }
+
+            input{
+              flex: 1;
+              height: 40px;
+              line-height: 40px;
+              font-size: 1.35em;
+            }
+          }
+
+          .submit-holder{
+            padding: 0.5em 0;
+
+            button, a{
+              padding: 10px 20px;
+              border-radius: 8px;
+              font-size: 1.35em;
+
+              .fa{
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      // Right Side Content
+      .right-content{
+        width: 100%;
+        padding: 1em 1em 12vw;
+        justify-content: flex-start;
+        align-items: center;
+
+        .right-title{
+          margin: 1em 0;
+          font-size: 2em;
+        }
+
+        .right-cta{
+          padding: 0.25em 1em;
+          font-size: 2em;
+          border: 2px solid #ff7c13;
+          border-radius: 10px;
+          width: auto;
+          display: inline-block;
+          z-index: 2;
+        }
+
+        .right-bg{
+          width: 28%;
+          bottom: 2%;
+          left: 5%;
+        }
+      }
+    }
+  }
+  @media #{$information-phone}{
+    .signup-info-modal-dialog{
+      width: 90%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100vh;
+
+      .close-signup-info-modal{
+        top: 3vw;
+        right: 3vw;
+        width: 8vw;
+      }
+
+      // Left Side Content
+      .left-content{
+        padding: 2.5em 1em 1.25em;
+
+        .popup-title{
+          font-size: 1.8em;
+        }
+
+        .popup-sub-title{
+          font-size: 1em;
+          letter-spacing: 0.02em;
+        }
+
+        .signup-information-form{
+          padding: 1.5em 0 0.2em;
+
+          .input-holder{
+            border: 2px solid #FFF;
+            padding: 5px 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            height: 42px;
+
+            label{
+              font-size: 1em;
+              margin-right: 6px;
+            }
+
+            input{
+              height: 36px;
+              line-height: 36px;
+              font-size: 1em;
+            }
+          }
+
+          .submit-holder{
+            padding: 0.5em 0;
+
+            button, a{
+              padding: 5px 18px;
+              border-radius: 8px;
+              font-size: 1em;
+            }
+          }
+        }
+      }
+
+      // Right Side Content
+      .right-content{
+        width: 100%;
+        padding: 1em 1em 16vw;
+        justify-content: flex-start;
+        align-items: center;
+
+        .right-title{
+          margin: 0.75em 0;
+          font-size: 1.5em;
+        }
+
+        .right-cta{
+          padding: 0.25em 1em;
+          font-size: 1.75em;
+          border: 2px solid #ff7c13;
+          border-radius: 7px;
+          z-index: 2;
+        }
+
+        .right-bg{
+          width: 32%;
+          bottom: 2%;
+          left: 5%;
+        }
+      }
+    }
+  }
+  @media #{$information-sm-phone}{}
+}

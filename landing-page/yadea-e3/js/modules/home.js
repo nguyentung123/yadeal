@@ -14,6 +14,7 @@ import Control from "./_control";
 import AntiThief from "./_anti-thief";
 import SavingEnergy from "./_saving-energy";
 import Features from "./_features";
+import SignupInfo from "./_signup-info";
 
 import { reachSection, pageListener } from './utils';
 
@@ -38,6 +39,7 @@ export default class Home {
         let antiThief    = new AntiThief();
         let savingEnergy1    = new SavingEnergy();
         let features    = new Features();
+        let signupInfo = new SignupInfo();
 
         let common = new Common();
 

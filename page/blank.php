@@ -1,5 +1,5 @@
 <?php
-    //*Template Name: Chính sách bảo hành
+    //*Template Name: Trang rỗng
 get_header();
 ?>
 <main class="no-overlay">

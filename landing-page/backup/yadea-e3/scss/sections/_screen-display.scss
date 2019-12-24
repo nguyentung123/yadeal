@@ -1,0 +1,535 @@
+#yadea-e3-page{
+  .section-screen-display{
+    background-color: #f8f2f2;
+    height: 76.04%;
+    position: relative;
+    margin-bottom: 230px;
+    z-index:2;
+
+    .main-content{
+      position: absolute;
+      width: 35.4%;
+      left: 32.3%;
+      text-align: center;
+      top: 13.5%;
+
+      &.charging-content{
+        background-color: #f8f2f2;
+        width: 51%;
+        left: 24.5%;
+        top: 57.5%;
+        padding: 30px 0 20px;
+        text-align: center;
+        z-index: 2;
+      }
+    }
+
+    .effect-holder{
+      position: relative;
+
+      .bg-holder{
+        width: 100%;
+        position: relative;
+
+        .img-holder{
+          width: 100%;
+
+          img{
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .marker-group{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 115.5%;
+      z-index: 2;
+
+
+      .marker{
+        position: absolute;
+        width: 3vw;
+        height: 3vw;
+        top: 2%;
+        left: 2%;
+        z-index: 2;
+
+        .line{
+          border-color: #fcea94;
+          position: absolute;
+
+          // Original State
+          //opacity: 0;
+          //transition: all ease-in 140ms 30ms;
+        }
+
+        .name{
+          color: #2c2c2c;
+          background-color: #fcea94;
+          height: 26px;
+          line-height: 26px;
+          display: inline-block;
+          padding: 0 15px;
+          border-radius: 13px;
+          z-index: 2;
+          font-weight: 600;
+          position: absolute;
+          white-space: nowrap;
+
+          // Original State
+          //opacity: 0;
+          //transition: all ease-in 140ms 30ms;
+        }
+
+        .dot{
+          width: 24px;
+          height: 24px;
+          border-radius: 12px;
+          position: absolute;
+          background-color: #fcea94;
+          cursor: pointer;
+
+          .dot-effect{
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            position: absolute;
+            left: -4px;
+            top: -4px;
+            background-color: rgba(#fcea94, 0.75);
+            animation: wavingEffect 1.2s infinite linear;
+          }
+        }
+
+        &.active{
+          .line, .name{
+            opacity: 1;
+            transition: all ease-out 220ms;
+          }
+        }
+
+        // Market Variation
+        &.distance{
+          top: 37.75%;
+          left: 28%;
+          width: 13%;
+          height: 4.5%;
+
+          .line{
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid #fcea94;
+            border-right:  2px solid #fcea94;
+            top: 12px;
+            left: 0;
+          }
+
+          .dot{
+            bottom: -12px;
+            right: -12px;
+          }
+
+          .name{
+            top: 0;
+            left: 0;
+          }
+        }
+
+        // Speed Marker
+        &.speed{
+          top: 44.75%;
+          left: 54.5%;
+          width: 6%;
+          height: 6.5%;
+
+          .line{
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid #fcea94;
+            border-right:  2px solid #fcea94;
+            top: 0;
+            left: 0;
+          }
+
+          .dot{
+            top: -12px;
+            left: -12px;
+          }
+
+          .name{
+            bottom: 0;
+            right: 0;
+            transform: translateX(50%);
+          }
+        }
+
+        // Battery Notification Marker
+        &.battery-noti{
+          top: 48.75%;
+          left: 40%;
+          width: 1px;
+          height: 5.5%;
+
+          .line{
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid #fcea94;
+            border-right:  2px solid #fcea94;
+            top: 0;
+            left: 0;
+          }
+
+          .dot{
+            top: -12px;
+            left: -12px;
+          }
+
+          .name{
+            bottom: 0;
+            right: 0;
+            transform: translateX(50%);
+          }
+        }
+
+        // Charging Port
+        &.charging-port{
+          top: 74.75%;
+          left: 27%;
+          width: 8%;
+          height: 5.5%;
+
+          .line{
+            width: 100%;
+            height: 100%;
+            border-bottom: 2px solid #fcea94;
+            border-right:  2px solid #fcea94;
+            top: 0;
+            left: 0;
+          }
+
+          .dot{
+            top: -12px;
+            right: -12px;
+          }
+
+          .name{
+            bottom: 0;
+            left: 0;
+            transform: translate(-50%, 50%);
+          }
+        }
+      }
+    }
+
+    .boundary-holder{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 230px;
+      width: 100%;
+
+      .boundary-bottom{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+
+        svg{
+          polygon{
+            fill: #F5A884
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1920px){
+    .section-screen-display{
+      width: 1920px;
+      height: 1480px;
+      margin-left: calc((100% - 1920px) / 2);
+    }
+  }
+
+  /* == RESPONSIVE === */
+  @media #{$information-tablet}{
+    .section-screen-display{
+      width: 100%;
+      height: 174.66vw;
+      padding-top: 25vw;
+      margin: 0;
+      background-color: #fab584;
+      background-image: linear-gradient(#f4a784, #fac085);
+
+      .main-content{
+        &.screen-content{
+          width: 100%;
+          top: 54vw;
+          left: 0;
+        }
+      }
+
+      .effect-holder{
+        width: 100%;
+        bottom: 0;
+        height: 100%;
+
+        .bg-holder{
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+
+      .boundary-holder{
+        display: none;
+      }
+
+      .marker-group{
+        width: 100%;
+        height: 100%;
+
+
+        .marker{
+          width: 3vw;
+          height: 3vw;
+          top: 2%;
+          left: 2%;
+          z-index: 2;
+
+          .line{
+            border-color: $white;
+          }
+
+          .name{
+            color: #2c2c2c;
+            background-color: $white;
+            height: 32px;
+            line-height: 32px;
+            display: inline-block;
+            padding: 0 15px;
+            border-radius: 16px;
+            z-index: 2;
+            font-size: 1.1em;
+
+            // Original State
+            //opacity: 0;
+            //transition: all ease-in 140ms 30ms;
+          }
+
+          .dot{
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            position: absolute;
+            background-color: $white;
+            cursor: pointer;
+
+            .dot-effect{
+              width: 32px;
+              height: 32px;
+              border-radius: 16px;
+              position: absolute;
+              left: -4px;
+              top: -4px;
+              background-color: rgba($white, 0.75);
+            }
+          }
+
+          &.active{
+            .line, .name{
+              opacity: 1;
+              transition: all ease-out 220ms;
+            }
+          }
+
+          // Market Variation
+          &.distance{
+            top: 55.75%;
+            left: 19%;
+            width: 18%;
+            height: 5.5%;
+
+            .line{
+              width: 50%;
+              height: 96%;
+              border: none;
+              background: linear-gradient(to top right,
+                      rgba(255,255,255,0) 0%,
+                      rgba(255,255,255,0) calc(50% - 2px),
+                      rgba(255,255,255,1) 50%,
+                      rgba(255,255,255,0) calc(50% + 2px),
+                      rgba(255,255,255,0) 100%);
+              top: 12px;
+              left: 50%;
+            }
+
+            .dot{
+              bottom: -12px;
+              right: -12px;
+            }
+
+            .name{
+              top: 0;
+              left: 0;
+            }
+          }
+
+          // Speed Marker
+          &.speed{
+            top: 49.75%;
+            left: 58.5%;
+            width: 6%;
+            height: 6.5%;
+
+            .line{
+              width: 100%;
+              height: 100%;
+              border-top: none;
+              border-right: 2px solid #FFF;
+              top: 100%;
+              left: 0;
+              border-bottom: 2px solid #FFF;
+            }
+
+            .dot{
+              top: calc(200% - 13px);
+              left: -12px;
+            }
+
+            .name{
+              bottom: 0;
+              right: 0;
+              transform: translateX(50%);
+            }
+          }
+
+          // Battery Notification Marker
+          &.battery-noti{
+            top: 65.75%;
+            left: 36%;
+            width: 1px;
+            height: 7.5%;
+
+            .line{
+              width: 100%;
+              height: 100%;
+              border-top: 2px solid $white;
+              border-right:  2px solid $white;
+              top: 0;
+              left: 0;
+            }
+
+            .dot{
+              top: -12px;
+              left: -12px;
+            }
+
+            .name{
+              bottom: 0;
+              right: 0;
+              transform: translateX(50%);
+            }
+          }
+
+          // Charging Port
+          &.charging-port{
+            display: none;
+          }
+        }
+      }
+    }
+
+    .section-usb-charging{
+      height: 169.33vw;
+      position: relative;
+
+      .effect-holder{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+
+        .img-holder{
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+
+          img{
+            width: 100%;
+          }
+        }
+
+        .effect-item-description{
+          position: absolute;
+          width: 29%;
+          height: 9%;
+          top: 77%;
+          left: 22%;
+
+          .line{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-bottom: 2px solid #222;
+            top: 0;
+            left: 0;
+            border-right: 2px solid #222;
+          }
+
+          .name{
+            display: inline-block;
+            position: absolute;
+            z-index: 2;
+            white-space: nowrap;
+            padding: 0 15px;
+            height: 32px;
+            line-height: 32px;
+            border: 1px solid #222;
+            background-color: #bfbebe;
+            font-weight: 600;
+            top: 0;
+            left: 100%;
+            border-radius: 8px;
+            font-size: 1.25em;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      .main-content{
+        width: 100%;
+        top: 7%;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
+
+@keyframes wavingEffect {
+  0%{
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  60%{
+    opacity: 0.65;
+    transform: scale(1.1);
+  }
+
+  90%{
+    opacity: 0;
+    transform: scale(1.3);
+  }
+
+  100%{
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}

@@ -66,6 +66,27 @@
     }
   }
 
+  @media (max-width: 1368px){
+    .section-driving-position {
+      height: 540px;
+
+      .driving-position-layout {
+        top: 100px;
+      }
+    }
+  }
+
+  @media (max-width: 1280px){
+    .section-driving-position {
+      height: 400px;
+      z-index: 3;
+
+      .driving-position-layout {
+        top: 70px;
+      }
+    }
+  }
+
   /* === RESPONSIVE === */
   @media #{$information-tablet}{
     .section-driving-position{

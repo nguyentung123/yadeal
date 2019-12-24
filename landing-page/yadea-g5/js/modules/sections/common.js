@@ -18,6 +18,8 @@ export default class Home {
         this.SetupVideoPlayer();
         this.SmoothScrollingSetup();
         this.PriceTagScroll();
+        this.NewsSliderSetup();
+        this.PayModalSetup();
 
         if(window.innerWidth <= 768){
             this.SetupPriceTagMenu();
@@ -143,6 +145,42 @@ export default class Home {
         this.$closePriceTagMenu.on('click', () => {
             this.$priceTagMenu.slideUp('normal');
             this.$iconHolder.removeClass('is-showing');
+        })
+    }
+
+    // News Slider
+    NewsSliderSetup(){
+        let slideToShow = 3;
+        if(window.innerWidth <= 768 && window.innerWidth > 480){
+            slideToShow = 2;
+        } else {
+            if(window.innerWidth < 480){
+                slideToShow = 1
+            }
+        }
+        $('.news-list').slick({
+            slidesToShow: slideToShow,
+            slidesToScroll: 1,
+            autoplay: true,
+            nextArrow: `<a class="news-slider-control slide-next"></a>`,
+            prevArrow: `<a class="news-slider-control slide-prev"></a>`,
+        })
+    }
+
+    // Tragop Modal
+    PayModalSetup(){
+        this.$payModal = $('.tra-gop-information-modal');
+        this.$openPayModalBtn = $('.open-tragop-modal');
+        this.$closePayModalBtn = $('.close-tragop-modal');
+
+        this.$openPayModalBtn.on('click', () => {
+            $('body').addClass('show-modal');
+            this.$payModal.addClass('active');
+        })
+
+        this.$closePayModalBtn.on('click', () => {
+            $('body').removeClass('active');
+            this.$payModal.removeClass('active');
         })
     }
 }
