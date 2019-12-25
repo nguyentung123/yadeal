@@ -4580,7 +4580,7 @@ body.admin-bar #page-header {
         left: calc((390px - 50vw) + 10px); }
       .product-real-image-section .real-img-slider .real-img-control.next-slide {
         right: calc((390px - 50vw) + 10px); } }
-  @media only screen and (max-width: 330px) {
+  @media only screen and (max-width: 360px) {
     .product-real-image-section {
       padding: 50px 0 60px; }
       .product-real-image-section .heading {
@@ -5481,7 +5481,7 @@ body.admin-bar .vbox-close {
         font-size: 12px; }
       #home-products-1 .product-showcase__item__body {
         height: 72vw; } }
-  @media only screen and (max-width: 330px) {
+  @media only screen and (max-width: 360px) {
     #home-products-1 .product-showcase__item .series-name {
       font-size: 19px; }
     #home-products-1 .product-showcase__item .product-name {
@@ -6099,7 +6099,7 @@ body.admin-bar .vbox-close {
         height: 38px; }
         #products-head .products-control-mb .products-control .products-control__item.active {
           display: none; } }
-  @media only screen and (max-width: 330px) {
+  @media only screen and (max-width: 360px) {
     #products-head .series-name {
       margin-bottom: 15px;
       padding: 0 25px;
@@ -6323,7 +6323,7 @@ body.admin-bar .vbox-close {
               margin-top: 5px; }
             #product-list .series__block__products__item__detail .product-cta {
               margin-right: 15px; } }
-  @media only screen and (max-width: 330px) {
+  @media only screen and (max-width: 360px) {
     #product-list {
       padding: 0; }
       #product-list .series__block {
@@ -6600,27 +6600,555 @@ body.admin-bar .vbox-close {
         #support-body .contact-info__details__item p {
           font-size: 15px; } }
 
-.support-pages .common-banner {
-  position: relative;
-  height: 31.25vw;
-  background-color: #fcfbfb;
-  overflow: hidden; }
-  .support-pages .common-banner .bg-holder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
-    .support-pages .common-banner .bg-holder#support-maintain-banner-bg img {
-      width: 100%; }
-  .support-pages .common-banner .container {
-    display: flex;
-    height: 100%;
-    align-items: center; }
-    .support-pages .common-banner .container .main-content {
-      align-items: center;
-      position: relative;
-      z-index: 2; }
+.support-pages {
+  /* === RESPONSIVE === */ }
+  .support-pages .common-banner {
+    position: relative;
+    height: 31.25vw;
+    background-color: #fcfbfb;
+    overflow: hidden; }
+    .support-pages .common-banner#support-banner-section {
+      background-color: #ebebeb; }
+    .support-pages .common-banner .bg-holder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; }
+      .support-pages .common-banner .bg-holder#support-maintain-banner-bg img {
+        width: 100%; }
+      .support-pages .common-banner .bg-holder#support-privacy-banner-bg .img-holder {
+        position: absolute;
+        width: 33%;
+        bottom: 0;
+        right: 12.5%; }
+        .support-pages .common-banner .bg-holder#support-privacy-banner-bg .img-holder img {
+          width: 100%; }
+      .support-pages .common-banner .bg-holder#support-main-banner-bg .img-holder {
+        position: absolute;
+        width: 30%;
+        bottom: 3%;
+        right: 13%; }
+        .support-pages .common-banner .bg-holder#support-main-banner-bg .img-holder img {
+          width: 100%; }
+    .support-pages .common-banner .container {
+      display: flex;
+      height: 100%;
+      align-items: center; }
+      .support-pages .common-banner .container .main-content {
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        width: 1080px;
+        max-width: 100%;
+        margin: auto; }
+        .support-pages .common-banner .container .main-content .title {
+          font-weight: bold;
+          color: #191919;
+          font-size: 48px; }
+        .support-pages .common-banner .container .main-content .desc {
+          font-size: 24px; }
+  .support-pages .after-banner-content {
+    padding: 150px 0; }
+    .support-pages .after-banner-content .desc {
+      width: 1080px;
+      max-width: 100%;
+      margin: auto;
+      font-size: 24px; }
+  .support-pages .common-pre-footer {
+    padding: 110px 0; }
+    .support-pages .common-pre-footer .action-holder {
+      width: 1080px;
+      max-width: 100%;
+      margin: auto;
+      display: flex; }
+      .support-pages .common-pre-footer .action-holder .pre-footer-action {
+        width: 50%;
+        flex-basis: 50%;
+        flex-shrink: 0;
+        text-align: center; }
+        .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon {
+          width: 114px;
+          height: 114px;
+          border-radius: 57px;
+          border: 2px solid #191919;
+          text-align: center;
+          line-height: 110px;
+          margin: auto;
+          margin-bottom: 22px; }
+          .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon img {
+            max-height: 58px; }
+        .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .action-title, .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .desc {
+          font-size: 16px;
+          margin: 0;
+          letter-spacing: 0.2px; }
+  .support-pages .common-page-content {
+    background-color: #f4f4f4;
+    padding: 85px 0; }
+    .support-pages .common-page-content .topic-holder {
+      width: 1080px;
+      max-width: 100%;
+      margin: auto;
+      padding: 8px;
+      background-color: #FFF; }
+      .support-pages .common-page-content .topic-holder ul {
+        list-style: none;
+        margin: 0;
+        padding: 0; }
+      .support-pages .common-page-content .topic-holder .topic-list .topic-item {
+        position: relative;
+        margin-bottom: 5px;
+        background-color: #ebebeb; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item:last-child {
+          margin-bottom: 0; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler {
+          position: absolute;
+          width: 38px;
+          height: 38px;
+          top: 21px;
+          right: 44px;
+          cursor: pointer; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:before, .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:after {
+            content: '';
+            background-color: #222;
+            position: absolute;
+            display: block; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:before {
+            width: 100%;
+            height: 3px;
+            top: 17.5px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:after {
+            width: 3px;
+            height: 100%;
+            left: 17.5px;
+            transition: all ease-out 80ms; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-title {
+          padding-left: 135px;
+          font-size: 24px;
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 85px;
+          margin: 0; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder, .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-context {
+          background-color: #FFF;
+          display: none; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder a, .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-context a {
+            color: #f36d21; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-context {
+          padding: 30px 155px; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item {
+          border-top: 2px solid #FFF; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-title {
+            background-color: #f4f4f4;
+            line-height: 85px;
+            font-size: 18px;
+            font-weight: bold;
+            padding-left: 135px;
+            cursor: pointer;
+            margin: 0; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-content {
+            padding: 30px 150px;
+            font-size: 16px;
+            line-height: 23px;
+            color: #333;
+            display: none; }
+            .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-content b {
+              display: inline-block;
+              font-size: 0.9em; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item.is-show-topic-content .topic-toggler:after {
+          opacity: 0;
+          transition: all ease-in 80ms; }
+  .support-pages .common-page-actions {
+    background-color: #f2f2f2;
+    padding: 140px 0 100px; }
+    .support-pages .common-page-actions .container .support-action-holder {
+      width: 1080px;
+      max-width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-column-gap: 25px;
+      grid-row-gap: 25px; }
+      .support-pages .common-page-actions .container .support-action-holder .support-action-item {
+        height: 200px;
+        border-radius: 26px;
+        border: 2px solid #3f4245;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all ease-in 100ms; }
+        .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-icon {
+          margin-bottom: 9px; }
+          .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-icon img {
+            max-height: 58px; }
+        .support-pages .common-page-actions .container .support-action-holder .support-action-item:hover {
+          background-color: #bcbcbc;
+          transition: all ease-out 150ms; }
+        .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-context {
+          white-space: nowrap;
+          font-size: 24px;
+          font-weight: bold; }
+  @media only screen and (max-width: 1368px) {
+    .support-pages .common-banner .container .main-content .title {
+      font-size: 40px; }
+    .support-pages .common-banner .container .main-content .desc {
+      font-size: 22px; }
+    .support-pages .after-banner-content {
+      padding: 120px 0; }
+      .support-pages .after-banner-content .desc {
+        font-size: 22px; }
+    .support-pages .common-pre-footer {
+      padding: 90px 0; }
+      .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        line-height: 96px; }
+        .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon img {
+          max-height: 50px; }
+      .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .action-title, .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .desc {
+        font-size: 16px;
+        letter-spacing: 0.1px; }
+    .support-pages .common-page-content {
+      padding: 65px 0; }
+      .support-pages .common-page-content .topic-holder {
+        padding: 6px; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item {
+          margin-bottom: 4px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler {
+            width: 36px;
+            height: 36px;
+            top: 20px;
+            right: 40px; }
+            .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:before {
+              top: 16px; }
+            .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:after {
+              left: 16px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-title {
+            padding-left: 115px;
+            font-size: 22px;
+            line-height: 80px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-context {
+            padding: 20px 130px;
+            font-size: 15px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-title {
+            line-height: 80px;
+            font-size: 16px;
+            padding-left: 115px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-content {
+            padding: 20px 130px;
+            font-size: 15px;
+            line-height: 21px; } }
+  @media only screen and (max-width: 1280px) {
+    .support-pages .common-banner .container .main-content .title {
+      font-size: 38px; }
+    .support-pages .common-banner .container .main-content .desc {
+      font-size: 20px; }
+    .support-pages .after-banner-content {
+      padding: 110px 0; }
+      .support-pages .after-banner-content .desc {
+        font-size: 20px; } }
+  @media only screen and (max-width: 768px) {
+    .support-pages .common-banner {
+      height: 162vw;
+      background-color: #ebebeb; }
+      .support-pages .common-banner .bg-holder {
+        height: 84.4vw;
+        bottom: auto; }
+        .support-pages .common-banner .bg-holder#support-maintain-banner-bg img {
+          width: 100%; }
+        .support-pages .common-banner .bg-holder#support-privacy-banner-bg {
+          display: flex;
+          align-items: center; }
+          .support-pages .common-banner .bg-holder#support-privacy-banner-bg .img-holder {
+            width: 100%;
+            bottom: auto;
+            left: 0;
+            top: 0;
+            position: static; }
+            .support-pages .common-banner .bg-holder#support-privacy-banner-bg .img-holder img {
+              display: block;
+              margin: auto;
+              width: 80%; }
+        .support-pages .common-banner .bg-holder#support-main-banner-bg {
+          display: flex;
+          align-items: center;
+          height: 92.5vw; }
+          .support-pages .common-banner .bg-holder#support-main-banner-bg .img-holder {
+            width: 100%;
+            position: static; }
+            .support-pages .common-banner .bg-holder#support-main-banner-bg .img-holder img {
+              display: block;
+              margin: auto;
+              width: 80%; }
+      .support-pages .common-banner .container {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        display: block; }
+        .support-pages .common-banner .container .main-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin: auto;
+          top: 84.33vw;
+          height: 77.67vw;
+          text-align: center; }
+          .support-pages .common-banner .container .main-content .title {
+            font-size: 48px; }
+          .support-pages .common-banner .container .main-content .desc {
+            font-size: 24px; }
+    .support-pages .after-banner-content {
+      padding: 120px 0; }
+      .support-pages .after-banner-content .desc {
+        font-size: 24px; }
+    .support-pages .common-pre-footer {
+      padding: 0 0 20vw;
+      background-color: #f2f2f2; }
+      .support-pages .common-pre-footer .action-holder {
+        flex-wrap: wrap; }
+        .support-pages .common-pre-footer .action-holder .pre-footer-action {
+          width: 100%;
+          flex-basis: 100%;
+          flex-shrink: 0;
+          height: 46.33vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column; }
+          .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon {
+            width: 110px;
+            height: 110px;
+            border-radius: 55px;
+            line-height: 106px;
+            margin: 0 auto 20px; }
+            .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon img {
+              max-height: 54px; }
+          .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .action-title, .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .desc {
+            font-size: 16px;
+            letter-spacing: 0.2px; }
+    .support-pages .common-page-content {
+      padding: 0; }
+      .support-pages .common-page-content .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0; }
+      .support-pages .common-page-content .topic-holder {
+        padding: 5px 0; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item {
+          margin-bottom: 5px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler {
+            width: 30px;
+            height: 30px;
+            top: 21px;
+            right: 4vw; }
+            .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:before {
+              width: 100%;
+              height: 3px;
+              top: 13.5px; }
+            .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:after {
+              width: 3px;
+              height: 100%;
+              left: 13.5px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-title {
+            padding-left: 10vw;
+            font-size: 20px;
+            line-height: 70px;
+            margin: 0; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-context {
+            padding: 2vw 11.5vw; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-title {
+            line-height: 70px;
+            font-size: 17px;
+            padding-left: 10vw; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-content {
+            padding: 2vw 11.5vw;
+            font-size: 16px;
+            line-height: 23px; }
+            .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-content b {
+              font-size: 0.9em; }
+    .support-pages .common-page-actions {
+      padding: 80px 0 60px; }
+      .support-pages .common-page-actions .container .support-action-holder {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px; }
+        .support-pages .common-page-actions .container .support-action-holder .support-action-item {
+          height: 190px;
+          border-radius: 24px; }
+          .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-context {
+            font-size: 22px; } }
+  @media only screen and (max-width: 480px) {
+    .support-pages .common-banner .bg-holder#support-privacy-banner-bg .img-holder img {
+      width: 85%; }
+    .support-pages .common-banner .container .main-content .title {
+      font-size: 26px;
+      margin-bottom: 12px;
+      white-space: nowrap; }
+    .support-pages .common-banner .container .main-content .desc {
+      font-size: 16px;
+      white-space: nowrap; }
+    .support-pages .after-banner-content {
+      padding: 40px 0; }
+      .support-pages .after-banner-content .desc {
+        font-size: 16px; }
+    .support-pages .common-pre-footer {
+      padding: 0 0 10vw; }
+      .support-pages .common-pre-footer .action-holder .pre-footer-action {
+        height: 54vw; }
+        .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon {
+          width: 60px;
+          height: 60px;
+          border-radius: 30px;
+          line-height: 56px;
+          margin: 0 auto 10px;
+          border-width: 1px; }
+          .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon img {
+            max-height: 28px; }
+        .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .action-title, .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .desc {
+          font-size: 13px;
+          letter-spacing: 0.2px; }
+    .support-pages .common-page-content .topic-holder {
+      padding: 5px 0; }
+      .support-pages .common-page-content .topic-holder .topic-list .topic-item {
+        margin-bottom: 5px; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler {
+          width: 18px;
+          height: 18px;
+          top: 18px;
+          right: 3vw; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:before {
+            width: 100%;
+            height: 2px;
+            top: 8px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:after {
+            width: 2px;
+            height: 100%;
+            left: 8px; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-title {
+          padding-left: 5vw;
+          font-size: 13px;
+          line-height: 54px;
+          margin: 0;
+          white-space: nowrap; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-context {
+          padding: 2vw 6vw;
+          font-size: 12px;
+          margin-bottom: 6px; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-title {
+          line-height: 54px;
+          font-size: 12px;
+          padding-left: 5vw; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-content {
+          padding: 2vw 6vw;
+          font-size: 12px;
+          line-height: 18px;
+          margin: 0; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-content b {
+            font-size: 0.9em; }
+    .support-pages .common-page-actions {
+      padding: 60px 0 40px; }
+      .support-pages .common-page-actions .container .support-action-holder {
+        padding: 0 8vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px; }
+        .support-pages .common-page-actions .container .support-action-holder .support-action-item {
+          height: 170px;
+          border-radius: 22px; }
+          .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-icon {
+            margin-bottom: 7px; }
+            .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-icon img {
+              max-height: 52px; }
+          .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-context {
+            font-size: 19px; } }
+  @media only screen and (max-width: 360px) {
+    .support-pages .common-banner .bg-holder#support-privacy-banner-bg .img-holder img {
+      width: 85%; }
+    .support-pages .common-banner .container .main-content .title {
+      font-size: 23px;
+      margin-bottom: 8px; }
+    .support-pages .common-banner .container .main-content .desc {
+      font-size: 14px;
+      white-space: nowrap; }
+    .support-pages .after-banner-content {
+      padding: 30px 0; }
+      .support-pages .after-banner-content .desc {
+        font-size: 14px; }
+    .support-pages .common-pre-footer {
+      padding: 0 0 10vw; }
+      .support-pages .common-pre-footer .action-holder .pre-footer-action {
+        height: 54vw; }
+        .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon {
+          width: 54px;
+          height: 54px;
+          border-radius: 27px;
+          line-height: 52px;
+          margin: 0 auto 8px;
+          border-width: 1px; }
+          .support-pages .common-pre-footer .action-holder .pre-footer-action .action-icon img {
+            max-height: 25px; }
+        .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .action-title, .support-pages .common-pre-footer .action-holder .pre-footer-action .action-detail .desc {
+          font-size: 12px;
+          letter-spacing: 0.1px; }
+    .support-pages .common-page-content .topic-holder {
+      padding: 2px 0; }
+      .support-pages .common-page-content .topic-holder .topic-list .topic-item {
+        margin-bottom: 2px; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler {
+          width: 18px;
+          height: 18px;
+          top: 18px;
+          right: 3vw; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:before {
+            width: 100%;
+            height: 2px;
+            top: 8px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-toggler:after {
+            width: 2px;
+            height: 100%;
+            left: 8px; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-title {
+          padding-left: 5vw;
+          font-size: 13px;
+          line-height: 54px;
+          margin: 0;
+          white-space: nowrap; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .topic-context {
+          padding: 2vw 6vw;
+          font-size: 12px; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-title {
+          line-height: 54px;
+          font-size: 12px;
+          padding-left: 5vw; }
+        .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-content {
+          padding: 2vw 6vw;
+          font-size: 12px;
+          line-height: 18px; }
+          .support-pages .common-page-content .topic-holder .topic-list .topic-item .sub-topic-holder .sub-topic-item .sub-topic-content b {
+            font-size: 0.9em; }
+    .support-pages .common-page-actions {
+      padding: 40px 0 30px; }
+      .support-pages .common-page-actions .container .support-action-holder {
+        padding: 0 7vw;
+        grid-template-columns: 1fr;
+        grid-column-gap: 18px;
+        grid-row-gap: 18px; }
+        .support-pages .common-page-actions .container .support-action-holder .support-action-item {
+          height: 160px;
+          border-radius: 20px; }
+          .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-icon {
+            margin-bottom: 5px; }
+            .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-icon img {
+              max-height: 50px; }
+          .support-pages .common-page-actions .container .support-action-holder .support-action-item .action-context {
+            font-size: 18px; } }
 
 #content-container .content-block {
   padding-bottom: 150px; }
@@ -6958,7 +7486,7 @@ body.admin-bar .vbox-close {
           .about-page .banner .intro-list .intro-item p {
             font-size: 13px;
             padding-right: 15px; } }
-  @media only screen and (max-width: 330px) {
+  @media only screen and (max-width: 360px) {
     .about-page .banner {
       background-position: center top 25px;
       background-size: 140% auto; }
@@ -7053,7 +7581,7 @@ body.admin-bar .vbox-close {
       .about-page .culture .text {
         padding: 0 25px !important;
         width: 100%; } }
-    @media only screen and (max-width: 330px) {
+    @media only screen and (max-width: 360px) {
       .about-page .culture .text {
         padding: 0 20px !important;
         width: 100%; } }
@@ -7315,7 +7843,7 @@ body.admin-bar .vbox-close {
       .about-page .product .points-list .points-item .text p {
         font-size: 15px; } }
 
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 360px) {
   .about-page .product .text {
     margin-bottom: 25px; }
     .about-page .product .text .title {
@@ -7470,7 +7998,7 @@ body.admin-bar .vbox-close {
         .history-section .history-holder .history-block__thumbnail {
           width: 150px;
           flex-basis: 150px; } }
-  @media only screen and (max-width: 330px) {
+  @media only screen and (max-width: 360px) {
     .history-section .history-holder {
       margin: 40px auto 30px; }
       .history-section .history-holder .history-block {
@@ -7952,7 +8480,7 @@ body.admin-bar .vbox-close {
         .slide-detail .product-detail-layout .bike-detail-summary .product-detail ul, .slide-detail .product-detail-layout .bike-detail-summary .product-detail ol {
           padding: 0 20px; } }
 
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: 360px) {
   .slide-detail .product-detail-layout {
     flex-direction: column-reverse;
     align-items: center; }
@@ -8645,9 +9173,16 @@ body.admin-bar .vbox-close {
 .fb_dialog.fb_customer_chat_bubble_animated_no_badge {
   -webkit-transform: translate(5%, 27%) scale(0.85);
   transform: translate(5%, 27%) scale(0.85); }
+  @media only screen and (max-width: 480px) {
+    .fb_dialog.fb_customer_chat_bubble_animated_no_badge {
+      -webkit-transform: translate(15%, 26%) scale(0.85);
+      transform: translate(15%, 26%) scale(0.85); } }
 
 .zalo-chat-widget {
   transform: translate(-110%, 0); }
+  @media only screen and (max-width: 480px) {
+    .zalo-chat-widget {
+      transform: translate(-16%, -83%); } }
 
 #loading-overlay {
   z-index: 9999999999; }

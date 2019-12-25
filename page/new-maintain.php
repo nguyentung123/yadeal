@@ -48,12 +48,12 @@ get_header();
       <!-- Desc -->
       <p class="desc">
         Công Ty TNHH Xe Máy Điện Thông Minh YADEA (sau đây gọi tắt là “YADEA”) chân thành cảm ơn quý khách
-        hàng đã tin tưởng và sử dụng Xe Máy Điện YADEA.<br>
+        hàng đã tin tưởng và sử dụng Xe Máy Điện YADEA.<br><br>
         Để đáp lại sự tin tưởng của quý khách, YADEA luôn nghiên cứu, đổi mới để cho ra đời những dòng sản phẩm Xe Máy
-        Điện Thông Minh YADEA thân thiện môi trường, đáp ứng được sự mong mỏi và nhu cầu của người sử dụng.<br>
+        Điện Thông Minh YADEA thân thiện môi trường, đáp ứng được sự mong mỏi và nhu cầu của người sử dụng.<br><br>
         Vì quyền lợi của người tiêu dùng, YADEA trân trọng thông báo đến Quý Khách hàng chính sách và điều kiện bảo
         hành của Xe Máy Điện Thông Minh YADEA. Chính sách này chỉ áp dụng cho việc sữa chữa bảo hành đối với các sản
-        phẩm Xe Máy Điện Thông Minh YADEA được phân phối chính thức tại Việt Nam.<br>
+        phẩm Xe Máy Điện Thông Minh YADEA được phân phối chính thức tại Việt Nam.<br><br>
       </p>
       <!-- Desc - END -->
 
@@ -113,29 +113,29 @@ get_header();
                   khách hàng phải cung cấp đầy đủ phụ tùng, và chứng từ mua hàng hợp lệ từ nhà phân phối hoặc đại
                   lý được ủy quyền chính thức (chứng từ mua hàng hợp lệ gồm có hóa đơn và sổ bảo hành) thì sẽ được
                   hưởng chính sách miễn phí đổi cùng loại xe hoặc bảo hành sửa chữa. Sau khi đổi xe, thời gian bảo
-                  hành đối với xe mới tính từ thời gian bắt đầu đổi xe.<br>
-                  •	Khách hàng đổi xe tại đại lý khách hàng mua xe<br>
+                  hành đối với xe mới tính từ thời gian bắt đầu đổi xe.<br><br>
+                  •	Khách hàng đổi xe tại đại lý khách hàng mua xe<br><br>
                   •	Các trung tâm bảo hành và các đại lý ủy quyền do YADEA chỉ định sẽ tiến hành sửa chữa hay thay thế
                   miễn phí các phụ tùng được kiểm tra và kết luận là lỗi do nhà sản xuất trong thời gian bảo hành
-                  (miễn phí cả về nhân công và phụ tùng thay thế).<br>
+                  (miễn phí cả về nhân công và phụ tùng thay thế).<br><br>
                   •	Tất cả những trường hợp đổi xe, thay thế linh kiện bảo hành, người tiêu dùng phải trả lại sản
                   phẩm hoặc bộ phận bị hỏng (nếu đó không phải là toàn bộ Sản phẩm) cho trung tâm chăm sóc khách
-                  hàng YADEA hoặc địa điểm dịch vụ bảo hành được YADEA chỉ định.<br>
+                  hàng YADEA hoặc địa điểm dịch vụ bảo hành được YADEA chỉ định.<br><br>
                   •	Các trung tâm bảo hành và các đại lý ủy quyền do YADEA chỉ định sẽ tiến hành sửa chữa hay thay
                   thế miễn phí các phụ tùng được kiểm tra và kết luận là lỗi do nhà sản xuất trong thời gian bảo hành
-                  (miễn phí cả về nhân công và phụ tùng thay thế).<br>
+                  (miễn phí cả về nhân công và phụ tùng thay thế).<br><br>
                   •	Khi mua xe máy điện YADEA, khách hàng phải điền đầy đủ, chính xác tất cả các thông tin vào sổ
-                  bảo hành và bảo quản sổ bảo hành, hóa đơn mua hàng.<br>
+                  bảo hành và bảo quản sổ bảo hành, hóa đơn mua hàng.<br><br>
                   •	Hóa đơn mua hàng chỉ có hiệu lực khi có đầy đủ thông tin liên quan đến sản phẩm như: Số V.I.N
-                  (số khung), số máy, mã số Pin ,mã vạch, ngày mua…<br>
+                  (số khung), số máy, mã số Pin ,mã vạch, ngày mua…<br><br>
                   •	Đối với những xe máy điện cần sửa chữa bảo hành, khách hàng có thể mang xe đến tất cả các trung
                   tâm chăm sóc khách hàng YADEA và các trung tâm ủy quyền chính thức được YADEA chỉ định trên
-                  toàn quốc.<br>
-                  •	YADEA chỉ bảo hành cho sản phẩm được phân phối tại thị trường Việt Nam.<br>
+                  toàn quốc.<br><br>
+                  •	YADEA chỉ bảo hành cho sản phẩm được phân phối tại thị trường Việt Nam.<br><br>
                   •	YADEA không áp dụng dịch vụ bảo hành này cho một số phụ kiện khác như sách hướng dẫn sử dụng,
-                  sổ bảo hành…<br>
+                  sổ bảo hành…<br><br>
                   •	YADEA có trách nhiệm gải thích tất cả các điều khoản, nội dung trong chính sách bảo hành xe máy
-                  điện YADEA. Quyền giải thích cuối cùng sẽ thuộc về YADEA.<br>
+                  điện YADEA. Quyền giải thích cuối cùng sẽ thuộc về YADEA.<br><br>
                 </p>
               </li>
               <!-- Sub Topic Item - END -->
@@ -166,32 +166,32 @@ get_header();
               <li class="sub-topic-item">
                 <p class="sub-topic-title">1. Những trường hợp sau đây bị từ chối bảo hành </p>
                 <p class="sub-topic-content">
-                  1. Xe đã hết thời hạn bảo hành.<br>
-                  2. Hư hỏng do người tiêu dùng gây nên hoặc sử dụng không đúng cách theo hướng dẫn sử dụng.<br>
-                  3. Không có hóa đơn gốc mua hàng hợp lệ, sổ bảo hành hoặc những giấy tờ hợp lệ khác liên quan đến sản
+                  <b>1.</b> Xe đã hết thời hạn bảo hành.<br><br>
+                  <b>2.</b> Hư hỏng do người tiêu dùng gây nên hoặc sử dụng không đúng cách theo hướng dẫn sử dụng.<br><br>
+                  <b>3.</b> Không có hóa đơn gốc mua hàng hợp lệ, sổ bảo hành hoặc những giấy tờ hợp lệ khác liên quan đến sản
                   phẩm như số V.I.N, số máy,số khung,số Pin,tem dán .… mã vạch và ngày mua bị thay đổi, sữa chữa ,mất
-                  hoặc không đúng với sản phẩm.<br>
-                  4. Hư hỏng do nguyên nhân của việc sửa chữa, điều chỉnh, thay đổi so với thiết kế ban đầu như thay
+                  hoặc không đúng với sản phẩm.<br><br>
+                  <b>4.</b> Hư hỏng do nguyên nhân của việc sửa chữa, điều chỉnh, thay đổi so với thiết kế ban đầu như thay
                   đổi công suất hoặc cấu trúc, v.v…do tác động từ bên ngoài không phải do trung tâm chăm sóc khách hàng
-                  YADEA và các trung tâm ủy quyền chính thức được YADEA chỉ định.<br>
-                  5. Thay thế sử dụng các linh kiện, phụ tùng, Pin không chính hãng.<br>
-                  6. Hư hỏng xảy ra do mục đích sử dụng xe, thể thao mạo hiểm (đua xe ,nhào lộn, leo núi v.v…), hoặc sử
-                  dụng xe vào mục đích kinh doanh như chuyên chở công cộng v.v….<br>
-                  7. Xảy ra hư hỏng trong một số trường hợp bất khả kháng như: thiên tai,hỏa hoạn,lũ lụt, cháy nổ,
+                  YADEA và các trung tâm ủy quyền chính thức được YADEA chỉ định.<br><br>
+                  <b>5.</b> Thay thế sử dụng các linh kiện, phụ tùng, Pin không chính hãng.<br><br>
+                  <b>6.</b> Hư hỏng xảy ra do mục đích sử dụng xe, thể thao mạo hiểm (đua xe ,nhào lộn, leo núi v.v…), hoặc sử
+                  dụng xe vào mục đích kinh doanh như chuyên chở công cộng v.v….<br><br>
+                  <b>7.</b> Xảy ra hư hỏng trong một số trường hợp bất khả kháng như: thiên tai,hỏa hoạn,lũ lụt, cháy nổ,
                   động đất,sử dụng xe trong điều kiện ngập nước, tai nạn, hoặc các hư hỏng gây ra bởi các yếu tố bên
-                  ngoài như đất, cát, sỏi, đá, vật cứng sắc nhọn văng vào xe trong quá trình vận hành …<br>
-                  8. Tự gây nên các tình trạng hư hỏng, trầy xước ở thân xe, phụ kiện hoặc hư hỏng xảy ra do việc
-                  bảo quản xe hay vận chuyển xe không đúng cách.<br>
-                  9. Hư hỏng gây ra bởi các yếu tố như: Ô-xy hóa, tàn thuốc lá, hóa chất, phân động vật, muối, chuột
+                  ngoài như đất, cát, sỏi, đá, vật cứng sắc nhọn văng vào xe trong quá trình vận hành …<br><br>
+                  <b>8.</b> Tự gây nên các tình trạng hư hỏng, trầy xước ở thân xe, phụ kiện hoặc hư hỏng xảy ra do việc
+                  bảo quản xe hay vận chuyển xe không đúng cách.<br><br>
+                  <b>9.</b> Hư hỏng gây ra bởi các yếu tố như: Ô-xy hóa, tàn thuốc lá, hóa chất, phân động vật, muối, chuột
                   cắn, rỉ sét, bạc màu sơn, cao su lão hóa, dầu mỡ sử dụng không chính hãng hay mức độ chai tự nhiên
-                  của Pin theo thời gian và các yếu tố hao mòn tự khác.<br>
-                  10. Các hao mòn tự nhiên theo thời gian sử dụng và các chi tiết nằm trong danh mục thay thế định kỳ
+                  của Pin theo thời gian và các yếu tố hao mòn tự khác.<br><br>
+                  <b>10.</b> Các hao mòn tự nhiên theo thời gian sử dụng và các chi tiết nằm trong danh mục thay thế định kỳ
                   như lốp xe, dầu, mỡ, má phanh, bóng đèn, các chi tiết cao su, dây tải, nhông tải hoặc các loại
-                  tương tự khác…<br>
-                  11. Hư hỏng do không bảo dưỡng định kỳ theo lịch trong sổ bảo hành.<br>
-                  12. Trong phạm vi pháp luật cho phép, YADEA Việt Nam từ chối bất cứ trách nhiệm nào do mất thời gian,
+                  tương tự khác…<br><br>
+                  <b>11.</b> Hư hỏng do không bảo dưỡng định kỳ theo lịch trong sổ bảo hành.<br><br>
+                  <b>12.</b> Trong phạm vi pháp luật cho phép, YADEA Việt Nam từ chối bất cứ trách nhiệm nào do mất thời gian,
                   các tổn thất hoặc các chi phí khác như phí điện thoại, phí ăn ở, thuê phương tiện khác, đi lại và
-                  thiệt hại kinh doanh.<br>
+                  thiệt hại kinh doanh.<br><br>
                 </p>
               </li>
               <!-- Sub Topic Item - END -->
@@ -308,11 +308,12 @@ get_header();
 
             <!-- Sub Topic List -->
             <p class="topic-context">
-              Hotline chăm sóc khách hàng của YADEA chủ yếu dùng để hỗ trợ, giải quyết nhanh chóng mọi thắc mắc từ phía khách hàng.
-              Mọi chi tiết xin liên hệ với chúng tôi:
-              Hotline:18006959
-              Email: service@yadeavietnam.vn
-              Website :www.yadeavietnam.vn
+              Hotline chăm sóc khách hàng của YADEA chủ yếu dùng để hỗ trợ, giải quyết nhanh chóng
+              mọi thắc mắc từ phía khách hàng.<br>
+              Mọi chi tiết xin liên hệ với chúng tôi:<br>
+              <b>Hotline:</b> 18006959<br>
+              <b>Email:</b> service@yadeavietnam.vn<br>
+              <b>Website:</b> <a>www.yadeavietnam.vn</a><br>
             </p>
             <!-- Sub Topic List - END -->
 

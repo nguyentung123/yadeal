@@ -51,6 +51,7 @@ export default class Home {
         if( $('.no-overlay').length > 0 ){
             if($('#loading-overlay').length > 0){
                 $('#loading-overlay').addClass('hidden');
+                $(document).trigger('remove-overlay');
             }
         }
 
@@ -59,6 +60,13 @@ export default class Home {
                 $('#loading-overlay').addClass('hidden');
             }
         }, 3000);
+
+        this.$zaloHolder = $('.zalo-holder');
+        this.$zaloHolder.on('click', () => {
+            if(!this.$zaloHolder.hasClass('active')){
+                this.$zaloHolder.addClass('active');
+            }
+        });
     }
 
 

@@ -1,10 +1,19 @@
 .fb_dialog.fb_customer_chat_bubble_animated_no_badge{
   -webkit-transform: translate(5%, 27%) scale(.85);
   transform: translate(5%, 27%) scale(.85);
+
+  @media #{$information-phone}{
+    -webkit-transform: translate(15%, 26%) scale(0.85);
+    transform: translate(15%, 26%) scale(0.85);
+  }
 }
 
 .zalo-chat-widget{
   transform: translate(-110%, 0);
+
+  @media #{$information-phone}{
+    transform: translate(-16%, -83%);
+  }
 }
 
 #loading-overlay{

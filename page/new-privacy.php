@@ -2,16 +2,16 @@
 //*Template Name: Chính sách bảo mật
 get_header();
 ?>
-<main class="no-overlay">
+<main class="no-overlay support-pages">
 
   <!-- Common Banner -->
-  <div class="common-banner" id="support-privacy-banner-bg">
+  <div class="common-banner">
 
     <!-- Container -->
     <div class="container">
 
       <!-- Background Holder -->
-      <div class="bg-holder">
+      <div class="bg-holder" id="support-privacy-banner-bg">
         <div class="img-holder">
           <img alt="banner privacy icon" src="<?php echo get_theme_file_uri('assets/img/update-dec/privacy-banner-full.png'); ?>">
         </div>

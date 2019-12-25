@@ -4815,6 +4815,307 @@ body.admin-bar #page-header {
 body.admin-bar .vbox-close {
   top: 32px !important; }
 
+.signup-info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in 10ms 300ms;
+  /* === RESPONSIVE === */ }
+  .signup-info-modal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all ease-in 200ms 150ms; }
+  .signup-info-modal .signup-info-modal-dialog {
+    position: relative;
+    background-color: #FFF;
+    width: 850px;
+    height: 500px;
+    max-width: 100%;
+    max-height: 100vh;
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.35);
+    display: flex;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all ease-in 250ms; }
+    .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      z-index: 3; }
+    .signup-info-modal .signup-info-modal-dialog .left-content {
+      background-color: #fabb88;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      flex-shrink: 0; }
+      .signup-info-modal .signup-info-modal-dialog .left-content > * {
+        width: 75%; }
+      .signup-info-modal .signup-info-modal-dialog .left-content .popup-title, .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+        text-align: justify;
+        white-space: nowrap;
+        margin: 0; }
+      .signup-info-modal .signup-info-modal-dialog .left-content .popup-title {
+        font-size: 2.2em;
+        font-weight: 600; }
+      .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+        font-size: 1.05em;
+        letter-spacing: 0.025em;
+        font-weight: 100; }
+      .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form {
+        padding: 2em 0 0.25em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder {
+          border: 2px solid #fff;
+          padding: 5px 9px;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder label {
+            margin: 0;
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-right: 6px; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder input {
+            flex: 1;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: #666;
+            font-weight: bold;
+            min-width: 0; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder {
+          text-align: center;
+          padding: 0.5em 0; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a {
+            border: 2px solid #FFF;
+            background-color: transparent;
+            color: #FFF;
+            padding: 5px 9px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all ease-in 100ms; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button.track-this-button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a.track-this-button {
+              position: relative; }
+              .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button.track-this-button:after, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a.track-this-button:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button .fa, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a .fa {
+              margin-left: 3px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button:hover, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a:hover {
+              background-color: #FFF;
+              color: #F36E22;
+              transition: all ease-out 150ms; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button .loading-context, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a .loading-context {
+              display: none; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder .submit-feedback {
+            opacity: 0;
+            transition: all ease-out 150ms;
+            font-weight: 600; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder .submit-feedback.success {
+              color: #00b894;
+              opacity: 1; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder .submit-feedback.error {
+              color: #ff2222;
+              opacity: 1; }
+    .signup-info-modal .signup-info-modal-dialog .right-content {
+      width: 50%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      text-align: center;
+      padding: 2em 1em;
+      color: #ff7c13; }
+      .signup-info-modal .signup-info-modal-dialog .right-content .right-title {
+        margin: 1.75em 0 1em;
+        font-weight: 700;
+        font-size: 2em; }
+      .signup-info-modal .signup-info-modal-dialog .right-content .right-cta {
+        text-align: left;
+        padding: 0.55em 1em;
+        font-size: 2.5em;
+        font-weight: 700;
+        white-space: nowrap;
+        border: 2px solid #ff7c13;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all ease-in 100ms; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-cta:hover {
+          color: #FFF;
+          background-color: #ff7c13;
+          transition: all ease-out 150ms; }
+      .signup-info-modal .signup-info-modal-dialog .right-content .right-bg {
+        position: absolute;
+        width: 40%;
+        bottom: 2%;
+        left: 5%; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-bg img {
+          width: 100%; }
+  .signup-info-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all ease-in 10ms; }
+    .signup-info-modal.active .overlay {
+      opacity: 1;
+      transition: all ease-out 150ms; }
+    .signup-info-modal.active .signup-info-modal-dialog {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all ease-out 300ms 100ms; }
+  @media only screen and (max-width: 768px) {
+    .signup-info-modal .signup-info-modal-dialog {
+      width: 90%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100vh;
+      flex-wrap: wrap; }
+      .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal {
+        top: 2vw;
+        right: 2vw;
+        width: 6vw; }
+        .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal img {
+          width: 100%; }
+      .signup-info-modal .signup-info-modal-dialog .left-content {
+        background-color: #fabb88;
+        color: #FFF;
+        width: 100%;
+        flex-shrink: 0;
+        padding: 3em 2em 2em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content > * {
+          width: 75%; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-title, .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+          text-align: justify;
+          white-space: nowrap;
+          margin: 0; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-title {
+          font-size: 2.2em;
+          text-align: center; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+          font-size: 1.05em;
+          letter-spacing: 0.025em;
+          text-align: center; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form {
+          padding: 2em 0 0.25em; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder {
+            border: 2px solid #FFF;
+            padding: 5px 12px;
+            border-radius: 8px;
+            margin-bottom: 20px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder label {
+              font-size: 1.35em;
+              margin-right: 6px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder input {
+              flex: 1;
+              height: 40px;
+              line-height: 40px;
+              font-size: 1.35em; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder {
+            padding: 0.5em 0; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a {
+              padding: 10px 20px;
+              border-radius: 8px;
+              font-size: 1.35em; }
+              .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button .fa, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a .fa {
+                margin-left: 5px; }
+      .signup-info-modal .signup-info-modal-dialog .right-content {
+        width: 100%;
+        padding: 1em 1em 12vw;
+        justify-content: flex-start;
+        align-items: center; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-title {
+          margin: 1em 0;
+          font-size: 2em; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-cta {
+          padding: 0.25em 1em;
+          font-size: 2em;
+          border: 2px solid #ff7c13;
+          border-radius: 10px;
+          width: auto;
+          display: inline-block;
+          z-index: 2; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-bg {
+          width: 28%;
+          bottom: 2%;
+          left: 5%; } }
+  @media only screen and (max-width: 480px) {
+    .signup-info-modal .signup-info-modal-dialog {
+      width: 90%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100vh; }
+      .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal {
+        top: 3vw;
+        right: 3vw;
+        width: 8vw; }
+      .signup-info-modal .signup-info-modal-dialog .left-content {
+        padding: 2.5em 1em 1.25em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-title {
+          font-size: 1.8em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
+          font-size: 1em;
+          letter-spacing: 0.02em; }
+        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form {
+          padding: 1.5em 0 0.2em; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder {
+            border: 2px solid #FFF;
+            padding: 5px 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            height: 42px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder label {
+              font-size: 1em;
+              margin-right: 6px; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder input {
+              height: 36px;
+              line-height: 36px;
+              font-size: 1em; }
+          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder {
+            padding: 0.5em 0; }
+            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a {
+              padding: 5px 18px;
+              border-radius: 8px;
+              font-size: 1em; }
+      .signup-info-modal .signup-info-modal-dialog .right-content {
+        width: 100%;
+        padding: 1em 1em 16vw;
+        justify-content: flex-start;
+        align-items: center; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-title {
+          margin: 0.75em 0;
+          font-size: 1.5em; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-cta {
+          padding: 0.25em 1em;
+          font-size: 1.75em;
+          border: 2px solid #ff7c13;
+          border-radius: 7px;
+          z-index: 2; }
+        .signup-info-modal .signup-info-modal-dialog .right-content .right-bg {
+          width: 32%;
+          bottom: 2%;
+          left: 5%; } }
+
 /* ======= HOME PAGE STYLE SHEET ====== */
 /* Home Banner 1 */
 #home-banner-1 {
@@ -4927,11 +5228,11 @@ body.admin-bar .vbox-close {
       #home-banner-1 .main-content__slider {
         padding: 0 15px;
         background-color: #FFF;
-        height: 800px; }
+        height: 155vw; }
         #home-banner-1 .main-content__slider .slick-slider {
-          height: 800px; }
+          height: 155vw; }
         #home-banner-1 .main-content__slider__item {
-          height: 800px; }
+          height: 155vw; }
           #home-banner-1 .main-content__slider__item.slide-video .video-holder video {
             min-height: 100%;
             height: auto;
@@ -5114,19 +5415,24 @@ body.admin-bar .vbox-close {
       #home-products-1 .product-showcase__item__top:hover .series-slogan:after {
         animation: arrowMoving ease-in-out 600ms 20ms infinite; }
     #home-products-1 .product-showcase__item__body {
-      height: 25vw;
+      height: 23.5vw;
       background-color: #f8f8f8;
       border-right: 1px solid #FFF;
-      position: relative; }
+      border-bottom: 1px solid #FFF;
+      position: relative;
+      display: block; }
       #home-products-1 .product-showcase__item__body .image-holder {
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 0; }
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
         #home-products-1 .product-showcase__item__body .image-holder img {
           width: 78%;
           left: 11%;
-          top: 3.5%; }
+          top: 6.5%; }
       #home-products-1 .product-showcase__item__body .product-detail {
         position: absolute;
         bottom: 0;
@@ -5134,7 +5440,7 @@ body.admin-bar .vbox-close {
         padding-bottom: 15px; }
   @media only screen and (max-width: 1368px) {
     #home-products-1 .product-showcase__item__body {
-      height: 28vw; } }
+      height: 24.5vw; } }
   @media only screen and (max-width: 820px) {
     #home-products-1 .product-showcase__item {
       padding: 0 15px; }
@@ -5144,7 +5450,7 @@ body.admin-bar .vbox-close {
         font-size: 24px;
         margin-bottom: 5px; }
       #home-products-1 .product-showcase__item__body {
-        height: 75vw; } }
+        height: 70vw; } }
   @media (max-width: 660px) {
     #home-products-1 .product-showcase__item .series-name {
       font-size: 22px; }
@@ -5152,26 +5458,24 @@ body.admin-bar .vbox-close {
       font-size: 22px;
       margin-bottom: 0; }
     #home-products-1 .product-showcase__item__body .image-holder {
-      height: 82vw; } }
+      height: 74vw; } }
   @media only screen and (max-width: 480px) {
     #home-products-1 .product-showcase__item {
       padding: 0 10px; }
       #home-products-1 .product-showcase__item__body {
-        height: 82vw; } }
+        height: 73vw; } }
   @media only screen and (max-width: 420px) {
     #home-products-1 .product-showcase__item {
       padding: 0 10px; }
       #home-products-1 .product-showcase__item .product-slogan {
         font-size: 12px; }
       #home-products-1 .product-showcase__item__body {
-        height: 80vw; } }
+        height: 72vw; } }
   @media only screen and (max-width: 330px) {
     #home-products-1 .product-showcase__item .series-name {
       font-size: 19px; }
     #home-products-1 .product-showcase__item .product-name {
-      font-size: 19px; }
-    #home-products-1 .product-showcase__item__body .image-holder {
-      height: 82vw; } }
+      font-size: 19px; } }
 
 /* Home Product List 2 */
 #home-products-2 {
@@ -5813,7 +6117,11 @@ body.admin-bar .vbox-close {
           #product-list .series__block__products__item__image img {
             max-width: 100%; }
         #product-list .series__block__products__item__detail {
-          padding: 25px 0px 0 40px; }
+          padding: 0 0 0 130px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start; }
           #product-list .series__block__products__item__detail .product-name {
             font-size: 57px;
             line-height: 71px;
@@ -5827,10 +6135,15 @@ body.admin-bar .vbox-close {
           #product-list .series__block__products__item__detail .desc {
             width: 80%;
             font-size: 24px;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             color: #000;
             opacity: 0.8;
             line-height: 30px; }
+          #product-list .series__block__products__item__detail ul {
+            font-size: 20px;
+            color: #000;
+            opacity: 0.8;
+            margin-bottom: 30px; }
           #product-list .series__block__products__item__detail .product-cta {
             margin-right: 20px; }
             #product-list .series__block__products__item__detail .product-cta:last-child {
@@ -5846,21 +6159,20 @@ body.admin-bar .vbox-close {
             font-size: 68px; }
         #product-list .series__block__products__item {
           margin-bottom: 90px; }
-          #product-list .series__block__products__item__detail {
-            padding: 25px 0px 0 40px; }
-            #product-list .series__block__products__item__detail .product-name {
-              font-size: 54px;
-              line-height: 70px;
-              margin-bottom: 18px; }
-            #product-list .series__block__products__item__detail .price {
-              font-size: 30px;
-              margin-bottom: 15px; }
-            #product-list .series__block__products__item__detail .desc {
-              font-size: 22px;
-              margin-bottom: 30px;
-              line-height: 30px; }
-            #product-list .series__block__products__item__detail .product-cta {
-              margin-right: 18px; } }
+          #product-list .series__block__products__item__detail .product-name {
+            font-size: 54px;
+            line-height: 70px;
+            margin-bottom: 18px; }
+          #product-list .series__block__products__item__detail .price {
+            font-size: 30px;
+            margin-bottom: 15px; }
+          #product-list .series__block__products__item__detail .desc {
+            font-size: 22px;
+            line-height: 30px; }
+          #product-list .series__block__products__item__detail ul {
+            font-size: 19px; }
+          #product-list .series__block__products__item__detail .product-cta {
+            margin-right: 18px; } }
   @media only screen and (max-width: 1280px) {
     #product-list {
       padding: 20px 0 85px; }
@@ -5872,21 +6184,20 @@ body.admin-bar .vbox-close {
             font-size: 66px; }
         #product-list .series__block__products__item {
           margin-bottom: 85px; }
-          #product-list .series__block__products__item__detail {
-            padding: 25px 0px 0 40px; }
-            #product-list .series__block__products__item__detail .product-name {
-              font-size: 50px;
-              line-height: 66px;
-              margin-bottom: 18px; }
-            #product-list .series__block__products__item__detail .price {
-              font-size: 28px;
-              margin-bottom: 12px; }
-            #product-list .series__block__products__item__detail .desc {
-              font-size: 20px;
-              margin-bottom: 30px;
-              line-height: 30px; }
-            #product-list .series__block__products__item__detail .product-cta {
-              margin-right: 12px; } }
+          #product-list .series__block__products__item__detail .product-name {
+            font-size: 50px;
+            line-height: 66px;
+            margin-bottom: 18px; }
+          #product-list .series__block__products__item__detail .price {
+            font-size: 28px;
+            margin-bottom: 12px; }
+          #product-list .series__block__products__item__detail .desc {
+            font-size: 20px;
+            line-height: 30px; }
+          #product-list .series__block__products__item__detail ul {
+            font-size: 18px; }
+          #product-list .series__block__products__item__detail .product-cta {
+            margin-right: 12px; } }
   @media only screen and (max-width: 820px) {
     #product-list {
       padding: 20px 0 0; }
@@ -5904,11 +6215,12 @@ body.admin-bar .vbox-close {
               max-width: 90%; }
           #product-list .series__block__products__item__detail {
             padding: 0;
-            text-align: center; }
+            text-align: center;
+            display: block; }
             #product-list .series__block__products__item__detail .product-name {
               font-size: 36px;
               line-height: 54px;
-              margin-bottom: 0px; }
+              margin-bottom: 0; }
             #product-list .series__block__products__item__detail .price {
               font-size: 30px;
               font-weight: 400;
@@ -5916,8 +6228,22 @@ body.admin-bar .vbox-close {
             #product-list .series__block__products__item__detail .desc {
               width: 100%;
               font-size: 22px;
-              margin-bottom: 30px;
               line-height: 28px; }
+            #product-list .series__block__products__item__detail ul {
+              list-style: none;
+              padding: 0;
+              font-size: 17px;
+              line-height: 17px;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              opacity: 0.7; }
+              #product-list .series__block__products__item__detail ul li {
+                padding: 0 18px;
+                margin-bottom: 15px;
+                border-right: 1px solid rgba(0, 0, 0, 0.7); }
+                #product-list .series__block__products__item__detail ul li:last-child {
+                  border-right: none; }
             #product-list .series__block__products__item__detail .product-cta {
               margin-right: 20px; } }
   @media only screen and (max-width: 480px) {
@@ -5948,9 +6274,18 @@ body.admin-bar .vbox-close {
               width: 100%;
               font-size: 18px;
               padding: 0 30px;
-              margin-bottom: 15px;
               line-height: 32px;
-              font-weight: 500; }
+              font-weight: 600;
+              margin-bottom: 0; }
+            #product-list .series__block__products__item__detail ul {
+              list-style: none;
+              padding: 0;
+              font-size: 12px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              line-height: 13px; }
+              #product-list .series__block__products__item__detail ul li {
+                padding: 0 8px; }
             #product-list .series__block__products__item__detail .product-cta {
               margin-right: 20px; } }
   @media only screen and (max-width: 420px) {
@@ -6006,6 +6341,8 @@ body.admin-bar .vbox-close {
               padding: 0 15px;
               margin-bottom: 12px;
               line-height: 30px; }
+            #product-list .series__block__products__item__detail ul {
+              font-size: 11px; }
             #product-list .series__block__products__item__detail .product-cta {
               margin-right: 5px; } }
 
@@ -7345,6 +7682,32 @@ body.admin-bar .vbox-close {
           padding: 0 18px; }
       .slide-detail .product-detail-layout .bike-detail-summary .cta-holder {
         color: #FFF; }
+  @media only screen and (max-width: 1368px) {
+    .slide-detail .product-detail-layout {
+      padding: 30px 0 0; }
+      .slide-detail .product-detail-layout .bike-detail-slider {
+        width: 60%;
+        flex-basis: 60%; }
+        .slide-detail .product-detail-layout .bike-detail-slider .slide-item {
+          padding: 20px 0; }
+          .slide-detail .product-detail-layout .bike-detail-slider .slide-item-image {
+            margin: auto;
+            width: 75%; }
+            .slide-detail .product-detail-layout .bike-detail-slider .slide-item-image img {
+              width: 90%;
+              margin: auto; }
+      .slide-detail .product-detail-layout .bike-detail-summary {
+        padding-top: 60px; }
+        .slide-detail .product-detail-layout .bike-detail-summary .product-name {
+          font-size: 2.15em; }
+        .slide-detail .product-detail-layout .bike-detail-summary .product-price {
+          margin-bottom: 30px;
+          font-size: 1.65em; }
+        .slide-detail .product-detail-layout .bike-detail-summary .product-detail {
+          font-size: 1.15em;
+          margin-bottom: 25px; }
+          .slide-detail .product-detail-layout .bike-detail-summary .product-detail ul, .slide-detail .product-detail-layout .bike-detail-summary .product-detail ol {
+            padding: 0 16px; } }
 
 @media only screen and (max-width: 1024px) {
   .slide-detail .product-detail-layout .slide-detail {
@@ -7898,9 +8261,15 @@ body.admin-bar .vbox-close {
         height: 34px;
         border-radius: 17px;
         margin: 0;
-        background-image: linear-gradient(to right, #ed2024, #f5811f); }
+        background-image: linear-gradient(to right, #ed2024, #f5811f);
+        padding: 8px 12px; }
       .section-shop-listing #storemapper #storemapper-form .storemapper-form-inner .storemapper-reset {
-        display: none; }
+        width: 38px !important;
+        background-color: #FFF;
+        left: calc(100% - 120px) !important; }
+        .section-shop-listing #storemapper #storemapper-form .storemapper-form-inner .storemapper-reset svg {
+          left: 50%;
+          transform: translate(-50%, -50%); }
     .section-shop-listing #storemapper #storemapper-form .storemapper-dropdown-menu li {
       font-size: 15px;
       padding: 5px 15px;
@@ -7932,7 +8301,9 @@ body.admin-bar .vbox-close {
         margin-left: 2px;
         background-position: center; }
   .section-shop-listing #storemapper #storemapper-list {
-    background-color: #fff; }
+    background-color: #fff;
+    height: 540px;
+    overflow: auto; }
     .section-shop-listing #storemapper #storemapper-list .tier {
       box-shadow: none;
       border: 1px solid #ddd; }
@@ -7987,7 +8358,8 @@ body.admin-bar .vbox-close {
         .section-shop-listing #storemapper #storemapper-list .tier.storemapper-selected p {
           color: #FFF !important; }
           .section-shop-listing #storemapper #storemapper-list .tier.storemapper-selected p a {
-            color: #FFF; }
+            color: #FFF !important;
+            border-color: #FFF !important; }
           .section-shop-listing #storemapper #storemapper-list .tier.storemapper-selected p svg {
             fill: #FFF; }
         .section-shop-listing #storemapper #storemapper-list .tier.storemapper-selected h4 {
@@ -8051,17 +8423,19 @@ body.admin-bar .vbox-close {
           background-size: 18px 12px;
           width: 18px;
           height: 12px; }
-    .section-shop-listing #storemapper #storemapper-list .tier h4 {
-      font-size: 15px; }
-    .section-shop-listing #storemapper #storemapper-list .tier p {
-      font-size: 12px;
-      line-height: 22px; }
-    .section-shop-listing #storemapper #storemapper-list .tier .storemapper_btn-wrap .storemapper_view a {
-      font-size: 12px;
-      height: 26px;
-      line-height: 25px;
-      border-radius: 13px;
-      width: 140px; }
+    .section-shop-listing #storemapper #storemapper-list {
+      height: 500px; }
+      .section-shop-listing #storemapper #storemapper-list .tier h4 {
+        font-size: 15px; }
+      .section-shop-listing #storemapper #storemapper-list .tier p {
+        font-size: 12px;
+        line-height: 22px; }
+      .section-shop-listing #storemapper #storemapper-list .tier .storemapper_btn-wrap .storemapper_view a {
+        font-size: 12px;
+        height: 26px;
+        line-height: 25px;
+        border-radius: 13px;
+        width: 140px; }
     .section-shop-listing #storemapper .storemapper-iw-content {
       padding: 8px 8px 0; }
       .section-shop-listing #storemapper .storemapper-iw-content h4 {
@@ -8100,19 +8474,21 @@ body.admin-bar .vbox-close {
           background-size: 18px 11px;
           width: 18px;
           height: 11px; }
-    .section-shop-listing #storemapper #storemapper-list .tier {
-      padding: 10px 15px; }
-      .section-shop-listing #storemapper #storemapper-list .tier h4 {
-        font-size: 14px; }
-      .section-shop-listing #storemapper #storemapper-list .tier p {
-        font-size: 12px;
-        line-height: 22px; }
-      .section-shop-listing #storemapper #storemapper-list .tier .storemapper_btn-wrap .storemapper_view a {
-        font-size: 11px;
-        height: 25px;
-        line-height: 24px;
-        border-radius: 13px;
-        width: 130px; }
+    .section-shop-listing #storemapper #storemapper-list {
+      height: 410px; }
+      .section-shop-listing #storemapper #storemapper-list .tier {
+        padding: 10px 15px; }
+        .section-shop-listing #storemapper #storemapper-list .tier h4 {
+          font-size: 14px; }
+        .section-shop-listing #storemapper #storemapper-list .tier p {
+          font-size: 12px;
+          line-height: 22px; }
+        .section-shop-listing #storemapper #storemapper-list .tier .storemapper_btn-wrap .storemapper_view a {
+          font-size: 11px;
+          height: 25px;
+          line-height: 24px;
+          border-radius: 13px;
+          width: 130px; }
     .section-shop-listing #storemapper .storemapper-iw-content {
       padding: 8px 5px 0; }
       .section-shop-listing #storemapper .storemapper-iw-content h4 {
@@ -8132,7 +8508,7 @@ body.admin-bar .vbox-close {
     .section-shop-listing #storemapper #storemapper-right {
       height: auto; }
     .section-shop-listing #storemapper #storemapper-left {
-      height: 550px;
+      height: auto;
       overflow: auto; }
     .section-shop-listing #storemapper #storemapper-form .storemapper-form-inner #storemapper-zip {
       height: 36px;
@@ -8155,6 +8531,7 @@ body.admin-bar .vbox-close {
           width: 18px;
           height: 10px; }
     .section-shop-listing #storemapper #storemapper-list {
+      height: auto;
       padding: 20px 10px; }
       .section-shop-listing #storemapper #storemapper-list .tier {
         padding: 10px 15px; }
@@ -8232,3 +8609,13 @@ body.admin-bar .vbox-close {
   #storemapper .gm-ui-hover-effect img {
     width: 18px !important;
     height: 18px !important; }
+
+.fb_dialog.fb_customer_chat_bubble_animated_no_badge {
+  -webkit-transform: translate(5%, 27%) scale(0.85);
+  transform: translate(5%, 27%) scale(0.85); }
+
+.zalo-chat-widget {
+  transform: translate(-110%, 0); }
+
+#loading-overlay {
+  z-index: 9999999999; }

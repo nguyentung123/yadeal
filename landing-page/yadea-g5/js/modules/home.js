@@ -112,8 +112,8 @@ export default class Home {
             infinite: true,
             slidesToShow: 3,
             slidesToScroll: 1,
-            nextArrow: '<img class="real-img-control next-slide" src="img/g5/next-slide.png">',
-            prevArrow: '<img class="real-img-control prev-slide" src="img/g5/prev-slide.png">',
+            nextArrow: `<img class="real-img-control next-slide" src="${rootLink.root}/g5/next-slide.png">`,
+            prevArrow: `<img class="real-img-control prev-slide" src="${rootLink.root}/g5/prev-slide.png">`,
         });
 
         let venoScreen = window.innerWidth;

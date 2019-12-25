@@ -76,7 +76,13 @@ Object.defineProperty(exports, "__esModule", {
 exports.pageListener = pageListener;
 exports.reachSection = exports.contextInit = exports.contextFadeIn = void 0;
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 // Custom Ultilities Functions
 var contextFadeIn = function contextFadeIn() {
@@ -347,8 +353,8 @@ function () {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        nextArrow: '<img class="real-img-control next-slide" src="img/g5/next-slide.png">',
-        prevArrow: '<img class="real-img-control prev-slide" src="img/g5/prev-slide.png">'
+        nextArrow: "<img class=\"real-img-control next-slide\" src=\"".concat(rootLink.root, "/g5/next-slide.png\">"),
+        prevArrow: "<img class=\"real-img-control prev-slide\" src=\"".concat(rootLink.root, "/g5/prev-slide.png\">")
       });
       var venoScreen = window.innerWidth;
 

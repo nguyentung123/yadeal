@@ -1,7 +1,7 @@
 <!-- Facebook Customer Chat -->
 <div id="fb-root"></div>
 <div class="fb-customerchat" attribution=setup_tool page_id="586286351830837" theme_color="#ff7e29"
-     logged_in_greeting="YADEA có thể giúp gì cho bạn?" logged_out_greeting="YADEA có thể giúp gì cho bạn?">
+                                                                    logged_in_greeting="YADEA có thể giúp gì cho bạn?" logged_out_greeting="YADEA có thể giúp gì cho bạn?">
 </div>
 
 <!-- Facebook plugin -->
@@ -24,6 +24,9 @@
 </script>
 
 <!-- Zalo Customer  Chat -->
-<div class="zalo-chat-widget" data-oaid="3358660728590406874" data-welcome-message="YADEA có thể hỗ trợ gì cho bạn?" data-autopopup="0" data-width="350" data-height="420"></div>
+<div class="zalo-holder">
+  <div class="zalo-chat-widget" data-oaid="3358660728590406874"
+       data-welcome-message="YADEA có thể hỗ trợ gì cho bạn?" data-autopopup="0" data-width="350" data-height="420"></div>
+</div>
 <!-- Zalo plugin -->
 <script src="https://sp.zalo.me/plugins/sdk.js" async></script>

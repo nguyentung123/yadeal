@@ -1683,7 +1683,7 @@ Template Name: Yadea G5 Product Landing Page
 
 
   <!-- Section Real Image Slider -->
-  <section class="product-real-image-section" id="product-real-image-section" style="display: none;">
+  <section class="product-real-image-section" id="product-real-image-section">
 
     <!-- Container -->
     <div class="container">
@@ -1699,36 +1699,87 @@ Template Name: Yadea G5 Product Landing Page
           <!-- Slide item -->
           <li class="slide-item">
             <a class="venobox"
-               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/yadea-real.jpg'); ?>">
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/1.jpg'); ?>">
               <img draggable="false"
-                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/yadea-real.jpg'); ?>">
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/1-thumbnail.jpg'); ?>">
             </a>
           </li>
 
           <!-- Slide item -->
           <li class="slide-item">
             <a class="venobox"
-               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/yadea-real.jpg'); ?>">
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/2.jpg'); ?>">
               <img draggable="false"
-                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/yadea-real.jpg'); ?>">
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/2-thumbnail.jpg'); ?>">
             </a>
           </li>
 
           <!-- Slide item -->
           <li class="slide-item">
             <a class="venobox"
-               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/yadea-real.jpg'); ?>">
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/3.jpg'); ?>">
               <img draggable="false"
-                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/yadea-real.jpg'); ?>">
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/3-thumbnail.jpg'); ?>">
             </a>
           </li>
 
           <!-- Slide item -->
           <li class="slide-item">
             <a class="venobox"
-               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/yadea-real.jpg'); ?>">
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/4.jpg'); ?>">
               <img draggable="false"
-                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5/yadea-real.jpg'); ?>">
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/4-thumbnail.jpg'); ?>">
+            </a>
+          </li>
+
+          <!-- Slide item -->
+          <li class="slide-item">
+            <a class="venobox"
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/5.jpg'); ?>">
+              <img draggable="false"
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/5-thumbnail.jpg'); ?>">
+            </a>
+          </li><!-- Slide item -->
+          <li class="slide-item">
+            <a class="venobox"
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/6.jpg'); ?>">
+              <img draggable="false"
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/6-thumbnail.jpg'); ?>">
+            </a>
+          </li><!-- Slide item -->
+          <li class="slide-item">
+            <a class="venobox"
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/7.jpg'); ?>">
+              <img draggable="false"
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/7-thumbnail.jpg'); ?>">
+            </a>
+          </li><!-- Slide item -->
+          <li class="slide-item">
+            <a class="venobox"
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/8.jpg'); ?>">
+              <img draggable="false"
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/8-thumbnail.jpg'); ?>">
+            </a>
+          </li><!-- Slide item -->
+          <li class="slide-item">
+            <a class="venobox"
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/9.jpg'); ?>">
+              <img draggable="false"
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/9-thumbnail.jpg'); ?>">
+            </a>
+          </li><!-- Slide item -->
+          <li class="slide-item">
+            <a class="venobox"
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/10.jpg'); ?>">
+              <img draggable="false"
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/10-thumbnail.jpg'); ?>">
+            </a>
+          </li><!-- Slide item -->
+          <li class="slide-item">
+            <a class="venobox"
+               href="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/11.jpg'); ?>">
+              <img draggable="false"
+                   src="<?php echo get_theme_file_uri('landing-page/yadea-g5/img/g5-img/11-thumbnail.jpg'); ?>">
             </a>
           </li>
 
@@ -2135,6 +2186,12 @@ Template Name: Yadea G5 Product Landing Page
 
 
 <!-- ====== SCRIPT REFERENCES  ====== -->
+
+<script type='text/javascript'>
+  /* <![CDATA[ */
+  var rootLink = {"root":"<?php echo get_theme_file_uri('landing-page/yadea-g5/img'); ?>",};
+  /* ]]> */
+</script>
 
 <!-- jQuery-->
 <script src="<?php echo get_theme_file_uri('landing-page/yadea-g5/js/jquery-3.3.1.min.js'); ?>"></script>

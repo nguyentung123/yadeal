@@ -5,10 +5,10 @@
     <div class="container">
 
         <!-- Row -->
-        <div class="row">
+        <div class="action-holder">
 
             <!-- Action Item -->
-            <div class="col-md-6 pre-footer-action" id="pre-footer-hotline-action">
+            <div class="pre-footer-action" id="pre-footer-hotline-action">
 
                 <!-- Action Icon -->
                 <div class="action-icon">
@@ -32,7 +32,7 @@
             <!-- Action Item - END -->
 
             <!-- Action Item -->
-            <div class="col-md-6 pre-footer-action">
+            <div class="pre-footer-action">
 
                 <!-- Action Icon -->
                 <div class="action-icon">

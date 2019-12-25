@@ -1,9 +1,14 @@
 .support-pages{
+  // Common Support Pages Banner
   .common-banner{
     position: relative;
     height: 31.25vw;
     background-color: #fcfbfb;
     overflow: hidden;
+
+    &#support-banner-section{
+      background-color: #ebebeb;
+    }
 
     .bg-holder{
       position: absolute;
@@ -17,6 +22,32 @@
           width: 100%;
         }
       }
+
+      &#support-privacy-banner-bg{
+        .img-holder{
+          position: absolute;
+          width: 33%;
+          bottom: 0;
+          right: 12.5%;
+
+          img{
+            width: 100%;
+          }
+        }
+      }
+
+      &#support-main-banner-bg{
+        .img-holder{
+          position: absolute;
+          width: 30%;
+          bottom: 3%;
+          right: 13%;
+
+          img{
+            width: 100%;
+          }
+        }
+      }
     }
 
     .container{
@@ -28,6 +59,943 @@
         align-items: center;
         position: relative;
         z-index: 2;
+        width: 1080px;
+        max-width: 100%;
+        margin: auto;
+
+        .title{
+          font-weight: bold;
+          color: #191919;
+          font-size: 48px;
+        }
+
+        .desc{
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  // After Banner Block
+  .after-banner-content{
+    padding: 150px 0;
+
+    .desc{
+      width: 1080px;
+      max-width: 100%;
+      margin: auto;
+      font-size: 24px;
+    }
+  }
+
+  // Common Pre Footer
+  .common-pre-footer{
+    padding: 110px 0;
+
+    .action-holder{
+      width: 1080px;
+      max-width: 100%;
+      margin: auto;
+      display: flex;
+
+      .pre-footer-action{
+        width: 50%;
+        flex-basis: 50%;
+        flex-shrink: 0;
+        text-align: center;
+
+        .action-icon{
+          width: 114px;
+          height: 114px;
+          border-radius: 57px;
+          border: 2px solid #191919;
+          text-align: center;
+          line-height: 110px;
+          margin: auto;
+          margin-bottom: 22px;
+
+          img{
+            max-height: 58px;
+          }
+        }
+
+        .action-detail{
+          .action-title,.desc{
+            font-size: 16px;
+            margin: 0;
+            letter-spacing: 0.2px;
+          }
+        }
+      }
+    }
+  }
+
+  // Question / Topic Content Holder
+  .common-page-content{
+    background-color: #f4f4f4;
+    padding: 85px 0;
+
+    .topic-holder{
+      width: 1080px;
+      max-width: 100%;
+      margin: auto;
+      padding: 8px;
+      background-color: $white;
+
+      ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .topic-list{
+        .topic-item{
+          position: relative;
+          margin-bottom: 5px;
+          background-color: #ebebeb;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+
+          .topic-toggler{
+            position: absolute;
+            width: 38px;
+            height: 38px;
+            top: 21px;
+            right: 44px;
+            cursor: pointer;
+
+            &:before, &:after{
+              content: '';
+              background-color: #222;
+              position: absolute;
+              display: block;
+            }
+
+            &:before{
+              width: 100%;
+              height: 3px;
+              top: 17.5px;
+            }
+
+            &:after{
+              width: 3px;
+              height: 100%;
+              left: 17.5px;
+              transition: all ease-out 80ms;
+            }
+          }
+
+          .topic-title{
+            padding-left: 135px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 85px;
+            margin: 0;
+          }
+
+          .sub-topic-holder, .topic-context{
+            background-color: $white;
+            display: none;
+
+            a{
+              color: $main-color;
+            }
+          }
+
+          .topic-context{
+            padding: 30px 155px;
+          }
+
+          .sub-topic-holder{
+            .sub-topic-item{
+              border-top: 2px solid $white;
+
+              .sub-topic-title{
+                background-color: #f4f4f4;
+                line-height: 85px;
+                font-size: 18px;
+                font-weight: bold;
+                padding-left: 135px;
+                cursor: pointer;
+                margin: 0;
+              }
+
+              .sub-topic-content{
+                padding: 30px 150px;
+                font-size: 16px;
+                line-height: 23px;
+                color: #333;
+                display: none;
+
+                b{
+                  display: inline-block;
+                  font-size: 0.9em;
+                }
+              }
+            }
+          }
+
+          &.is-show-topic-content{
+            .topic-toggler{
+              &:after{
+                opacity: 0;
+                transition: all ease-in 80ms;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Main Support Page Action Group
+  .common-page-actions{
+    background-color: #f2f2f2;
+    padding: 140px 0 100px;
+
+    .container{
+      .support-action-holder{
+        width: 1080px;
+        max-width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 25px;
+        grid-row-gap: 25px;
+
+        .support-action-item{
+          height: 200px;
+          border-radius: 26px;
+          border: 2px solid #3f4245;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          cursor: pointer;
+          background-color: transparent;
+          transition: all ease-in 100ms;
+
+          .action-icon{
+            margin-bottom: 9px;
+
+            img{
+              max-height: 58px;
+            }
+          }
+
+          &:hover{
+            background-color: #bcbcbc;
+            transition: all ease-out 150ms;
+          }
+
+          .action-context{
+            white-space: nowrap;
+            font-size: 24px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-laptop}{
+    // Common Support Pages Banner
+    .common-banner{
+      .container{
+        .main-content{
+          .title{
+            font-size: 40px;
+          }
+
+          .desc{
+            font-size: 22px;
+          }
+        }
+      }
+    }
+
+    // After Banner Block
+    .after-banner-content{
+      padding: 120px 0;
+
+      .desc{
+        font-size: 22px;
+      }
+    }
+
+    // Common Pre Footer
+    .common-pre-footer{
+      padding: 90px 0;
+
+      .action-holder{
+        .pre-footer-action{
+          .action-icon{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            line-height: 96px;
+
+            img{
+              max-height: 50px;
+            }
+          }
+
+          .action-detail{
+            .action-title,.desc{
+              font-size: 16px;
+              letter-spacing: 0.1px;
+            }
+          }
+        }
+      }
+    }
+
+    // Question / Topic Content Holder
+    .common-page-content{
+      padding: 65px 0;
+
+      .topic-holder{
+        padding: 6px;
+
+        .topic-list{
+          .topic-item{
+            margin-bottom: 4px;
+
+            .topic-toggler{
+              width: 36px;
+              height: 36px;
+              top: 20px;
+              right: 40px;
+
+              &:before{
+                top: 16px;
+              }
+
+              &:after{
+                left: 16px;
+              }
+            }
+
+            .topic-title{
+              padding-left: 115px;
+              font-size: 22px;
+              line-height: 80px;
+            }
+
+            .topic-context{
+              padding: 20px 130px;
+              font-size: 15px;
+            }
+
+            .sub-topic-holder{
+              .sub-topic-item{
+                .sub-topic-title{
+                  line-height: 80px;
+                  font-size: 16px;
+                  padding-left: 115px;
+                }
+
+                .sub-topic-content{
+                  padding: 20px 130px;
+                  font-size: 15px;
+                  line-height: 21px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-laptop}{
+    // Common Support Pages Banner
+    .common-banner{
+      .container{
+        .main-content{
+          .title{
+            font-size: 38px;
+          }
+
+          .desc{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    // After Banner Block
+    .after-banner-content{
+      padding: 110px 0;
+
+      .desc{
+        font-size: 20px;
+      }
+    }
+  }
+
+  /* === RESPONSIVE === */
+  @media #{$information-tablet}{
+    // Common Support Pages Banner
+    .common-banner{
+      height: 162vw;
+      background-color: #ebebeb;
+
+      .bg-holder{
+        height: 84.4vw;
+        bottom: auto;
+
+        &#support-maintain-banner-bg{
+          img{
+            width: 100%;
+          }
+        }
+
+        &#support-privacy-banner-bg{
+          display: flex;
+          align-items: center;
+
+          .img-holder{
+            width: 100%;
+            bottom: auto;
+            left: 0;
+            top: 0;
+            position: static;
+
+            img{
+              display: block;
+              margin: auto;
+              width: 80%;
+            }
+          }
+        }
+
+        &#support-main-banner-bg{
+          display: flex;
+          align-items: center;
+          height: 92.5vw;
+
+          .img-holder{
+            width: 100%;
+            position: static;
+
+            img{
+              display: block;
+              margin: auto;
+              width: 80%;
+            }
+          }
+        }
+      }
+
+      .container{
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        display: block;
+
+        .main-content{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin: auto;
+          top: 84.33vw;
+          height: 77.67vw;
+          text-align: center;
+
+
+          .title{
+            font-size: 48px;
+          }
+
+          .desc{
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    // After Banner Block
+    .after-banner-content{
+      padding: 120px 0;
+
+      .desc{
+        font-size: 24px;
+      }
+    }
+
+    // Common Pre Footer
+    .common-pre-footer{
+      padding: 0 0 20vw;
+      background-color: #f2f2f2;
+
+      .action-holder{
+        flex-wrap: wrap;
+
+        .pre-footer-action{
+          width: 100%;
+          flex-basis: 100%;
+          flex-shrink: 0;
+          height: 46.33vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          .action-icon{
+            width: 110px;
+            height: 110px;
+            border-radius: 55px;
+            line-height: 106px;
+            margin: 0 auto 20px;
+
+            img{
+              max-height: 54px;
+            }
+          }
+
+          .action-detail{
+            .action-title,.desc{
+              font-size: 16px;
+              letter-spacing: 0.2px;
+            }
+          }
+        }
+      }
+    }
+
+    // Question / Topic Content Holder
+    .common-page-content{
+      padding: 0;
+
+      .container{
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .topic-holder{
+        padding: 5px 0;
+
+        .topic-list{
+          .topic-item{
+            margin-bottom: 5px;
+
+            .topic-toggler{
+              width: 30px;
+              height: 30px;
+              top: 21px;
+              right: 4vw;
+
+              &:before{
+                width: 100%;
+                height: 3px;
+                top: 13.5px;
+              }
+
+              &:after{
+                width: 3px;
+                height: 100%;
+                left: 13.5px;
+              }
+            }
+
+            .topic-title{
+              padding-left: 10vw;
+              font-size: 20px;
+              line-height: 70px;
+              margin: 0;
+            }
+
+            .topic-context{
+              padding: 2vw 11.5vw;
+            }
+
+            .sub-topic-holder{
+              .sub-topic-item{
+                .sub-topic-title{
+                  line-height: 70px;
+                  font-size: 17px;
+                  padding-left: 10vw;
+                }
+
+                .sub-topic-content{
+                  padding: 2vw 11.5vw;
+                  font-size: 16px;
+                  line-height: 23px;
+
+                  b{
+                    font-size: 0.9em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Main Support Page Action Group
+    .common-page-actions{
+      padding: 80px 0 60px;
+
+      .container{
+        .support-action-holder{
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          grid-column-gap: 20px;
+          grid-row-gap: 20px;
+
+          .support-action-item{
+            height: 190px;
+            border-radius: 24px;
+
+            .action-context{
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone}{
+    // Common Support Pages Banner
+    .common-banner{
+      .bg-holder{
+        &#support-privacy-banner-bg{
+          .img-holder{
+            img{
+              width: 85%;
+            }
+          }
+        }
+      }
+
+      .container{
+        .main-content{
+          .title{
+            font-size: 26px;
+            margin-bottom: 12px;
+            white-space: nowrap;
+          }
+
+          .desc{
+            font-size: 16px;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    // After Banner Block
+    .after-banner-content{
+      padding: 40px 0;
+
+      .desc{
+        font-size: 16px;
+      }
+    }
+
+    // Common Pre Footer
+    .common-pre-footer{
+      padding: 0 0 10vw;
+
+      .action-holder{
+
+        .pre-footer-action{
+          height: 54vw;
+
+          .action-icon{
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            line-height: 56px;
+            margin: 0 auto 10px;
+            border-width: 1px;
+
+            img{
+              max-height: 28px;
+            }
+          }
+
+          .action-detail{
+            .action-title,.desc{
+              font-size: 13px;
+              letter-spacing: 0.2px;
+            }
+          }
+        }
+      }
+    }
+
+    // Question / Topic Content Holder
+    .common-page-content{
+      .topic-holder{
+        padding: 5px 0;
+
+        .topic-list{
+          .topic-item{
+            margin-bottom: 5px;
+
+            .topic-toggler{
+              width: 18px;
+              height: 18px;
+              top: 18px;
+              right: 3vw;
+
+              &:before{
+                width: 100%;
+                height: 2px;
+                top: 8px;
+              }
+
+              &:after{
+                width: 2px;
+                height: 100%;
+                left: 8px;
+              }
+            }
+
+            .topic-title{
+              padding-left: 5vw;
+              font-size: 13px;
+              line-height: 54px;
+              margin: 0;
+              white-space: nowrap;
+            }
+
+            .topic-context{
+              padding: 2vw 6vw;
+              font-size: 12px;
+              margin-bottom: 6px;
+            }
+
+            .sub-topic-holder{
+              .sub-topic-item{
+                .sub-topic-title{
+                  line-height: 54px;
+                  font-size: 12px;
+                  padding-left: 5vw;
+                }
+
+                .sub-topic-content{
+                  padding: 2vw 6vw;
+                  font-size: 12px;
+                  line-height: 18px;
+                  margin: 0;
+
+
+                  b{
+                    font-size: 0.9em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Main Support Page Action Group
+    .common-page-actions{
+      padding: 60px 0 40px;
+
+      .container{
+        .support-action-holder{
+          padding: 0 8vw;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+          grid-column-gap: 20px;
+          grid-row-gap: 20px;
+
+          .support-action-item{
+            height: 170px;
+            border-radius: 22px;
+
+            .action-icon{
+              margin-bottom: 7px;
+
+              img{
+                max-height: 52px;
+              }
+            }
+
+            .action-context{
+              font-size: 19px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone}{
+    // Common Support Pages Banner
+    .common-banner{
+      .bg-holder{
+        &#support-privacy-banner-bg{
+          .img-holder{
+            img{
+              width: 85%;
+            }
+          }
+        }
+      }
+
+      .container{
+        .main-content{
+          .title{
+            font-size: 23px;
+            margin-bottom: 8px;
+          }
+
+          .desc{
+            font-size: 14px;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    // After Banner Block
+    .after-banner-content{
+      padding: 30px 0;
+
+      .desc{
+        font-size: 14px;
+      }
+    }
+
+    // Common Pre Footer
+    .common-pre-footer{
+      padding: 0 0 10vw;
+
+      .action-holder{
+
+        .pre-footer-action{
+          height: 54vw;
+
+          .action-icon{
+            width: 54px;
+            height: 54px;
+            border-radius: 27px;
+            line-height: 52px;
+            margin: 0 auto 8px;
+            border-width: 1px;
+
+            img{
+              max-height: 25px;
+            }
+          }
+
+          .action-detail{
+            .action-title,.desc{
+              font-size: 12px;
+              letter-spacing: 0.1px;
+            }
+          }
+        }
+      }
+    }
+
+    // Question / Topic Content Holder
+    .common-page-content{
+      .topic-holder{
+        padding: 2px 0;
+
+        .topic-list{
+          .topic-item{
+            margin-bottom: 2px;
+
+            .topic-toggler{
+              width: 18px;
+              height: 18px;
+              top: 18px;
+              right: 3vw;
+
+              &:before{
+                width: 100%;
+                height: 2px;
+                top: 8px;
+              }
+
+              &:after{
+                width: 2px;
+                height: 100%;
+                left: 8px;
+              }
+            }
+
+            .topic-title{
+              padding-left: 5vw;
+              font-size: 13px;
+              line-height: 54px;
+              margin: 0;
+              white-space: nowrap;
+            }
+
+            .topic-context{
+              padding: 2vw 6vw;
+              font-size: 12px;
+            }
+
+            .sub-topic-holder{
+              .sub-topic-item{
+                .sub-topic-title{
+                  line-height: 54px;
+                  font-size: 12px;
+                  padding-left: 5vw;
+                }
+
+                .sub-topic-content{
+                  padding: 2vw 6vw;
+                  font-size: 12px;
+                  line-height: 18px;
+
+                  b{
+                    font-size: 0.9em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Main Support Page Action Group
+    .common-page-actions{
+      padding: 40px 0 30px;
+
+      .container{
+        .support-action-holder{
+          padding: 0 7vw;
+          grid-template-columns: 1fr;
+          grid-column-gap: 18px;
+          grid-row-gap: 18px;
+
+          .support-action-item{
+            height: 160px;
+            border-radius: 20px;
+
+            .action-icon{
+              margin-bottom: 5px;
+
+              img{
+                max-height: 50px;
+              }
+            }
+
+            .action-context{
+              font-size: 18px;
+            }
+          }
+        }
       }
     }
   }
