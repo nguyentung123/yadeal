@@ -1,18 +1,15 @@
 // 3rd Party Vendor Stylesheet
 @import "vendors/fontawesome/font-awesome";
-
 // Website Core Stylesheet Guideline
 @import "common/variables";
 @import "common/elements";
 @import "common/helpers";
 @import "common/typography";
-
 // Website Common Components
 @import "components/core";
 @import "components/ui";
 @import "components/footer";
 @import "components/header";
-
 //Website Stylesheet For Individual Page
 @import "sections/banner";
 @import "sections/design";
@@ -24,7 +21,7 @@
 @import "sections/saving-energy";
 @import "sections/anti-thief";
 @import "sections/easy-control";
-
+@import "sections/chatbox";
 // Reuse
 @import "sections/reuse/common";
 @import "sections/reuse/features3";
@@ -32,5 +29,5 @@
 @import "sections/reuse/news";
 @import "sections/reuse/img-slider-library";
 @import "sections/reuse/signup-info.scss";
-
-
+@import "sections/reuse/find-stores";
+@import "sections/reuse/october-sale";

@@ -3157,7 +3157,7 @@ ul, li {
           padding: 0 30px;
           border-radius: 16px; }
       #page-header .sub-header .sub-menu-row .sub-menu-main {
-        grid-column: 2 / span 3;
+        grid-column: 1 / span 3;
         display: flex;
         justify-content: space-between; }
         #page-header .sub-header .sub-menu-row .sub-menu-main li {
@@ -3378,7 +3378,14 @@ body.stop-scroll {
         margin-bottom: 40px;
         text-align: center; }
       #yadea-e3-page .section-design-intro .custom-container .design-image-list .img-holder {
-        margin-bottom: 20px; }
+        margin-bottom: 20px;
+        overflow: hidden; }
+        #yadea-e3-page .section-design-intro .custom-container .design-image-list .img-holder img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-position: center;
+          object-fit: cover; }
   @media only screen and (max-width: 768px) {
     #yadea-e3-page .section-design-intro {
       padding: 80px 0 50px; } }
@@ -3620,22 +3627,20 @@ body.stop-scroll {
   @media (max-width: 1920px) {
     #yadea-e3-page .section-driving-position {
       width: 1920px;
-      height: 620px;
+      height: 720px;
       margin-left: calc((100% - 1920px) / 2); }
-      #yadea-e3-page .section-driving-position .driving-position-layout {
-        top: 60px; }
-        #yadea-e3-page .section-driving-position .driving-position-layout .main-content {
-          width: 28%;
-          left: 19%; } }
+      #yadea-e3-page .section-driving-position .driving-position-layout .main-content {
+        width: 28%;
+        left: 19%; } }
   @media (max-width: 1368px) {
+    #yadea-e3-page .section-driving-position {
+      height: 540px; }
+      #yadea-e3-page .section-driving-position .driving-position-layout {
+        top: 100px; } }
+  @media (max-width: 1280px) {
     #yadea-e3-page .section-driving-position {
       height: 400px;
       z-index: 3; }
-      #yadea-e3-page .section-driving-position .driving-position-layout {
-        top: 60px; } }
-  @media (max-width: 1280px) {
-    #yadea-e3-page .section-driving-position {
-      height: 390px; }
       #yadea-e3-page .section-driving-position .driving-position-layout {
         top: 70px; } }
   @media only screen and (max-width: 768px) {
@@ -4617,6 +4622,130 @@ body.stop-scroll {
         transform: translateY(0);
         transition: all ease-out 350ms; } }
 
+.fb_dialog.fb_customer_chat_bubble_animated_no_badge {
+  -webkit-transform: translate(5%, 27%) scale(0.85);
+  transform: translate(5%, 27%) scale(0.85); }
+  @media only screen and (max-width: 768px) {
+    .fb_dialog.fb_customer_chat_bubble_animated_no_badge {
+      -webkit-transform: translate(32%, calc(24% - 50px)) scale(0.8);
+      transform: translate(32%, calc(24% - 50px)) scale(0.8); } }
+
+.zalo-chat-widget {
+  -webkit-transform: translate(-110%, 0%);
+  transform: translate(-110%, 0%); }
+  @media only screen and (max-width: 768px) {
+    .zalo-chat-widget {
+      -webkit-transform: translate(0%, calc(-83% - 50px));
+      transform: translate(0%, calc(-83% - 50px)); } }
+
+.test-drive-box {
+  width: 0;
+  height: 0; }
+  .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper {
+    position: fixed;
+    top: 25vh;
+    right: 15px;
+    z-index: 3;
+    height: 50px; }
+    .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: 180ms all ease-in; }
+      .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder .img-holder, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder .img-holder {
+        height: 50px;
+        position: relative;
+        z-index: 2; }
+        .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder .img-holder img, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder .img-holder img {
+          height: 100%; }
+      .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder .effect-holder, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder .effect-holder {
+        position: absolute;
+        box-shadow: 0 0 16px #e77e47;
+        border-radius: 12px;
+        border-top-left-radius: 35px;
+        width: calc(100% - 10px);
+        height: 40px;
+        bottom: 1px;
+        right: 0;
+        background-color: #e77e47;
+        animation: shiningEffect 3s infinite; }
+      .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder.active, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder.active {
+        opacity: 1;
+        transform: none;
+        transition: 330ms 120ms all ease-out; }
+      .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder .close-area, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder .close-area {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        z-index: 3;
+        top: 0;
+        left: 0; }
+  .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 3;
+    background-color: #e77e47;
+    color: #FFF;
+    display: none;
+    padding: 4px;
+    height: 50px;
+    flex-wrap: nowrap; }
+    @media only screen and (max-width: 768px) {
+      .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper {
+        display: flex; } }
+    .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .close-btn {
+      width: 42px;
+      flex-basis: 42px;
+      flex-shrink: 0;
+      height: 42px;
+      display: flex;
+      background-color: #FFF;
+      justify-content: center;
+      align-items: center; }
+      .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .close-btn img {
+        width: 35px;
+        height: 35px; }
+    .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .context-holder {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto; }
+      .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .context-holder .test-drive-text {
+        font-weight: 600;
+        font-size: 18px;
+        margin: 0 8px; }
+      .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .context-holder .test-drive-icon img {
+        height: 32px; }
+  .test-drive-box.inactive .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder, .test-drive-box.inactive .cta-holder .link-wrapper .desktop-content-wrapper .context-holder {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: 180ms all ease-in;
+    visibility: hidden; }
+  .test-drive-box.inactive .cta-holder .link-wrapper .mobile-content-wrapper {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 180ms all ease-in;
+    visibility: hidden; }
+
+#loading-overlay {
+  z-index: 9999999999; }
+
+@keyframes shiningEffect {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6; }
+  50% {
+    transform: scale(1.01);
+    opacity: 1;
+    filter: brightness(108%); }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.6; } }
+
 #yadea-e3-page {
   padding-top: 120px; }
   #yadea-e3-page .section {
@@ -5215,8 +5344,7 @@ body.stop-scroll {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all ease-in 10ms 300ms;
-  /* === RESPONSIVE === */ }
+  transition: all ease-in 10ms 300ms; }
   .signup-info-modal .overlay {
     position: absolute;
     top: 0;
@@ -5363,134 +5491,456 @@ body.stop-scroll {
       opacity: 1;
       transform: translateY(0);
       transition: all ease-out 300ms 100ms; }
+
+#yadea-e3-page {
+  /* RESPONSIVE */ }
+  #yadea-e3-page .section-find-yadea-stores {
+    color: #FFF;
+    position: relative;
+    overflow: hidden; }
+    #yadea-e3-page .section-find-yadea-stores .bg-holder {
+      width: 100%;
+      height: 27.0833vw;
+      background-size: cover;
+      background-position: center;
+      transition: all ease-out 0.75s;
+      filter: brightness(94%); }
+      @media only screen and (max-width: 1920px) {
+        #yadea-e3-page .section-find-yadea-stores .bg-holder {
+          width: 1920px;
+          margin-left: calc((100% - 1920px) / 2);
+          height: 520px; } }
+      @media only screen and (max-width: 768px) {
+        #yadea-e3-page .section-find-yadea-stores .bg-holder {
+          filter: brightness(100%);
+          width: 100%;
+          height: 144vw;
+          margin-left: 0; } }
+    #yadea-e3-page .section-find-yadea-stores:hover .bg-holder {
+      -webkit-transform: scale(1.02);
+      transform: scale(1.02);
+      filter: brightness(114%);
+      transition: all ease-out 1s; }
+    #yadea-e3-page .section-find-yadea-stores .main-content {
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: calc((100% - 1108px) / 2);
+      width: 1108px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      #yadea-e3-page .section-find-yadea-stores .main-content .find-stores-title {
+        font-size: 1.5625rem;
+        line-height: 1.42;
+        margin-bottom: 0.8rem;
+        font-weight: 500; }
+      #yadea-e3-page .section-find-yadea-stores .main-content .cta {
+        font-size: 0.78125rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        display: inline-block;
+        background-color: #F26D20;
+        border-radius: 1.25rem;
+        padding: 0 2rem;
+        font-weight: 500; }
   @media only screen and (max-width: 768px) {
-    .signup-info-modal .signup-info-modal-dialog {
-      width: 90%;
-      height: auto;
-      max-width: 100%;
-      max-height: 100vh;
-      flex-wrap: wrap; }
-      .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal {
-        top: 2vw;
-        right: 2vw;
-        width: 6vw; }
-        .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal img {
-          width: 100%; }
-      .signup-info-modal .signup-info-modal-dialog .left-content {
-        background-color: #fabb88;
-        color: #FFF;
-        width: 100%;
-        flex-shrink: 0;
-        padding: 3em 2em 2em; }
-        .signup-info-modal .signup-info-modal-dialog .left-content > * {
-          width: 75%; }
-        .signup-info-modal .signup-info-modal-dialog .left-content .popup-title, .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
-          text-align: justify;
-          white-space: nowrap;
-          margin: 0; }
-        .signup-info-modal .signup-info-modal-dialog .left-content .popup-title {
-          font-size: 2.2em;
-          text-align: center; }
-        .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
-          font-size: 1.05em;
-          letter-spacing: 0.025em;
-          text-align: center; }
-        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form {
-          padding: 2em 0 0.25em; }
-          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder {
-            border: 2px solid #FFF;
-            padding: 5px 12px;
-            border-radius: 8px;
-            margin-bottom: 20px; }
-            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder label {
-              font-size: 1.35em;
-              margin-right: 6px; }
-            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder input {
-              flex: 1;
-              height: 40px;
-              line-height: 40px;
-              font-size: 1.35em; }
-          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder {
-            padding: 0.5em 0; }
-            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a {
-              padding: 10px 20px;
-              border-radius: 8px;
-              font-size: 1.35em; }
-              .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button .fa, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a .fa {
-                margin-left: 5px; }
-      .signup-info-modal .signup-info-modal-dialog .right-content {
-        width: 100%;
-        padding: 1em 1em 12vw;
-        justify-content: flex-start;
-        align-items: center; }
-        .signup-info-modal .signup-info-modal-dialog .right-content .right-title {
-          margin: 1em 0;
-          font-size: 2em; }
-        .signup-info-modal .signup-info-modal-dialog .right-content .right-cta {
-          padding: 0.25em 1em;
-          font-size: 2em;
-          border: 2px solid #ff7c13;
-          border-radius: 10px;
-          width: auto;
-          display: inline-block;
-          z-index: 2; }
-        .signup-info-modal .signup-info-modal-dialog .right-content .right-bg {
-          width: 28%;
-          bottom: 2%;
-          left: 5%; } }
+    #yadea-e3-page .section-find-yadea-stores .main-content {
+      top: auto;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 35%;
+      text-align: center;
+      white-space: nowrap; }
+      #yadea-e3-page .section-find-yadea-stores .main-content .find-stores-title {
+        font-size: 2rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem; }
+      #yadea-e3-page .section-find-yadea-stores .main-content .cta {
+        font-size: 2rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+        border-radius: 1.75rem;
+        padding: 0 3rem; } }
   @media only screen and (max-width: 480px) {
-    .signup-info-modal .signup-info-modal-dialog {
-      width: 90%;
-      height: auto;
+    #yadea-e3-page .section-find-yadea-stores .main-content {
+      left: 5%;
+      width: 90%; }
+      #yadea-e3-page .section-find-yadea-stores .main-content .find-stores-title {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem; }
+      #yadea-e3-page .section-find-yadea-stores .main-content .cta {
+        font-size: 1.5rem;
+        height: 3rem;
+        line-height: 3rem;
+        border-radius: 1.5rem;
+        padding: 0 2.5rem; } }
+  @media only screen and (max-width: 360px) {
+    #yadea-e3-page .section-find-yadea-stores .main-content .find-stores-title {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem; }
+    #yadea-e3-page .section-find-yadea-stores .main-content .cta {
+      font-size: 1.25rem;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      border-radius: 1.25rem;
+      padding: 0 2rem; } }
+
+.section-banner-sale {
+  position: relative;
+  margin-top: 44px;
+  /* === --- RESPONSIVE --- === */
+  /* === Desktop and laptop === */
+  /* === Desktop and laptop - END === */
+  /* === Tablet and Mobile === */
+  /* === Tablet and Mobile - END === */ }
+  .section-banner-sale .bg-holder {
+    width: 100%; }
+    .section-banner-sale .bg-holder picture,
+    .section-banner-sale .bg-holder img {
+      display: block;
+      width: 100%; }
+  .section-banner-sale .cta-content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute; }
+    .section-banner-sale .cta-content .see-info-cta,
+    .section-banner-sale .cta-content .buynow-cta {
+      position: absolute; }
+    .section-banner-sale .cta-content .see-info-cta {
+      font-weight: 600;
+      font-size: 24px;
+      color: #222;
+      border-bottom: 2px solid #222;
+      cursor: pointer; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 14px;
+        height: 14px;
+        border: 2px solid #222;
+        border-left: none;
+        border-bottom: none;
+        display: inline-block;
+        -webkit-transform: rotate(45deg) translateY(-2px);
+        transform: rotate(45deg) translateY(-2px); }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      color: #bac61e;
+      line-height: 53px;
+      height: 55px;
+      border: 2px solid #bac61e;
+      display: inline-block;
+      padding: 0 40px;
+      border-radius: 28px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 24px;
+      transition: all ease-in 100ms; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 14px;
+        height: 14px;
+        border: 2px solid #bac61e;
+        border-left: none;
+        border-bottom: none;
+        display: inline-block;
+        transition: all ease-in 100ms;
+        -webkit-transform: rotate(45deg) translateY(-2px);
+        transform: rotate(45deg) translateY(-2px); }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn:hover {
+        background-color: #bac61e;
+        color: #fff;
+        transition: all ease-out 150ms; }
+        .section-banner-sale .cta-content .buynow-cta .buynow-btn:hover .arrow {
+          border-color: #fff;
+          transition: all ease-in 100ms; }
+  @media screen and (max-width: 1920px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 22px; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 13px;
+        height: 13px; }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 48px;
+      height: 50px;
+      padding: 0 30px;
+      border-radius: 25px;
+      font-size: 20px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 13px;
+        height: 13px; } }
+  @media screen and (max-width: 1680px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 19px; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 11px;
+        height: 11px; }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 46px;
+      height: 48px;
+      padding: 0 28px;
+      border-radius: 25px;
+      font-size: 18px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 11px;
+        height: 11px; } }
+  @media screen and (max-width: 1440px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 16px;
+      border-width: 1px; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 9px;
+        height: 9px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 38px;
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 22px;
+      font-size: 15px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 9px;
+        height: 9px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); } }
+  @media screen and (max-width: 1280px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 15px;
+      border-width: 1px; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 8px;
+        height: 8px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 36px;
+      height: 38px;
+      padding: 0 20px;
+      border-radius: 19px;
+      font-size: 14px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 8px;
+        height: 8px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); } }
+  @media screen and (max-width: 768px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 24px;
+      border-bottom: 2px solid #222; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 14px;
+        height: 14px; }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 53px;
+      height: 55px;
+      border: 2px solid #bac61e;
+      padding: 0 40px;
+      border-radius: 28px;
+      font-size: 24px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 14px;
+        height: 14px;
+        -webkit-transform: rotate(45deg) translateY(-2px);
+        transform: rotate(45deg) translateY(-2px); } }
+  @media screen and (max-width: 480px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 15px;
+      border-width: 1px;
+      white-space: nowrap; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 8px;
+        height: 8px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 36px;
+      height: 38px;
+      padding: 0 20px;
+      border-radius: 19px;
+      font-size: 14px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 8px;
+        height: 8px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); } }
+
+.october-sale-information-modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  transition: all 10ms 350ms ease-out;
+  /* Responsive */ }
+  .october-sale-information-modal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0; }
+  .october-sale-information-modal .tragop-dialog {
+    width: 1200px;
+    max-width: 95%;
+    border-radius: 22px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 3em 2.5em 1.5em;
+    margin: auto;
+    max-height: 70vh;
+    position: relative;
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+    transition: all ease-in 200ms 10ms; }
+    .october-sale-information-modal .tragop-dialog .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #333;
+      border: 2px solid #333;
+      font-size: 28px;
+      width: 34px;
+      height: 34px;
+      border-radius: 17px;
+      text-align: center;
+      line-height: 31px;
+      cursor: pointer; }
+    .october-sale-information-modal .tragop-dialog .tragop-main-content {
+      color: #333;
+      overflow: auto;
       max-width: 100%;
-      max-height: 100vh; }
-      .signup-info-modal .signup-info-modal-dialog .close-signup-info-modal {
-        top: 3vw;
-        right: 3vw;
-        width: 8vw; }
-      .signup-info-modal .signup-info-modal-dialog .left-content {
-        padding: 2.5em 1em 1.25em; }
-        .signup-info-modal .signup-info-modal-dialog .left-content .popup-title {
-          font-size: 1.8em; }
-        .signup-info-modal .signup-info-modal-dialog .left-content .popup-sub-title {
-          font-size: 1em;
-          letter-spacing: 0.02em; }
-        .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form {
-          padding: 1.5em 0 0.2em; }
-          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder {
-            border: 2px solid #FFF;
-            padding: 5px 12px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            height: 42px; }
-            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder label {
-              font-size: 1em;
-              margin-right: 6px; }
-            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .input-holder input {
-              height: 36px;
-              line-height: 36px;
-              font-size: 1em; }
-          .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder {
-            padding: 0.5em 0; }
-            .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder button, .signup-info-modal .signup-info-modal-dialog .left-content .signup-information-form .submit-holder a {
-              padding: 5px 18px;
-              border-radius: 8px;
-              font-size: 1em; }
-      .signup-info-modal .signup-info-modal-dialog .right-content {
-        width: 100%;
-        padding: 1em 1em 16vw;
-        justify-content: flex-start;
-        align-items: center; }
-        .signup-info-modal .signup-info-modal-dialog .right-content .right-title {
-          margin: 0.75em 0;
-          font-size: 1.5em; }
-        .signup-info-modal .signup-info-modal-dialog .right-content .right-cta {
-          padding: 0.25em 1em;
-          font-size: 1.75em;
-          border: 2px solid #ff7c13;
-          border-radius: 7px;
-          z-index: 2; }
-        .signup-info-modal .signup-info-modal-dialog .right-content .right-bg {
-          width: 32%;
-          bottom: 2%;
-          left: 5%; } }
+      max-height: 55vh;
+      padding-right: 1.5em; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .title {
+        text-align: center;
+        font-size: 1.55em;
+        font-weight: 600;
+        letter-spacing: 0;
+        margin-bottom: 1em; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .sub-title {
+        font-size: 1.25em;
+        font-weight: 600;
+        margin-bottom: .5em;
+        text-align: center;
+        letter-spacing: 0; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .desc {
+        font-size: 1em;
+        line-height: 1.65em;
+        margin-bottom: 0.75em; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .cta-holder {
+        color: #F26D20;
+        font-weight: 600;
+        text-align: center;
+        font-size: 1.15em;
+        margin-top: 1.5em; }
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .cta-holder a {
+          border-bottom: 2px solid #F26D20; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .value {
+        margin: 0; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table {
+        margin: 10px 0; }
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row {
+          border: 1px solid #999;
+          margin: 0 !important; }
+          .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row:first-child {
+            border-bottom: none; }
+          .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row div {
+            padding: 0 !important;
+            border-right: 1px solid #999;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center; }
+            .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row div:last-child {
+              border: none; }
+            .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row div hr {
+              width: 100%;
+              flex-basis: 100%;
+              background-color: #999;
+              border-color: #999;
+              margin: 0; }
+            .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row div .value {
+              text-align: center;
+              padding: 8px 5px;
+              width: 100%;
+              flex-basis: 100%; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content ul {
+        margin-top: -0.75em; }
+  .october-sale-information-modal.active {
+    transition: visibility 10s ease-out;
+    visibility: visible; }
+    .october-sale-information-modal.active .overlay {
+      opacity: 1;
+      transition: all ease-out 150ms; }
+    .october-sale-information-modal.active .tragop-dialog {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+      transition: all ease-out 220ms 100ms; }
+  @media only screen and (max-width: 480px) {
+    .october-sale-information-modal .tragop-dialog {
+      border-radius: 18px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 2.5em 1.75em 1.25em;
+      max-height: 70vh; }
+      .october-sale-information-modal .tragop-dialog .close-btn {
+        top: 12px;
+        right: 12px;
+        font-size: 28px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        line-height: 28px; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content {
+        max-height: 52vh;
+        padding-right: 1em; }
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .title {
+          font-size: 1.35em;
+          margin-bottom: 0.75em; }
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .sub-title {
+          font-size: 1.05em;
+          margin-bottom: .25em; }
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .desc {
+          font-size: 0.9em;
+          line-height: 1.55em;
+          margin-bottom: 0.7em; }
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table {
+          margin: 8px 0; }
+          .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row .value {
+            padding: 5px 3px;
+            font-size: 0.8em;
+            font-weight: 500; }
+        .october-sale-information-modal .tragop-dialog .tragop-main-content ul {
+          margin-top: -0.7em; } }
+
+#e3-october-sale {
+  margin-top: 0;
+  /* === --- RESPONSIVE --- === */
+  /* === Tablet and Mobile === */
+  /* === Tablet and Mobile - END === */ }
+  #e3-october-sale .cta-content .buynow-cta {
+    top: 89%;
+    left: 65%; }
+  #e3-october-sale .cta-content .see-info-cta {
+    top: 90%;
+    left: 23%; }
+  @media screen and (max-width: 768px) {
+    #e3-october-sale .cta-content .buynow-cta {
+      top: 92%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); }
+    #e3-october-sale .cta-content .see-info-cta {
+      top: 75%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); } }

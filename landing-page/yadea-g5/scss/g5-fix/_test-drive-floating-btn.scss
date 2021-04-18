@@ -1,0 +1,191 @@
+.fb_dialog.fb_customer_chat_bubble_animated_no_badge{
+  -webkit-transform: translate(5%, 27%) scale(0.85);
+  transform: translate(5%, 27%) scale(0.85);
+
+  @media #{$information-tablet}{
+    -webkit-transform: translate(32%, calc(24% - 50px)) scale(0.8);
+    transform: translate(32%, calc(24% - 50px)) scale(0.8);
+  }
+}
+
+
+.zalo-chat-widget{
+  -webkit-transform: translate(-110%, 0%);
+  transform: translate(-110%, 0%);
+
+  @media #{$information-tablet}{
+    -webkit-transform: translate(0%, calc(-83% - 50px));
+    transform: translate(0%, calc(-83% - 50px));
+  }
+}
+
+.test-drive-box{
+  width: 0;
+  height: 0;
+
+  img{
+    max-width: none;
+  }
+
+  .cta-holder{
+    .link-wrapper{
+      .desktop-content-wrapper{
+        position: fixed;
+        top: 25vh;
+        right: 15px;
+        z-index: 3;
+        height: 50px;
+
+        .icon-holder, .context-holder{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+
+          //Original State
+          opacity: 0;
+          transform: translateX(100%);
+          transition: 180ms all ease-in;
+
+          .img-holder{
+            height: 50px;
+            position: relative;
+            z-index: 2;
+
+            img{
+              height: 100%;
+            }
+          }
+
+          .effect-holder{
+            position: absolute;
+            box-shadow: 0 0 16px #e77e47;
+            border-radius: 12px;
+            border-top-left-radius: 35px;
+            width: calc(100% - 10px);
+            height: 40px;
+            bottom: 1px;
+            right: 0;
+            background-color: #e77e47;
+            animation: shiningEffect 3s infinite;
+          }
+
+          &.active{
+            opacity: 1;
+            transform: none;
+            transition: 330ms 120ms all ease-out;
+          }
+
+          .close-area{
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            z-index: 3;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        .icon-holder{
+
+        }
+      }
+
+      .mobile-content-wrapper{
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        z-index: 3;
+        background-color: #e77e47;
+        color: #FFF;
+        display: none;
+        padding: 4px;
+        height: 50px;
+        flex-wrap: nowrap;
+
+        @media #{$information-tablet}{
+          display: flex;
+        }
+
+        .close-btn{
+          width: 42px;
+          flex-basis: 42px;
+          flex-shrink: 0;
+          height: 42px;
+          display: flex;
+          background-color: #FFF;
+          justify-content: center;
+          align-items: center;
+
+          img{
+            width: 35px;
+            height: 35px;
+          }
+        }
+
+        .context-holder{
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: auto;
+
+          .test-drive-text{
+            font-weight: 600;
+            font-size: 18px;
+            margin: 0 8px;
+          }
+
+          .test-drive-icon{
+            img{
+              height: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.inactive{
+    .cta-holder{
+      .link-wrapper{
+        .desktop-content-wrapper{
+          .icon-holder, .context-holder {
+            opacity: 0;
+            transform: translateX(100%);
+            transition: 180ms all ease-in;
+            visibility: hidden;
+          }
+        }
+
+        .mobile-content-wrapper{
+          opacity: 0;
+          transform: translateY(100%);
+          transition: 180ms all ease-in;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
+
+#loading-overlay{
+  z-index: 9999999999;
+}
+
+@keyframes shiningEffect {
+  0%{
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+
+  50%{
+    transform: scale(1.01);
+    opacity: 1;
+    filter: brightness(108%);
+  }
+
+  100%{
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+}

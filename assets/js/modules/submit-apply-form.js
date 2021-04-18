@@ -14,10 +14,33 @@ export default class SubmitApplyForm {
      * =================================== */
     bindEvents(){
         this.$applyShopForm = $('#signup-as-shop-form');
+        this.$signupTestDriveForm = $('#signup-test-drive');
+
         this.SetupAJAXSubmitForm(this.$applyShopForm);
+        this.SetupAJAXSubmitForm(this.$signupTestDriveForm);
+
+        // Restrict input to digits and '.' by using a regular expression filter.
+        if(document.getElementById("phone-number-input")){
+            this.setInputFilter(document.getElementById("phone-number-input"), function(value) {
+                return /^\d*\.?\d*$/.test(value);
+            });
+        }
     }
 
-
+    setInputFilter(textbox, inputFilter) {
+        ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+            textbox.addEventListener(event, function() {
+                if (inputFilter(this.value)) {
+                    this.oldValue = this.value;
+                    this.oldSelectionStart = this.selectionStart;
+                    this.oldSelectionEnd = this.selectionEnd;
+                } else if (this.hasOwnProperty("oldValue")) {
+                    this.value = this.oldValue;
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                }
+            });
+        });
+    }
 
     /* ===================================
      *  METHODS
@@ -26,6 +49,8 @@ export default class SubmitApplyForm {
         let $submitFeedback = formElement.find('.submit-feedback');
         let action = formElement.attr('action');
         let $loadingIcon = formElement.find('.loading-form');
+        let callbackLink = formElement.data('callback-link') ? formElement.data('callback-link') : '';
+        console.log(callbackLink);
         formElement.on('submit', (e) => {
             e.preventDefault();
 
@@ -48,7 +73,7 @@ export default class SubmitApplyForm {
                     if(data == 'false'){
                         $submitFeedback.removeClass('success').addClass('error').html('Đăng ký thông tin không thành công, quý khách vui lòng thử lại');
                     } else {
-                        $submitFeedback.removeClass('error').addClass('success').html('Đăng ký nhận thông tin thành công, Yadea sẽ liên hệ lại với bạn');
+                        window.location.replace(callbackLink);
                     }
                 }
             });

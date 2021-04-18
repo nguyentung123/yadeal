@@ -1,0 +1,373 @@
+#yadea-xmen-page {
+  .section-color-intro,
+  #yadea-xmen-colors {
+    padding: 60px 0;
+
+    .main-content {
+      .product-swapper {
+        margin-top: 30px;
+
+        .swap-btn {
+          font-size: 20px;
+          text-transform: uppercase;
+          height: 44px;
+          line-height: 44px;
+          border-radius: 22px;
+          margin: 0 8px;
+          border: 2px solid #111;
+          background-color: transparent;
+          transition: all ease-in 120ms;
+          cursor: pointer;
+          outline: none;
+          width: 180px;
+          padding: 0;
+          white-space: nowrap;
+          text-align: center;
+          display: inline-block;
+          font-weight: 800;
+          position: relative;
+
+          .arrow {
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            border: 2px solid #111;
+            border-bottom: none;
+            border-left: none;
+            top: 13px;
+            right: 12px;
+            transform: rotate(45deg);
+            transition: all ease-in 120ms;
+          }
+
+          &.active,
+          &:hover {
+            background-color: #111;
+            color: $white;
+            transition: all ease-out 150ms;
+
+            .arrow {
+              border-color: $white;
+              transition: all ease-out 150ms;
+            }
+          }
+        }
+      }
+    }
+
+    .color-images-layout {
+      width: 1100px;
+      height: 440px;
+      position: relative;
+      margin: 80px auto 40px;
+
+      .color-set {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-around;
+
+        .color-item {
+          .product-color-holder {
+            transition: all cubic-bezier(0.2, 0.66, 0.56, 0.99) 0.3s;
+            position: relative;
+            width: 255px;
+            height: 380px;
+            cursor: pointer;
+
+            .color-image {
+              position: absolute;
+              height: 360px;
+              z-index: 1;
+              width: 100%;
+              top: 0;
+              left: 0;
+              box-shadow: 0 3px 8px rgba(#000, 0.35);
+
+              .img-holder {
+                width: 100%;
+                height: 100%;
+                background-color: #1c1e1d;
+
+                img {
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: center;
+                }
+              }
+            }
+
+            .color-label {
+              position: absolute;
+              text-align: center;
+              width: 190px;
+              bottom: 0;
+              left: 32.5px;
+              height: 36px;
+              color: $white;
+              font-weight: 700;
+              background-color: #333;
+              white-space: nowrap;
+              font-size: 13px;
+              line-height: 36px;
+              z-index: 3;
+              box-shadow: 0 3px 8px rgba(#000, 0.35);
+
+              &.green {
+                background-color: #60c55b;
+              }
+
+              &.orange {
+                background-color: #f2862c;
+              }
+
+              &.blue {
+                background-color: #2d44d2;
+              }
+
+              &.red {
+                background-color: #ad1c01;
+              }
+
+              &.black-txt {
+                color: #000;
+              }
+
+              &.white {
+                background-color: #fff;
+                color: #000;
+              }
+            }
+
+            &:hover {
+              -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+              transition: all 1.25s cubic-bezier(0.21, 0.75, 0.41, 1.01);
+            }
+          }
+        }
+
+        // Individual color set
+        &.xmen-color-set {
+          z-index: 2;
+        }
+
+        &.x5-color-set {
+          .color-item {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  /* === RESPONSIVE ===*/
+  @media #{$information-tablet} {
+    .section-color-intro,
+    #yadea-xmen-colors {
+      padding: 14vw 0 5vw;
+
+      .main-content {
+        padding: 0 30px;
+
+        .product-swapper {
+          margin-top: 30px;
+
+          .swap-btn {
+            font-size: 19px;
+            height: 44px;
+            line-height: 43px;
+            margin: 0 8px;
+            width: 170px;
+
+            .arrow {
+              width: 12px;
+              height: 12px;
+              top: 14px;
+              right: 13px;
+            }
+          }
+        }
+      }
+
+      .color-images-layout {
+        width: 150vw;
+        height: 440px;
+        margin: 40px auto 60px;
+        margin-left: -25vw;
+
+        .color-set {
+          .slick-current {
+            .color-item {
+              .product-color-holder {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                transition: all 0.5s cubic-bezier(0.21, 0.75, 0.41, 1.01);
+              }
+            }
+          }
+
+          .color-item {
+            padding: 40px 0;
+
+            .product-color-holder {
+              width: 255px;
+              height: 380px;
+              margin: auto;
+
+              .color-image {
+                height: 360px;
+              }
+
+              .color-label {
+                width: 190px;
+                left: 32.5px;
+                height: 36px;
+                font-size: 13px;
+                line-height: 36px;
+                box-shadow: 0 3px 8px rgba(#000, 0.35);
+              }
+
+              &:hover {
+                -webkit-transform: none;
+                transform: none;
+              }
+            }
+          }
+
+          &.x5-color-set {
+            .color-item {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    .section-color-intro,
+    #yadea-xmen-colors {
+      padding: 12vw 0 0;
+
+      .main-content {
+        padding: 0 15px;
+
+        .product-swapper {
+          margin-top: 20px;
+
+          .swap-btn {
+            font-size: 14px;
+            height: 36px;
+            line-height: 35px;
+            margin: 0 6px;
+            width: 130px;
+
+            .arrow {
+              width: 9px;
+              height: 9px;
+              top: 12px;
+              right: 12px;
+            }
+          }
+        }
+      }
+
+      .color-images-layout {
+        width: 780px;
+        height: 380px;
+        margin: 20px auto 20px;
+        margin-left: calc((100% - 780px) / 2);
+
+        .color-set {
+          .color-item {
+            padding: 40px 0;
+
+            .product-color-holder {
+              width: 180px;
+              height: 280px;
+
+              .color-image {
+                height: 264px;
+              }
+
+              .color-label {
+                width: 140px;
+                left: 20px;
+                height: 28px;
+                font-size: 10px;
+                line-height: 28px;
+                box-shadow: 0 2px 5px rgba(#000, 0.35);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone} {
+    .section-color-intro,
+    #yadea-xmen-colors {
+      padding: 10vw 0 0;
+
+      .main-content {
+        padding: 0 13px;
+
+        .product-swapper {
+          margin-top: 18px;
+
+          .swap-btn {
+            font-size: 12px;
+            line-height: 24px;
+            margin: 0 5px;
+            width: 120px;
+
+            .arrow {
+              width: 9px;
+              height: 9px;
+              top: 11px;
+              right: 11px;
+            }
+          }
+        }
+      }
+
+      .color-images-layout {
+        width: 720px;
+        height: 360px;
+        margin: 20px auto 20px;
+        margin-left: calc((100% - 720px) / 2);
+
+        .color-set {
+          .color-item {
+            padding: 40px 0;
+
+            .product-color-holder {
+              width: 170px;
+              height: 260px;
+
+              .color-image {
+                height: 248px;
+              }
+
+              .color-label {
+                width: 140px;
+                left: 16px;
+                height: 24px;
+                font-size: 9px;
+                line-height: 24px;
+                box-shadow: 0 1px 4px rgba(#000, 0.35);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

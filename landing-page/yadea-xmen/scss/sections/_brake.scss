@@ -1,0 +1,169 @@
+#yadea-xmen-page {
+  .section-brake,
+  #yadea-xmen-brake {
+    height: 52vw;
+    // min-height: 850px;
+    background-color: #000000;
+    padding-top: 60px;
+
+    .main-content {
+      position: relative;
+      z-index: 4;
+    }
+
+    .effect-holder {
+      position: absolute;
+      top: 14.418%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+
+      .effect-cover {
+        position: absolute;
+        top: -2px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+      }
+
+      .brake-effect {
+        position: absolute;
+
+        .main-image,
+        .main-highlight,
+        .sub-highlight {
+          position: absolute;
+        }
+
+        .main-image {
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+
+        .main-highlight {
+          z-index: 2;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+
+        .sub-highlight {
+          z-index: 0;
+        }
+
+        // Individual Brake
+        &.back-brake {
+          width: 41.55%;
+          height: 78.6%;
+          top: 7%;
+          left: 6.7%;
+
+          .sub-highlight {
+            width: 89%;
+            bottom: 2%;
+            left: 61%;
+          }
+        }
+
+        &.front-brake {
+          width: 51.7%;
+          height: 90.45%;
+          top: -0.2%;
+          right: 0%;
+
+          .sub-highlight {
+            width: 59%;
+            bottom: 6%;
+            left: 35%;
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-lg-screen} {
+    .section-brake,
+    #yadea-xmen-brake {
+      width: 1920px;
+      height: 1000px;
+      margin-left: calc((100% - 1920px) / 2);
+    }
+  }
+
+  /* === RESPONSIVE === */
+  @media #{$information-tablet} {
+    .section-brake,
+    #yadea-xmen-brake {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      padding: 0;
+
+      .main-content {
+        padding: 14vw 30px 5vw;
+      }
+
+      .effect-holder {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 203.3333vw;
+
+        .brake-effect {
+          // Individual Brake
+          &.back-brake {
+            width: 84.55%;
+            height: 57%;
+            top: 35%;
+            left: 0;
+
+            .sub-highlight {
+              width: 139%;
+              bottom: 1%;
+              left: 46%;
+            }
+          }
+
+          &.front-brake {
+            width: 88.7%;
+            height: 50.5%;
+            top: -5%;
+            right: 10%;
+
+            .sub-highlight {
+              width: 119%;
+              bottom: 0;
+              left: 53%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    .section-brake,
+    #yadea-xmen-brake {
+      .main-content {
+        padding: 12vw 15px 5vw;
+      }
+    }
+  }
+
+  @media #{$information-sm-phone} {
+    .section-brake,
+    #yadea-xmen-brake {
+      .main-content {
+        padding: 12vw 13px 5vw;
+      }
+    }
+  }
+}

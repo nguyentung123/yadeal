@@ -1,4 +1,4 @@
-import  { contextFadeIn, contextInit } from './utils';
+import { contextFadeIn, contextInit } from './utils';
 
 export default class Trending {
     /* ===================================
@@ -25,13 +25,13 @@ export default class Trending {
     /* ===================================
      *  METHODS
      * =================================== */
-    InitSection(){
+    InitSection() {
         contextInit(this.$context);
 
         this.SetupSlider();
     }
 
-    SetupAnimation(){
+    SetupAnimation() {
         g5Listener.on('trending-anim', () => {
             contextFadeIn(this.$context, () => {
                 console.log('Finished');
@@ -39,7 +39,7 @@ export default class Trending {
         });
     }
 
-    SetupSlider(){
+    SetupSlider() {
         this.$sliderWrapper.slick({
             dots: true,
             arrows: false,
@@ -50,6 +50,7 @@ export default class Trending {
             speed: 650,
             swipeToSlide: true,
             autoplay: true,
+            lazyLoad: 'ondemand',
         })
     }
 }

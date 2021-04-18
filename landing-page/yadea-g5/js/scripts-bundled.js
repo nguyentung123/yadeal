@@ -76,13 +76,17 @@ Object.defineProperty(exports, "__esModule", {
 exports.pageListener = pageListener;
 exports.reachSection = exports.contextInit = exports.contextFadeIn = void 0;
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 // Custom Ultilities Functions
 var contextFadeIn = function contextFadeIn() {
@@ -193,8 +197,12 @@ var __assign=this&&this.__assign||function(){return(__assign=Object.assign||func
 
 var _home = _interopRequireDefault(__webpack_require__(3));
 
+var _lazyLoad = _interopRequireDefault(__webpack_require__(42));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// Run Lazy Load Image Function First
+(0, _lazyLoad.default)();
 $(document).ready(function () {
   var demo = new _home.default();
 });
@@ -257,6 +265,8 @@ var _TweenMax = __webpack_require__(38);
 
 var _signupInfo = _interopRequireDefault(__webpack_require__(40));
 
+var _octoberSale = _interopRequireDefault(__webpack_require__(41));
+
 var _utils = __webpack_require__(0);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -267,9 +277,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Home =
-/*#__PURE__*/
-function () {
+var Home = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -339,6 +347,7 @@ function () {
     var frame = new _frame.default();
     var acc = new _accessories.default();
     var signup = new _signupInfo.default();
+    var october = new _octoberSale.default();
     this.bindEvents();
   }
   /* ===================================
@@ -353,6 +362,7 @@ function () {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
+        lazyLoad: 'ondemand',
         nextArrow: "<img class=\"real-img-control next-slide\" src=\"".concat(rootLink.root, "/g5/next-slide.png\">"),
         prevArrow: "<img class=\"real-img-control prev-slide\" src=\"".concat(rootLink.root, "/g5/prev-slide.png\">")
       });
@@ -365,7 +375,7 @@ function () {
       $('.venobox').venobox({
         framewidth: venoScreen + 'px'
       });
-      this.ScrollingDetect();
+      this.ScrollingDetect(); // this.SetupTestDriveFloatingButton();
     }
     /* ===================================
      *  METHODS
@@ -517,6 +527,40 @@ function () {
         }
       });
     }
+  }, {
+    key: "SetupTestDriveFloatingButton",
+    value: function SetupTestDriveFloatingButton() {
+      var _this2 = this;
+
+      this.$testDriveFloatBlock = $('.signup-test-drive-float-btn');
+
+      if ($('.signup-test-drive-page').length < 1) {
+        this.allowInteractionTestDrive = true;
+        this.$testDriveThumbnail = this.$testDriveFloatBlock.find('.thumbnail-icon');
+        this.$testDriveMainIcon = this.$testDriveFloatBlock.find('.main-icon');
+        this.$testDriveCloseIcon = this.$testDriveMainIcon.find('.close-test-drive-area'); // this.$testDriveThumbnail.on('click', () => {
+        //     if(this.allowInteractionTestDrive){
+        //         this.allowInteractionTestDrive = false;
+        //         this.$testDriveFloatBlock.addClass('active');
+        //         setTimeout(() => {this.allowInteractionTestDrive = true;}, 350)
+        //     }
+        // });
+
+        this.$testDriveCloseIcon.on('click', function () {
+          if (_this2.allowInteractionTestDrive) {
+            _this2.allowInteractionTestDrive = false;
+
+            _this2.$testDriveFloatBlock.removeClass('active');
+
+            setTimeout(function () {
+              _this2.allowInteractionTestDrive = true;
+            }, 350);
+          }
+        });
+      } else {
+        this.$testDriveFloatBlock.hide();
+      }
+    }
   }]);
 
   return Home;
@@ -546,9 +590,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Home =
-/*#__PURE__*/
-function () {
+var Home = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -571,10 +613,14 @@ function () {
       this.PriceTagScroll();
       this.NewsSliderSetup();
       this.PayModalSetup();
+      this.GPSModalSetup();
 
       if (window.innerWidth <= 768) {
         this.SetupPriceTagMenu();
-      }
+      } // Setup Test Drive Behavior
+
+
+      this.SetupTestDriveBehavior();
     }
     /* ===================================
      *  METHODS
@@ -751,6 +797,102 @@ function () {
 
         _this5.$payModal.removeClass('active');
       });
+    } // GPS Modal
+
+  }, {
+    key: "GPSModalSetup",
+    value: function GPSModalSetup() {
+      var _this6 = this;
+
+      this.$gpsModal = $('.gps-info-modal');
+      this.$openGPSModalBtn = $('.open-gps-modal');
+      this.$closeGPSModalBtn = $('.close-gps-modal');
+      this.$openGPSModalBtn.on('click', function () {
+        $('body').addClass('show-modal');
+
+        _this6.$gpsModal.addClass('active');
+      });
+      this.$closeGPSModalBtn.on('click', function () {
+        $('body').removeClass('active');
+
+        _this6.$gpsModal.removeClass('active');
+      });
+    } // Test Drive Floating Button
+
+  }, {
+    key: "SetupTestDriveBehavior",
+    value: function SetupTestDriveBehavior() {
+      var _this7 = this;
+
+      this.$testDriveBox = $('.test-drive-box');
+      this.$closeButton = this.$testDriveBox.find('.cta-holder .close-area');
+      this.$closeButton.on('click', function (e) {
+        e.preventDefault();
+
+        _this7.$testDriveBox.addClass('inactive');
+      });
+
+      if (window.innerWidth > 768) {
+        // Desktop
+        this.testDriveIsHover = false;
+        this.testDriveAllowInteraction = true;
+        this.$desktopContentWrapper = this.$testDriveBox.find('.desktop-content-wrapper');
+        this.$desktopIconHolder = this.$desktopContentWrapper.find('.icon-holder');
+        this.$desktopContextHolder = this.$desktopContentWrapper.find('.context-holder');
+
+        if (window.pageYOffset > 30) {
+          this.$desktopIconHolder.addClass('active');
+          this.$desktopContextHolder.removeClass('active');
+        }
+
+        $(document).on('scroll', function () {
+          if (window.pageYOffset > 30 && !_this7.testDriveIsHover) {
+            if (!_this7.$desktopIconHolder.hasClass('active')) {
+              _this7.$desktopIconHolder.addClass('active');
+
+              _this7.$desktopContextHolder.removeClass('active');
+            }
+          } else {
+            if (!_this7.$desktopContextHolder.hasClass('active')) {
+              _this7.$desktopIconHolder.removeClass('active');
+
+              _this7.$desktopContextHolder.addClass('active');
+            }
+          }
+        }); // Mouse In, Show Context, Block Other Interaction
+
+        this.$desktopContentWrapper.on('mouseenter', function () {
+          _this7.testDriveIsHover = true;
+
+          if (_this7.$desktopIconHolder.hasClass('active') && _this7.testDriveAllowInteraction) {
+            _this7.testDriveAllowInteraction = false;
+
+            _this7.$desktopIconHolder.removeClass('active');
+
+            _this7.$desktopContextHolder.addClass('active');
+
+            setTimeout(function () {
+              _this7.testDriveAllowInteraction = true;
+            }, 300);
+          }
+        });
+        this.$desktopContentWrapper.on('mouseleave', function () {
+          _this7.testDriveIsHover = false;
+
+          if (window.pageYOffset > 30 && _this7.$desktopContextHolder.hasClass('active') && _this7.testDriveAllowInteraction) {
+            _this7.testDriveAllowInteraction = false;
+
+            _this7.$desktopIconHolder.addClass('active');
+
+            _this7.$desktopContextHolder.removeClass('active');
+
+            setTimeout(function () {
+              _this7.testDriveAllowInteraction = true;
+            }, 300);
+          }
+        });
+      } else {// Mobile
+      }
     }
   }]);
 
@@ -2118,9 +2260,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 // import TweenMax from 'gsap/TweenMax';
-var Home =
-/*#__PURE__*/
-function () {
+var Home = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -2223,9 +2363,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var LCDScreen =
-/*#__PURE__*/
-function () {
+var LCDScreen = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -2303,9 +2441,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Colors =
-/*#__PURE__*/
-function () {
+var Colors = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -2370,7 +2506,8 @@ function () {
         centerMode: true,
         centerPadding: '0',
         slidesToShow: 3,
-        arrows: false
+        arrows: false,
+        lazyLoad: 'ondemand'
       });
       g5Listener.on('color-anim', function () {
         (0, _utils.contextFadeIn)(_this2.$context, function () {
@@ -2525,9 +2662,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Trending =
-/*#__PURE__*/
-function () {
+var Trending = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -2582,7 +2717,8 @@ function () {
         autoplaySpeed: 4000,
         speed: 650,
         swipeToSlide: true,
-        autoplay: true
+        autoplay: true,
+        lazyLoad: 'ondemand'
       });
     }
   }]);
@@ -2612,9 +2748,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Led =
-/*#__PURE__*/
-function () {
+var Led = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -2671,9 +2805,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Led =
-/*#__PURE__*/
-function () {
+var Led = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -2761,9 +2893,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var SmartButton =
-/*#__PURE__*/
-function () {
+var SmartButton = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -2986,9 +3116,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Charging =
-/*#__PURE__*/
-function () {
+var Charging = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -3055,9 +3183,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var DriveMode =
-/*#__PURE__*/
-function () {
+var DriveMode = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -3142,7 +3268,7 @@ function () {
           this.$sportIcon.removeClass('active');
           var demo2 = new _countup.CountUp('max-speed-value', 38, {
             duration: 1,
-            startVal: 52,
+            startVal: 50,
             useEasing: false
           });
 
@@ -3163,7 +3289,7 @@ function () {
           this.$ecoDetail.removeClass('active');
           this.$ecoIcon.removeClass('active');
           this.$sportIcon.addClass('active');
-          var demo1 = new _countup.CountUp('max-speed-value', 52, {
+          var demo1 = new _countup.CountUp('max-speed-value', 50, {
             duration: 1,
             startVal: 38,
             useEasing: false
@@ -3205,9 +3331,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Engine =
-/*#__PURE__*/
-function () {
+var Engine = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -3267,9 +3391,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Brake =
-/*#__PURE__*/
-function () {
+var Brake = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -3333,9 +3455,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Lithium =
-/*#__PURE__*/
-function () {
+var Lithium = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -3345,7 +3465,7 @@ function () {
     this.$context = $('.g5-lithium-battery-section');
     this.$mainInfo = this.$context.find('.main-info');
     this.$selectGroup = this.$context.find('.mode-selectors');
-    this.currentSpeed = 65;
+    this.currentSpeed = 60;
     this.bindEvents();
   }
   /* ===================================
@@ -3456,9 +3576,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var BMS =
-/*#__PURE__*/
-function () {
+var BMS = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -3534,9 +3652,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Sensor =
-/*#__PURE__*/
-function () {
+var Sensor = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -3762,9 +3878,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var GPS =
-/*#__PURE__*/
-function () {
+var GPS = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -3849,9 +3963,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Lock =
-/*#__PURE__*/
-function () {
+var Lock = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -3941,9 +4053,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Scan =
-/*#__PURE__*/
-function () {
+var Scan = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -4136,9 +4246,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Water =
-/*#__PURE__*/
-function () {
+var Water = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -4205,9 +4313,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Frame =
-/*#__PURE__*/
-function () {
+var Frame = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -4265,9 +4371,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Accessories =
-/*#__PURE__*/
-function () {
+var Accessories = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -12356,9 +12460,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var SignupInfo =
-/*#__PURE__*/
-function () {
+var SignupInfo = /*#__PURE__*/function () {
   /* ===================================
    *  CONSTRUCTOR
    * =================================== */
@@ -12401,6 +12503,8 @@ function () {
       var $loadingIcon = formElement.find('.loading-context');
       var $buttonContext = formElement.find('.btn-context');
       var $submitBtn = formElement.find('[type=submit]');
+      var $callbackLink = formElement.data('callback-link') ? formElement.data('callback-link') : '';
+      console.log($callbackLink);
       formElement.on('submit', function (e) {
         e.preventDefault();
         var today = new Date();
@@ -12424,8 +12528,13 @@ function () {
               $loadingIcon.hide();
               $submitFeedback.removeClass('success').addClass('error').html('Đăng ký mua xe không thành công, quý khách vui lòng thử lại');
             } else {
-              $submitBtn.hide();
-              $submitFeedback.removeClass('error').addClass('success').html('Đăng ký mua xe thành công, Yadea sẽ liên hệ lại với bạn');
+              if ($callbackLink === '') {
+                $submitBtn.hide();
+                $submitFeedback.removeClass('error').addClass('success').html('Đăng ký mua xe thành công, Yadea sẽ liên hệ lại với bạn');
+              } else {
+                $submitBtn.hide();
+                window.location.replace($callbackLink);
+              }
             }
           }
         });
@@ -12437,6 +12546,127 @@ function () {
 }();
 
 exports.default = SignupInfo;
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SignupInfo = /*#__PURE__*/function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function SignupInfo() {
+    _classCallCheck(this, SignupInfo);
+
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(SignupInfo, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      var _this = this;
+
+      this.$openModalBtn = $('.open-october-info-modal');
+      this.$closeModalBtn = $('.close-october-info-modal');
+      this.$OctoberInfoModal = $('.october-sale-information-modal');
+      this.$openModalBtn.on('click', function () {
+        _this.$OctoberInfoModal.addClass('active');
+      });
+      this.$closeModalBtn.on('click', function () {
+        _this.$OctoberInfoModal.removeClass('active');
+      });
+    }
+  }]);
+
+  return SignupInfo;
+}();
+
+exports.default = SignupInfo;
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var lazyLoad = function lazyLoad() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var lazyloadImages; // Using Intersection Observer API
+
+    if ("IntersectionObserver" in window) {
+      lazyloadImages = document.querySelectorAll(".lazy");
+      var imageObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var image = entry.target;
+            image.src = image.dataset.src;
+            image.classList.remove("lazy");
+            imageObserver.unobserve(image);
+          }
+        });
+      });
+      lazyloadImages.forEach(function (image) {
+        imageObserver.observe(image);
+      });
+    } else {
+      var lazyload = function lazyload() {
+        if (lazyloadThrottleTimeout) {
+          clearTimeout(lazyloadThrottleTimeout);
+        }
+
+        lazyloadThrottleTimeout = setTimeout(function () {
+          var scrollTop = window.pageYOffset;
+          lazyloadImages.forEach(function (img) {
+            if (img.offsetTop < window.innerHeight + scrollTop) {
+              img.src = img.dataset.src;
+              img.classList.remove("lazy");
+            }
+          });
+
+          if (lazyloadImages.length == 0) {
+            document.removeEventListener("scroll", lazyload);
+            window.removeEventListener("resize", lazyload);
+            window.removeEventListener("orientationChange", lazyload);
+          }
+        }, 20);
+      };
+
+      // Backup
+      var lazyloadThrottleTimeout;
+      lazyloadImages = document.querySelectorAll(".lazy");
+      document.addEventListener("scroll", lazyload);
+      window.addEventListener("resize", lazyload);
+      window.addEventListener("orientationChange", lazyload);
+    }
+  });
+};
+
+var _default = lazyLoad;
+exports.default = _default;
 
 /***/ })
 /******/ ]);

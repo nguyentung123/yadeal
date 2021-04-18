@@ -101,3 +101,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 1368px) and (min-width: 769px){
+  .g5-driving-mode-section .effect-holder .img-holder{
+    margin-left: 0;
+  }
+}
+
+@media only screen and(min-width: 1080px){
+  .g5-intro-video .intro-bg{
+    height: 50vw;
+  }
+}

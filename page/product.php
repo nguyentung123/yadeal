@@ -5,184 +5,192 @@ get_header();
 
 <!-- === MAIN CONTENT === -->
 <main>
-    <!-- Product Header Control -->
-    <section class="section light-gray-bg" id="products-head">
+  <!-- Product Header Control -->
+  <section class="section light-gray-bg" id="products-head">
 
-        <!-- Container -->
-        <div class="container">
+    <!-- Container -->
+    <div class="container">
 
-            <!-- Title -->
-            <h2 class="series-name text-center">
-                Lựa chọn phong cách riêng của bạn
-            </h2>
+      <!-- Title -->
+      <h2 class="series-name text-center">
+        Lựa chọn phong cách riêng của bạn
+      </h2>
 
-            <?php
-            $terms = get_terms( array(
-                'taxonomy'     => 'series',
-                'hide_empty'   => true,
-            ));
+      <?php
+      $terms = get_terms(array(
+        'taxonomy'     => 'series',
+        'hide_empty'   => true,
+      ));
 
-            // Wordpress does not sort term by default, do it manually
-            foreach ($terms as $term_item){
-                $term_item -> series_priority = get_field('series_priority', $term_item);
-            }
+      // Wordpress does not sort term by default, do it manually
+      foreach ($terms as $term_item) {
+        $term_item->series_priority = get_field('series_priority', $term_item);
+      }
 
-            usort($terms, "cmp");
-
-
-            if($terms):
-                ?>
-                <!-- Products Control -->
-                <div class="products-control text-center mb-hide">
-
-                    <!-- All Product -->
-                    <a class="products-control__item active" data-target="all" href="#all">
-                        <span class="product-control__item__link" data-target="all">Tất cả</span>
-                    </a>
-
-                    <?php foreach ($terms as $terms_item):?>
-                        <?php // Show Term If Term Have Any Post ?>
-                        <a class="products-control__item" data-target="<?php echo $terms_item->slug;?>" href="#<?php echo $terms_item->slug; ?>">
-                            <span class="product-control__item__link" data-target="<?php echo $terms_item->slug;?>"><?php echo $terms_item->name;?></span>
-                        </a>
-                    <?php endforeach; ?>
-                    <!-- L Series -->
-
-                </div><!-- Products Control -->
-
-                <div class="products-control-mb mb-show-bl">
-                    <!-- All Product -->
-                    <a class="action-holder btn product-cta btn-grad">
-                        Tất cả
-                        <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </a>
-
-                    <div class="products-control" id="mobile-control-list">
-                        <!-- All Product -->
-                        <a class="products-control__item active" href="#all" data-target="all">
-                            <span class="product-control__item__link" data-target="all">Tất cả</span>
-                        </a>
-                        <?php foreach ($terms as $terms_item):?>
-                            <a class="products-control__item" data-target="<?php echo $terms_item->slug;?>" href="#<?php echo $terms_item->slug; ?>">
-                                <span class="product-control__item__link" data-target="<?php echo $terms_item->slug;?>"><?php echo $terms_item->name;?></span>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            <?php endif;?>
-
-        </div><!-- Container -->
-
-    </section>
-    <!-- Product Header Control -->
+      usort($terms, "cmp");
 
 
-    <!-- Product Main List -->
-    <section class="section" id="product-list">
+      if ($terms) :
+      ?>
+      <!-- Products Control -->
+      <div class="products-control text-center mb-hide">
 
-        <!-- Container - All Products Wrapper -->
-        <div class="container series">
-            <?php foreach ($terms as $term_item):?>
+        <!-- All Product -->
+        <a class="products-control__item active" data-target="all" href="#all">
+          <span class="product-control__item__link" data-target="all">Tất cả</span>
+        </a>
 
-                <?php
-                $args = array(
-                    'posts_per_page'   => -1,
-                    'orderby'          => 'date',
-                    'order'            => 'DESC',
-                    'post_type'        => 'product',
-                    'post_status'      => 'publish',
-                    'ignore_sticky_posts' => true,
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'series',
-                            'field' => 'term_id',
-                            'terms' => $term_item->term_id,
-                        )
-                    )
-                );
+        <?php foreach ($terms as $terms_item) : ?>
+        <?php // Show Term If Term Have Any Post 
+            ?>
+        <a class="products-control__item" data-target="<?php echo $terms_item->slug; ?>"
+          href="#<?php echo $terms_item->slug; ?>">
+          <span class="product-control__item__link"
+            data-target="<?php echo $terms_item->slug; ?>"><?php echo $terms_item->name; ?></span>
+        </a>
+        <?php endforeach; ?>
+        <!-- L Series -->
 
-                $query=new WP_Query($args);
+      </div><!-- Products Control -->
 
-                if($query->have_posts()):?>
+      <div class="products-control-mb mb-show-bl">
+        <!-- All Product -->
+        <a class="action-holder btn product-cta btn-grad">
+          Tất cả
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+        </a>
 
-                    <!-- Series Block -->
-                    <div class="series__block" data-value="<?php echo $term_item->slug;?>">
+        <div class="products-control" id="mobile-control-list">
+          <!-- All Product -->
+          <a class="products-control__item active" href="#all" data-target="all">
+            <span class="product-control__item__link" data-target="all">Tất cả</span>
+          </a>
+          <?php foreach ($terms as $terms_item) : ?>
+          <a class="products-control__item" data-target="<?php echo $terms_item->slug; ?>"
+            href="#<?php echo $terms_item->slug; ?>">
+            <span class="product-control__item__link"
+              data-target="<?php echo $terms_item->slug; ?>"><?php echo $terms_item->name; ?></span>
+          </a>
+          <?php endforeach; ?>
+        </div>
+      </div>
+      <?php endif; ?>
 
-                        <!-- Series Title -->
-                        <div class="series__block__title">
-                            <h2 class="series-title">
-                                <?php echo str_replace( ' ', '-', $term_item->name); ?>
-                            </h2>
-                        </div><!-- Series Title -->
+    </div><!-- Container -->
 
-                        <!-- Series Product List -->
-                        <div class="series__block__products">
+  </section>
+  <!-- Product Header Control -->
 
-                            <?php while ($query->have_posts()):
-                                $query->the_post();?>
-                                <!-- Row - Product Item -->
-                                <div class="row series__block__products__item">
 
-                                    <!-- Product Image -->
-                                    <div class="col-lg-6 col-12 series__block__products__item__image">
-                                        <?php
-                                        // Choose 1 Image To Show On The Page
-                                        $url_img_pro = get_theme_file_uri('assets/img/placeholder/image-placeholder.png');
+  <!-- Product Main List -->
+  <section class="section" id="product-list">
 
-                                        if(count(get_field('product_colors')) > 0){
-                                            $url_img_pro = get_field('product_colors')[0]['product_color_image'];
-                                        }
-                                        ?>
-                                        <img src="<?php echo $url_img_pro; ?>">
-                                    </div>
-                                    <div class="col-lg-6 col-12 series__block__products__item__detail">
-                                        <?php echo acf_render('<h2 class="product-name">',get_the_title(),'</h2>');?>
+    <!-- Container - All Products Wrapper -->
+    <div class="container series">
+      <?php foreach ($terms as $term_item) : ?>
 
-                                        <?php $price_pro = get_field('product_price');
-                                        if($price_pro):
-                                            ?>
-                                            <h4 class="price">
-                                                <?php echo number_format($price_pro);?> VND
-                                            </h4>
-                                        <?php endif;?>
+      <?php
+        $args = array(
+          'posts_per_page'   => -1,
+          'orderby'          => 'date',
+          'order'            => 'DESC',
+          'post_type'        => 'product',
+          'post_status'      => 'publish',
+          'ignore_sticky_posts' => true,
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'series',
+              'field' => 'term_id',
+              'terms' => $term_item->term_id,
+            )
+          )
+        );
 
-                                        <p class="desc"><?php echo get_field('product_slogan'); ?></p>
-                                        <?php echo get_field('product_intro'); ?>
+        $query = new WP_Query($args);
 
-                                        <?php
-                                        $productLandingPage = get_permalink();
-                                        if( get_field('product_landing_page') ){
-                                            $productLandingPage = get_field('product_landing_page');
-                                        }
-                                        ?>
+        if ($query->have_posts()) : ?>
 
-                                        <a href="<?php echo $productLandingPage; ?>"
-                                           class="btn product-cta btn-grad btn-sh effect effect-main">
-                                            <span>TÌM HIỂU THÊM</span>
-                                        </a>
+      <!-- Series Block -->
+      <div class="series__block" data-value="<?php echo $term_item->slug; ?>">
 
-                                        <a href="<?php echo site_url('/support/tim-cua-hang/');?>" style="display: none;"
-                                           class="btn product-cta btn-trans border-gray btn-sh effect effect-main">
-                                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> MUA NGAY</span>
-                                        </a>
-                                    </div>
-                                </div><!-- Row - Product Item -->
-                            <?php endwhile; ?>
+        <!-- Series Title -->
+        <div class="series__block__title">
+          <h2 class="series-title">
+            <?php echo str_replace(' ', '-', $term_item->name); ?>
+          </h2>
+        </div><!-- Series Title -->
 
-                        </div><!-- Series Product List -->
+        <!-- Series Product List -->
+        <div class="series__block__products">
 
-                    </div><!-- Series Block -->
-                <?php endif;
-                wp_reset_postdata();
-            endforeach; ?>
-        </div><!-- Container - All Products Wrapper -->
+          <?php while ($query->have_posts()) :
+                $query->the_post(); ?>
+          <!-- Row - Product Item -->
+          <div class="row series__block__products__item">
 
-    </section>
-    <!-- Product Main List -->
+            <!-- Product Image -->
+            <div class="col-lg-6 col-12 series__block__products__item__image">
+              <?php
+                    // Choose 1 Image To Show On The Page
+                    $url_img_pro = get_theme_file_uri('assets/img/placeholder/image-placeholder.png');
+
+                    if (count(get_field('product_colors')) > 0) {
+                      $url_img_pro = get_field('product_colors')[0]['product_color_image'];
+                    }
+                    ?>
+              <img src="<?php echo $url_img_pro; ?>">
+            </div>
+            <div class="col-lg-6 col-12 series__block__products__item__detail">
+              <?php echo acf_render('<h2 class="product-name">', get_the_title(), '</h2>'); ?>
+
+              <?php $price_pro = get_field('product_price');
+                    if ($price_pro) :
+                    ?>
+              <h4 class="price">
+                <?php echo number_format($price_pro); ?> VNĐ
+                <?php if (get_field('product_is_sale')) :
+                          echo '<span class="sale-label" style="display: block;
+                          font-size: 0.65em; color: #666; margin-top: 0.25em;">' . get_field('product_is_sale') .  '</span>';
+                        endif; ?>
+              </h4>
+              <?php endif; ?>
+
+              <p class="desc"><?php echo get_field('product_slogan'); ?></p>
+              <?php echo get_field('product_intro'); ?>
+
+              <?php
+                    $productLandingPage = get_permalink();
+                    if (get_field('product_landing_page')) {
+                      $productLandingPage = get_field('product_landing_page');
+                    }
+                    ?>
+
+              <a href="<?php echo $productLandingPage; ?>" class="btn product-cta btn-grad btn-sh effect effect-main">
+                <span>TÌM HIỂU THÊM</span>
+              </a>
+
+              <a href="<?php echo site_url('/support/tim-cua-hang/'); ?>" style="display: none;"
+                class="btn product-cta btn-trans border-gray btn-sh effect effect-main">
+                <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> MUA NGAY</span>
+              </a>
+            </div>
+          </div><!-- Row - Product Item -->
+          <?php endwhile; ?>
+
+        </div><!-- Series Product List -->
+
+      </div><!-- Series Block -->
+      <?php endif;
+        wp_reset_postdata();
+      endforeach; ?>
+    </div><!-- Container - All Products Wrapper -->
+
+  </section>
+  <!-- Product Main List -->
 
 </main>
 <!-- === MAIN CONTENT - END === -->
 
 
 <!--get footer-->
-<?php get_footer();?>
+<?php get_footer(); ?>

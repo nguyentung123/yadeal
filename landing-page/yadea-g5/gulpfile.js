@@ -2,13 +2,27 @@ var gulp = require('gulp');
 var webpack = require('webpack');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
+const minify = require('gulp-minify');
+const cleanCSS = require('gulp-clean-css');
+gulp.task('minify-css', () => {
+  return gulp.src('./css/*.css')
+              .pipe(cleanCSS({compatibility: 'ie8'}))
+              .pipe(gulp.dest('./css/dist'));
+});
 
+gulp.task('compress', function() {
+  gulp.src(['./js/*.js', './js/*.mjs'])
+       .pipe(minify())
+       .pipe(gulp.dest('./js/dist'));
+});
 
 gulp.task('sass',function(){
   return gulp.src('scss/*.scss')
     .pipe(sass())
     .on('error', swallowError)
     .pipe(gulp.dest('css'))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./css/dist'))
     .pipe(browserSync.reload({stream:true}));
 });
 

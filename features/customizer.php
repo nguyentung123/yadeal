@@ -306,6 +306,35 @@ function yadea_customizer_setting($wp_customize){
         'settings'     => 'oxygen_banner_priority_show',
         'type'         => 'checkbox',
     ));
+
+    // Download App Banner Priority
+    $wp_customize->add_setting('download_app_banner_priority', array(
+        'default'     => 5,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('download_app_banner_priority', array(
+        'label'        => 'Độ ưu tiên Banner Tải ứng dụng',
+        'description'  => 'Độ ưu tiên nhỏ sẽ xuất hiện trước',
+        'section'      => 'banner_management',
+        'settings'     => 'download_app_banner_priority',
+        'type'         => 'number',
+        'input_attrs'  => array(
+            'min' => 1,
+            'max' => 5
+        ),
+    ));
+
+    // Download App Banner Show / Hide
+    $wp_customize->add_setting('download_app_banner_show', array(
+        'default'     => 1,
+        'transport'   => 'refresh',
+    ));
+    $wp_customize->add_control('download_app_banner_show', array(
+        'label'        => 'Ẩn / Hiện banner download ứng dụng',
+        'section'      => 'banner_management',
+        'settings'     => 'download_app_banner_show',
+        'type'         => 'checkbox',
+    ));
 }
 
 // Enqueue Live Preview

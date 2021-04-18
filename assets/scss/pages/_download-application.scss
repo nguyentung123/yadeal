@@ -1,0 +1,118 @@
+/**
+* TODO:
+1/ Trang chu, section download app - template-parts/home-download-app-section.php
+2/ Trang Download app link voi trang ho tro - Check
+3/ Trang ho tro them nut download app - CHECK
+*/
+#download-app-section {
+  padding: 35px 0px;
+  //background
+  .bg-download-app {
+    @include flex;
+    align-items: center;
+    background: url("../img/download-app-banner.jpg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,.17);
+    padding: 9px 0px;
+    //content
+    .content {
+      width: 62%;
+      font-family: 'Encode Sans Semi Expanded', sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      color: #2a2a2a;
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      a {
+        display: inline-block;
+        line-height: normal;
+        font-size: 16px;
+        font-weight: 700;
+        color: #f26e21;
+        border: 2px solid #f26e21;
+        padding: 6px 14px;
+        display: -moz-inline-box;
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        align-items: center;
+        @include border-radius(10px);
+        i {
+          font-size: 20px;
+          margin-left: 8px;
+        }
+      }
+    }
+    //image
+    .image {
+      width: 38%;
+      @include animation(animate-image-download 4s linear infinite);
+    }
+  }
+}
+
+//----------responsive----------
+@media #{$information-md-tablet} {
+  #download-app-section {
+    //background
+    .bg-download-app {
+      @include flex;
+      flex-direction: column;
+      //background: url("../img/download-app-banner-mobile.jpg") no-repeat;
+      background-size: cover;
+      //content
+      .content {
+        width: 100%;
+        padding-top: 40px;
+        h3 {
+          font-size: 17px;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 10px;
+          font-weight: 600;
+          margin-bottom: 10px;
+          padding: 0px 60px;
+        }
+        a {
+          font-size: 12px;
+          padding: 5px 14px;
+          i {
+            font-size: 15px;
+          }
+        }
+      }
+      //image
+      .image {
+        width: 100%;
+        text-align: center;
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media #{$information-tablet} {
+  #download-app-section {
+    padding: 35px 0px;
+    //background
+    .bg-download-app {
+      //image
+      .image {
+        img {
+          width: 270px;
+        }
+      }
+    }
+  }
+}

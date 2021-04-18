@@ -1,7 +1,7 @@
 <?php
 $banner1Query = new WP_Query(array(
     'post_type'        => 'banner_1',
-    'post_status'      =>'publish',
+    'post_status'      => 'publish',
     'posts_per_page'   => 5,
     'orderby'        => 'meta_value_num',
     'order'          => 'ASC',
@@ -15,7 +15,7 @@ $banner1Query = new WP_Query(array(
     )
 ));
 
-if ($banner1Query->have_posts()): ?>
+if ($banner1Query->have_posts()) : ?>
     <!-- Section Home Banner 1 -->
     <section class="section" id="home-banner-1">
 
@@ -31,7 +31,7 @@ if ($banner1Query->have_posts()): ?>
                     <!-- Context Wrapper -->
                     <div class="main-content__context__wrapper">
                         <div id="slider-style-1-indicator">
-                            <?php while ($banner1Query->have_posts()):
+                            <?php while ($banner1Query->have_posts()) :
                                 $banner1Query->the_post(); ?>
 
                                 <!-- Indicator Item 1 -->
@@ -40,30 +40,26 @@ if ($banner1Query->have_posts()): ?>
                                         <?php echo get_field('banner_title'); ?>
                                     </h1>
 
-                                    <?php if (get_field('banner_subtitle')): ?>
+                                    <?php if (get_field('banner_subtitle')) : ?>
                                         <h3 class="sub-title txt-gray">
                                             <?php echo get_field('banner_subtitle'); ?>
                                         </h3>
                                     <?php endif; ?>
 
-                                    <?php if (get_field('banner_text')): ?>
+                                    <?php if (get_field('banner_text')) : ?>
                                         <p class="desc txt-gray">
                                             <?php echo get_field('banner_text'); ?>
                                         </p>
                                     <?php endif; ?>
 
-                                    <?php if (get_field('button_btn_text') AND get_field('banner_link')):
-                                        $slug_title = str_replace(' ','-',strtolower(get_field('banner_title')));
-                                        ?>
-                                        <a id="banner-1-<?php echo $slug_title;?>-cta-btn-click"
-                                           class="btn product-cta border-gray btn-trans effect effect-main mb-hide"
-                                           href="<?php echo get_field('banner_link'); ?>">
+                                    <?php if (get_field('button_btn_text') and get_field('banner_link')) :
+                                        $slug_title = str_replace(' ', '-', strtolower(get_field('banner_title')));
+                                    ?>
+                                        <a id="banner-1-<?php echo $slug_title; ?>-cta-btn-click" class="btn product-cta border-gray btn-trans effect effect-main mb-hide" href="<?php echo get_field('banner_link'); ?>">
                                             <span><?php echo get_field('button_btn_text'); ?></span>
                                         </a>
 
-                                        <a id="banner-1-<?php echo $slug_title;?>-cta-btn-click"
-                                           class="btn product-cta mb-show-ib btn-grad"
-                                           href="<?php echo get_field('banner_link'); ?>">
+                                        <a id="banner-1-<?php echo $slug_title; ?>-cta-btn-click" class="btn product-cta mb-show-ib btn-grad" href="<?php echo get_field('banner_link'); ?>">
                                             <span><?php echo get_field('button_btn_text'); ?></span>
                                         </a>
                                     <?php endif; ?>
@@ -80,50 +76,51 @@ if ($banner1Query->have_posts()): ?>
 
                 <!-- Right Slider -->
                 <div class="col-lg-8 col-12 main-content__slider">
-                    <?php if ($banner1Query->have_posts()): ?>
+                    <?php if ($banner1Query->have_posts()) : ?>
                         <div id="slider-style-1">
-                            <?php while ($banner1Query->have_posts()): ?>
+                            <?php while ($banner1Query->have_posts()) : ?>
                                 <?php
                                 $banner1Query->the_post();
                                 $banner_type = get_field('banner_1_type');
                                 ?>
 
-                                <?php if($banner_type == 'image'):?>
+                                <?php if ($banner_type == 'image') : ?>
 
-                                    <?php echo get_field('banner_link') ? '<a href="'.get_field('banner_link').'">': ''; ?>
+                                    <?php echo get_field('banner_link') ? '<a href="' . get_field('banner_link') . '">' : ''; ?>
 
                                     <div class="main-content__slider__item slide-image">
                                         <?php
                                         $placeHolder = get_theme_file_uri('assets/img/placeholder/image-placeholder.png');
                                         $mbBg = get_field('banner_1_mobile_bg') ? get_field('banner_1_mobile_bg') : $placeHolder;
                                         $mainBg = get_field('banner_1_desktop_bg') ? get_field('banner_1_desktop_bg') : $placeHolder;
-                                        echo '<img src="' .$mainBg . '" class="mb-hide">';
-                                        echo '<img src="'. $mbBg . '" class="mb-show-bl">';
                                         ?>
+                                        <picture>
+                                            <source media="(max-width: 768px)" srcset="<?php echo $mbBg ?>">
+                                            <img src="<?php echo $mainBg ?>">
+                                        </picture>
                                     </div>
 
-                                    <?php echo get_field('banner_link') ? '</a>':''; ?>
+                                    <?php echo get_field('banner_link') ? '</a>' : ''; ?>
 
-                                <?php else: ?>
-                                    <?php echo get_field('banner_link') ? '<a href="'.get_field('banner_link').'">': ''; ?>
-                                    <?php $videoFile = get_field('banner_1_video'); ?>
-                                    <?php if($videoFile): ?>
+                                <?php else : ?>
+                                    <?php echo get_field('banner_link') ? '<a href="' . get_field('banner_link') . '">' : '';
+                                    $videoFile = null;
+                                    $videoFileMb = null;
+                                    $videoFileMb = get_field('banner_1_video_mobile');
+                                    $videoFile = get_field('banner_1_video');
+                                    if ($videoFile) : ?>
                                         <div class="main-content__slider__item slide-video">
                                             <div class="video-holder">
-                                                <video width="100%" height="100%" autobuffer="" autoplay="" muted="" loop="" playsinline="">
-                                                    <source src="<?php echo $videoFile; ?>" type="video/mp4">
+                                                <video class="video-js" width="100%" height="100%" autobuffer="" autoplay="" muted="" playsinline="">
+                                                    <source src="<?php echo $videoFile; ?>">
+                                                    <source src="<?php echo $videoFileMb; ?>" media="all and (max-width: 768px)">
                                                 </video>
                                             </div>
-                                        </div>
-                                    <?php
-                                    endif;
-                                    echo get_field('banner_link') ? '</a>':'';
-                                endif;
-                                ?>
-
-                            <?php endwhile; ?>
-                        </div>
-
+                                        </div> <?php
+                                            endif;
+                                            echo get_field('banner_link') ? '</a>' : '';
+                                        endif;
+                                                ?> <?php endwhile; ?> </div>
                         <div class="slider-paging" id="slider-style-1-paging">
                             <span class="slider-paging__page page-mold">00</span>
                             <span class="slider-paging__page current-page active">03</span>

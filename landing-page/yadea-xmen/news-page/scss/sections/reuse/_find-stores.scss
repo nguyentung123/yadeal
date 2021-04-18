@@ -1,0 +1,140 @@
+#yadea-xmen-news-page {
+  .section-find-yadea-stores {
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    .bg-holder {
+      width: 100%;
+      height: 27.0833vw;
+      background-size: cover;
+      background-position: center;
+      transition: all ease-out 0.75s;
+      filter: brightness(94%);
+
+      @media #{$information-lg-screen} {
+        width: 1920px;
+        margin-left: calc((100% - 1920px) / 2);
+        height: 520px;
+      }
+
+      @media #{$information-tablet} {
+        filter: brightness(100%);
+        width: 100%;
+        height: 144vw;
+        margin-left: 0;
+      }
+    }
+
+    &:hover {
+      .bg-holder {
+        -webkit-transform: scale(1.02);
+        transform: scale(1.02);
+        filter: brightness(114%);
+        transition: all ease-out 1s;
+      }
+    }
+
+    .main-content {
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: calc((100% - 1108px) / 2);
+      width: 1108px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .find-stores-title {
+        font-size: 1.5625rem;
+        line-height: 1.42;
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+      }
+
+      .cta {
+        font-size: 0.78125rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        display: inline-block;
+        background-color: $main-color;
+        border-radius: 1.25rem;
+        padding: 0 2rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  /* RESPONSIVE */
+  @media #{$information-tablet} {
+    .section-find-yadea-stores {
+      .main-content {
+        top: auto;
+        bottom: 0;
+        left: 10%;
+        width: 80%;
+        height: 35%;
+        text-align: center;
+        white-space: nowrap;
+
+        .find-stores-title {
+          font-size: 2rem;
+          line-height: 1.5;
+          margin-bottom: 0.75rem;
+        }
+
+        .cta {
+          font-size: 2rem;
+          height: 3.5rem;
+          line-height: 3.5rem;
+          border-radius: 1.75rem;
+          padding: 0 3rem;
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    .section-find-yadea-stores {
+      .main-content {
+        left: 5%;
+        width: 90%;
+
+        .find-stores-title {
+          font-size: 1.5rem;
+          line-height: 1.5;
+          margin-bottom: 0.75rem;
+        }
+
+        .cta {
+          font-size: 1.5rem;
+          height: 3rem;
+          line-height: 3rem;
+          border-radius: 1.5rem;
+          padding: 0 2.5rem;
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone} {
+    .section-find-yadea-stores {
+      .main-content {
+        .find-stores-title {
+          font-size: 1.25rem;
+          line-height: 1.5;
+          margin-bottom: 0.5rem;
+        }
+
+        .cta {
+          font-size: 1.25rem;
+          height: 2.5rem;
+          line-height: 2.5rem;
+          border-radius: 1.25rem;
+          padding: 0 2rem;
+        }
+      }
+    }
+  }
+}

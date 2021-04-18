@@ -1,0 +1,369 @@
+#yadea-xmen-news-page {
+    padding-top: 0;
+    .section-news-banner,
+    #yadea-xmen-news-banner {
+        background-color: #171717;
+        padding: 50px 0;
+        position: relative;
+        .container {
+            width: 1280px;
+            padding: 0;
+        }
+        .image-viewer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            // Otiginal State
+            opacity: 0;
+            visibility: hidden;
+            transition: all ease-in 100ms;
+            &.active {
+                transition: all ease-out 150ms;
+                opacity: 1;
+                visibility: visible;
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                background-color: rgb(23, 23, 23);
+            }
+            .img-holder {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgb(23, 23, 23);
+                z-index: 2;
+                img {
+                    width: auto;
+                    height: 100%;
+                    max-width: 100%;
+                    margin: auto;
+                }
+            }
+        }
+        .container {
+            .banner-top {
+                .slider-toggler {
+                    display: flex;
+                    list-style: none;
+                    justify-content: center;
+                    padding: 0;
+                    .slide-swap {
+                        border: 1px solid $white;
+                        width: 140px;
+                        height: 36px;
+                        line-height: 36px;
+                        color: $white;
+                        text-align: center;
+                        font-weight: 700;
+                        margin: 0 8px;
+                        cursor: pointer;
+                        &.active {
+                            background-color: $white;
+                            color: #222;
+                        }
+                    }
+                }
+            }
+            .banner-holder {
+                width: 100%;
+                height: 490px;
+                position: relative;
+                .main-banner-slider {
+                    height: 100%;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    // Original State
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all ease-out 150ms;
+                    &.active {
+                        opacity: 1;
+                        visibility: visible;
+                        transition: all ease-out 200ms;
+                    }
+                    .banner-slider-holder {
+                        position: relative;
+                        width: 100%;
+                        // padding: 0 90px;
+                        padding: 0;
+                        .gallery-control {
+                            background-color: transparent;
+                            border: none;
+                            outline: none;
+                            position: absolute;
+                            top: calc(50% - 20px);
+                            cursor: pointer;
+                            transition: all ease-in 120ms;
+                            &:hover {
+                                svg {
+                                    * {
+                                        transition: all ease-out 150ms;
+                                        fill: $white;
+                                    }
+                                }
+                            }
+                            svg {
+                                height: 40px;
+                            }
+                            &.next-slide {
+                                right: -50px;
+                            }
+                            &.prev-slide {
+                                left: -50px;
+                            }
+                        }
+                        .slide-item {
+                            display: block;
+                            // 540 x 490
+                            .slide-layout {
+                                height: 490px;
+                                display: grid;
+                                padding: 4px;
+                                grid-gap: 8px;
+                                grid-template-columns: 1.25fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
+                                grid-template-rows: 1fr 0.5fr 0.5fr;
+                                .thumbnail-holder {
+                                    width: 100%;
+                                    height: 100%;
+                                    cursor: pointer;
+                                    overflow: hidden;
+                                    .img-holder {
+                                        width: 100%;
+                                        height: 100%;
+                                        background-color: #999;
+                                        img {
+                                            height: 100%;
+                                            object-fit: cover;
+                                            object-position: center;
+                                        }
+                                    }
+                                    // Individual Item Depends On Its Index
+                                    &:first-child {
+                                        grid-column: 1 / span 4;
+                                        grid-row: 1;
+                                    }
+                                    &:nth-child(2) {
+                                        grid-column: 5 / span 2;
+                                        grid-row: 1;
+                                    }
+                                    &:nth-child(3) {
+                                        grid-column: 1;
+                                        grid-row: 2 / span 2;
+                                    }
+                                    &:nth-child(4) {
+                                        grid-column: 2 / span 4;
+                                        grid-row: 2;
+                                    }
+                                    &:nth-child(5) {
+                                        grid-column: 2 / span 2;
+                                        grid-row: 3;
+                                    }
+                                    &:nth-child(6) {
+                                        grid-column: 4 / span 2;
+                                        grid-row: 3;
+                                    }
+                                    &:nth-child(7) {
+                                        grid-column: 6;
+                                        grid-row: 2 / span 2;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-laptop} {
+        .section-news-banner,
+        #yadea-xmen-news-banner {
+            padding: 30px 0;
+            .container {
+                width: 1200px;
+                padding: 0 15px;
+            }
+        }
+    }
+    /* === RESPONSIVE === */
+    @media #{$information-tablet} {
+        padding-top: 0;
+        .section-news-banner,
+        #yadea-xmen-news-banner {
+            padding: 20px 0;
+            .image-viewer {
+                .img-holder {
+                    width: 90%;
+                    height: 90%;
+                    top: 5%;
+                    left: 5%;
+                    z-index: 2;
+                }
+            }
+            .container {
+                .banner-top {
+                    .slider-toggler {
+                        .slide-swap {
+                            border: 1px solid $white;
+                            width: 120px;
+                            height: 36px;
+                            line-height: 36px;
+                            margin: 0 8px;
+                        }
+                    }
+                }
+                .banner-holder {
+                    width: 100%;
+                    height: 90vw;
+                    position: relative;
+                    .main-banner-slider {
+                        .banner-slider-holder {
+                            width: 100%;
+                            padding: 0 30px;
+                            .gallery-control {
+                                top: calc(50% - 15px);
+                                svg {
+                                    height: 30px;
+                                }
+                                &.next-slide {
+                                    right: 0;
+                                }
+                                &.prev-slide {
+                                    left: 0;
+                                }
+                            }
+                            .slide-item {
+                                // 540 x 490
+                                .slide-layout {
+                                    height: 90vw;
+                                    padding: 2.5px;
+                                    grid-gap: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-phone} {
+        .section-news-banner,
+        #yadea-xmen-news-banner {
+            padding: 20px 0;
+            // .image-viewer {
+            //   .img-holder {
+            //     width: 80%;
+            //     height: 80%;
+            //     top: 10%;
+            //     left: 10%;
+            //   }
+            // }
+            .container {
+                .banner-top {
+                    .slider-toggler {
+                        .slide-swap {
+                            width: 110px;
+                            height: 32px;
+                            line-height: 32px;
+                            margin: 0 8px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .banner-holder {
+                    width: 100%;
+                    height: 90vw;
+                    position: relative;
+                    .main-banner-slider {
+                        .banner-slider-holder {
+                            width: 100%;
+                            padding: 0 20px;
+                            .gallery-control {
+                                top: calc(50% - 15px);
+                                svg {
+                                    height: 30px;
+                                }
+                                &.next-slide {
+                                    right: -10px;
+                                }
+                                &.prev-slide {
+                                    left: -10px;
+                                }
+                            }
+                            .slide-item {
+                                // 540 x 490
+                                .slide-layout {
+                                    height: 90vw;
+                                    padding: 2.5px;
+                                    grid-gap: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-sm-phone} {
+        .section-news-banner,
+        #yadea-xmen-news-banner {
+            .container {
+                .banner-top {
+                    .slider-toggler {
+                        .slide-swap {
+                            width: 100px;
+                            height: 30px;
+                            line-height: 30px;
+                            margin: 0 6px;
+                            font-size: 13px;
+                        }
+                    }
+                }
+                .banner-holder {
+                    width: 100%;
+                    height: 90vw;
+                    position: relative;
+                    .main-banner-slider {
+                        .banner-slider-holder {
+                            width: 100%;
+                            padding: 0 13px;
+                            .gallery-control {
+                                top: calc(50% - 15px);
+                                svg {
+                                    height: 30px;
+                                }
+                                &.next-slide {
+                                    right: -10px;
+                                }
+                                &.prev-slide {
+                                    left: -10px;
+                                }
+                            }
+                            .slide-item {
+                                // 540 x 490
+                                .slide-layout {
+                                    height: 90vw;
+                                    padding: 2px;
+                                    grid-gap: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,9 +1,9 @@
-import {TweenMax} from 'gsap/TweenMax';
+import { TweenMax } from 'gsap/TweenMax';
 export default class Supports {
     /* ===================================
      *  CONSTRUCTOR
      * =================================== */
-    constructor(){
+    constructor() {
         // Elements Variable
         this.$modalElem = $('.modal');
         this.$modalOverlay = this.$modalElem.find('.modal-overlay');
@@ -18,16 +18,14 @@ export default class Supports {
     /* ===================================
      *  EVENTS
      * =================================== */
-    bindEvents(){
-        this.$closeModal.on('click', ()=>{this.CloseModal();});
-        this.$openModal.on('click', ()=>{this.OpenModal();});
+    bindEvents() {
+        this.$closeModal.on('click', () => { this.CloseModal(); });
+        this.$openModal.on('click', () => { this.OpenModal(); });
 
         this.SetupTopicControl();
 
         this.InitBannerState();
-        $(document).on('remove-overlay', () => {
-            this.SetupBannerAnimation();
-        })
+        this.SetupBannerAnimation();
     }
 
 
@@ -35,15 +33,15 @@ export default class Supports {
     /* ===================================
      *  METHODS
      * =================================== */
-    CloseModal(){
+    CloseModal() {
         this.$modalElem.removeClass('active');
     }
 
-    OpenModal(){
+    OpenModal() {
         this.$modalElem.addClass('active');
     }
 
-    SetupTopicControl(){
+    SetupTopicControl() {
         this.$topicList = $('.support-pages .topic-holder .topic-list');
         this.$mainTopicItem = this.$topicList.find('.topic-item');
         this.$mainTopicToggler = this.$topicList.find('.topic-toggler');
@@ -54,8 +52,8 @@ export default class Supports {
         // Animation Blocking Flag
         this.allowChangeTopic = true;
 
-        this.$mainTopicToggler.on('click', (e) => {
-            if(this.allowChangeTopic){
+        this.$mainTopicItem.on('click', (e) => {
+            if (this.allowChangeTopic) {
                 // Block interaction until animation finish
                 this.allowChangeTopic = false;
 
@@ -64,7 +62,7 @@ export default class Supports {
                 let $topicContent = $(e.target).siblings('.sub-topic-holder, .topic-context');
 
                 // Choose Other Topic
-                if(!$targetTopicItem.hasClass('is-show-topic-content')){
+                if (!$targetTopicItem.hasClass('is-show-topic-content')) {
 
                     // Close Current Active Topic
                     // let $currentActive = $('.is-show-topic-content');
@@ -91,35 +89,44 @@ export default class Supports {
         });
 
         this.$subTopicToggler.on('click', (e) => {
-            if(this.allowChangeTopic){
+            if (this.allowChangeTopic) {
                 // Block interaction until animation finish
                 this.allowChangeTopic = false;
 
-                $(e.target).siblings('.sub-topic-content').slideToggle('fast',  () => {
-                    // Reopen animation Blocking
-                    this.allowChangeTopic = true;
-                })
+                if ($(e.target).hasClass('active')) {
+                    $(e.target).removeClass('active');
+                    $(e.target).siblings('.sub-topic-content').slideUp('fast', () => {
+                        // Reopen animation Blocking
+                        this.allowChangeTopic = true;
+                    })
+                } else {
+                    $(e.target).addClass('active');
+                    $(e.target).siblings('.sub-topic-content').slideDown('fast', () => {
+                        // Reopen animation Blocking
+                        this.allowChangeTopic = true;
+                    })
+                }
             }
         })
     }
 
-    InitBannerState(){
+    InitBannerState() {
         this.$supportBanner = $('.support-pages .common-banner');
         this.$bannerImage = this.$supportBanner.find('.bg-holder');
         this.$bannerContent = this.$supportBanner.find('.main-content');
-        TweenMax.set(this.$bannerImage, {opacity: 0, y: window.innerWidth * 0.04});
-        TweenMax.set(this.$bannerContent, {opacity: 0, y: window.innerWidth * 0.025});
+        TweenMax.set(this.$bannerImage, { opacity: 0, y: window.innerWidth * 0.04 });
+        TweenMax.set(this.$bannerContent, { opacity: 0, y: window.innerWidth * 0.025 });
 
-        this.bannerTimeline = new TimelineMax({paused: true});
+        this.bannerTimeline = new TimelineMax({ paused: true });
         this.bannerTimeline.add(
-          TweenMax.to(this.$bannerImage, 0.8, { opacity: 1, y:0, easing: Power4.easeOut }),
-          '+=0.85');
+            TweenMax.to(this.$bannerImage, 0.8, { opacity: 1, y: 0, easing: Power4.easeOut }),
+            '+=0.85');
         this.bannerTimeline.add(
-          TweenMax.to(this.$bannerContent, 0.75, { opacity: 1, y:0 }),
-          '-=0.15');
+            TweenMax.to(this.$bannerContent, 0.75, { opacity: 1, y: 0 }),
+            '-=0.15');
     }
 
-    SetupBannerAnimation(){
+    SetupBannerAnimation() {
         this.bannerTimeline.play();
     }
-} 
+}

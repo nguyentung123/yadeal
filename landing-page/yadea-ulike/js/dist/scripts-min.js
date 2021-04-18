@@ -1,0 +1,1 @@
+import Common from"./modules/common";import Home from"./modules/home";$(document).ready(function(){if($("#yadea-ulike-page").length>0){new Home}});

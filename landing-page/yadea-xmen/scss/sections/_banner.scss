@@ -1,0 +1,344 @@
+#yadea-xmen-page {
+  #yadea-xmen-banner,
+  .section-banner {
+    position: relative;
+    background-color: #2e3e82;
+    height: 59.9vw;
+
+    .bg-holder {
+      width: 100%;
+
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .main-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 68%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 4.5%;
+
+        .sale-logo {
+          flex-basis: 550px;
+        }
+
+        .sale-detail {
+          flex-grow: 1;
+          padding-left: 60px;
+
+          .label {
+            font-weight: 700;
+            font-size: 26px;
+            color: $main-color;
+            line-height: 1.2;
+          }
+
+          .sale-value {
+            font-size: 52px;
+            font-weight: 900;
+            color: $main-color;
+            letter-spacing: 2px;
+          }
+
+          .sale-detail-1 {
+            font-size: 20px;
+
+            .highlight {
+              font-weight: 900;
+            }
+          }
+
+          .sale-detail-2 {
+            font-size: 15px;
+            margin-top: 5px;
+
+            .seemore-sale {
+              color: $main-color;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .sale-cta {
+          width: 100%;
+          flex-basis: 100%;
+          text-align: center;
+          padding-top: 30px;
+
+          .cta-btn {
+            color: $main-color;
+            border: 1px solid $main-color;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            border-radius: 20px;
+            position: relative;
+            font-weight: 700;
+            padding: 0 30px;
+            transition: all ease-out 150ms;
+
+            .arrow {
+              border: 2px solid $main-color;
+              width: 10px;
+              height: 10px;
+              position: absolute;
+              top: 14px;
+              right: 13px;
+              border-left: none;
+              border-bottom: none;
+              transform: rotate(45deg);
+              transition: all ease-out 100ms;
+            }
+
+            &:hover {
+              color: $white;
+              background-color: $main-color;
+              transition: all ease-out 150ms;
+
+              .arrow {
+                border-color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-lg-screen} {
+    #yadea-xmen-banner,
+    .section-banner {
+      width: 1920px;
+      margin-left: calc((100% - 1920px) / 2);
+      height: 1167px;
+    }
+  }
+
+  @media #{$information-tablet} {
+    #yadea-xmen-banner,
+    .section-banner {
+      width: 100%;
+      margin-left: 0;
+      height: auto;
+
+      .main-content {
+        top: 57%;
+        padding: 0 7.5%;
+
+        .container {
+          align-items: center;
+          height: 68%;
+          justify-content: space-between;
+          padding: 0 30px;
+
+          .sale-logo {
+            width: 100%;
+            flex-basis: 100%;
+            margin-bottom: 30px;
+
+            img {
+              display: block;
+              width: 100%;
+            }
+          }
+
+          .sale-detail {
+            flex-grow: 1;
+            padding-left: 0;
+            text-align: center;
+
+            .label {
+              font-weight: 900;
+              font-size: 32px;
+              color: $main-color;
+              line-height: 1.2;
+            }
+
+            .sale-value {
+              font-size: 64px;
+              letter-spacing: 3px;
+            }
+
+            .sale-detail-1 {
+              font-size: 24px;
+            }
+
+            .sale-detail-2 {
+              font-size: 18px;
+              margin-top: 20px;
+
+              .seemore-sale {
+                display: block;
+                margin-top: 10px;
+              }
+            }
+          }
+
+          .sale-cta {
+            padding-top: 20px;
+
+            .cta-btn {
+              height: 48px;
+              line-height: 48px;
+              border-radius: 24px;
+              padding: 0 36px;
+              font-size: 24px;
+              transition: all ease-out 150ms;
+
+              .arrow {
+                width: 12px;
+                height: 12px;
+                position: absolute;
+                top: 16px;
+                right: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    #yadea-xmen-banner,
+    .section-banner {
+      .main-content {
+        top: 57%;
+        padding: 0;
+
+        .container {
+          height: 75%;
+          padding: 0 15px;
+
+          .sale-logo {
+            width: 100%;
+            flex-basis: 100%;
+            margin-bottom: 20px;
+            padding: 0 6%;
+          }
+
+          .sale-detail {
+            .label {
+              font-size: 22px;
+            }
+
+            .sale-value {
+              font-size: 44px;
+              letter-spacing: 1px;
+              white-space: nowrap;
+            }
+
+            .sale-detail-1 {
+              font-size: 16px;
+              white-space: nowrap;
+            }
+
+            .sale-detail-2 {
+              font-size: 15px;
+              margin-top: 7px;
+
+              .seemore-sale {
+                display: block;
+                margin-top: 5px;
+              }
+            }
+          }
+
+          .sale-cta {
+            padding-top: 12px;
+
+            .cta-btn {
+              height: 36px;
+              line-height: 36px;
+              border-radius: 24px;
+              padding: 0 30px;
+              font-size: 16px;
+
+              .arrow {
+                width: 9px;
+                height: 9px;
+                top: 12px;
+                right: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone} {
+    #yadea-xmen-banner,
+    .section-banner {
+      .main-content {
+        top: 57%;
+        padding: 0;
+
+        .container {
+          height: 77%;
+          padding: 0 13px;
+
+          .sale-logo {
+            margin-bottom: 18px;
+            padding: 0 4%;
+          }
+
+          .sale-detail {
+            .label {
+              font-size: 19px;
+            }
+
+            .sale-value {
+              font-size: 38px;
+              letter-spacing: 1px;
+            }
+
+            .sale-detail-1 {
+              font-size: 14px;
+            }
+
+            .sale-detail-2 {
+              font-size: 14px;
+              margin-top: 5px;
+
+              .seemore-sale {
+                display: block;
+                margin-top: 4px;
+              }
+            }
+          }
+
+          .sale-cta {
+            padding-top: 10px;
+
+            .cta-btn {
+              height: 32px;
+              line-height: 32px;
+              border-radius: 18px;
+              padding: 0 24px;
+              font-size: 15px;
+
+              .arrow {
+                width: 8px;
+                height: 8px;
+                top: 10px;
+                right: 11px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

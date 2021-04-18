@@ -1,0 +1,187 @@
+#yadea-xmen-news-page {
+  .section-external {
+    .section-layout {
+      height: 122px;
+      display: flex;
+
+      .col {
+        height: 122px;
+        width: 50%;
+        flex-basis: 50%;
+
+        .external-btn {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          display: block;
+
+          .bg-image {
+            position: absolute;
+            height: 100%;
+            width: 960px;
+            top: 0;
+          }
+
+          .context {
+            position: absolute;
+            color: $white;
+            font-weight: 700;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 15px;
+            border: 1px solid $white;
+            background-color: rgba(#000, 0.2);
+            top: calc(50% - 20px);
+
+            .arrow-down {
+              width: 8px;
+              height: 8px;
+              display: inline-block;
+              border: 2px solid $white;
+              transform: rotate(45deg) translateY(-4px);
+              border-top: none;
+              border-left: none;
+            }
+          }
+        }
+
+        &.left-col {
+          background-color: #31343b;
+
+          .external-btn {
+            .bg-image {
+              right: 0;
+            }
+
+            .context {
+              right: 5%;
+            }
+          }
+        }
+
+        &.right-col {
+          background-color: #181f2f;
+
+          .external-btn {
+            .bg-image {
+              left: 0;
+            }
+
+            .context {
+              left: 5%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-tablet} {
+    .section-external {
+      .section-layout {
+        height: auto;
+        flex-wrap: wrap;
+
+        .col {
+          height: 16vw;
+          width: 100%;
+          flex-basis: 100%;
+
+          .external-btn {
+            .bg-image {
+              width: 100%;
+            }
+
+            .context {
+              height: 34px;
+              line-height: 34px;
+              padding: 0 14px;
+              top: calc(50% - 17px);
+              font-size: 14px;
+
+              .arrow-down {
+                width: 8px;
+                height: 8px;
+                border: 2px solid $white;
+                transform: rotate(45deg) translateY(-2px);
+                border-bottom: none;
+                border-left: none;
+              }
+            }
+          }
+
+          &.left-col {
+            .external-btn {
+              .context {
+                left: 5%;
+                right: auto;
+              }
+            }
+          }
+
+          &.right-col {
+            .external-btn {
+              .context {
+                left: 5%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    .section-external {
+      .section-layout {
+        .col {
+          height: 16vw;
+
+          .external-btn {
+            .bg-image {
+              width: 100%;
+            }
+
+            .context {
+              height: 32px;
+              line-height: 32px;
+              padding: 0 13px;
+              top: calc(50% - 16px);
+              font-size: 13px;
+
+              .arrow-down {
+                width: 7px;
+                height: 7px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone} {
+    .section-external {
+      .section-layout {
+        .col {
+          height: 16vw;
+
+          .external-btn {
+            .context {
+              height: 30px;
+              line-height: 30px;
+              padding: 0 13px;
+              top: calc(50% - 15px);
+              font-size: 12px;
+
+              .arrow-down {
+                width: 7px;
+                height: 7px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

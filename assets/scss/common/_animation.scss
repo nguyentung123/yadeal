@@ -19,3 +19,22 @@
     @include transform(translateX(0px));
   }
 }
+
+// Animation image download app of banner
+@include keyframes(animate-image-download) {
+  0% {
+    @include transform(translateY(-4px));
+  }
+  25% {
+    @include transform(translateY(0px));
+  }
+  50% {
+    @include transform(translateY(4px));
+  }
+  75% {
+    @include transform(translateY(0px));
+  }
+  100% {
+    @include transform(translateY(-4px));
+  }
+}

@@ -1,0 +1,791 @@
+#yadea-xmen-page {
+  .section-product-intro,
+  #yadea-xmen-intro {
+    height: 48.4375vw;
+    background-color: #f4f4f4;
+
+    .intro-holder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      .cover-layer {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        left: 100%;
+        background: #000;
+
+        &.in {
+        }
+
+        &.out {
+        }
+      }
+
+      .intro-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+
+        .layer-switch {
+          display: block;
+          width: 180px;
+          line-height: 45px;
+          height: 44px;
+          border-radius: 22px;
+          border: 2px solid $white;
+          font-weight: 700;
+          text-transform: uppercase;
+          background-color: transparent;
+          color: $white;
+          padding: 0 15px;
+          font-size: 20px;
+          margin-bottom: 10px;
+          position: relative;
+          outline: none;
+          cursor: pointer;
+
+          &.red {
+            border-color: $red;
+            color: $red;
+          }
+
+          &.med {
+            width: 160px;
+          }
+
+          .arrow {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 2px solid $white;
+            border-bottom: none;
+            border-left: none;
+            top: 14px;
+            right: 13px;
+            transform: rotate(45deg);
+          }
+        }
+
+        // Individual Layer
+        &.layer-1 {
+          height: 100%;
+          z-index: 2;
+          background-color: #6c78f2;
+          overflow: hidden;
+
+          .main-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding-top: 35px;
+          }
+
+          .bg-holder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+          }
+
+          .layer-controller {
+            position: absolute;
+            top: 42.857%;
+            left: 0;
+            right: 0;
+          }
+        }
+
+        &.layer-2 {
+          height: 100%;
+          overflow: hidden;
+          z-index: 1;
+          background-color: #f4f4f4;
+
+          .main-content {
+            position: absolute;
+            bottom: 60%;
+            left: 0;
+            right: 0;
+            top: 0;
+
+            .container {
+              display: flex;
+              height: 100%;
+
+              .layer-swapper {
+                width: 180px;
+                height: 100%;
+                flex-shrink: 0;
+                position: relative;
+
+                .layer-swapper-item {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+
+                  .layer-switch {
+                    color: #111;
+                    border-color: #111;
+                    transition: all ease-in 120ms;
+
+                    &:hover {
+                      color: $white;
+                      background-color: #111;
+                      transition: all ease-out 150ms;
+                    }
+                  }
+                }
+              }
+
+              .context {
+                flex: 1;
+                position: relative;
+                height: 100%;
+
+                .context-item {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                }
+              }
+            }
+          }
+
+          .product-detail-layout {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #f4f4f4;
+
+            .product-detail-wrapper {
+              width: 1300px;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: calc(50% - 650px);
+              // background-color: rgba(red, 0.4);
+
+              .image-block {
+                position: absolute;
+                overflow: hidden;
+
+                .img-cover,
+                .img-item {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                }
+
+                .img-cover {
+                  background-color: #000;
+                  z-index: 2;
+                }
+
+                .img-item {
+                  background-color: #000;
+
+                  .img-holder {
+                    height: 100%;
+                    transition: all ease-in 220ms;
+
+                    img {
+                      height: 100%;
+                      object-fit: cover;
+                      object-position: center top;
+                    }
+                  }
+
+                  &:hover {
+                    .img-holder {
+                      -webkit-transform: scale(1.06);
+                      transform: scale(1.06);
+                      transition: all cubic-bezier(0.25, 0.91, 0.61, 1) 1s;
+                    }
+                  }
+                }
+              }
+
+              &#xmen-intro-detail-layout {
+                // display: none;
+
+                .xmen-img-1 {
+                  top: 0;
+                  left: 0;
+                  width: 28%;
+                  height: 100%;
+                }
+
+                .xmen-img-2 {
+                  left: 28%;
+                  top: 0%;
+                  width: 44%;
+                  height: 31%;
+                }
+
+                .xmen-img-3 {
+                  left: 28%;
+                  top: 31%;
+                  width: 44%;
+                  height: 33.5%;
+                }
+
+                .xmen-img-4 {
+                  left: 28%;
+                  top: 64.5%;
+                  width: 44%;
+                  height: 35.5%;
+                }
+
+                .xmen-img-5 {
+                  left: 72%;
+                  top: 0;
+                  width: 14%;
+                  height: 31%;
+                }
+
+                .xmen-img-6 {
+                  left: 86%;
+                  top: 0;
+                  width: 14%;
+                  height: 31%;
+                }
+
+                .xmen-img-7 {
+                  top: 31%;
+                  width: 28%;
+                  height: 69%;
+                  left: 72%;
+                }
+
+                // .xmen-img-8 {
+                //   top: 34.5%;
+                //   width: 29%;
+                //   height: 65.5%;
+                //   left: 71%;
+                // }
+
+                // .xmen-img-9 {
+                //   top: 64%;
+                //   width: 43%;
+                //   height: 36%;
+                //   left: 28%;
+                // }
+              }
+
+              &#x5-intro-detail-layout {
+                .xmen-img-1 {
+                  width: 18.5%;
+                  height: 60%;
+                  top: 0;
+                  left: 0;
+                }
+
+                .xmen-img-2 {
+                  left: 0;
+                  top: 60%;
+                  width: 18.5%;
+                  height: 40%;
+                }
+
+                .xmen-img-3 {
+                  left: 18.5%;
+                  top: 0;
+                  width: 17.5%;
+                  height: 30.5%;
+                }
+
+                .xmen-img-4 {
+                  left: 18.5%;
+                  top: 30.5%;
+                  width: 17.5%;
+                  height: 37%;
+                }
+
+                .xmen-img-5 {
+                  left: 18.5%;
+                  top: 67.5%;
+                  width: 17.5%;
+                  height: 32.5%;
+                }
+
+                .xmen-img-6 {
+                  left: 36%;
+                  top: 0%;
+                  width: 34%;
+                  height: 30.5%;
+                }
+
+                .xmen-img-7 {
+                  left: 36%;
+                  top: 30.5%;
+                  width: 34%;
+                  height: 37%;
+                }
+
+                .xmen-img-8 {
+                  left: 36%;
+                  top: 67.5%;
+                  width: 34%;
+                  height: 32.5%;
+                }
+
+                .xmen-img-9 {
+                  left: 70%;
+                  top: 0;
+                  width: 30%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-lg-screen} {
+    .section-product-intro,
+    #yadea-xmen-intro {
+      width: 1920px;
+      margin-left: calc((100% - 1920px) / 2);
+      height: 930px;
+
+      .intro-holder {
+        .intro-layer {
+          // Individual Layer
+          &.layer-1 {
+            height: 930px;
+          }
+
+          &.layer-2 {
+            height: 930px;
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-tablet} {
+    .section-product-intro,
+    #yadea-xmen-intro {
+      width: 100%;
+      margin-left: 0;
+      height: 160.667vw;
+
+      .intro-holder {
+        .intro-layer {
+          .layer-switch {
+            display: block;
+            width: 180px;
+            line-height: 52px;
+            height: 52px;
+            border-radius: 0;
+            border: 3px solid $white;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: transparent;
+            color: $white;
+            padding: 0 15px;
+            font-size: 20px;
+            margin: 0 auto 10px;
+
+            .arrow {
+              position: absolute;
+              width: 13px;
+              height: 13px;
+              border: 2px solid $white;
+              border-bottom: none;
+              border-left: none;
+              top: 17px;
+              right: 12px;
+              transform: rotate(45deg);
+            }
+          }
+
+          // Individual Layer
+          &.layer-1 {
+            height: 160.667vw;
+            z-index: 3;
+
+            .main-content {
+              padding: 50px 30px 0;
+            }
+
+            .layer-controller {
+              position: absolute;
+              top: auto;
+              left: 0;
+              right: 0;
+              bottom: 4%;
+            }
+          }
+
+          &.layer-2 {
+            height: 160.667vw;
+
+            .main-content {
+              bottom: 50%;
+
+              .container {
+                display: flex;
+                height: 100%;
+                flex-direction: column-reverse;
+
+                .layer-swapper {
+                  width: 100%;
+                  height: 30%;
+                  flex-shrink: 0;
+
+                  .layer-swapper-item {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    position: absolute;
+
+                    .layer-switch {
+                      color: $red;
+                      border-color: $red;
+                    }
+                  }
+                }
+
+                .context {
+                  position: relative;
+                  height: 70%;
+                  text-align: center;
+
+                  .context-item {
+                    padding: 0 30px;
+                  }
+                }
+              }
+            }
+
+            .product-detail-layout {
+              top: 50%;
+
+              .product-detail-wrapper {
+                width: 100%;
+                left: 0;
+
+                &#xmen-intro-detail-layout {
+                  .xmen-img-1 {
+                    top: 0;
+                    left: 0;
+                    width: 40%;
+                    height: 100%;
+                  }
+
+                  .xmen-img-2 {
+                    left: 40%;
+                    top: 0;
+                    width: 60%;
+                    height: 33.33%;
+                  }
+
+                  .xmen-img-3 {
+                    left: 40%;
+                    top: 33.33%;
+                    width: 60%;
+                    height: 33.33%;
+                  }
+
+                  .xmen-img-6 {
+                    display: none;
+                  }
+
+                  .xmen-img-4 {
+                    left: 40%;
+                    top: 66.66%;
+                    width: 60%;
+                    height: 33.33%;
+                  }
+
+                  .xmen-img-5 {
+                    display: none;
+                  }
+
+                  .xmen-img-7 {
+                    display: none;
+                  }
+
+                  .xmen-img-8 {
+                    display: none;
+                  }
+
+                  .xmen-img-9 {
+                    display: none;
+                  }
+                }
+
+                &#x5-intro-detail-layout {
+                  .xmen-img-1 {
+                    display: none;
+                  }
+
+                  .xmen-img-2 {
+                    display: none;
+                  }
+
+                  .xmen-img-3 {
+                    display: none;
+                  }
+
+                  .xmen-img-4 {
+                    display: none;
+                  }
+
+                  .xmen-img-5 {
+                    display: none;
+                  }
+
+                  .xmen-img-6 {
+                    left: 0;
+                    top: 0;
+                    width: 60%;
+                    height: 33.33%;
+                  }
+
+                  .xmen-img-7 {
+                    left: 0;
+                    top: 33.33%;
+                    width: 60%;
+                    height: 33.33%;
+                  }
+
+                  .xmen-img-8 {
+                    left: 0;
+                    top: 66.667%;
+                    width: 60%;
+                    height: 33.333%;
+                  }
+
+                  .xmen-img-9 {
+                    left: 60%;
+                    height: 100%;
+                    width: 40%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    .section-product-intro,
+    #yadea-xmen-intro {
+      .intro-holder {
+        .intro-layer {
+          .layer-switch {
+            width: 130px;
+            line-height: 36px;
+            height: 36px;
+            border: 2px solid $white;
+            padding: 0 15px;
+            font-size: 15px;
+            margin: 0 auto 8px;
+            white-space: nowrap;
+
+            .arrow {
+              position: absolute;
+              width: 9px;
+              height: 9px;
+              border: 2px solid $white;
+              border-bottom: none;
+              border-left: none;
+              top: 12px;
+              right: 9px;
+              transform: rotate(45deg);
+            }
+          }
+
+          // Individual Layer
+          &.layer-1 {
+            height: 160.667vw;
+            z-index: 3;
+
+            .main-content {
+              padding: 35px 15px 0;
+            }
+
+            .layer-controller {
+              position: absolute;
+              top: auto;
+              left: 0;
+              right: 0;
+              bottom: 1%;
+            }
+          }
+
+          &.layer-2 {
+            height: 160.667vw;
+
+            .main-content {
+              bottom: 50%;
+
+              .container {
+                .layer-swapper {
+                  width: 90%;
+                  left: 5%;
+                  height: 30%;
+
+                  .layer-switch.med {
+                    width: 140px;
+                  }
+                }
+
+                .context {
+                  height: 70%;
+
+                  .context-item {
+                    padding: 0 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone} {
+    .section-product-intro,
+    #yadea-xmen-intro {
+      .intro-holder {
+        .intro-layer {
+          .layer-switch {
+            width: 120px;
+            line-height: 33px;
+            height: 33px;
+            border: 2px solid $white;
+            padding: 0 15px;
+            font-size: 13px;
+            margin: 0 auto 8px;
+
+            .arrow {
+              width: 8px;
+              height: 8px;
+              border: 2px solid $white;
+              border-bottom: none;
+              border-left: none;
+              top: 11px;
+              right: 9px;
+            }
+          }
+
+          // Individual Layer
+          &.layer-1 {
+            height: 160.667vw;
+            z-index: 3;
+
+            .main-content {
+              padding: 35px 15px 0;
+            }
+
+            .layer-controller {
+              position: absolute;
+              top: auto;
+              left: 0;
+              right: 0;
+              bottom: 1%;
+            }
+          }
+
+          &.layer-2 {
+            height: 160.667vw;
+
+            .main-content {
+              bottom: 50%;
+
+              .container {
+                .layer-swapper {
+                  width: 90%;
+                  left: 5%;
+                  height: 30%;
+
+                  .layer-switch.med {
+                    width: 130px;
+                  }
+                }
+
+                .context {
+                  height: 70%;
+
+                  .context-item {
+                    padding: 0 13px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === SUPPORT KEYFRAMES === */
+@keyframes coverIn {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes coverOut {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  99% {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+  }
+
+  99.5% {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

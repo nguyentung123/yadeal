@@ -3,7 +3,6 @@ export default class Common {
      *  CONSTRUCTOR
      * =================================== */
     constructor(){
-        this.$pageOverlay = $('#loading-overlay');
         this.bindEvents();
     }
 
@@ -22,9 +21,6 @@ export default class Common {
         // Smooth Scrolling
         this.SmoothScrollingSetup();
 
-        // News Slider
-        this.NewsSliderSetup();
-
         // Color Slider
         this.BikeColorSliderSetup();
 
@@ -36,35 +32,9 @@ export default class Common {
         if(window.innerWidth < 480){
             this.SetupMbMenuToggle();
         }
-    }
 
-    NewsSliderSetup(){
-        $('.news-list').on('init', () => {
-            this.$pageOverlay.addClass('hidden');
-
-            setTimeout(() => {
-                e3Listener.emit('page-start');
-            }, 1000);
-        });
-
-        $('.news-list').slick({
-            slidesToShow: 4,
-            nextArrow: `<a class="news-slide-control slide-next"></a>`,
-            prevArrow: `<a class="news-slide-control slide-prev"></a>`,
-            responsive: [
-                {
-                    breakpoint: 769,
-                    settings: {
-                        slidesToShow: 2,
-                    }
-                },{
-                    breakpoint: 481,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }
-            ]
-        });
+        // Setup Test Drive Behavior
+        this.SetupTestDriveBehavior();
     }
 
     BikeColorSliderSetup(){
@@ -116,39 +86,39 @@ export default class Common {
     SmoothScrollingSetup(){
         $('a[href*="#"]')
         // Remove links that don't actually link to anything
-            .not('[href="#"]')
-            .not('[href="#0"]')
-            .click(function(event) {
-                // On-page links
-                if (
-                    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-                    &&
-                    location.hostname == this.hostname
-                ) {
-                    // Figure out element to scroll to
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    // Does a scroll target exist?
-                    if (target.length) {
-                        // Only prevent default if animation is actually gonna happen
-                        event.preventDefault();
-                        $('html, body').animate({
-                            scrollTop: target.offset().top
-                        }, 700, function() {
-                            // Callback after animation
-                            // Must change focus!
-                            var $target = $(target);
-                            $target.focus();
-                            if ($target.is(":focus")) { // Checking if the target was focused
-                                return false;
-                            } else {
-                                $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                                $target.focus(); // Set focus again
-                            };
-                        });
-                    }
+          .not('[href="#"]')
+          .not('[href="#0"]')
+          .click(function(event) {
+            // On-page links
+            if (
+              location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+              &&
+              location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 700, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
                 }
-            });
+            }
+        });
     }
 
     // Fixed Top Sub Menu
@@ -202,5 +172,73 @@ export default class Common {
                 this.$subMenu.slideUp('fast');
             }
         })
+    }
+
+    SetupTestDriveBehavior(){
+        this.$testDriveBox = $('.test-drive-box');
+        this.$closeButton = this.$testDriveBox.find('.cta-holder .close-area');
+
+        this.$closeButton.on('click', (e) => {
+            e.preventDefault();
+            this.$testDriveBox.addClass('inactive');
+        })
+
+        if(window.innerWidth > 768){
+            // Desktop
+            this.testDriveIsHover = false;
+            this.testDriveAllowInteraction = true;
+            this.$desktopContentWrapper = this.$testDriveBox.find('.desktop-content-wrapper');
+            this.$desktopIconHolder = this.$desktopContentWrapper.find('.icon-holder');
+            this.$desktopContextHolder = this.$desktopContentWrapper.find('.context-holder');
+
+            if(window.pageYOffset > 30){
+                this.$desktopIconHolder.addClass('active');
+                this.$desktopContextHolder.removeClass('active');
+            }
+
+            $(document).on('scroll', () => {
+                if(window.pageYOffset > 30 && !this.testDriveIsHover){
+                    if(!this.$desktopIconHolder.hasClass('active')){
+                        this.$desktopIconHolder.addClass('active');
+                        this.$desktopContextHolder.removeClass('active');
+                    }
+                } else {
+                    if(!this.$desktopContextHolder.hasClass('active')){
+                        this.$desktopIconHolder.removeClass('active');
+                        this.$desktopContextHolder.addClass('active');
+                    }
+                }
+            });
+
+            // Mouse In, Show Context, Block Other Interaction
+            this.$desktopContentWrapper.on('mouseenter', () => {
+                this.testDriveIsHover = true;
+                if(this.$desktopIconHolder.hasClass('active') && this.testDriveAllowInteraction){
+                    this.testDriveAllowInteraction = false;
+                    this.$desktopIconHolder.removeClass('active');
+                    this.$desktopContextHolder.addClass('active');
+
+                    setTimeout(() => {
+                        this.testDriveAllowInteraction = true;
+                    }, 300);
+                }
+            });
+
+            this.$desktopContentWrapper.on('mouseleave', () => {
+                this.testDriveIsHover = false;
+                if( window.pageYOffset > 30 &&
+                    this.$desktopContextHolder.hasClass('active') &&
+                    this.testDriveAllowInteraction ) {
+                    this.testDriveAllowInteraction = false;
+                    this.$desktopIconHolder.addClass('active');
+                    this.$desktopContextHolder.removeClass('active');
+                    setTimeout(() => {
+                        this.testDriveAllowInteraction = true;
+                    }, 300);
+                }
+            });
+        } else {
+            // Mobile
+        }
     }
 }

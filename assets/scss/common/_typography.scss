@@ -1,25 +1,26 @@
-  @font-face {
-  font-family: 'DIN Pro', sans-serif;
-  src: url('../../fonts/UVF DINPro.otf');
+@font-face {
+  font-family: "DIN Pro", sans-serif;
+  src: url("../../fonts/UVF DINPro.otf");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'DIN Pro', sans-serif;
-  src: url('../../fonts/UVF DINPro-Bold.otf');
+  font-family: "DIN Pro", sans-serif;
+  src: url("../../fonts/UVF DINPro-Bold.otf");
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Futura-Bold', sans-serif;
-  src: url('../../fonts/futura-bold_[allfont.net].ttf');
+  font-family: "Futura-Bold", sans-serif;
+  src: url("../../fonts/futura-bold_[allfont.net].ttf");
   font-weight: 700;
 }
 
-html, body{
-  font-family: 'Encode Sans Semi Expanded', sans-serif;
+html,
+body {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
   color: $black;
-  @media only screen and (max-width : 1170px) {
+  @media only screen and (max-width: 1170px) {
     font-size: 15px;
   }
 
@@ -31,36 +32,41 @@ html, body{
   }
 }
 
-a{
+a {
   color: inherit;
 
-  &:hover{
+  &:hover {
     text-decoration: none;
     color: inherit;
   }
 }
 
-h1,h2,h3,h4,h5,p{
-  font-family: 'Encode Sans Semi Expanded', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
   margin-top: 0;
 }
 
-.grad-txt{
-  background: -webkit-linear-gradient( 0deg, #F91201, #F86704, #F26D20);
+.grad-txt {
+  background: -webkit-linear-gradient(0deg, #f91201, #f86704, #f26d20);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.no-wrap{
+.no-wrap {
   white-space: nowrap !important;
 }
 
-.txt-up{
+.txt-up {
   text-transform: uppercase;
 }
 
-.btn{
-  &.product-cta{
+.btn {
+  &.product-cta {
     padding: 0 70px;
     height: 44px;
     line-height: 44px;
@@ -72,7 +78,7 @@ h1,h2,h3,h4,h5,p{
     font-size: 16px;
     outline: none;
 
-    &.main{
+    &.main {
       background-color: $main-color;
       color: $white;
     }
@@ -124,13 +130,13 @@ h1,h2,h3,h4,h5,p{
     }
   }
 
-  &.btn-trans{
+  &.btn-trans {
     background-color: transparent;
     position: relative;
     overflow: hidden;
   }
 
-  &.btn-sh{
+  &.btn-sh {
     padding: 0 40px 1px;
 
     @media #{$information-laptop} {
@@ -162,7 +168,7 @@ h1,h2,h3,h4,h5,p{
     }
   } // -sh stand for short
 
-  &.btn-grad{
+  &.btn-grad {
     background: $main-color;
     background: linear-gradient(to right, #ed2024, #f5811f);
     color: $white !important;
@@ -170,7 +176,7 @@ h1,h2,h3,h4,h5,p{
     overflow: hidden;
     border: 1px solid transparent;
 
-    &:active{
+    &:active {
       background: $main-color !important;
       background: linear-gradient(to right, #ed2024, #f5811f) !important;
       color: $white !important;
@@ -180,7 +186,7 @@ h1,h2,h3,h4,h5,p{
 
   // Hover Effect On Transparent Button (Optional)
   &.effect {
-    span{
+    span {
       position: relative;
       z-index: 1;
       color: inherit;
@@ -188,7 +194,7 @@ h1,h2,h3,h4,h5,p{
     }
 
     &:before {
-      content: '';
+      content: "";
       width: 0;
       height: 0;
       position: absolute;
@@ -200,55 +206,54 @@ h1,h2,h3,h4,h5,p{
       transition: all ease-out 300ms 20ms;
     }
 
-    &:hover{
+    &:hover {
       &:before {
         width: 300px;
         height: 300px;
       }
     }
 
-    &.effect-white{
-      &:before{
+    &.effect-white {
+      &:before {
         background-color: $white;
       }
 
-      &:hover{
-        span{
+      &:hover {
+        span {
           color: $black;
         }
       }
     }
 
-    &.effect-black{
-      span{
-        color: $gray
+    &.effect-black {
+      span {
+        color: $gray;
       }
 
-      &:before{
+      &:before {
         background-color: $gray;
       }
 
-      &:hover{
-        span{
+      &:hover {
+        span {
           color: $white;
         }
       }
     }
 
-    &.effect-main{
-
-      span{
+    &.effect-main {
+      span {
         color: inherit;
       }
 
-      &:before{
+      &:before {
         background-color: $main-color;
       }
 
-      &:hover{
+      &:hover {
         border-color: $main-color !important;
 
-        span{
+        span {
           color: $white;
         }
       }
@@ -256,7 +261,7 @@ h1,h2,h3,h4,h5,p{
   }
 }
 
-.series-name{
+.series-name {
   color: $main-color;
   font-size: 24px;
   font-weight: 700; //bold
@@ -289,7 +294,7 @@ h1,h2,h3,h4,h5,p{
   }
 }
 
-.series-slogan{
+.series-slogan {
   font-size: 16px;
   font-weight: 400; //regular
 
@@ -310,7 +315,7 @@ h1,h2,h3,h4,h5,p{
   }
 }
 
-.product-name{
+.product-name {
   font-size: 24px;
   letter-spacing: 1px;
   font-weight: 700; //bold
@@ -343,7 +348,7 @@ h1,h2,h3,h4,h5,p{
   }
 }
 
-.product-slogan{
+.product-slogan {
   font-size: 16px;
   font-weight: 400; // regular
   line-height: 24px;
@@ -353,12 +358,12 @@ h1,h2,h3,h4,h5,p{
   border-color: inherit;
   border-width: 0;
 
-  &:after{
-    content: '';
+  &:after {
+    content: "";
     font-weight: 300;
     width: 18px;
     height: 18px;
-    background-image: url('../img/icons/product-arrow.png');
+    background-image: url("../img/icons/product-arrow.png");
     background-repeat: no-repeat;
     background-size: 17px 17px;
     background-position: center center;
@@ -370,42 +375,42 @@ h1,h2,h3,h4,h5,p{
     transform: translate(24px, 3px);
   }
 
-  &:hover{
-    &:after{
+  &:hover {
+    &:after {
       -webkit-animation: arrowLeftRight ease-in-out 600ms 20ms infinite;
       animation: arrowLeftRight ease-in-out 600ms 20ms infinite;
     }
   }
 
   @-webkit-keyframes arrowLeftRight {
-    0%{
+    0% {
       -webkit-transform: translate(24px, 3px);
       transform: translate(24px, 3px);
-      opacity: 1
+      opacity: 1;
     }
-    50%{
+    50% {
       -webkit-transform: translate(26px, 3px);
       transform: translate(26px, 3px);
-      opacity: 0.5
+      opacity: 0.5;
     }
   }
 
   @keyframes arrowLeftRight {
-    0%{
+    0% {
       -webkit-transform: translate(24px, 3px);
       transform: translate(24px, 3px);
-      opacity: 1
+      opacity: 1;
     }
-    50%{
+    50% {
       -webkit-transform: translate(26px, 3px);
       transform: translate(26px, 3px);
-      opacity: 0.5
+      opacity: 0.5;
     }
   }
 
-  &.txt-white{
+  &.txt-white {
     &:after {
-      background-image: url('../img/icons/product-arrow-white.png');
+      background-image: url("../img/icons/product-arrow-white.png");
     }
   }
 
@@ -434,190 +439,222 @@ h1,h2,h3,h4,h5,p{
 /* ===================
  * Typography Helpers
  * =================== */
-.page-title{
-  font-size: 52px;
+.page-title {
+  font-size: 4.25rem;
   letter-spacing: 2px;
   font-weight: 700; // Bold
 
+  @media #{$information-lg-screen} {
+    font-size: 3.25rem;
+    letter-spacing: 2px;
+  }
+
   @media #{$information-laptop} {
-    font-size: 50px;
+    font-size: 3.15rem;
     letter-spacing: 2px;
   }
 
   @media #{$information-sm-laptop} {
-    font-size: 48px;
+    font-size: 3rem;
   }
 
   @media #{$information-lg-tablet} {
-    font-size: 46px;
+    font-size: 2.875rem;
   }
 
   @media #{$information-hz-phone} {
-    font-size: 34px;
+    font-size: 2.65rem;
   }
 
   @media #{$information-tablet} {
-    font-size: 32px;
+    font-size: 2.45rem;
     letter-spacing: 1px;
   }
 
   @media #{$information-phone} {
-    font-size: 30px;
-    margin-bottom: 0;
+    font-size: 2.45rem;
   }
 
   @media #{$information-md-phone} {
-    font-size: 28px;
-    letter-spacing: 0;
+    font-size: 2.45rem;
+  }
+
+  @media #{$information-sm-phone} {
+    font-size: 2.15rem;
   }
 }
 
-.title{
-  font-size: 42px;
+.title {
   font-weight: 500; // Medium
-  letter-spacing: 2px;
+  font-size: 3.2rem;
+
+  @media #{$information-lg-screen} {
+    font-size: 2.625rem;
+    letter-spacing: 2px;
+  }
 
   @media #{$information-laptop} {
-    font-size: 40px;
+    font-size: 2.5rem;
     letter-spacing: 2px;
   }
 
   @media #{$information-sm-laptop} {
-    font-size: 38px;
+    font-size: 2.375rem;
   }
 
   @media #{$information-lg-tablet} {
-    font-size: 36px;
+    font-size: 2.25rem;
     letter-spacing: 1px;
   }
 
   @media #{$information-tablet} {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   @media #{$information-phone} {
-    font-size: 30px;
+    font-size: 1.875rem;
     margin-bottom: 0;
   }
 
   @media #{$information-md-phone} {
-    font-size: 28px;
+    font-size: 1.75;
     letter-spacing: 0;
   }
 }
 
-.page-sub-title{
-  font-size: 36px;
+.page-sub-title {
+  font-size: 3rem;
   letter-spacing: -2px;
   font-weight: 400;
 
+  @media #{$information-lg-screen} {
+    font-size: 2.25rem;
+    letter-spacing: -2px;
+  }
+
   @media #{$information-laptop} {
-    font-size: 33px;
+    font-size: 2.0625rem;
   }
 
   @media #{$information-sm-laptop} {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 
   @media #{$information-lg-tablet} {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
   @media #{$information-tablet} {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
 
   @media #{$information-phone} {
-    font-size: 25px;
+    font-size: 1.5625rem;
   }
 
   @media #{$information-md-phone} {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 
-.sub-title{
-  font-size: 22px;
+.sub-title {
+  font-size: 2.25rem;
   font-weight: 400; // Regular
   letter-spacing: 1px;
-  line-height: 30px;
+  line-height: 1.25;
+
+  @media #{$information-lg-screen} {
+    font-size: 1.5rem;
+  }
 
   @media #{$information-laptop} {
-    font-size: 20px;
+    font-size: 1.35rem;
   }
 
   @media #{$information-sm-laptop} {
-    font-size: 19px;
+    font-size: 1.25rem;
   }
 
   @media #{$information-lg-tablet} {
-    font-size: 19px;
+    font-size: 1.25rem;
   }
 
   @media #{$information-tablet} {
-    font-size: 19px;
+    font-size: 1.45rem;
   }
 
   @media #{$information-phone} {
-    font-size: 18px;
+    font-size: 1.45rem;
+  }
+
+  @media #{$information-sm-phone} {
+    font-size: 1.2rem;
   }
 }
 
-.desc{
-  font-size: 16px;
+.desc {
+  font-size: 1.35rem;
   font-weight: 400; // Regular
 
+  @media #{$information-lg-screen} {
+    font-size: 1.05rem;
+  }
+
   @media #{$information-laptop} {
-    font-size: 15px;
+    font-size: 1rem;
   }
 
   @media #{$information-sm-laptop} {
-    font-size: 14px;
+    font-size: 0.95rem;
   }
 
   @media #{$information-phone} {
-    font-size: 18px;
+    font-size: 1.025rem;
   }
 }
 
-.page-desc{
-  font-size: 18px;
+.page-desc {
+  font-size: 1.5rem;
   font-weight: 400; // Regular
 
   @media #{$information-laptop} {
-    font-size: 17px;
+    font-size: 1.15rem;
+  }
+
+  @media #{$information-laptop} {
+    font-size: 1.1rem;
   }
 
   @media #{$information-sm-laptop} {
-    font-size: 16px;
+    font-size: 1.05rem;
   }
 
   @media #{$information-tablet} {
-    font-size: 15px;
+    font-size: 1rem;
   }
 }
 
-.uppercase{
+.uppercase {
   text-transform: uppercase;
 }
 
-.txt-white{
+.txt-white {
   color: $white;
 }
 
-.txt-gray{
+.txt-gray {
   color: $gray;
 }
 
-.txt-main{
+.txt-main {
   color: $main-color;
 }
 
-.txt-black{
+.txt-black {
   color: $text-color;
 }
 
-.mb-bold{
+.mb-bold {
   @media #{$information-hz-phone} {
     font-weight: 700; // bold
   }

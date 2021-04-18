@@ -1,0 +1,272 @@
+#yadea-xmen-page {
+  #yadea-xmen-battery,
+  .section-battery {
+    padding: 60px 0;
+    background-color: #000;
+
+    .bg-holder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+
+    .main-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .effect-holder {
+      margin-top: 20px;
+
+      .effect-top {
+        width: 380px;
+        height: 380px;
+        position: relative;
+        margin: auto;
+
+        .wave-layer,
+        .battery-layer {
+          position: absolute;
+        }
+
+        .wave-layer {
+          z-index: 1;
+          width: 99%;
+          height: 99%;
+          top: 0.5%;
+          left: 0.5%;
+          animation: glowing 5s linear infinite;
+        }
+
+        .battery-layer {
+          z-index: 2;
+          top: 6%;
+          left: 6%;
+          width: 87%;
+          height: 88%;
+        }
+      }
+
+      .effect-bottom {
+        margin-top: 50px;
+        position: relative;
+        z-index: 2;
+
+        .battery-feature-list {
+          margin: auto;
+          padding: 0;
+          width: 600px;
+          height: 190px;
+          display: grid;
+          grid-gap: 8px;
+          grid-template-columns: 1fr 1fr 1fr;
+
+          .feature-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px 0;
+            background-color: rgba(#fff, 0.035);
+            border: 2px solid transparent;
+
+            .label {
+              width: 100%;
+              font-size: 14px;
+              // letter-spacing: 1px;
+              font-weight: 400;
+            }
+
+            .value {
+              width: 100%;
+              color: $red;
+              font-size: 22px;
+              font-weight: 700;
+
+              .highlight {
+                font-size: 1.5em;
+              }
+            }
+
+            &:hover {
+              border-color: $red;
+              background-color: rgba(#000, 1);
+              -webkit-transform: scale(1.02);
+              transform: scale(1.02);
+              transition: all ease-out 150ms;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-lg-screen} {
+    #yadea-xmen-battery,
+    .section-battery {
+      width: 1920px;
+      margin-left: calc((100% - 1920px) / 2);
+    }
+  }
+
+  @media #{$information-tablet} {
+    #yadea-xmen-battery,
+    .section-battery {
+      width: 100%;
+      margin-left: 0;
+      padding: 13.333vw 0 12vw;
+
+      .main-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 30px;
+      }
+
+      .effect-holder {
+        margin-top: 40px;
+
+        .effect-top {
+          width: 42.1333vw;
+          height: 42.1333vw;
+        }
+
+        .effect-bottom {
+          margin-top: 12vw;
+
+          .battery-feature-list {
+            width: 80%;
+            height: 25vw;
+            grid-gap: 8px;
+
+            .feature-item {
+              padding: 18px 0;
+
+              .label {
+                font-size: 18px;
+              }
+
+              .value {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    #yadea-xmen-battery,
+    .section-battery {
+      .main-content {
+        padding: 0 15px;
+      }
+
+      .effect-holder {
+        margin-top: 40px;
+
+        .effect-top {
+          width: 55vw;
+          height: 55vw;
+        }
+
+        .effect-bottom {
+          margin-top: 12vw;
+
+          .battery-feature-list {
+            width: 92%;
+            height: 30vw;
+            grid-gap: 8px;
+
+            .feature-item {
+              padding: 12px 0;
+
+              .label {
+                font-size: 12px;
+              }
+
+              .value {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone} {
+    #yadea-xmen-battery,
+    .section-battery {
+      padding: 10vw 0 10vw;
+
+      .main-content {
+        padding: 0 10px;
+      }
+
+      .effect-holder {
+        margin-top: 40px;
+
+        .effect-top {
+          width: 55vw;
+          height: 55vw;
+        }
+
+        .effect-bottom {
+          margin-top: 12vw;
+
+          .battery-feature-list {
+            width: 92%;
+            height: 30vw;
+            grid-gap: 6px;
+
+            .feature-item {
+              padding: 11px 0;
+
+              .label {
+                font-size: 11px;
+              }
+
+              .value {
+                font-size: 11px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === SUPPORT KEYFRAME === */
+@-webkit-keyframes glowing {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(0.99);
+    -webkit-transform: scale(0.99);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.025);
+    -webkit-transform: scale(1.025);
+  }
+}
+
+@keyframes glowing {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(0.99);
+    -webkit-transform: scale(0.99);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.025);
+    -webkit-transform: scale(1.025);
+  }
+}

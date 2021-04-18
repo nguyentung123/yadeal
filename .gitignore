@@ -1,1 +1,8 @@
 *.mp4
+/node_modules
+assets/node_modules/
+landing-page/yadea-e3/node_modules/
+landing-page/yadea-ulike/node_modules/
+landing-page/yadea-xmen/news-page/node_modules/
+landing-page/yadea-xmen/node_modules/
+backup/

@@ -1,0 +1,28 @@
+@import "vendors/fontawesome/font-awesome";
+// Website Core Stylesheet Guideline
+@import "common/variables";
+@import "common/elements";
+@import "common/helpers";
+@import "common/typography";
+// Website Common Components
+@import "components/header";
+@import "components/custom-header";
+@import "components/footer";
+@import "components/yt-modal";
+@import "components/signup-info-modal";
+@import "components/tragop-modal";
+// Sections
+@import "sections/banner";
+@import "sections/tvc";
+@import "sections/intro";
+@import "sections/color";
+@import "sections/battery";
+@import "sections/distance";
+@import "sections/power";
+@import "sections/smartkey";
+@import "sections/brake";
+@import "sections/maintainance";
+@import "sections/360deg";
+@import "sections/comparision";
+@import "sections/external";
+@import "sections/reuse/find-stores";

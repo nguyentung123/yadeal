@@ -9,7 +9,7 @@
             <!-- Header Logo -->
             <div class="col-lg-2 col-6 header__logo">
                 <a href="<?php echo site_url(); ?>">
-                    <img src="<?php echo get_theme_file_uri('assets/img/logo.png'); ?>" class="header__logo__image">
+                    <img src="https://sw-hcm-1.vinadata.vn/v1/AUTH_6002c87d444b4c85b63d8a941e0512d7/yadeavietnam/themes/logo.svg" class="header__logo__image">
                 </a>
             </div><!-- Header Logo -->
 
@@ -18,16 +18,16 @@
 
                 <!-- Header Main Menu -->
                 <ul class="nav justify-content-end mb-hide">
-                    <li class="nav-item <?php if(is_page('products')) echo 'active'; ?>" id="sub-menu-trigger">
+                    <li class="nav-item <?php if (is_page('products')) echo 'active'; ?>" id="sub-menu-trigger">
                         <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
                     </li>
-                    <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
+                    <li class="nav-item <?php if (is_page('/shops')) echo 'active'; ?>">
                         <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
                     </li>
-                    <li id="about-us-sub-menu-trigger" class="nav-item <?php if(is_page('/about-us')) echo 'active'; ?>">
+                    <li id="about-us-sub-menu-trigger" class="nav-item <?php if (is_page('/about-us')) echo 'active'; ?>">
                         <a class="nav-link" href="<?php echo site_url('/about') ?>">Về chúng tôi</a>
                     </li>
-                    <li class="nav-item <?php if(is_page('support')) echo 'active'; ?>">
+                    <li class="nav-item <?php if (is_page('support')) echo 'active'; ?>">
                         <a class="nav-link" href="<?php echo site_url('/support') ?>">Hỗ trợ</a>
                     </li>
                 </ul>
@@ -62,7 +62,7 @@
                 <div class="sub-menu__wrapper__item__detail">
                     <a href="<?php echo site_url('/about'); ?>">
                         <div class="about-us__thumbnail">
-                            <img class="img-fluid" src="<?php echo get_theme_file_uri('assets/img/about-thumbnail.jpg'); ?>">
+                            <img class="img-fluid lazy" data-src="https://sw-hcm-1.vinadata.vn/v1/AUTH_6002c87d444b4c85b63d8a941e0512d7/yadeavietnam/themes/about-thumbnail.jpg">
                         </div>
                         <p class="sub-title">Giới thiệu Yadea</p>
                         <p class="txt-gray desc">Công ty TNHH Xe Máy Điện Thông Minh YADEA</p>
@@ -77,7 +77,7 @@
                 <div class="sub-menu__wrapper__item__detail">
                     <a href="<?php echo site_url('/course'); ?>">
                         <div class="about-us__thumbnail">
-                            <img class="img-fluid" src="<?php echo get_theme_file_uri('assets/img/history-thumbnail.jpg'); ?>">
+                            <img class="img-fluid lazy" data-src="https://sw-hcm-1.vinadata.vn/v1/AUTH_6002c87d444b4c85b63d8a941e0512d7/yadeavietnam/themes/history-thumbnail.jpg">
                         </div>
                         <p class="sub-title">Quá trình phát triển</p>
                         <p class="txt-gray desc">Lịch sử hình thành - quá trình phát triển của YADEA</p>
@@ -93,7 +93,7 @@
                 <div class="sub-menu__wrapper__item__detail">
                     <a href="<?php echo site_url('/supplier'); ?>">
                         <div class="about-us__thumbnail">
-                            <img class="img-fluid" src="<?php echo get_theme_file_uri('assets/img/supplier-thumbnail.jpg'); ?>">
+                            <img class="img-fluid lazy" data-src="https://sw-hcm-1.vinadata.vn/v1/AUTH_6002c87d444b4c85b63d8a941e0512d7/yadeavietnam/themes/supplier-thumbnail.jpg">
                         </div>
                         <p class="sub-title">Đối tác hàng đầu</p>
                         <p class="txt-gray desc">Đối tác hàng đầu của chúng tôi</p>
@@ -114,7 +114,7 @@
         <ul class="nav light-gray-bg">
 
             <!-- Product Listing -->
-            <li class="nav-item with-sub-menu <?php if(is_page('/products')) echo 'active'; ?>">
+            <li class="nav-item with-sub-menu <?php if (is_page('/products')) echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo site_url('/products'); ?>">Sản phẩm</a>
 
                 <?php get_template_part('template-parts/header', 'product-mobile'); ?>
@@ -122,7 +122,7 @@
             </li>
 
             <!-- Shop Searching Page -->
-            <li class="nav-item <?php if(is_page('/shops')) echo 'active'; ?>">
+            <li class="nav-item <?php if (is_page('/shops')) echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo site_url('/shops') ?>">Cửa hàng</a>
             </li>
 
@@ -155,7 +155,7 @@
             </li>
 
             <!-- Support -->
-            <li class="nav-item <?php if(is_page('support')) echo 'active'; ?>">
+            <li class="nav-item <?php if (is_page('support')) echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo site_url('/support') ?>">Hỗ trợ</a>
             </li>
         </ul>

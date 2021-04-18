@@ -12,6 +12,36 @@
       height: 190vw;
       background-position: center bottom; } }
 
+.g5-driving-mode-section .effect-holder .img-holder {
+  position: absolute;
+  /* width: 100%; */
+  max-width: 1920px;
+  width: 1920px;
+  bottom: 0;
+  left: calc((100% - 1920px) / 2); }
+  @media only screen and (max-width: 768px) {
+    .g5-driving-mode-section .effect-holder .img-holder {
+      width: 1280px;
+      margin-left: calc((1280px - 100%) / -2);
+      position: relative;
+      top: -70px;
+      margin-bottom: -70px;
+      left: 0; } }
+  @media only screen and (max-width: 480px) {
+    .g5-driving-mode-section .effect-holder .img-holder {
+      width: 1024px;
+      margin-left: calc((1024px - 100%) / -2);
+      position: relative;
+      top: -100px;
+      margin-bottom: -100px;
+      left: 0; } }
+  @media only screen and (max-width: 360px) {
+    .g5-driving-mode-section .effect-holder .img-holder {
+      width: 980px;
+      margin-left: calc((980px - 100%) / -2);
+      top: -100px;
+      margin-bottom: -100px; } }
+
 /* === DESKTOP === */
 #yadea-g5-page {
   /* === DESKTOP - END === */
@@ -261,6 +291,14 @@
     .yadea-g5-banner .tra-gop-img .tragop-line1, .yadea-g5-banner .tra-gop-img .tragop-line2 {
       font-size: 1.25em;
       white-space: nowrap; } }
+
+@media only screen and (max-width: 1368px) and (min-width: 769px) {
+  .g5-driving-mode-section .effect-holder .img-holder {
+    margin-left: 0; } }
+
+@media only screen and (min-width: 1080px) {
+  .g5-intro-video .intro-bg {
+    height: 50vw; } }
 
 .signup-info-modal {
   position: fixed;
@@ -563,7 +601,8 @@
           bottom: 2%;
           left: 5%; } }
 
-.tra-gop-information-modal {
+.tra-gop-information-modal,
+.gps-info-modal {
   z-index: 10;
   position: fixed;
   top: 0;
@@ -575,7 +614,8 @@
   visibility: hidden;
   transition: all 10ms 350ms ease-out;
   /* Responsive */ }
-  .tra-gop-information-modal .overlay {
+  .tra-gop-information-modal .overlay,
+  .gps-info-modal .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -583,7 +623,694 @@
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0; }
-  .tra-gop-information-modal .tragop-dialog {
+  .tra-gop-information-modal .tragop-dialog,
+  .tra-gop-information-modal .gps-dialog,
+  .gps-info-modal .tragop-dialog,
+  .gps-info-modal .gps-dialog {
+    width: 1080px;
+    max-width: 95%;
+    border-radius: 22px;
+    background-color: white;
+    padding: 3em 2.5em 1.5em;
+    margin: auto;
+    max-height: 70vh;
+    position: relative;
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+    transition: all ease-in 200ms 10ms; }
+    .tra-gop-information-modal .tragop-dialog .close-btn,
+    .tra-gop-information-modal .gps-dialog .close-btn,
+    .gps-info-modal .tragop-dialog .close-btn,
+    .gps-info-modal .gps-dialog .close-btn {
+      position: absolute;
+      top: 15px;
+      left: 5px;
+      color: #333;
+      font-size: 32px;
+      width: 34px;
+      height: 34px;
+      border-radius: 17px;
+      text-align: center;
+      line-height: 31px;
+      cursor: pointer; }
+    .tra-gop-information-modal .tragop-dialog .tragop-main-content,
+    .tra-gop-information-modal .tragop-dialog .gps-main-content,
+    .tra-gop-information-modal .gps-dialog .tragop-main-content,
+    .tra-gop-information-modal .gps-dialog .gps-main-content,
+    .gps-info-modal .tragop-dialog .tragop-main-content,
+    .gps-info-modal .tragop-dialog .gps-main-content,
+    .gps-info-modal .gps-dialog .tragop-main-content,
+    .gps-info-modal .gps-dialog .gps-main-content {
+      color: #333;
+      overflow: auto;
+      max-width: 100%;
+      max-height: 55vh;
+      padding-right: 1.5em; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content .title,
+      .tra-gop-information-modal .tragop-dialog .gps-main-content .title,
+      .tra-gop-information-modal .gps-dialog .tragop-main-content .title,
+      .tra-gop-information-modal .gps-dialog .gps-main-content .title,
+      .gps-info-modal .tragop-dialog .tragop-main-content .title,
+      .gps-info-modal .tragop-dialog .gps-main-content .title,
+      .gps-info-modal .gps-dialog .tragop-main-content .title,
+      .gps-info-modal .gps-dialog .gps-main-content .title {
+        text-align: center;
+        font-size: 1.55em;
+        font-weight: 600;
+        letter-spacing: 0;
+        margin-bottom: 1em; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content .desc,
+      .tra-gop-information-modal .tragop-dialog .gps-main-content .desc,
+      .tra-gop-information-modal .gps-dialog .tragop-main-content .desc,
+      .tra-gop-information-modal .gps-dialog .gps-main-content .desc,
+      .gps-info-modal .tragop-dialog .tragop-main-content .desc,
+      .gps-info-modal .tragop-dialog .gps-main-content .desc,
+      .gps-info-modal .gps-dialog .tragop-main-content .desc,
+      .gps-info-modal .gps-dialog .gps-main-content .desc {
+        font-size: 1em;
+        line-height: 1.65em;
+        margin-bottom: 0.75em; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content .value,
+      .tra-gop-information-modal .tragop-dialog .gps-main-content .value,
+      .tra-gop-information-modal .gps-dialog .tragop-main-content .value,
+      .tra-gop-information-modal .gps-dialog .gps-main-content .value,
+      .gps-info-modal .tragop-dialog .tragop-main-content .value,
+      .gps-info-modal .tragop-dialog .gps-main-content .value,
+      .gps-info-modal .gps-dialog .tragop-main-content .value,
+      .gps-info-modal .gps-dialog .gps-main-content .value {
+        margin: 0; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table,
+      .tra-gop-information-modal .tragop-dialog .gps-main-content .custom-table,
+      .tra-gop-information-modal .gps-dialog .tragop-main-content .custom-table,
+      .tra-gop-information-modal .gps-dialog .gps-main-content .custom-table,
+      .gps-info-modal .tragop-dialog .tragop-main-content .custom-table,
+      .gps-info-modal .tragop-dialog .gps-main-content .custom-table,
+      .gps-info-modal .gps-dialog .tragop-main-content .custom-table,
+      .gps-info-modal .gps-dialog .gps-main-content .custom-table {
+        margin: 10px auto; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row,
+        .tra-gop-information-modal .tragop-dialog .gps-main-content .custom-table .row,
+        .tra-gop-information-modal .gps-dialog .tragop-main-content .custom-table .row,
+        .tra-gop-information-modal .gps-dialog .gps-main-content .custom-table .row,
+        .gps-info-modal .tragop-dialog .tragop-main-content .custom-table .row,
+        .gps-info-modal .tragop-dialog .gps-main-content .custom-table .row,
+        .gps-info-modal .gps-dialog .tragop-main-content .custom-table .row,
+        .gps-info-modal .gps-dialog .gps-main-content .custom-table .row {
+          border: 1px solid #999;
+          margin: 0 !important; }
+          .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row:first-child,
+          .tra-gop-information-modal .tragop-dialog .gps-main-content .custom-table .row:first-child,
+          .tra-gop-information-modal .gps-dialog .tragop-main-content .custom-table .row:first-child,
+          .tra-gop-information-modal .gps-dialog .gps-main-content .custom-table .row:first-child,
+          .gps-info-modal .tragop-dialog .tragop-main-content .custom-table .row:first-child,
+          .gps-info-modal .tragop-dialog .gps-main-content .custom-table .row:first-child,
+          .gps-info-modal .gps-dialog .tragop-main-content .custom-table .row:first-child,
+          .gps-info-modal .gps-dialog .gps-main-content .custom-table .row:first-child {
+            border-bottom: none; }
+          .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div,
+          .tra-gop-information-modal .tragop-dialog .gps-main-content .custom-table .row div,
+          .tra-gop-information-modal .gps-dialog .tragop-main-content .custom-table .row div,
+          .tra-gop-information-modal .gps-dialog .gps-main-content .custom-table .row div,
+          .gps-info-modal .tragop-dialog .tragop-main-content .custom-table .row div,
+          .gps-info-modal .tragop-dialog .gps-main-content .custom-table .row div,
+          .gps-info-modal .gps-dialog .tragop-main-content .custom-table .row div,
+          .gps-info-modal .gps-dialog .gps-main-content .custom-table .row div {
+            padding: 0 !important;
+            border-right: 1px solid #999;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center; }
+            .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div:last-child,
+            .tra-gop-information-modal .tragop-dialog .gps-main-content .custom-table .row div:last-child,
+            .tra-gop-information-modal .gps-dialog .tragop-main-content .custom-table .row div:last-child,
+            .tra-gop-information-modal .gps-dialog .gps-main-content .custom-table .row div:last-child,
+            .gps-info-modal .tragop-dialog .tragop-main-content .custom-table .row div:last-child,
+            .gps-info-modal .tragop-dialog .gps-main-content .custom-table .row div:last-child,
+            .gps-info-modal .gps-dialog .tragop-main-content .custom-table .row div:last-child,
+            .gps-info-modal .gps-dialog .gps-main-content .custom-table .row div:last-child {
+              border: none; }
+            .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div hr,
+            .tra-gop-information-modal .tragop-dialog .gps-main-content .custom-table .row div hr,
+            .tra-gop-information-modal .gps-dialog .tragop-main-content .custom-table .row div hr,
+            .tra-gop-information-modal .gps-dialog .gps-main-content .custom-table .row div hr,
+            .gps-info-modal .tragop-dialog .tragop-main-content .custom-table .row div hr,
+            .gps-info-modal .tragop-dialog .gps-main-content .custom-table .row div hr,
+            .gps-info-modal .gps-dialog .tragop-main-content .custom-table .row div hr,
+            .gps-info-modal .gps-dialog .gps-main-content .custom-table .row div hr {
+              width: 100%;
+              flex-basis: 100%;
+              background-color: #999;
+              border-color: #999;
+              margin: 0; }
+            .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div .value,
+            .tra-gop-information-modal .tragop-dialog .gps-main-content .custom-table .row div .value,
+            .tra-gop-information-modal .gps-dialog .tragop-main-content .custom-table .row div .value,
+            .tra-gop-information-modal .gps-dialog .gps-main-content .custom-table .row div .value,
+            .gps-info-modal .tragop-dialog .tragop-main-content .custom-table .row div .value,
+            .gps-info-modal .tragop-dialog .gps-main-content .custom-table .row div .value,
+            .gps-info-modal .gps-dialog .tragop-main-content .custom-table .row div .value,
+            .gps-info-modal .gps-dialog .gps-main-content .custom-table .row div .value {
+              text-align: center;
+              padding: 8px 5px;
+              width: 100%;
+              flex-basis: 100%; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content ul,
+      .tra-gop-information-modal .tragop-dialog .gps-main-content ul,
+      .tra-gop-information-modal .gps-dialog .tragop-main-content ul,
+      .tra-gop-information-modal .gps-dialog .gps-main-content ul,
+      .gps-info-modal .tragop-dialog .tragop-main-content ul,
+      .gps-info-modal .tragop-dialog .gps-main-content ul,
+      .gps-info-modal .gps-dialog .tragop-main-content ul,
+      .gps-info-modal .gps-dialog .gps-main-content ul {
+        margin-top: -0.75em; }
+  .tra-gop-information-modal.active,
+  .gps-info-modal.active {
+    transition: visibility 10s ease-out;
+    visibility: visible; }
+    .tra-gop-information-modal.active .overlay,
+    .gps-info-modal.active .overlay {
+      opacity: 1;
+      transition: all ease-out 150ms; }
+    .tra-gop-information-modal.active .tragop-dialog,
+    .tra-gop-information-modal.active .gps-dialog,
+    .gps-info-modal.active .tragop-dialog,
+    .gps-info-modal.active .gps-dialog {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+      transition: all ease-out 220ms 100ms; }
+  @media only screen and (max-width: 480px) {
+    .tra-gop-information-modal .tragop-dialog,
+    .tra-gop-information-modal .gps-dialog,
+    .gps-info-modal .tragop-dialog,
+    .gps-info-modal .gps-dialog {
+      border-radius: 18px;
+      padding: 2.5em 1.75em 1.25em;
+      max-height: 70vh; }
+      .tra-gop-information-modal .tragop-dialog .close-btn,
+      .tra-gop-information-modal .gps-dialog .close-btn,
+      .gps-info-modal .tragop-dialog .close-btn,
+      .gps-info-modal .gps-dialog .close-btn {
+        top: 2px;
+        right: auto;
+        font-size: 32px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        line-height: 28px; }
+      .tra-gop-information-modal .tragop-dialog .tragop-main-content,
+      .tra-gop-information-modal .tragop-dialog .gps-main-content,
+      .tra-gop-information-modal .gps-dialog .tragop-main-content,
+      .tra-gop-information-modal .gps-dialog .gps-main-content,
+      .gps-info-modal .tragop-dialog .tragop-main-content,
+      .gps-info-modal .tragop-dialog .gps-main-content,
+      .gps-info-modal .gps-dialog .tragop-main-content,
+      .gps-info-modal .gps-dialog .gps-main-content {
+        max-height: 52vh;
+        padding-right: 1em; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content .title,
+        .tra-gop-information-modal .tragop-dialog .gps-main-content .title,
+        .tra-gop-information-modal .gps-dialog .tragop-main-content .title,
+        .tra-gop-information-modal .gps-dialog .gps-main-content .title,
+        .gps-info-modal .tragop-dialog .tragop-main-content .title,
+        .gps-info-modal .tragop-dialog .gps-main-content .title,
+        .gps-info-modal .gps-dialog .tragop-main-content .title,
+        .gps-info-modal .gps-dialog .gps-main-content .title {
+          font-size: 1.35em;
+          margin-bottom: 0.75em; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content .desc,
+        .tra-gop-information-modal .tragop-dialog .gps-main-content .desc,
+        .tra-gop-information-modal .gps-dialog .tragop-main-content .desc,
+        .tra-gop-information-modal .gps-dialog .gps-main-content .desc,
+        .gps-info-modal .tragop-dialog .tragop-main-content .desc,
+        .gps-info-modal .tragop-dialog .gps-main-content .desc,
+        .gps-info-modal .gps-dialog .tragop-main-content .desc,
+        .gps-info-modal .gps-dialog .gps-main-content .desc {
+          font-size: 0.9em;
+          line-height: 1.55em;
+          margin-bottom: 0.7em; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table,
+        .tra-gop-information-modal .tragop-dialog .gps-main-content .custom-table,
+        .tra-gop-information-modal .gps-dialog .tragop-main-content .custom-table,
+        .tra-gop-information-modal .gps-dialog .gps-main-content .custom-table,
+        .gps-info-modal .tragop-dialog .tragop-main-content .custom-table,
+        .gps-info-modal .tragop-dialog .gps-main-content .custom-table,
+        .gps-info-modal .gps-dialog .tragop-main-content .custom-table,
+        .gps-info-modal .gps-dialog .gps-main-content .custom-table {
+          margin: 8px auto; }
+          .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row .value,
+          .tra-gop-information-modal .tragop-dialog .gps-main-content .custom-table .row .value,
+          .tra-gop-information-modal .gps-dialog .tragop-main-content .custom-table .row .value,
+          .tra-gop-information-modal .gps-dialog .gps-main-content .custom-table .row .value,
+          .gps-info-modal .tragop-dialog .tragop-main-content .custom-table .row .value,
+          .gps-info-modal .tragop-dialog .gps-main-content .custom-table .row .value,
+          .gps-info-modal .gps-dialog .tragop-main-content .custom-table .row .value,
+          .gps-info-modal .gps-dialog .gps-main-content .custom-table .row .value {
+            padding: 5px 3px;
+            font-size: 0.8em;
+            font-weight: 500; }
+        .tra-gop-information-modal .tragop-dialog .tragop-main-content ul,
+        .tra-gop-information-modal .tragop-dialog .gps-main-content ul,
+        .tra-gop-information-modal .gps-dialog .tragop-main-content ul,
+        .tra-gop-information-modal .gps-dialog .gps-main-content ul,
+        .gps-info-modal .tragop-dialog .tragop-main-content ul,
+        .gps-info-modal .tragop-dialog .gps-main-content ul,
+        .gps-info-modal .gps-dialog .tragop-main-content ul,
+        .gps-info-modal .gps-dialog .gps-main-content ul {
+          margin-top: -0.7em; } }
+
+.yadea-hr {
+  width: 40px;
+  height: 2px;
+  border: none;
+  margin: 20px auto;
+  background-color: #f36e22; }
+
+.fb_dialog.fb_customer_chat_bubble_animated_no_badge {
+  -webkit-transform: translate(5%, 27%) scale(0.85);
+  transform: translate(5%, 27%) scale(0.85); }
+  @media only screen and (max-width: 768px) {
+    .fb_dialog.fb_customer_chat_bubble_animated_no_badge {
+      -webkit-transform: translate(32%, calc(24% - 50px)) scale(0.8);
+      transform: translate(32%, calc(24% - 50px)) scale(0.8); } }
+
+.zalo-chat-widget {
+  -webkit-transform: translate(-110%, 0%);
+  transform: translate(-110%, 0%); }
+  @media only screen and (max-width: 768px) {
+    .zalo-chat-widget {
+      -webkit-transform: translate(0%, calc(-83% - 50px));
+      transform: translate(0%, calc(-83% - 50px)); } }
+
+.test-drive-box {
+  width: 0;
+  height: 0; }
+  .test-drive-box img {
+    max-width: none; }
+  .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper {
+    position: fixed;
+    top: 25vh;
+    right: 15px;
+    z-index: 3;
+    height: 50px; }
+    .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: 180ms all ease-in; }
+      .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder .img-holder, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder .img-holder {
+        height: 50px;
+        position: relative;
+        z-index: 2; }
+        .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder .img-holder img, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder .img-holder img {
+          height: 100%; }
+      .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder .effect-holder, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder .effect-holder {
+        position: absolute;
+        box-shadow: 0 0 16px #e77e47;
+        border-radius: 12px;
+        border-top-left-radius: 35px;
+        width: calc(100% - 10px);
+        height: 40px;
+        bottom: 1px;
+        right: 0;
+        background-color: #e77e47;
+        animation: shiningEffect 3s infinite; }
+      .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder.active, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder.active {
+        opacity: 1;
+        transform: none;
+        transition: 330ms 120ms all ease-out; }
+      .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder .close-area, .test-drive-box .cta-holder .link-wrapper .desktop-content-wrapper .context-holder .close-area {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        z-index: 3;
+        top: 0;
+        left: 0; }
+  .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 3;
+    background-color: #e77e47;
+    color: #FFF;
+    display: none;
+    padding: 4px;
+    height: 50px;
+    flex-wrap: nowrap; }
+    @media only screen and (max-width: 768px) {
+      .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper {
+        display: flex; } }
+    .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .close-btn {
+      width: 42px;
+      flex-basis: 42px;
+      flex-shrink: 0;
+      height: 42px;
+      display: flex;
+      background-color: #FFF;
+      justify-content: center;
+      align-items: center; }
+      .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .close-btn img {
+        width: 35px;
+        height: 35px; }
+    .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .context-holder {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto; }
+      .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .context-holder .test-drive-text {
+        font-weight: 600;
+        font-size: 18px;
+        margin: 0 8px; }
+      .test-drive-box .cta-holder .link-wrapper .mobile-content-wrapper .context-holder .test-drive-icon img {
+        height: 32px; }
+  .test-drive-box.inactive .cta-holder .link-wrapper .desktop-content-wrapper .icon-holder, .test-drive-box.inactive .cta-holder .link-wrapper .desktop-content-wrapper .context-holder {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: 180ms all ease-in;
+    visibility: hidden; }
+  .test-drive-box.inactive .cta-holder .link-wrapper .mobile-content-wrapper {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 180ms all ease-in;
+    visibility: hidden; }
+
+#loading-overlay {
+  z-index: 9999999999; }
+
+@keyframes shiningEffect {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6; }
+  50% {
+    transform: scale(1.01);
+    opacity: 1;
+    filter: brightness(108%); }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.6; } }
+
+#yadea-g5-page {
+  /* RESPONSIVE */ }
+  #yadea-g5-page .section-find-yadea-stores {
+    color: #fff;
+    position: relative;
+    overflow: hidden; }
+    #yadea-g5-page .section-find-yadea-stores .bg-holder {
+      width: 100%;
+      height: 27.0833vw;
+      background-size: cover;
+      background-position: center;
+      transition: all ease-out 0.75s;
+      filter: brightness(94%); }
+      @media only screen and (max-width: 1920px) {
+        #yadea-g5-page .section-find-yadea-stores .bg-holder {
+          width: 1920px;
+          margin-left: calc((100% - 1920px) / 2);
+          height: 520px; } }
+      @media only screen and (max-width: 768px) {
+        #yadea-g5-page .section-find-yadea-stores .bg-holder {
+          filter: brightness(100%);
+          width: 100%;
+          height: 144vw;
+          margin-left: 0; } }
+    #yadea-g5-page .section-find-yadea-stores:hover .bg-holder {
+      -webkit-transform: scale(1.02);
+      transform: scale(1.02);
+      filter: brightness(114%);
+      transition: all ease-out 1s; }
+    #yadea-g5-page .section-find-yadea-stores .main-content {
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: calc((100% - 1108px) / 2);
+      width: 1108px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      #yadea-g5-page .section-find-yadea-stores .main-content .find-stores-title {
+        font-size: 1.5625rem;
+        line-height: 1.42;
+        margin-bottom: 0.8rem;
+        font-weight: 500; }
+      #yadea-g5-page .section-find-yadea-stores .main-content .cta {
+        font-size: 0.78125rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        display: inline-block;
+        background-color: #f36e22;
+        border-radius: 1.25rem;
+        padding: 0 2rem;
+        font-weight: 500; }
+  @media only screen and (max-width: 768px) {
+    #yadea-g5-page .section-find-yadea-stores .main-content {
+      top: auto;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 35%;
+      text-align: center;
+      white-space: nowrap; }
+      #yadea-g5-page .section-find-yadea-stores .main-content .find-stores-title {
+        font-size: 2rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem; }
+      #yadea-g5-page .section-find-yadea-stores .main-content .cta {
+        font-size: 2rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+        border-radius: 1.75rem;
+        padding: 0 3rem; } }
+  @media only screen and (max-width: 480px) {
+    #yadea-g5-page .section-find-yadea-stores .main-content {
+      left: 5%;
+      width: 90%; }
+      #yadea-g5-page .section-find-yadea-stores .main-content .find-stores-title {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem; }
+      #yadea-g5-page .section-find-yadea-stores .main-content .cta {
+        font-size: 1.5rem;
+        height: 3rem;
+        line-height: 3rem;
+        border-radius: 1.5rem;
+        padding: 0 2.5rem; } }
+  @media only screen and (max-width: 360px) {
+    #yadea-g5-page .section-find-yadea-stores .main-content .find-stores-title {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem; }
+    #yadea-g5-page .section-find-yadea-stores .main-content .cta {
+      font-size: 1.25rem;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      border-radius: 1.25rem;
+      padding: 0 2rem; } }
+
+.section-banner-sale {
+  position: relative;
+  margin-top: 44px;
+  /* === --- RESPONSIVE --- === */
+  /* === Desktop and laptop === */
+  /* === Desktop and laptop - END === */
+  /* === Tablet and Mobile === */
+  /* === Tablet and Mobile - END === */ }
+  .section-banner-sale .bg-holder {
+    width: 100%; }
+    .section-banner-sale .bg-holder picture,
+    .section-banner-sale .bg-holder img {
+      display: block;
+      width: 100%; }
+  .section-banner-sale .cta-content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute; }
+    .section-banner-sale .cta-content .see-info-cta,
+    .section-banner-sale .cta-content .buynow-cta {
+      position: absolute; }
+    .section-banner-sale .cta-content .see-info-cta {
+      font-weight: 600;
+      font-size: 24px;
+      color: #222;
+      border-bottom: 2px solid #222;
+      cursor: pointer; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 14px;
+        height: 14px;
+        border: 2px solid #222;
+        border-left: none;
+        border-bottom: none;
+        display: inline-block;
+        -webkit-transform: rotate(45deg) translateY(-2px);
+        transform: rotate(45deg) translateY(-2px); }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      color: #bac61e;
+      line-height: 53px;
+      height: 55px;
+      border: 2px solid #bac61e;
+      display: inline-block;
+      padding: 0 40px;
+      border-radius: 28px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 24px;
+      transition: all ease-in 100ms; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 14px;
+        height: 14px;
+        border: 2px solid #bac61e;
+        border-left: none;
+        border-bottom: none;
+        display: inline-block;
+        transition: all ease-in 100ms;
+        -webkit-transform: rotate(45deg) translateY(-2px);
+        transform: rotate(45deg) translateY(-2px); }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn:hover {
+        background-color: #bac61e;
+        color: #fff;
+        transition: all ease-out 150ms; }
+        .section-banner-sale .cta-content .buynow-cta .buynow-btn:hover .arrow {
+          border-color: #fff;
+          transition: all ease-in 100ms; }
+  @media screen and (max-width: 1920px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 22px; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 13px;
+        height: 13px; }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 48px;
+      height: 50px;
+      padding: 0 30px;
+      border-radius: 25px;
+      font-size: 20px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 13px;
+        height: 13px; } }
+  @media screen and (max-width: 1680px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 19px; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 11px;
+        height: 11px; }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 46px;
+      height: 48px;
+      padding: 0 28px;
+      border-radius: 25px;
+      font-size: 18px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 11px;
+        height: 11px; } }
+  @media screen and (max-width: 1440px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 16px;
+      border-width: 1px; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 9px;
+        height: 9px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 38px;
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 22px;
+      font-size: 15px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 9px;
+        height: 9px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); } }
+  @media screen and (max-width: 1280px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 15px;
+      border-width: 1px; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 8px;
+        height: 8px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 36px;
+      height: 38px;
+      padding: 0 20px;
+      border-radius: 19px;
+      font-size: 14px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 8px;
+        height: 8px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); } }
+  @media screen and (max-width: 768px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 24px;
+      border-bottom: 2px solid #222; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 14px;
+        height: 14px; }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 53px;
+      height: 55px;
+      border: 2px solid #bac61e;
+      padding: 0 40px;
+      border-radius: 28px;
+      font-size: 24px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 14px;
+        height: 14px;
+        -webkit-transform: rotate(45deg) translateY(-2px);
+        transform: rotate(45deg) translateY(-2px); } }
+  @media screen and (max-width: 480px) {
+    .section-banner-sale .cta-content .see-info-cta {
+      font-size: 15px;
+      border-width: 1px;
+      white-space: nowrap; }
+      .section-banner-sale .cta-content .see-info-cta .arrow {
+        width: 8px;
+        height: 8px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); }
+    .section-banner-sale .cta-content .buynow-cta .buynow-btn {
+      line-height: 36px;
+      height: 38px;
+      padding: 0 20px;
+      border-radius: 19px;
+      font-size: 14px; }
+      .section-banner-sale .cta-content .buynow-cta .buynow-btn .arrow {
+        width: 8px;
+        height: 8px;
+        -webkit-transform: rotate(45deg) translateY(-1px);
+        transform: rotate(45deg) translateY(-1px); } }
+
+.october-sale-information-modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  transition: all 10ms 350ms ease-out;
+  /* Responsive */ }
+  .october-sale-information-modal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0; }
+  .october-sale-information-modal .tragop-dialog {
     width: 1200px;
     max-width: 95%;
     border-radius: 22px;
@@ -596,7 +1323,7 @@
     -webkit-transform: translateY(15px);
     transform: translateY(15px);
     transition: all ease-in 200ms 10ms; }
-    .tra-gop-information-modal .tragop-dialog .close-btn {
+    .october-sale-information-modal .tragop-dialog .close-btn {
       position: absolute;
       top: 15px;
       right: 15px;
@@ -609,71 +1336,85 @@
       text-align: center;
       line-height: 31px;
       cursor: pointer; }
-    .tra-gop-information-modal .tragop-dialog .tragop-main-content {
+    .october-sale-information-modal .tragop-dialog .tragop-main-content {
       color: #333;
       overflow: auto;
       max-width: 100%;
       max-height: 55vh;
       padding-right: 1.5em; }
-      .tra-gop-information-modal .tragop-dialog .tragop-main-content .title {
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .title {
         text-align: center;
         font-size: 1.55em;
         font-weight: 600;
         letter-spacing: 0;
         margin-bottom: 1em; }
-      .tra-gop-information-modal .tragop-dialog .tragop-main-content .desc {
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .sub-title {
+        font-size: 1.25em;
+        font-weight: 600;
+        margin-bottom: .5em;
+        text-align: center;
+        letter-spacing: 0; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .desc {
         font-size: 1em;
         line-height: 1.65em;
         margin-bottom: 0.75em; }
-      .tra-gop-information-modal .tragop-dialog .tragop-main-content .value {
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .cta-holder {
+        color: #F26D20;
+        font-weight: 600;
+        text-align: center;
+        font-size: 1.15em;
+        margin-top: 1.5em; }
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .cta-holder a {
+          border-bottom: 2px solid #F26D20; }
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .value {
         margin: 0; }
-      .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table {
+      .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table {
         margin: 10px 0; }
-        .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row {
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row {
           border: 1px solid #999;
           margin: 0 !important; }
-          .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row:first-child {
+          .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row:first-child {
             border-bottom: none; }
-          .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div {
+          .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row div {
             padding: 0 !important;
             border-right: 1px solid #999;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center; }
-            .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div:last-child {
+            .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row div:last-child {
               border: none; }
-            .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div hr {
+            .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row div hr {
               width: 100%;
               flex-basis: 100%;
               background-color: #999;
               border-color: #999;
               margin: 0; }
-            .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row div .value {
+            .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row div .value {
               text-align: center;
               padding: 8px 5px;
               width: 100%;
               flex-basis: 100%; }
-      .tra-gop-information-modal .tragop-dialog .tragop-main-content ul {
+      .october-sale-information-modal .tragop-dialog .tragop-main-content ul {
         margin-top: -0.75em; }
-  .tra-gop-information-modal.active {
+  .october-sale-information-modal.active {
     transition: visibility 10s ease-out;
     visibility: visible; }
-    .tra-gop-information-modal.active .overlay {
+    .october-sale-information-modal.active .overlay {
       opacity: 1;
       transition: all ease-out 150ms; }
-    .tra-gop-information-modal.active .tragop-dialog {
+    .october-sale-information-modal.active .tragop-dialog {
       -webkit-transform: translateY(0);
       transform: translateY(0);
       opacity: 1;
       transition: all ease-out 220ms 100ms; }
   @media only screen and (max-width: 480px) {
-    .tra-gop-information-modal .tragop-dialog {
+    .october-sale-information-modal .tragop-dialog {
       border-radius: 18px;
       background-color: rgba(255, 255, 255, 0.8);
       padding: 2.5em 1.75em 1.25em;
       max-height: 70vh; }
-      .tra-gop-information-modal .tragop-dialog .close-btn {
+      .october-sale-information-modal .tragop-dialog .close-btn {
         top: 12px;
         right: 12px;
         font-size: 28px;
@@ -681,21 +1422,46 @@
         height: 30px;
         border-radius: 15px;
         line-height: 28px; }
-      .tra-gop-information-modal .tragop-dialog .tragop-main-content {
+      .october-sale-information-modal .tragop-dialog .tragop-main-content {
         max-height: 52vh;
         padding-right: 1em; }
-        .tra-gop-information-modal .tragop-dialog .tragop-main-content .title {
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .title {
           font-size: 1.35em;
           margin-bottom: 0.75em; }
-        .tra-gop-information-modal .tragop-dialog .tragop-main-content .desc {
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .sub-title {
+          font-size: 1.05em;
+          margin-bottom: .25em; }
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .desc {
           font-size: 0.9em;
           line-height: 1.55em;
           margin-bottom: 0.7em; }
-        .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table {
+        .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table {
           margin: 8px 0; }
-          .tra-gop-information-modal .tragop-dialog .tragop-main-content .custom-table .row .value {
+          .october-sale-information-modal .tragop-dialog .tragop-main-content .custom-table .row .value {
             padding: 5px 3px;
             font-size: 0.8em;
             font-weight: 500; }
-        .tra-gop-information-modal .tragop-dialog .tragop-main-content ul {
+        .october-sale-information-modal .tragop-dialog .tragop-main-content ul {
           margin-top: -0.7em; } }
+
+#g5-october-sale {
+  /* === --- RESPONSIVE --- === */
+  /* === Tablet and Mobile === */
+  /* === Tablet and Mobile - END === */ }
+  #g5-october-sale .cta-content .buynow-cta {
+    top: 89%;
+    left: 63%; }
+  #g5-october-sale .cta-content .see-info-cta {
+    top: 90%;
+    left: 25%; }
+  @media screen and (max-width: 768px) {
+    #g5-october-sale .cta-content .buynow-cta {
+      top: 91%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); }
+    #g5-october-sale .cta-content .see-info-cta {
+      top: 73%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); } }

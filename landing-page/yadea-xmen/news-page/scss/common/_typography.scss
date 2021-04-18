@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800&display=swap");
+
+/* === TYPOGRAPHY === */
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.white-txt,
+.txt-white {
+  color: $white !important;
+
+  * {
+    color: $white !important;
+  }
+}
+
+.txt-center,
+.text-center {
+  text-align: center;
+}
+
+.txt-right,
+.text-right {
+  text-align: right;
+}

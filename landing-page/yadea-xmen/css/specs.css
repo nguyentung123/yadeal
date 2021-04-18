@@ -1,0 +1,1750 @@
+/* =======================================
+ * COLOR
+ /* ======================================= */
+/* =======================================
+ * OTHERS
+ /* ======================================= */
+/* =======================================
+ * RESPONSIVE MARK
+ /* ======================================= */
+/* USAGE */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800&display=swap");
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+body,
+html {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  color: #000; }
+  body *,
+  html * {
+    box-sizing: border-box; }
+  body img.img-fluid,
+  html img.img-fluid {
+    display: block;
+    width: 100%; }
+  body .mold,
+  html .mold {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden; }
+    body .mold img,
+    html .mold img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center; }
+    body .mold.active,
+    html .mold.active {
+      opacity: 1;
+      visibility: visible; }
+  body #realme-c11 .img-holder img,
+  html #realme-c11 .img-holder img {
+    display: block;
+    width: 100%; }
+  body #realme-c11 .img-holder.bg img,
+  html #realme-c11 .img-holder.bg img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center; }
+
+/* ======================
+* Margin And Padding Generator 
+====================== */
+.mt-5 {
+  margin-top: 5px !important; }
+
+.pt-5 {
+  padding-top: 5px !important; }
+
+.mb-5 {
+  margin-bottom: 5px !important; }
+
+.pb-5 {
+  padding-bottom: 5px !important; }
+
+.ml-5 {
+  margin-left: 5px !important; }
+
+.pl-5 {
+  padding-left: 5px !important; }
+
+.mr-5 {
+  margin-right: 5px !important; }
+
+.pr-5 {
+  padding-right: 5px !important; }
+
+.mt-10 {
+  margin-top: 10px !important; }
+
+.pt-10 {
+  padding-top: 10px !important; }
+
+.mb-10 {
+  margin-bottom: 10px !important; }
+
+.pb-10 {
+  padding-bottom: 10px !important; }
+
+.ml-10 {
+  margin-left: 10px !important; }
+
+.pl-10 {
+  padding-left: 10px !important; }
+
+.mr-10 {
+  margin-right: 10px !important; }
+
+.pr-10 {
+  padding-right: 10px !important; }
+
+.mt-15 {
+  margin-top: 15px !important; }
+
+.pt-15 {
+  padding-top: 15px !important; }
+
+.mb-15 {
+  margin-bottom: 15px !important; }
+
+.pb-15 {
+  padding-bottom: 15px !important; }
+
+.ml-15 {
+  margin-left: 15px !important; }
+
+.pl-15 {
+  padding-left: 15px !important; }
+
+.mr-15 {
+  margin-right: 15px !important; }
+
+.pr-15 {
+  padding-right: 15px !important; }
+
+.mt-20 {
+  margin-top: 20px !important; }
+
+.pt-20 {
+  padding-top: 20px !important; }
+
+.mb-20 {
+  margin-bottom: 20px !important; }
+
+.pb-20 {
+  padding-bottom: 20px !important; }
+
+.ml-20 {
+  margin-left: 20px !important; }
+
+.pl-20 {
+  padding-left: 20px !important; }
+
+.mr-20 {
+  margin-right: 20px !important; }
+
+.pr-20 {
+  padding-right: 20px !important; }
+
+.mt-25 {
+  margin-top: 25px !important; }
+
+.pt-25 {
+  padding-top: 25px !important; }
+
+.mb-25 {
+  margin-bottom: 25px !important; }
+
+.pb-25 {
+  padding-bottom: 25px !important; }
+
+.ml-25 {
+  margin-left: 25px !important; }
+
+.pl-25 {
+  padding-left: 25px !important; }
+
+.mr-25 {
+  margin-right: 25px !important; }
+
+.pr-25 {
+  padding-right: 25px !important; }
+
+.mt-30 {
+  margin-top: 30px !important; }
+
+.pt-30 {
+  padding-top: 30px !important; }
+
+.mb-30 {
+  margin-bottom: 30px !important; }
+
+.pb-30 {
+  padding-bottom: 30px !important; }
+
+.ml-30 {
+  margin-left: 30px !important; }
+
+.pl-30 {
+  padding-left: 30px !important; }
+
+.mr-30 {
+  margin-right: 30px !important; }
+
+.pr-30 {
+  padding-right: 30px !important; }
+
+.mt-35 {
+  margin-top: 35px !important; }
+
+.pt-35 {
+  padding-top: 35px !important; }
+
+.mb-35 {
+  margin-bottom: 35px !important; }
+
+.pb-35 {
+  padding-bottom: 35px !important; }
+
+.ml-35 {
+  margin-left: 35px !important; }
+
+.pl-35 {
+  padding-left: 35px !important; }
+
+.mr-35 {
+  margin-right: 35px !important; }
+
+.pr-35 {
+  padding-right: 35px !important; }
+
+.mt-40 {
+  margin-top: 40px !important; }
+
+.pt-40 {
+  padding-top: 40px !important; }
+
+.mb-40 {
+  margin-bottom: 40px !important; }
+
+.pb-40 {
+  padding-bottom: 40px !important; }
+
+.ml-40 {
+  margin-left: 40px !important; }
+
+.pl-40 {
+  padding-left: 40px !important; }
+
+.mr-40 {
+  margin-right: 40px !important; }
+
+.pr-40 {
+  padding-right: 40px !important; }
+
+.mt-45 {
+  margin-top: 45px !important; }
+
+.pt-45 {
+  padding-top: 45px !important; }
+
+.mb-45 {
+  margin-bottom: 45px !important; }
+
+.pb-45 {
+  padding-bottom: 45px !important; }
+
+.ml-45 {
+  margin-left: 45px !important; }
+
+.pl-45 {
+  padding-left: 45px !important; }
+
+.mr-45 {
+  margin-right: 45px !important; }
+
+.pr-45 {
+  padding-right: 45px !important; }
+
+.mt-50 {
+  margin-top: 50px !important; }
+
+.pt-50 {
+  padding-top: 50px !important; }
+
+.mb-50 {
+  margin-bottom: 50px !important; }
+
+.pb-50 {
+  padding-bottom: 50px !important; }
+
+.ml-50 {
+  margin-left: 50px !important; }
+
+.pl-50 {
+  padding-left: 50px !important; }
+
+.mr-50 {
+  margin-right: 50px !important; }
+
+.pr-50 {
+  padding-right: 50px !important; }
+
+.mt-55 {
+  margin-top: 55px !important; }
+
+.pt-55 {
+  padding-top: 55px !important; }
+
+.mb-55 {
+  margin-bottom: 55px !important; }
+
+.pb-55 {
+  padding-bottom: 55px !important; }
+
+.ml-55 {
+  margin-left: 55px !important; }
+
+.pl-55 {
+  padding-left: 55px !important; }
+
+.mr-55 {
+  margin-right: 55px !important; }
+
+.pr-55 {
+  padding-right: 55px !important; }
+
+.mt-60 {
+  margin-top: 60px !important; }
+
+.pt-60 {
+  padding-top: 60px !important; }
+
+.mb-60 {
+  margin-bottom: 60px !important; }
+
+.pb-60 {
+  padding-bottom: 60px !important; }
+
+.ml-60 {
+  margin-left: 60px !important; }
+
+.pl-60 {
+  padding-left: 60px !important; }
+
+.mr-60 {
+  margin-right: 60px !important; }
+
+.pr-60 {
+  padding-right: 60px !important; }
+
+.mt-65 {
+  margin-top: 65px !important; }
+
+.pt-65 {
+  padding-top: 65px !important; }
+
+.mb-65 {
+  margin-bottom: 65px !important; }
+
+.pb-65 {
+  padding-bottom: 65px !important; }
+
+.ml-65 {
+  margin-left: 65px !important; }
+
+.pl-65 {
+  padding-left: 65px !important; }
+
+.mr-65 {
+  margin-right: 65px !important; }
+
+.pr-65 {
+  padding-right: 65px !important; }
+
+.mt-70 {
+  margin-top: 70px !important; }
+
+.pt-70 {
+  padding-top: 70px !important; }
+
+.mb-70 {
+  margin-bottom: 70px !important; }
+
+.pb-70 {
+  padding-bottom: 70px !important; }
+
+.ml-70 {
+  margin-left: 70px !important; }
+
+.pl-70 {
+  padding-left: 70px !important; }
+
+.mr-70 {
+  margin-right: 70px !important; }
+
+.pr-70 {
+  padding-right: 70px !important; }
+
+.mt-75 {
+  margin-top: 75px !important; }
+
+.pt-75 {
+  padding-top: 75px !important; }
+
+.mb-75 {
+  margin-bottom: 75px !important; }
+
+.pb-75 {
+  padding-bottom: 75px !important; }
+
+.ml-75 {
+  margin-left: 75px !important; }
+
+.pl-75 {
+  padding-left: 75px !important; }
+
+.mr-75 {
+  margin-right: 75px !important; }
+
+.pr-75 {
+  padding-right: 75px !important; }
+
+.mt-80 {
+  margin-top: 80px !important; }
+
+.pt-80 {
+  padding-top: 80px !important; }
+
+.mb-80 {
+  margin-bottom: 80px !important; }
+
+.pb-80 {
+  padding-bottom: 80px !important; }
+
+.ml-80 {
+  margin-left: 80px !important; }
+
+.pl-80 {
+  padding-left: 80px !important; }
+
+.mr-80 {
+  margin-right: 80px !important; }
+
+.pr-80 {
+  padding-right: 80px !important; }
+
+.mt-85 {
+  margin-top: 85px !important; }
+
+.pt-85 {
+  padding-top: 85px !important; }
+
+.mb-85 {
+  margin-bottom: 85px !important; }
+
+.pb-85 {
+  padding-bottom: 85px !important; }
+
+.ml-85 {
+  margin-left: 85px !important; }
+
+.pl-85 {
+  padding-left: 85px !important; }
+
+.mr-85 {
+  margin-right: 85px !important; }
+
+.pr-85 {
+  padding-right: 85px !important; }
+
+.mt-90 {
+  margin-top: 90px !important; }
+
+.pt-90 {
+  padding-top: 90px !important; }
+
+.mb-90 {
+  margin-bottom: 90px !important; }
+
+.pb-90 {
+  padding-bottom: 90px !important; }
+
+.ml-90 {
+  margin-left: 90px !important; }
+
+.pl-90 {
+  padding-left: 90px !important; }
+
+.mr-90 {
+  margin-right: 90px !important; }
+
+.pr-90 {
+  padding-right: 90px !important; }
+
+.mt-100 {
+  margin-top: 100px !important; }
+
+.pt-100 {
+  padding-top: 100px !important; }
+
+.mb-100 {
+  margin-bottom: 100px !important; }
+
+.pb-100 {
+  padding-bottom: 100px !important; }
+
+.ml-100 {
+  margin-left: 100px !important; }
+
+.pl-100 {
+  padding-left: 100px !important; }
+
+.mr-100 {
+  margin-right: 100px !important; }
+
+.pr-100 {
+  padding-right: 100px !important; }
+
+.mt-105 {
+  margin-top: 105px !important; }
+
+.pt-105 {
+  padding-top: 105px !important; }
+
+.mb-105 {
+  margin-bottom: 105px !important; }
+
+.pb-105 {
+  padding-bottom: 105px !important; }
+
+.ml-105 {
+  margin-left: 105px !important; }
+
+.pl-105 {
+  padding-left: 105px !important; }
+
+.mr-105 {
+  margin-right: 105px !important; }
+
+.pr-105 {
+  padding-right: 105px !important; }
+
+.mt-110 {
+  margin-top: 110px !important; }
+
+.pt-110 {
+  padding-top: 110px !important; }
+
+.mb-110 {
+  margin-bottom: 110px !important; }
+
+.pb-110 {
+  padding-bottom: 110px !important; }
+
+.ml-110 {
+  margin-left: 110px !important; }
+
+.pl-110 {
+  padding-left: 110px !important; }
+
+.mr-110 {
+  margin-right: 110px !important; }
+
+.pr-110 {
+  padding-right: 110px !important; }
+
+.mt-115 {
+  margin-top: 115px !important; }
+
+.pt-115 {
+  padding-top: 115px !important; }
+
+.mb-115 {
+  margin-bottom: 115px !important; }
+
+.pb-115 {
+  padding-bottom: 115px !important; }
+
+.ml-115 {
+  margin-left: 115px !important; }
+
+.pl-115 {
+  padding-left: 115px !important; }
+
+.mr-115 {
+  margin-right: 115px !important; }
+
+.pr-115 {
+  padding-right: 115px !important; }
+
+.mt-120 {
+  margin-top: 120px !important; }
+
+.pt-120 {
+  padding-top: 120px !important; }
+
+.mb-120 {
+  margin-bottom: 120px !important; }
+
+.pb-120 {
+  padding-bottom: 120px !important; }
+
+.ml-120 {
+  margin-left: 120px !important; }
+
+.pl-120 {
+  padding-left: 120px !important; }
+
+.mr-120 {
+  margin-right: 120px !important; }
+
+.pr-120 {
+  padding-right: 120px !important; }
+
+.mt-125 {
+  margin-top: 125px !important; }
+
+.pt-125 {
+  padding-top: 125px !important; }
+
+.mb-125 {
+  margin-bottom: 125px !important; }
+
+.pb-125 {
+  padding-bottom: 125px !important; }
+
+.ml-125 {
+  margin-left: 125px !important; }
+
+.pl-125 {
+  padding-left: 125px !important; }
+
+.mr-125 {
+  margin-right: 125px !important; }
+
+.pr-125 {
+  padding-right: 125px !important; }
+
+.mt-130 {
+  margin-top: 130px !important; }
+
+.pt-130 {
+  padding-top: 130px !important; }
+
+.mb-130 {
+  margin-bottom: 130px !important; }
+
+.pb-130 {
+  padding-bottom: 130px !important; }
+
+.ml-130 {
+  margin-left: 130px !important; }
+
+.pl-130 {
+  padding-left: 130px !important; }
+
+.mr-130 {
+  margin-right: 130px !important; }
+
+.pr-130 {
+  padding-right: 130px !important; }
+
+.mt-135 {
+  margin-top: 135px !important; }
+
+.pt-135 {
+  padding-top: 135px !important; }
+
+.mb-135 {
+  margin-bottom: 135px !important; }
+
+.pb-135 {
+  padding-bottom: 135px !important; }
+
+.ml-135 {
+  margin-left: 135px !important; }
+
+.pl-135 {
+  padding-left: 135px !important; }
+
+.mr-135 {
+  margin-right: 135px !important; }
+
+.pr-135 {
+  padding-right: 135px !important; }
+
+.mt-140 {
+  margin-top: 140px !important; }
+
+.pt-140 {
+  padding-top: 140px !important; }
+
+.mb-140 {
+  margin-bottom: 140px !important; }
+
+.pb-140 {
+  padding-bottom: 140px !important; }
+
+.ml-140 {
+  margin-left: 140px !important; }
+
+.pl-140 {
+  padding-left: 140px !important; }
+
+.mr-140 {
+  margin-right: 140px !important; }
+
+.pr-140 {
+  padding-right: 140px !important; }
+
+.mt-145 {
+  margin-top: 145px !important; }
+
+.pt-145 {
+  padding-top: 145px !important; }
+
+.mb-145 {
+  margin-bottom: 145px !important; }
+
+.pb-145 {
+  padding-bottom: 145px !important; }
+
+.ml-145 {
+  margin-left: 145px !important; }
+
+.pl-145 {
+  padding-left: 145px !important; }
+
+.mr-145 {
+  margin-right: 145px !important; }
+
+.pr-145 {
+  padding-right: 145px !important; }
+
+.mt-150 {
+  margin-top: 150px !important; }
+
+.pt-150 {
+  padding-top: 150px !important; }
+
+.mb-150 {
+  margin-bottom: 150px !important; }
+
+.pb-150 {
+  padding-bottom: 150px !important; }
+
+.ml-150 {
+  margin-left: 150px !important; }
+
+.pl-150 {
+  padding-left: 150px !important; }
+
+.mr-150 {
+  margin-right: 150px !important; }
+
+.pr-150 {
+  padding-right: 150px !important; }
+
+.mt-180 {
+  margin-top: 180px !important; }
+
+.pt-180 {
+  padding-top: 180px !important; }
+
+.mb-180 {
+  margin-bottom: 180px !important; }
+
+.pb-180 {
+  padding-bottom: 180px !important; }
+
+.ml-180 {
+  margin-left: 180px !important; }
+
+.pl-180 {
+  padding-left: 180px !important; }
+
+.mr-180 {
+  margin-right: 180px !important; }
+
+.pr-180 {
+  padding-right: 180px !important; }
+
+.mt-200 {
+  margin-top: 200px !important; }
+
+.pt-200 {
+  padding-top: 200px !important; }
+
+.mb-200 {
+  margin-bottom: 200px !important; }
+
+.pb-200 {
+  padding-bottom: 200px !important; }
+
+.ml-200 {
+  margin-left: 200px !important; }
+
+.pl-200 {
+  padding-left: 200px !important; }
+
+.mr-200 {
+  margin-right: 200px !important; }
+
+.pr-200 {
+  padding-right: 200px !important; }
+
+/* ============================
+ * Mixin helper
+ * ============================ */
+/* ============================
+ * Color Helper
+ * ============================ */
+/* ============================
+ * Responsive Supports
+ * ============================ */
+@media only screen and (max-width: 768px) {
+  .mb-hide {
+    display: none !important; } }
+
+.mb-show {
+  display: none !important; }
+  @media only screen and (max-width: 768px) {
+    .mb-show {
+      display: block !important; }
+      .mb-show.il-block {
+        display: inline-block !important; } }
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/SVN-Gilroy Regular.otf");
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/SVN-Gilroy Medium.otf");
+  font-weight: 500; }
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/SVN-Gilroy SemiBold.otf");
+  font-weight: 600; }
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/SVN-Gilroy Thin.otf");
+  font-weight: 300; }
+
+/* === TYPOGRAPHY === */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+  a:hover {
+    color: inherit;
+    text-decoration: none; }
+
+p {
+  margin: 0; }
+
+.white-txt {
+  color: #fff !important; }
+  .white-txt * {
+    color: #fff !important; }
+
+.txt-center {
+  text-align: center; }
+
+.blue-txt,
+.txt-blue {
+  color: #103992; }
+
+@media only screen and (max-width: 768px) {
+  .txt-mb-right {
+    text-align: right; } }
+
+#realme-c11 .section {
+  /* === RESPONSIVE === */ }
+  #realme-c11 .section .section-heading {
+    position: relative;
+    width: 1600px;
+    margin: 0 auto 60px;
+    padding: 0 60px;
+    max-width: 100%; }
+    #realme-c11 .section .section-heading .effect-layer {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0; }
+      #realme-c11 .section .section-heading .effect-layer .line-effect {
+        height: 105px;
+        position: absolute; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.up-line {
+          width: 1080px;
+          left: 60px;
+          top: 30%;
+          background-image: linear-gradient(to right, #b8ff67, rgba(184, 255, 103, 0)); }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.bottom-line {
+          width: 720px;
+          left: 180px;
+          top: 46%;
+          background-image: linear-gradient(to right, #b8ff67, rgba(184, 255, 103, 0));
+          opacity: 0.75; }
+    #realme-c11 .section .section-heading .title-layer {
+      position: relative;
+      z-index: 2;
+      font-family: "Gilroy", Arial, Helvetica, sans-serif; }
+      #realme-c11 .section .section-heading .title-layer .text-effect {
+        position: relative;
+        left: 240px;
+        width: 85%; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .main-text,
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          font-size: 130px;
+          line-height: 1;
+          letter-spacing: 4px;
+          font-weight: 400;
+          font-family: "Gilroy", Arial, Helvetica, sans-serif; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .main-text {
+          color: #7fdc99;
+          position: relative;
+          z-index: 3; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          color: #fff;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: #7fdc99;
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          right: -3px;
+          bottom: -3px; }
+  #realme-c11 .section .section-body,
+  #realme-c11 .section .section-bottom {
+    width: 1600px;
+    margin: 0 auto;
+    max-width: 100%; }
+  #realme-c11 .section .section-body .section-content {
+    text-align: center; }
+  #realme-c11 .section .section-title {
+    font-size: 50px;
+    letter-spacing: 1px; }
+  #realme-c11 .section .section-sub-title {
+    font-size: 36px;
+    letter-spacing: 1px;
+    font-weight: 400; }
+  @media only screen and (max-width: 1920px) {
+    #realme-c11 .section .section-heading {
+      width: 1440px;
+      margin: 0 auto 54px;
+      padding: 0 54px; }
+      #realme-c11 .section .section-heading .effect-layer .line-effect {
+        height: 86px; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.up-line {
+          width: 972px;
+          left: 54px;
+          top: 30%; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.bottom-line {
+          width: 648px;
+          left: 162px;
+          top: 46%; }
+      #realme-c11 .section .section-heading .title-layer .text-effect {
+        left: 198px;
+        width: 85%; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .main-text,
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          font-size: 117px; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          top: 3px;
+          left: 3px;
+          right: -3px;
+          bottom: -3px; }
+    #realme-c11 .section .section-body,
+    #realme-c11 .section .section-bottom {
+      width: 1440px; }
+    #realme-c11 .section .section-title {
+      font-size: 45px;
+      letter-spacing: 1px; }
+    #realme-c11 .section .section-sub-title {
+      font-size: 32px;
+      letter-spacing: 1px; } }
+  @media only screen and (max-width: 1680px) {
+    #realme-c11 .section .section-heading {
+      width: 1200px;
+      padding: 0 45px;
+      margin: 0 auto 45px; }
+      #realme-c11 .section .section-heading .effect-layer .line-effect {
+        height: 72px; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.up-line {
+          width: 810px;
+          left: 45px;
+          top: 30%; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.bottom-line {
+          width: 540px;
+          left: 135px;
+          top: 46%; }
+      #realme-c11 .section .section-heading .title-layer .text-effect {
+        left: 165px;
+        width: 85%; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .main-text,
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          font-size: 90px; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          top: 2px;
+          left: 2px;
+          right: -2px;
+          bottom: -2px; }
+    #realme-c11 .section .section-body,
+    #realme-c11 .section .section-bottom {
+      width: 1200px; }
+    #realme-c11 .section .section-title {
+      font-size: 37px;
+      letter-spacing: 1px; }
+    #realme-c11 .section .section-sub-title {
+      font-size: 27px;
+      letter-spacing: 1px; } }
+  @media only screen and (max-width: 1440px) {
+    #realme-c11 .section .section-title {
+      font-size: 32px;
+      letter-spacing: 1px; }
+    #realme-c11 .section .section-sub-title {
+      font-size: 24px;
+      letter-spacing: 1px; } }
+  @media only screen and (max-width: 768px) {
+    #realme-c11 .section .section-heading {
+      margin: 0 auto 30px;
+      padding: 0;
+      max-width: 100%; }
+      #realme-c11 .section .section-heading .effect-layer .line-effect {
+        height: 70px; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.up-line {
+          width: 80%;
+          left: 0;
+          top: 20%; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.bottom-line {
+          width: 60%;
+          left: 10%;
+          top: 46%; }
+      #realme-c11 .section .section-heading .title-layer .text-effect {
+        left: 10%;
+        width: 85%; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .main-text,
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          font-size: 67px;
+          letter-spacing: 3px; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          top: 2px;
+          left: 2px;
+          right: -2px;
+          bottom: -2px; }
+    #realme-c11 .section .section-title {
+      font-size: 30px;
+      letter-spacing: 1px; }
+    #realme-c11 .section .section-sub-title {
+      font-size: 21px;
+      letter-spacing: 1px; } }
+  @media only screen and (max-width: 480px) {
+    #realme-c11 .section .section-heading {
+      margin: 0 auto 30px;
+      padding: 0;
+      max-width: 100%; }
+      #realme-c11 .section .section-heading .effect-layer .line-effect {
+        height: 40px; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.up-line {
+          width: 80%;
+          left: 0;
+          top: 20%; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.bottom-line {
+          width: 60%;
+          left: 6%;
+          top: 46%; }
+      #realme-c11 .section .section-heading .title-layer .text-effect {
+        left: 9%;
+        width: 85%; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .main-text,
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          font-size: 40px;
+          letter-spacing: 2px; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          top: 2px;
+          left: 2px;
+          right: -2px;
+          bottom: -2px; }
+    #realme-c11 .section .section-title {
+      font-size: 20px;
+      letter-spacing: 0; }
+    #realme-c11 .section .section-sub-title {
+      font-size: 16px;
+      letter-spacing: 0; } }
+  @media only screen and (max-width: 376px) {
+    #realme-c11 .section .section-heading {
+      margin: 0 auto 30px;
+      padding: 0;
+      max-width: 100%; }
+      #realme-c11 .section .section-heading .effect-layer .line-effect {
+        height: 33px; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.up-line {
+          width: 80%;
+          left: 0;
+          top: 20%; }
+        #realme-c11 .section .section-heading .effect-layer .line-effect.bottom-line {
+          width: 60%;
+          left: 6%;
+          top: 42%; }
+      #realme-c11 .section .section-heading .title-layer .text-effect {
+        left: 9%;
+        width: 85%; }
+        #realme-c11 .section .section-heading .title-layer .text-effect .main-text,
+        #realme-c11 .section .section-heading .title-layer .text-effect .shadow-text {
+          font-size: 33px;
+          letter-spacing: 1px;
+          white-space: nowrap; }
+    #realme-c11 .section .section-title {
+      font-size: 18px; }
+    #realme-c11 .section .section-sub-title {
+      font-size: 14px; } }
+
+.modal-preorder {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden; }
+  .modal-preorder .modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    opacity: 0;
+    transition: all ease-in 300ms 180ms; }
+  .modal-preorder .modal-content {
+    width: 1200px;
+    max-width: 100%;
+    background-color: #191919;
+    color: #fff;
+    position: relative;
+    padding: 20px 20px 15px;
+    box-shadow: 8px 8px 7px rgba(0, 0, 0, 0.4);
+    transition: all ease-in 300ms 20ms;
+    opacity: 0;
+    transform: translateY(30px); }
+    .modal-preorder .modal-content .title {
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 10px; }
+    .modal-preorder .modal-content .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 26px;
+      color: #ffca12;
+      cursor: pointer; }
+    .modal-preorder .modal-content .title {
+      text-align: center; }
+    .modal-preorder .modal-content .shop-list {
+      display: flex;
+      list-style: none;
+      padding: 15px 30px;
+      margin: 0;
+      justify-content: center;
+      flex-wrap: wrap; }
+      .modal-preorder .modal-content .shop-list .shop-item {
+        width: 19%;
+        flex-basis: 19%;
+        margin: 0 0.5% 5px;
+        flex-shrink: 0;
+        text-align: center;
+        border: 1px solid #999;
+        padding: 0 10px 12px;
+        display: flex;
+        flex-direction: column; }
+        .modal-preorder .modal-content .shop-list .shop-item .shop-logo {
+          height: 110px;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          margin: 10px 0 20px; }
+          .modal-preorder .modal-content .shop-list .shop-item .shop-logo img {
+            max-height: 38px;
+            max-width: 80%; }
+        .modal-preorder .modal-content .shop-list .shop-item .cta {
+          display: block;
+          font-weight: 600;
+          line-height: 36px;
+          font-size: 16px;
+          color: #434343;
+          background-color: #ffca12;
+          border-radius: 3px; }
+      .modal-preorder .modal-content .shop-list.compressed .shop-item {
+        width: 11.5%;
+        flex-basis: 11.5%;
+        margin: 0 0.5% 5px;
+        flex-shrink: 0;
+        border: none;
+        padding: 3px 5px; }
+        .modal-preorder .modal-content .shop-list.compressed .shop-item .shop-logo {
+          height: 75px;
+          margin: 0; }
+          .modal-preorder .modal-content .shop-list.compressed .shop-item .shop-logo img {
+            max-height: 38px;
+            max-width: 90%; }
+    .modal-preorder .modal-content .search-store-btn {
+      text-align: center; }
+      .modal-preorder .modal-content .search-store-btn .cta {
+        display: inline-block;
+        font-size: 1em;
+        line-height: 2.25em;
+        padding: 0 1.5em;
+        border-radius: 3px;
+        font-weight: 600;
+        background-color: #ffca12;
+        color: #434343; }
+  .modal-preorder.active {
+    visibility: visible; }
+    .modal-preorder.active .modal-overlay {
+      transition: all ease-out 300ms 20ms;
+      opacity: 0.5; }
+    .modal-preorder.active .modal-content {
+      transition: all ease-out 300ms 180ms;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1; }
+  @media only screen and (max-width: 1368px) {
+    .modal-preorder .modal-content {
+      max-width: 100%;
+      padding: 25px 20px 15px; }
+      .modal-preorder .modal-content .title {
+        font-size: 32px;
+        margin-bottom: 13px; }
+      .modal-preorder .modal-content .close-btn {
+        top: 15px;
+        right: 30px;
+        font-size: 26px; }
+      .modal-preorder .modal-content .shop-list {
+        padding: 10px 25px; }
+        .modal-preorder .modal-content .shop-list .shop-item {
+          padding: 10px; }
+          .modal-preorder .modal-content .shop-list .shop-item .shop-logo {
+            height: 115px;
+            margin: 10px 0; }
+            .modal-preorder .modal-content .shop-list .shop-item .shop-logo img {
+              max-height: 38px;
+              max-width: 80%; }
+          .modal-preorder .modal-content .shop-list .shop-item .cta {
+            font-weight: 500;
+            line-height: 35px;
+            font-size: 16px; }
+      .modal-preorder .modal-content.compressed .shop-item {
+        margin: 0 0.5% 3px;
+        padding: 2px 4px; }
+        .modal-preorder .modal-content.compressed .shop-item .shop-logo {
+          height: 65px;
+          margin: 5px 0; }
+          .modal-preorder .modal-content.compressed .shop-item .shop-logo img {
+            max-height: 35px;
+            max-width: 90%; } }
+  @media only screen and (max-width: 1280px) {
+    .modal-preorder .modal-content {
+      padding: 22px 20px 15px; }
+      .modal-preorder .modal-content .title {
+        font-size: 30px;
+        margin-bottom: 10px; }
+      .modal-preorder .modal-content .close-btn {
+        top: 15px;
+        right: 30px;
+        font-size: 25px; }
+      .modal-preorder .modal-content .shop-list {
+        padding: 13px 22px; }
+        .modal-preorder .modal-content .shop-list .shop-item {
+          padding: 8px; }
+          .modal-preorder .modal-content .shop-list .shop-item .shop-logo {
+            height: 100px;
+            margin: 10px 0; }
+            .modal-preorder .modal-content .shop-list .shop-item .shop-logo img {
+              max-height: 32px;
+              max-width: 80%; }
+          .modal-preorder .modal-content .shop-list .shop-item .cta {
+            font-weight: 500;
+            line-height: 34px;
+            font-size: 15px; } }
+  @media only screen and (max-width: 1024px) {
+    .modal-preorder .modal-content {
+      width: 940px;
+      padding: 22px 20px 10px; }
+      .modal-preorder .modal-content .title {
+        font-size: 30px;
+        margin-bottom: 20px; }
+      .modal-preorder .modal-content .close-btn {
+        top: 15px;
+        right: 30px;
+        font-size: 25px; }
+      .modal-preorder .modal-content .shop-list {
+        padding: 13px 22px; }
+        .modal-preorder .modal-content .shop-list .shop-item {
+          padding: 10px;
+          width: 24%;
+          flex-basis: 24%; }
+          .modal-preorder .modal-content .shop-list .shop-item .shop-logo {
+            height: 135px;
+            margin: 10px 0 15px; }
+            .modal-preorder .modal-content .shop-list .shop-item .shop-logo img {
+              max-height: 35px;
+              max-width: 80%; }
+          .modal-preorder .modal-content .shop-list .shop-item .cta {
+            font-weight: 500;
+            line-height: 34px;
+            font-size: 15px; } }
+  @media only screen and (max-width: 768px) {
+    .modal-preorder .modal-content {
+      width: 720px;
+      padding: 22px 10px 15px; }
+      .modal-preorder .modal-content .title {
+        font-size: 28px;
+        margin-bottom: 18px; }
+      .modal-preorder .modal-content .close-btn {
+        top: 15px;
+        right: 26px;
+        font-size: 25px; }
+      .modal-preorder .modal-content .shop-list {
+        padding: 13px 15px; }
+        .modal-preorder .modal-content .shop-list .shop-item {
+          padding: 10px;
+          width: 24%;
+          flex-basis: 24%; }
+          .modal-preorder .modal-content .shop-list .shop-item .shop-logo {
+            height: 100px;
+            margin: 10px 0 15px; }
+            .modal-preorder .modal-content .shop-list .shop-item .shop-logo img {
+              max-height: 35px;
+              max-width: 90%; }
+          .modal-preorder .modal-content .shop-list .shop-item .cta {
+            font-weight: 500;
+            line-height: 32px;
+            font-size: 14px; } }
+  @media only screen and (max-width: 480px) {
+    .modal-preorder .modal-content {
+      width: 94%;
+      padding: 22px 8px 12px; }
+      .modal-preorder .modal-content .title {
+        font-size: 20px;
+        margin-bottom: 12px; }
+      .modal-preorder .modal-content .close-btn {
+        top: 10px;
+        right: 20px;
+        font-size: 22px; }
+      .modal-preorder .modal-content .shop-list {
+        padding: 13px 0;
+        max-height: 50vh;
+        overflow-y: auto; }
+        .modal-preorder .modal-content .shop-list .shop-item {
+          padding: 8px;
+          width: 32%;
+          flex-basis: 32%; }
+          .modal-preorder .modal-content .shop-list .shop-item .shop-logo {
+            height: 70px;
+            margin: 0; }
+            .modal-preorder .modal-content .shop-list .shop-item .shop-logo img {
+              max-height: 28px;
+              max-width: 90%; }
+          .modal-preorder .modal-content .shop-list .shop-item .cta {
+            font-weight: 500;
+            line-height: 28px;
+            font-size: 12px;
+            white-space: nowrap; }
+        .modal-preorder .modal-content .shop-list.compressed .shop-item {
+          width: 19%;
+          flex-basis: 19%;
+          margin: 0 0.5% 3px;
+          flex-shrink: 0;
+          border: none;
+          padding: 3px 3px; }
+          .modal-preorder .modal-content .shop-list.compressed .shop-item .shop-logo {
+            height: 40px;
+            margin: 5px 0; }
+            .modal-preorder .modal-content .shop-list.compressed .shop-item .shop-logo img {
+              max-height: 33px;
+              max-width: 90%; } }
+  @media only screen and (max-width: 376px) {
+    .modal-preorder .modal-content {
+      width: 95%;
+      padding: 20px 5px 10px; }
+      .modal-preorder .modal-content .title {
+        font-size: 18px;
+        margin-bottom: 8px; }
+      .modal-preorder .modal-content .close-btn {
+        top: 10px;
+        right: 20px;
+        font-size: 22px; }
+      .modal-preorder .modal-content .shop-list {
+        padding: 12px 0; }
+        .modal-preorder .modal-content .shop-list .shop-item {
+          padding: 5px;
+          width: 32%;
+          flex-basis: 32%; }
+          .modal-preorder .modal-content .shop-list .shop-item .shop-logo {
+            height: 35px;
+            margin: 0; }
+            .modal-preorder .modal-content .shop-list .shop-item .shop-logo img {
+              max-height: 24px;
+              max-width: 90%; }
+          .modal-preorder .modal-content .shop-list .shop-item .cta {
+            font-weight: 500;
+            line-height: 22px;
+            font-size: 11px;
+            white-space: nowrap; } }
+
+#realme-c11-specs {
+  /* === Responsive === */ }
+  #realme-c11-specs .container {
+    width: 1200px;
+    margin: 0 auto;
+    max-width: 100%; }
+  #realme-c11-specs .section-specs-banner {
+    height: 800px;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout {
+      height: 485px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 2fr 1fr; }
+      #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-img-holder {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        position: relative;
+        width: 100%;
+        height: 100%; }
+        #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-img-holder .phone-color {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: all ease-in 150ms; }
+          #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-img-holder .phone-color.active {
+            opacity: 1;
+            visibility: visible;
+            transition: all ease-out 220ms; }
+      #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail {
+        grid-column: 2 / span 2;
+        grid-row: 1;
+        padding-left: 120px; }
+        #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout {
+          display: flex;
+          flex-wrap: wrap;
+          height: 100%; }
+          #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item {
+            width: 50%;
+            flex-basis: 50%; }
+            #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item .line-1 {
+              font-size: 20px;
+              margin-bottom: 5px;
+              font-weight: 600; }
+            #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item .line-2 {
+              font-size: 14px;
+              opacity: 0.5;
+              font-weight: 600; }
+      #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+        padding-left: 120px; }
+        #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .label {
+          font-size: 20px;
+          font-weight: 600; }
+        #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder {
+          display: flex;
+          margin-top: 20px; }
+          #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item {
+            width: 22.5%; }
+            #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark {
+              width: 40px;
+              height: 40px;
+              position: relative;
+              border: 3px solid #707070;
+              border-radius: 50%;
+              margin: 0 auto 10px;
+              cursor: pointer;
+              border-color: transparent; }
+              #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark:before {
+                content: "";
+                width: 28px;
+                height: 28px;
+                border-radius: 14px;
+                top: 3px;
+                left: 3px;
+                position: absolute;
+                background-color: #999; }
+              #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark.c11-green:before {
+                background-color: #a6d9ba;
+                background-image: linear-gradient(#a5e4b1, #579164); }
+              #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark.c11-gray:before {
+                background-color: #b4b0b0;
+                background-image: linear-gradient(#dedede, #525653); }
+            #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-label {
+              text-align: center;
+              font-size: 20px;
+              font-weight: 600; }
+            #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item.active .color-mark {
+              border-color: #707070; }
+  @media only screen and (max-width: 768px) {
+    #realme-c11-specs .section-specs-banner {
+      height: 208.333vw; }
+      #realme-c11-specs .section-specs-banner .specs-banner-layout {
+        height: 172.22vw;
+        width: 85%;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2.6fr 1.3fr 2.3fr; }
+        #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-img-holder {
+          grid-column: 1;
+          grid-row: 1;
+          width: 65%;
+          margin: 0 auto; }
+          #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-img-holder .phone-color .img-holder {
+            width: 100%; }
+            #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-img-holder .phone-color .img-holder img {
+              width: 100%;
+              display: block; }
+        #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail {
+          grid-column: 1;
+          grid-row: 3;
+          padding: 0; }
+          #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item .line-1 {
+            font-size: 20px;
+            margin-bottom: 5px; }
+          #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item .line-2 {
+            font-size: 14px; }
+        #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper {
+          grid-column: 1;
+          grid-row: 2;
+          padding: 0;
+          width: 80%;
+          margin: 0 auto; }
+          #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .label {
+            font-size: 20px;
+            font-weight: 600;
+            display: none; }
+          #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder {
+            margin-top: 20px; }
+            #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item {
+              width: 50%; }
+              #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark {
+                width: 40px;
+                height: 40px;
+                border: 3px solid transparent;
+                margin: 0 auto 10px; }
+                #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark:before {
+                  width: 28px;
+                  height: 28px;
+                  border-radius: 14px;
+                  top: 3px;
+                  left: 3px; }
+              #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-label {
+                font-size: 20px; } }
+  @media only screen and (max-width: 480px) {
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item:nth-child(odd) {
+      padding-right: 10px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item:nth-child(even) {
+      padding-left: 10px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item .line-1 {
+      font-size: 15px;
+      margin-bottom: 5px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item .line-2 {
+      font-size: 12px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark {
+      width: 36px;
+      height: 36px;
+      border: 2px solid transparent;
+      margin: 0 auto 10px;
+      cursor: pointer; }
+      #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark:before {
+        width: 26px;
+        height: 26px;
+        border-radius: 14px;
+        top: 3px;
+        left: 3px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-label {
+      font-size: 15px; } }
+  @media only screen and (max-width: 376px) {
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item:nth-child(odd) {
+      padding-right: 10px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item:nth-child(even) {
+      padding-left: 10px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item .line-1 {
+      font-size: 14px;
+      margin-bottom: 4px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-detail .phone-detail-layout .detail-item .line-2 {
+      font-size: 11px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark {
+      width: 36px;
+      height: 36px;
+      border: 2px solid transparent;
+      margin: 0 auto 10px; }
+      #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-mark:before {
+        width: 26px;
+        height: 26px;
+        border-radius: 14px;
+        top: 3px;
+        left: 3px; }
+    #realme-c11-specs .section-specs-banner .specs-banner-layout .phone-color-swapper .color-holder .color-item .color-label {
+      font-size: 14px; } }
+
+#realme-c11-specs {
+  /* === RESPONSIVE === */ }
+  #realme-c11-specs .section-specs-detail {
+    padding-top: 160px; }
+    #realme-c11-specs .section-specs-detail .specs-detail-block {
+      display: flex;
+      margin-bottom: 145px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-left {
+        width: 16.667%;
+        flex-basis: 16.667%; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-left .block-label {
+          white-space: nowrap;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 1.75; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right {
+        width: 80%;
+        flex-basis: 80%;
+        display: flex;
+        flex-wrap: wrap; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .block-title {
+          width: 100%;
+          flex-basis: 100%;
+          font-size: 34px;
+          font-weight: 600;
+          margin-bottom: 30px; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .detail-col.size-25 {
+          width: 25%;
+          flex-basis: 25%; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .detail-col.size-33 {
+          width: 33.33%;
+          flex-basis: 33.33%; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .detail-col.size-50 {
+          width: 50%;
+          flex-basis: 50%; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .detail-col.size-75 {
+          width: 75%;
+          flex-basis: 75%; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .detail-col.size-100 {
+          width: 100%;
+          flex-basis: 100%; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .img-holder {
+          margin: 30px 0 45px; }
+          #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .img-holder img {
+            display: block;
+            width: 100%; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .desc {
+          font-size: 16px;
+          margin-bottom: 8px;
+          white-space: nowrap; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right b {
+          font-weight: 600; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .label {
+          font-size: 24px;
+          margin-bottom: 15px;
+          font-weight: 600; }
+  @media only screen and (max-width: 768px) {
+    #realme-c11-specs .section-specs-detail {
+      padding: 19.44vw 50px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block {
+        margin-bottom: 18.055vw;
+        flex-wrap: wrap; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-left {
+          width: 100%;
+          flex-basis: 100%; }
+          #realme-c11-specs .section-specs-detail .specs-detail-block .detail-left .block-label {
+            font-size: 24px; }
+            #realme-c11-specs .section-specs-detail .specs-detail-block .detail-left .block-label br {
+              display: none; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right {
+          width: 100%;
+          flex-basis: 100%; }
+          #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .block-title {
+            font-size: 30px;
+            margin-bottom: 30px; }
+          #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .detail-col.size-sm-100 {
+            width: 100%;
+            flex-basis: 100%; }
+          #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .detail-col.size-sm-50 {
+            width: 50%;
+            flex-basis: 50%; }
+          #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .img-holder {
+            margin: 30px 0 45px; }
+            #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .img-holder img {
+              display: block;
+              width: 100%; }
+          #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .desc {
+            font-size: 16px;
+            margin-bottom: 8px;
+            white-space: normal; }
+          #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right b {
+            font-weight: 600; }
+          #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .label {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600; } }
+  @media only screen and (max-width: 480px) {
+    #realme-c11-specs .section-specs-detail {
+      padding: 19.44vw 30px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-left .block-label {
+        font-size: 18px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .block-title {
+        font-size: 22px;
+        margin-bottom: 15px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .img-holder {
+        margin: 20px 0 25px; }
+        #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .img-holder img {
+          display: block;
+          width: 100%; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .desc {
+        font-size: 14px;
+        margin-bottom: 6px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .label {
+        font-size: 18px;
+        margin-bottom: 15px; } }
+  @media only screen and (max-width: 376px) {
+    #realme-c11-specs .section-specs-detail {
+      padding: 19.44vw 20px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-left .block-label {
+        font-size: 16px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .block-title {
+        font-size: 19px;
+        margin-bottom: 15px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .img-holder {
+        margin: 16px 0 20px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .desc {
+        font-size: 12px;
+        margin-bottom: 6px; }
+      #realme-c11-specs .section-specs-detail .specs-detail-block .detail-right .label {
+        font-size: 16px;
+        margin-bottom: 15px; } }

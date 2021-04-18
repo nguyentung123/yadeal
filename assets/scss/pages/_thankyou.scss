@@ -1,0 +1,249 @@
+.thankyou-page{
+  .section-thankyou-context{
+    padding: 120px 0 80px;
+
+    .container{
+      width: 1080px;
+      max-width: 100%;
+
+      /* Cotext */
+      .main-content{
+        text-align: center;
+
+        .title{
+          font-size: 36px;
+          font-weight: bold;
+          margin-bottom: 0.75em;
+        }
+
+        .thankyou-note{
+          font-size: 16px;
+          line-height: 25px;
+          margin-bottom: 0.5em;
+        }
+
+        .custom-line{
+          width: 65px;
+          height: 5px;
+          border-radius: 3px;
+          background-color: #ff850d;
+          margin: 22px auto 40px;
+        }
+
+        .cta-holder{
+          margin-top: 22px;
+          text-align: center;
+        }
+      }
+
+      /* Main Image */
+      .thankyou-img{
+        margin-top: 40px;
+
+        .img-holder{
+          margin: auto;
+
+          img{
+            max-width: 100%;
+            display: block;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+
+  /* Responsive */
+  @media #{$information-tablet}{
+    .section-thankyou-context {
+      padding: 85px 0 60px;
+    }
+  }
+
+  @media #{$information-phone}{
+    .section-thankyou-context{
+      padding: 65px 0 40px;
+
+      .container{
+        /* Cotext */
+        .main-content{
+
+          .title{
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 0.75em;
+          }
+
+          .thankyou-note{
+            font-size: 15px;
+            line-height: 23px;
+            margin-bottom: 0.5em;
+          }
+
+          .custom-line{
+            width: 60px;
+            height: 5px;
+            border-radius: 3px;
+            background-color: #ff850d;
+            margin: 20px auto 34px;
+          }
+
+          .cta-holder{
+            margin-top: 22px;
+            text-align: center;
+          }
+        }
+
+        /* Main Image */
+        .thankyou-img{
+          margin-top: 60px;
+
+          .img-holder{
+            margin: auto;
+
+            img{
+              max-width: 87.5%;
+              display: block;
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Common Reuse */
+.btn {
+  &.shadow-cta{
+    position: relative;
+    display: inline-block;
+    padding: 0;
+
+    .context{
+      display: block;
+      position: relative;
+      z-index: 1;
+      background-color: #ff850d;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 0 22px 0 33px;
+      line-height: 35px;
+      color: #2a2a2a;
+      transition: color ease-in 100ms;
+
+      .arrow{
+        font-size: 1.1em;
+        display: inline-block;
+        -webkit-transform: scaleY(1.2) scaleX(0.8) translateY(-1px);
+        transform: scaleY(1.2) scaleX(0.8) translateY(-1px);
+      }
+
+      &:hover{
+        color: $white;
+        transition: color ease-out 150ms;
+      }
+    }
+
+    .shadow{
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: 0 0 15px #ff850d, inset 0 0 15px #ff850d;
+      //background-color: #ff850d;
+      border-radius: 8px;
+      -webkit-animation: shadowBtnEffect 1500ms linear infinite;
+      animation: shadowBtnEffect 1500ms linear infinite;
+    }
+
+    &.no-effect{
+      .shadow{
+        display: none;
+      }
+    }
+  }
+
+  @media #{$information-phone}{
+    &.shadow-cta{
+      .context{
+        font-size: 14px;
+        border-radius: 7px;
+        padding: 0 15px 0 25px;
+        line-height: 32px;
+
+        .arrow{
+          font-size: 1.1em;
+        }
+      }
+
+      .shadow{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: 0 0 15px #ff850d, inset 0 0 15px #ff850d;
+        //background-color: #ff850d;
+        border-radius: 8px;
+        -webkit-animation: shadowBtnEffect 1500ms linear infinite;
+        animation: shadowBtnEffect 1500ms linear infinite;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes shadowBtnEffect {
+  0%{
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+
+  12.5%{
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+
+  60%{
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  99.99%{
+    transform: scaleY(1.5) scaleX(1.1);
+    opacity: 0;
+  }
+
+  100%{
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes shadowBtnEffect {
+  0%{
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+
+  12.5%{
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+
+  60%{
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  99.99%{
+    transform: scaleY(1.5) scaleX(1.1);
+    opacity: 0;
+  }
+
+  100%{
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+}

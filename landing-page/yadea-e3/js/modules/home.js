@@ -15,6 +15,7 @@ import AntiThief from "./_anti-thief";
 import SavingEnergy from "./_saving-energy";
 import Features from "./_features";
 import SignupInfo from "./_signup-info";
+import OctoberSale from "./_october-sale";
 
 import { reachSection, pageListener } from './utils';
 
@@ -22,24 +23,25 @@ export default class Home {
     /* ===================================
      *  CONSTRUCTOR
      * =================================== */
-    constructor(){
+    constructor() {
         window.TweenMax = TweenMax;
         window.e3Listener = new pageListener();
 
         // Behavior Use For All Page
-        let banner    = new Banner();
-        let design    = new Design();
+        let banner = new Banner();
+        let design = new Design();
         let container = new Container();
-        let light     = new Light();
-        let water    = new WaterResistance();
+        let light = new Light();
+        let water = new WaterResistance();
         let positionSeat = new PositionSeat();
-        let screen    = new Screen();
-        let battery    = new Battery();
-        let control    = new Control();
-        let antiThief    = new AntiThief();
-        let savingEnergy1    = new SavingEnergy();
-        let features    = new Features();
+        let screen = new Screen();
+        let battery = new Battery();
+        let control = new Control();
+        let antiThief = new AntiThief();
+        let savingEnergy1 = new SavingEnergy();
+        let features = new Features();
         let signupInfo = new SignupInfo();
+        let october = new OctoberSale();
 
         let common = new Common();
 
@@ -82,8 +84,18 @@ export default class Home {
     /* ===================================
      *  EVENTS
      * =================================== */
-    bindEvents(){
-        this.ScrollingDetect();
+    bindEvents() {
+        this.$pageOverlay = $('#loading-overlay');
+        setTimeout(() => {
+            e3Listener.emit('page-start');
+            this.ScrollingDetect();
+        }, 2500)
+
+        window.onload = () => {
+            this.$pageOverlay.addClass('hidden');
+        }
+
+        // this.SetupTestDriveFloatingButton();
     }
 
 
@@ -91,111 +103,139 @@ export default class Home {
     /* ===================================
      *  METHODS
      * =================================== */
-    ScrollingDetect(){
+    ScrollingDetect() {
         $(window).on('scroll', (e) => {
             // Design 2nd Section
-            if(reachSection( this.pageSections.$design )){
-                if( !this.animationStatus.design){
+            if (reachSection(this.pageSections.$design)) {
+                if (!this.animationStatus.design) {
                     this.animationStatus.design = true;
                     e3Listener.emit('design-anim');
                 }
             }
 
             // Container 3rd Section
-            if(reachSection( this.pageSections.$container )){
-                if( !this.animationStatus.container){
+            if (reachSection(this.pageSections.$container)) {
+                if (!this.animationStatus.container) {
                     this.animationStatus.container = true;
                     e3Listener.emit('container-anim');
                 }
             }
 
             // Container 4th Section
-            if(reachSection( this.pageSections.$light )){
-                if( !this.animationStatus.light){
+            if (reachSection(this.pageSections.$light)) {
+                if (!this.animationStatus.light) {
                     this.animationStatus.light = true;
                     e3Listener.emit('light-anim');
                 }
             }
 
             // Water Resistance 5th Section
-            if(reachSection( this.pageSections.$waterResistance )){
-                if( !this.animationStatus.waterResistance){
+            if (reachSection(this.pageSections.$waterResistance)) {
+                if (!this.animationStatus.waterResistance) {
                     this.animationStatus.waterResistance = true;
                     e3Listener.emit('water-resistance-anim');
                 }
             }
 
             // Position Seat 6th Section
-            if(reachSection( this.pageSections.$positionSeat )){
-                if( !this.animationStatus.positionSeat){
+            if (reachSection(this.pageSections.$positionSeat)) {
+                if (!this.animationStatus.positionSeat) {
                     this.animationStatus.positionSeat = true;
                     e3Listener.emit('position-seat-anim');
                 }
             }
 
             // Screen Display 7th Section
-            if(reachSection( this.pageSections.$screen )){
-                if( !this.animationStatus.screen){
+            if (reachSection(this.pageSections.$screen)) {
+                if (!this.animationStatus.screen) {
                     this.animationStatus.screen = true;
                     e3Listener.emit('screen-anim');
                 }
             }
 
             // Control 8th Section
-            if(reachSection( this.pageSections.$control )){
-                if( !this.animationStatus.control){
+            if (reachSection(this.pageSections.$control)) {
+                if (!this.animationStatus.control) {
                     this.animationStatus.control = true;
                     e3Listener.emit('easy-control-anim');
                 }
             }
 
             // Battery 8.1th Section
-            if(reachSection( this.pageSections.$battery )){
-                if( !this.animationStatus.battery){
+            if (reachSection(this.pageSections.$battery)) {
+                if (!this.animationStatus.battery) {
                     this.animationStatus.battery = true;
                     e3Listener.emit('battery-anim');
                 }
             }
 
             // Easy Control 9th Section
-            if(reachSection( this.pageSections.$control )){
-                if( !this.animationStatus.control){
+            if (reachSection(this.pageSections.$control)) {
+                if (!this.animationStatus.control) {
                     this.animationStatus.control = true;
                     e3Listener.emit('control-anim');
                 }
             }
 
             // Anti Thief 11th Section
-            if(reachSection( this.pageSections.$antiThief )){
-                if( !this.animationStatus.antiThief){
+            if (reachSection(this.pageSections.$antiThief)) {
+                if (!this.animationStatus.antiThief) {
                     this.animationStatus.antiThief = true;
                     e3Listener.emit('anti-thief-anim');
                 }
             }
 
             // Saving Energy 1 12th Section
-            if(reachSection( this.pageSections.$savingEnergy1 )){
-                if( !this.animationStatus.savingEnergy1){
+            if (reachSection(this.pageSections.$savingEnergy1)) {
+                if (!this.animationStatus.savingEnergy1) {
                     this.animationStatus.savingEnergy1 = true;
                     e3Listener.emit('saving-energy-anim');
                 }
             }
 
             // Saving Energy 2 13th Section
-            if(reachSection( this.pageSections.$savingEnergy2 )){
-                if( !this.animationStatus.savingEnergy2){
+            if (reachSection(this.pageSections.$savingEnergy2)) {
+                if (!this.animationStatus.savingEnergy2) {
                     this.animationStatus.savingEnergy2 = true;
                     e3Listener.emit('saving-energy-2-anim');
                 }
             }
 
             // Saving Energy 1 14th Section
-            if(reachSection( this.pageSections.$features )){
-                if( !this.animationStatus.features){
-                    this.animationStatus.features= true;
+            if (reachSection(this.pageSections.$features)) {
+                if (!this.animationStatus.features) {
+                    this.animationStatus.features = true;
                     e3Listener.emit('features-anim');
                 }
             }
         });
+    }
+
+    SetupTestDriveFloatingButton() {
+        this.$testDriveFloatBlock = $('.signup-test-drive-float-btn');
+        if ($('.signup-test-drive-page').length < 1) {
+            this.allowInteractionTestDrive = true;
+            this.$testDriveThumbnail = this.$testDriveFloatBlock.find('.thumbnail-icon');
+            this.$testDriveMainIcon = this.$testDriveFloatBlock.find('.main-icon');
+            this.$testDriveCloseIcon = this.$testDriveMainIcon.find('.close-test-drive-area');
+
+            // this.$testDriveThumbnail.on('click', () => {
+            //     if(this.allowInteractionTestDrive){
+            //         this.allowInteractionTestDrive = false;
+            //         this.$testDriveFloatBlock.addClass('active');
+            //         setTimeout(() => {this.allowInteractionTestDrive = true;}, 350)
+            //     }
+            // });
+
+            this.$testDriveCloseIcon.on('click', () => {
+                if (this.allowInteractionTestDrive) {
+                    this.allowInteractionTestDrive = false;
+                    this.$testDriveFloatBlock.removeClass('active');
+                    setTimeout(() => { this.allowInteractionTestDrive = true; }, 350)
+                }
+            });
+        } else {
+            this.$testDriveFloatBlock.hide();
+        }
     }
 }

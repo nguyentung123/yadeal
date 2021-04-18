@@ -1,0 +1,562 @@
+#yadea-xmen-page {
+  .section-comparision,
+  #yadea-xmen-comparision {
+    padding: 65px 0;
+
+    .main-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .comparision-layout {
+      width: 1200px;
+      padding: 0 45px;
+      max-width: 100%;
+      margin: 40px auto;
+      display: grid;
+      grid-gap: 8px;
+      grid-template-columns: 4.35fr 1.2fr 4.35fr;
+      grid-template-rows: 275px auto 1fr;
+
+      .compare-options {
+        grid-column: 2;
+        grid-row: 2;
+
+        .comparision-options {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          .option-item {
+            font-weight: 700;
+            text-align: center;
+            display: block;
+            border: 1px solid #000;
+            height: 38px;
+            line-height: 38px;
+            font-size: 16px;
+            margin-bottom: 13px;
+            cursor: pointer;
+
+            &.active {
+              background-color: #000;
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .compare-product-column {
+        .product-image {
+          width: 100%;
+          height: 295px;
+          position: relative;
+
+          .bike-image {
+            position: absolute;
+            width: 82%;
+            bottom: 20px;
+            left: 9%;
+          }
+        }
+
+        .product-color-listing {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin: 10px 0;
+
+          .color-item {
+            position: relative;
+            background-color: $white;
+            box-shadow: 0 3px 6px rgba(#000, 0.35);
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            margin: 0 8px;
+            transition: all ease-in 125ms;
+
+            &:before {
+              content: "";
+              width: 20px;
+              height: 20px;
+              border-radius: 10px;
+              top: 5px;
+              left: 5px;
+              position: absolute;
+              border: 3px solid #252525;
+            }
+
+            &.active,
+            &:hover {
+              transform: scale(1.1);
+              box-shadow: 0 2px 7px rgba(#000, 0.5);
+              transition: all ease-out 150ms;
+            }
+
+            &.xmen-color-1 {
+              &:before {
+                background-color: #1039c8;
+              }
+            }
+
+            &.xmen-color-2 {
+              &:before {
+                background-color: #f06423;
+              }
+            }
+
+            &.xmen-color-3 {
+              &:before {
+                background-color: #c13217;
+              }
+            }
+
+            &.xmen-color-4 {
+              &:before {
+                background-color: #3b8c43;
+              }
+            }
+
+            &.x5-color-1 {
+              &:before {
+                border-color: #c13217;
+                background-color: #1039c8;
+              }
+            }
+
+            &.x5-color-2 {
+              &:before {
+                background-color: #f06423;
+              }
+            }
+
+            &.x5-color-3 {
+              &:before {
+                background-color: #c13217;
+              }
+            }
+          }
+        }
+
+        .product-name {
+          margin: 10px 0 15px;
+        }
+
+        .product-price {
+          font-weight: 700;
+          font-size: 30px;
+        }
+
+        .product-compare-data {
+          margin: 30px 0 10px;
+
+          .data-list {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            list-style: none;
+            display: none;
+
+            &.active {
+              display: block;
+            }
+
+            .data-item {
+              position: relative;
+              margin: 15px 0 40px;
+              padding-top: 17px;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 29px;
+              min-height: 60px;
+
+              &:before {
+                content: "";
+                height: 6px;
+                width: 17px;
+                background-color: $red;
+                position: absolute;
+                left: calc(50% - 8px);
+                top: 0;
+              }
+            }
+          }
+        }
+
+        .product-cta {
+          .buynow-btn {
+            line-height: 38px;
+            border: 1px solid #000;
+            display: inline-block;
+            font-weight: 900;
+            font-size: 18px;
+            padding: 0 12px;
+            cursor: pointer;
+          }
+        }
+
+        // Variation
+        &.product-xmen {
+          grid-column: 1;
+
+          &.column-top {
+            grid-row: 1 / span 2;
+          }
+
+          &.column-bottom {
+            grid-row: 3;
+          }
+        }
+
+        &.product-x5 {
+          grid-column: 3;
+          grid-row: 1 / span 3;
+
+          &.column-top {
+            grid-row: 1 / span 2;
+          }
+
+          &.column-bottom {
+            grid-row: 3;
+          }
+        }
+      }
+    }
+  }
+
+  /* === RESPONSIVE === */
+  @media #{$information-tablet} {
+    .section-comparision,
+    #yadea-xmen-comparision {
+      padding: 12vw 0 10vw;
+
+      .comparision-layout {
+        width: 100%;
+        padding: 0 30px;
+        max-width: 100%;
+        margin: 2vw auto;
+        display: grid;
+        grid-gap: 8px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+
+        .compare-options {
+          grid-column: 1 / span 2;
+          grid-row: 2;
+          padding: 3vw 8vw 0;
+
+          .comparision-options {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+
+            .option-item {
+              flex-basis: 31%;
+              height: 40px;
+              line-height: 40px;
+              font-size: 18px;
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        .compare-product-column {
+          .product-image {
+            height: 35vw;
+
+            .bike-image {
+              width: 90%;
+              bottom: 12px;
+              left: 5%;
+            }
+          }
+
+          .product-color-listing {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+
+            .color-item {
+              width: 30px;
+              height: 30px;
+              margin: 0 7px;
+
+              &:before {
+              }
+
+              &:before {
+              }
+            }
+          }
+
+          .product-name {
+            width: 50%;
+            line-height: 50px;
+            margin: 15px auto 22px;
+            font-size: 24px;
+            color: $white;
+            background-color: #111;
+            font-weight: 700;
+            white-space: nowrap;
+            padding-top: 2px;
+          }
+
+          .product-price {
+            font-size: 28px;
+          }
+
+          .product-compare-data {
+            margin: 25px 0 50px;
+
+            .data-list {
+              .data-item {
+                margin: 15px 0 30px;
+                padding-top: 17px;
+                font-size: 16px;
+
+                &:before {
+                  height: 6px;
+                  width: 18px;
+                  left: calc(50% - 9px);
+                }
+              }
+            }
+          }
+
+          .product-cta {
+            .buynow-btn {
+              height: 42px;
+              line-height: 43px;
+              font-size: 18px;
+              padding: 0 15px;
+            }
+          }
+
+          // Variation
+          &.product-xmen {
+            grid-column: 1;
+
+            &.column-top {
+              grid-row: 1 / span 2;
+            }
+
+            &.column-bottom {
+              grid-row: 3;
+            }
+          }
+
+          &.product-x5 {
+            grid-column: 2;
+
+            &.column-top {
+              grid-row: 1;
+            }
+
+            &.column-bottom {
+              grid-row: 3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    .section-comparision,
+    #yadea-xmen-comparision {
+      padding: 10vw 0 7vw;
+
+      .main-content {
+        padding: 0 15px;
+      }
+
+      .comparision-layout {
+        width: 100%;
+        padding: 0 15px;
+        margin: 1vw auto;
+        grid-gap: 3px;
+
+        .compare-options {
+          padding: 3vw 5vw 0;
+
+          .comparision-options {
+            .option-item {
+              flex-basis: 31%;
+              height: 36px;
+              line-height: 35px;
+              font-size: 15px;
+            }
+          }
+        }
+
+        .compare-product-column {
+          .product-image {
+            height: 37vw;
+
+            .bike-image {
+              width: 96%;
+              bottom: 10px;
+              left: 2%;
+            }
+          }
+
+          .product-color-listing {
+            width: 100%;
+            margin: 7px 0;
+
+            .color-item {
+              width: 27px;
+              height: 27px;
+              margin: 0 5px;
+
+              &:before {
+                width: 17px;
+                height: 17px;
+                border-width: 2px;
+              }
+            }
+          }
+
+          .product-name {
+            margin: 10px auto 15px;
+            font-size: 14px;
+            line-height: 32px;
+          }
+
+          .product-price {
+            font-size: 18px;
+          }
+
+          .product-compare-data {
+            margin: 20px 0 40px;
+
+            .data-list {
+              .data-item {
+                margin: 15px 0 30px;
+                padding: 17px 10px 0;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 1.5;
+                height: auto;
+
+                // br {
+                //   display: none;
+                // }
+
+                &:before {
+                  height: 6px;
+                  width: 18px;
+                  left: calc(50% - 9px);
+                }
+              }
+            }
+          }
+
+          .product-cta {
+            .buynow-btn {
+              height: 33px;
+              line-height: 34px;
+              font-size: 13px;
+              padding: 0 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone} {
+    .section-comparision,
+    #yadea-xmen-comparision {
+      padding: 10vw 0 7vw;
+
+      .main-content {
+        padding: 0 13px;
+      }
+
+      .comparision-layout {
+        padding: 0 13px;
+        margin: 1vw auto;
+        grid-gap: 3px;
+
+        .compare-options {
+          padding: 3vw 4vw 0;
+
+          .comparision-options {
+            .option-item {
+              flex-basis: 31%;
+              height: 34px;
+              line-height: 33px;
+              font-size: 13px;
+            }
+          }
+        }
+
+        .compare-product-column {
+          .product-image {
+            height: 37vw;
+
+            .bike-image {
+              width: 96%;
+              bottom: 10px;
+              left: 2%;
+            }
+          }
+
+          .product-color-listing {
+            margin: 6px 0 10px;
+
+            .color-item {
+              width: 26px;
+              height: 26px;
+              margin: 0 5px;
+            }
+          }
+
+          .product-name {
+            width: 60%;
+            margin: 10px auto 13px;
+            font-size: 12px;
+            height: 30px;
+            line-height: 29px;
+          }
+
+          .product-price {
+            font-size: 18px;
+          }
+
+          .product-compare-data {
+            margin: 20px 0 40px;
+
+            .data-list {
+              .data-item {
+                margin: 15px 0 30px;
+                padding: 17px 10px 0;
+                font-size: 14px;
+                font-weight: 400;
+
+                &:before {
+                  height: 6px;
+                  width: 16px;
+                  left: calc(50% - 8px);
+                }
+              }
+            }
+          }
+
+          .product-cta {
+            .buynow-btn {
+              line-height: 36px;
+              font-size: 13px;
+              padding: 0 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

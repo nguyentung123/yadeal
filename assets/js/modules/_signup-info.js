@@ -38,6 +38,7 @@ export default class SignupInfo {
     let $loadingIcon = formElement.find('.loading-context');
     let $buttonContext = formElement.find('.btn-context');
     let $submitBtn = formElement.find('[type=submit]');
+    let $callbackLink = formElement.data('callback-link') ? formElement.data('callback-link') : '';
     formElement.on('submit', (e) => {
       e.preventDefault();
 
@@ -63,8 +64,12 @@ export default class SignupInfo {
             $loadingIcon.hide();
             $submitFeedback.removeClass('success').addClass('error').html('Đăng ký mua xe không thành công, quý khách vui lòng thử lại');
           } else {
-            $submitBtn.hide();
-            $submitFeedback.removeClass('error').addClass('success').html('Đăng ký mua xe thành công, Yadea sẽ liên hệ lại với bạn');
+            if($callbackLink === ''){
+              $submitBtn.hide();
+              $submitFeedback.removeClass('error').addClass('success').html('Đăng ký mua xe thành công, Yadea sẽ liên hệ lại với bạn');
+            } else {
+              window.location.replace($callbackLink);
+            }
           }
         }
       });

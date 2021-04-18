@@ -1,9 +1,0 @@
-body.admin-bar #page-header{
-    top: 32px;
-}
-
-@media screen and (max-width: 780px){
-    body.admin-bar #page-header{
-        top: 46px;
-    }
-}

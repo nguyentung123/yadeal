@@ -1,0 +1,1 @@
+import Home from"./modules/home";import LazyLoadImage from"./modules/lazy-load";LazyLoadImage(),$(document).ready(function(){new Home});

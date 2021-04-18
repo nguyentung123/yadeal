@@ -155,7 +155,7 @@ function yadea_custom_posts_type(){
         'show_in_nav_menus'   => false,
         'menu_position'       => 5,
         'menu_icon'           => 'dashicons-tag',
-        'supports'            => array('title','editor', 'thumbnail', 'custom-fields'),
+        'supports'            => array('title', 'thumbnail', 'custom-fields'),
     ));
 }
 add_action( 'init', 'yadea_custom_posts_type' );

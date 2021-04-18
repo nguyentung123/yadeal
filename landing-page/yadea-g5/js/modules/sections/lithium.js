@@ -11,7 +11,7 @@ export default class Lithium {
         this.$mainInfo = this.$context.find('.main-info');
         this.$selectGroup = this.$context.find('.mode-selectors');
 
-        this.currentSpeed = 65;
+        this.currentSpeed = 60;
 
         this.bindEvents();
     }

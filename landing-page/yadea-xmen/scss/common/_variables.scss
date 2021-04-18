@@ -1,0 +1,33 @@
+/* =======================================
+ * COLOR
+ /* ======================================= */
+$black: #000;
+$text-color: #333;
+$white: #fff;
+$main-color: #f47f39;
+$red: #d81000;
+$light-gray: #f8f8f8;
+$gray: #909090;
+/* =======================================
+ * OTHERS
+ /* ======================================= */
+
+/* =======================================
+ * RESPONSIVE MARK
+ /* ======================================= */
+$information-lg-screen: "only screen and (max-width : 1920px)";
+$information-md-screen: "only screen and (max-width : 1680px)";
+$information-sm-screen: "only screen and (max-width : 1440px)";
+$information-laptop: "only screen and (max-width : 1368px)";
+$information-sm-laptop: "only screen and (max-width : 1280px)";
+$information-hz-phone: "only screen and (max-width : 820px)";
+$information-tablet: "only screen and (max-width : 768px)";
+$information-lg-phone: "only screen and (max-width : 576px)";
+$information-phone: "only screen and (max-width : 480px)";
+$information-md-phone: "only screen and (max-width : 420px)";
+$information-sm-phone: "only screen and (max-width : 375px)";
+$information-lg-tablet: "only screen and (max-width : 1024px)";
+
+/* USAGE */
+@media #{$information-sm-laptop} {
+}

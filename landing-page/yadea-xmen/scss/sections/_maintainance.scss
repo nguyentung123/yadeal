@@ -1,0 +1,59 @@
+#yadea-xmen-page {
+  .section-maintanance,
+  #yadea-xmen-maintainance {
+    // padding: 60px 0 40px;
+    // height: 50.20833vw;
+    background-color: #bdbdbd;
+
+    .main-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-top: 50px;
+      z-index: 2;
+    }
+
+    // .effect-holder {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    // }
+  }
+
+  @media #{$information-lg-screen} {
+    .section-maintanance,
+    #yadea-xmen-maintainance {
+      width: 1920px;
+      // height: 965px;
+      margin-left: calc((100% - 1920px) / 2);
+    }
+  }
+
+  /* === RESPONSIVE === */
+  @media #{$information-tablet} {
+    .section-maintanance,
+    #yadea-xmen-maintainance {
+      width: 100%;
+      // height: 175.33vw;
+      margin-left: 0;
+
+      .main-content {
+        padding: 14vw 30px 0;
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    .section-maintanance,
+    #yadea-xmen-maintainance {
+      .main-content {
+        padding: 12vw 15px 0;
+      }
+    }
+  }
+
+  /* === RESPONSIVE === */
+}

@@ -2887,7 +2887,6 @@ function () {
   function Common() {
     _classCallCheck(this, Common);
 
-    this.$pageOverlay = $('#loading-overlay');
     this.bindEvents();
   }
   /* ===================================
@@ -2908,9 +2907,7 @@ function () {
     key: "SetupCommon",
     value: function SetupCommon() {
       // Smooth Scrolling
-      this.SmoothScrollingSetup(); // News Slider
-
-      this.NewsSliderSetup(); // Color Slider
+      this.SmoothScrollingSetup(); // Color Slider
 
       this.BikeColorSliderSetup(); // Fixed Top Menu Effect
 
@@ -2919,41 +2916,15 @@ function () {
 
       if (window.innerWidth < 480) {
         this.SetupMbMenuToggle();
-      }
-    }
-  }, {
-    key: "NewsSliderSetup",
-    value: function NewsSliderSetup() {
-      var _this = this;
+      } // Setup Test Drive Behavior
 
-      $('.news-list').on('init', function () {
-        _this.$pageOverlay.addClass('hidden');
 
-        setTimeout(function () {
-          ulikeListener.emit('page-start');
-        }, 1000);
-      });
-      $('.news-list').slick({
-        slidesToShow: 4,
-        nextArrow: "<a class=\"news-slide-control slide-next\"></a>",
-        prevArrow: "<a class=\"news-slide-control slide-prev\"></a>",
-        responsive: [{
-          breakpoint: 769,
-          settings: {
-            slidesToShow: 2
-          }
-        }, {
-          breakpoint: 481,
-          settings: {
-            slidesToShow: 1
-          }
-        }]
-      });
+      this.SetupTestDriveBehavior();
     }
   }, {
     key: "BikeColorSliderSetup",
     value: function BikeColorSliderSetup() {
-      var _this2 = this;
+      var _this = this;
 
       this.allowChangeColor = true;
       this.$bikeColorSlider = $('.color-slider-holder .color-listing');
@@ -2968,17 +2939,17 @@ function () {
         autoplay: true
       });
       $('.color-slider-holder .custom-button').on('click', function (e) {
-        if (!$(e.target).hasClass('active') && _this2.allowChangeColor) {
+        if (!$(e.target).hasClass('active') && _this.allowChangeColor) {
           // Stop interaction
-          _this2.allowChangeColor = false;
+          _this.allowChangeColor = false;
           setTimeout(function () {
-            return _this2.allowChangeColor = true;
+            return _this.allowChangeColor = true;
           }, 520); // White
 
           if ($(e.target).hasClass('button-white')) {
             $('.color-slider-holder .custom-button .slider-button.active').removeClass('active');
 
-            _this2.$bikeColorSlider.slick('slickGoTo', 0);
+            _this.$bikeColorSlider.slick('slickGoTo', 0);
 
             $(e.target).addClass('active');
           } // Red
@@ -2987,7 +2958,7 @@ function () {
           if ($(e.target).hasClass('button-red')) {
             $('.color-slider-holder .custom-button .slider-button.active').removeClass('active');
 
-            _this2.$bikeColorSlider.slick('slickGoTo', 1);
+            _this.$bikeColorSlider.slick('slickGoTo', 1);
 
             $(e.target).addClass('active');
           } // Black
@@ -2996,7 +2967,7 @@ function () {
           if ($(e.target).hasClass('button-black')) {
             $('.color-slider-holder .custom-button .slider-button.active').removeClass('active');
 
-            _this2.$bikeColorSlider.slick('slickGoTo', 2);
+            _this.$bikeColorSlider.slick('slickGoTo', 2);
 
             $(e.target).addClass('active');
           } // Black
@@ -3005,7 +2976,7 @@ function () {
           if ($(e.target).hasClass('button-yellow')) {
             $('.color-slider-holder .custom-button .slider-button.active').removeClass('active');
 
-            _this2.$bikeColorSlider.slick('slickGoTo', 3);
+            _this.$bikeColorSlider.slick('slickGoTo', 3);
 
             $(e.target).addClass('active');
           }
@@ -3053,7 +3024,7 @@ function () {
   }, {
     key: "SetupFixedTopSubMenu",
     value: function SetupFixedTopSubMenu() {
-      var _this3 = this;
+      var _this2 = this;
 
       if (window.pageYOffset > 20) {
         this.$pageHeader.addClass('scrolling-menu');
@@ -3063,9 +3034,9 @@ function () {
 
       $(window).on('scroll', function () {
         if (window.pageYOffset > 20) {
-          _this3.$pageHeader.addClass('scrolling-menu');
+          _this2.$pageHeader.addClass('scrolling-menu');
         } else {
-          _this3.$pageHeader.removeClass('scrolling-menu');
+          _this2.$pageHeader.removeClass('scrolling-menu');
         }
       });
     } // Mobile Menu Toggle
@@ -3073,7 +3044,7 @@ function () {
   }, {
     key: "SetupMbMenuToggle",
     value: function SetupMbMenuToggle() {
-      var _this4 = this;
+      var _this3 = this;
 
       this.allowToggle = true;
       this.$closeSubMenuBtn = $('.close-sub-menu');
@@ -3081,37 +3052,112 @@ function () {
       this.$subHeader = $('.sub-header');
       this.$subMenu = $('.sub-menu-main');
       this.$menuToggleButton.on('click', function (e) {
-        if (_this4.allowToggle) {
+        if (_this3.allowToggle) {
           // After 300ms, allow Toggle back to true
-          _this4.allowToggle = false;
+          _this3.allowToggle = false;
           setTimeout(function () {
-            _this4.allowToggle = true;
+            _this3.allowToggle = true;
           }, 300);
 
-          if (!_this4.$subHeader.hasClass('showing-sub-menu')) {
-            _this4.$subHeader.addClass('showing-sub-menu');
+          if (!_this3.$subHeader.hasClass('showing-sub-menu')) {
+            _this3.$subHeader.addClass('showing-sub-menu');
 
-            _this4.$subMenu.slideDown('fast');
+            _this3.$subMenu.slideDown('fast');
           } else {
-            _this4.$subHeader.removeClass('showing-sub-menu');
+            _this3.$subHeader.removeClass('showing-sub-menu');
 
-            _this4.$subMenu.slideUp('fast');
+            _this3.$subMenu.slideUp('fast');
           }
         }
       });
       this.$closeSubMenuBtn.on('click', function (e) {
-        if (_this4.allowToggle) {
+        if (_this3.allowToggle) {
           // After 300ms, allow Toggle back to true
-          _this4.allowToggle = false;
+          _this3.allowToggle = false;
           setTimeout(function () {
-            _this4.allowToggle = true;
+            _this3.allowToggle = true;
           }, 300);
 
-          _this4.$subHeader.removeClass('showing-sub-menu');
+          _this3.$subHeader.removeClass('showing-sub-menu');
 
-          _this4.$subMenu.slideUp('fast');
+          _this3.$subMenu.slideUp('fast');
         }
       });
+    }
+  }, {
+    key: "SetupTestDriveBehavior",
+    value: function SetupTestDriveBehavior() {
+      var _this4 = this;
+
+      this.$testDriveBox = $('.test-drive-box');
+      this.$closeButton = this.$testDriveBox.find('.cta-holder .close-area');
+      this.$closeButton.on('click', function (e) {
+        e.preventDefault();
+
+        _this4.$testDriveBox.addClass('inactive');
+      });
+
+      if (window.innerWidth > 768) {
+        // Desktop
+        this.testDriveIsHover = false;
+        this.testDriveAllowInteraction = true;
+        this.$desktopContentWrapper = this.$testDriveBox.find('.desktop-content-wrapper');
+        this.$desktopIconHolder = this.$desktopContentWrapper.find('.icon-holder');
+        this.$desktopContextHolder = this.$desktopContentWrapper.find('.context-holder');
+
+        if (window.pageYOffset > 30) {
+          this.$desktopIconHolder.addClass('active');
+          this.$desktopContextHolder.removeClass('active');
+        }
+
+        $(document).on('scroll', function () {
+          if (window.pageYOffset > 30 && !_this4.testDriveIsHover) {
+            if (!_this4.$desktopIconHolder.hasClass('active')) {
+              _this4.$desktopIconHolder.addClass('active');
+
+              _this4.$desktopContextHolder.removeClass('active');
+            }
+          } else {
+            if (!_this4.$desktopContextHolder.hasClass('active')) {
+              _this4.$desktopIconHolder.removeClass('active');
+
+              _this4.$desktopContextHolder.addClass('active');
+            }
+          }
+        }); // Mouse In, Show Context, Block Other Interaction
+
+        this.$desktopContentWrapper.on('mouseenter', function () {
+          _this4.testDriveIsHover = true;
+
+          if (_this4.$desktopIconHolder.hasClass('active') && _this4.testDriveAllowInteraction) {
+            _this4.testDriveAllowInteraction = false;
+
+            _this4.$desktopIconHolder.removeClass('active');
+
+            _this4.$desktopContextHolder.addClass('active');
+
+            setTimeout(function () {
+              _this4.testDriveAllowInteraction = true;
+            }, 300);
+          }
+        });
+        this.$desktopContentWrapper.on('mouseleave', function () {
+          _this4.testDriveIsHover = false;
+
+          if (window.pageYOffset > 30 && _this4.$desktopContextHolder.hasClass('active') && _this4.testDriveAllowInteraction) {
+            _this4.testDriveAllowInteraction = false;
+
+            _this4.$desktopIconHolder.addClass('active');
+
+            _this4.$desktopContextHolder.removeClass('active');
+
+            setTimeout(function () {
+              _this4.testDriveAllowInteraction = true;
+            }, 300);
+          }
+        });
+      } else {// Mobile
+      }
     }
   }]);
 
@@ -16012,9 +16058,11 @@ var _bikeController = _interopRequireDefault(__webpack_require__(28));
 
 var _signupInfo = _interopRequireDefault(__webpack_require__(29));
 
-var _colorFeature = _interopRequireDefault(__webpack_require__(30));
+var _octoberSale = _interopRequireDefault(__webpack_require__(30));
 
-var _utils = __webpack_require__(31);
+var _colorFeature = _interopRequireDefault(__webpack_require__(31));
+
+var _utils = __webpack_require__(32);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16056,27 +16104,28 @@ function () {
     var features = new _feature.default();
     var disatance = new _distance.default();
     var signupInfo = new _signupInfo.default();
+    var october = new _octoberSale.default();
     var colorFeature = new _colorFeature.default();
+    this.$pageOverlay = $("#loading-overlay");
     this.pageSections = {
-      $banner: $('#yadea-ulike-page .section-banner'),
-      $distance: $('#yadea-ulike-page .section-distance'),
-      $light: $('#yadea-ulike-page .section-light-section'),
-      $mixedFeature1: $('#yadea-ulike-page .feature-mixed-1'),
-      $led: $('#yadea-ulike-page .section-led'),
-      $mixedFeature2: $('#yadea-ulike-page .feature-mixed-2'),
-      $container: $('#yadea-ulike-page .container-feature'),
-      $charging: $('#yadea-ulike-page .charging-feature'),
-      $smartScreen: $('#yadea-ulike-page .smart-screen-feature'),
-      $fashionColor: $('#yadea-ulike-page .colors-feature'),
-      $controller: $('#yadea-ulike-page .section-bike-controller'),
-      $mixedFeature3: $('#yadea-ulike-page .feature-mixed-3'),
-      $antiThief: $('#yadea-ulike-page .anti-thief-feature'),
-      $waterResistance: $('#yadea-ulike-page .water-resistance'),
-      $accessories: $('#yadea-ulike-page .section-accessories'),
-      $features: $('#yadea-ulike-page .section-features'),
-      $imagesLibrary: $('#yadea-ulike-page .section-images-library'),
-      $specs: $('#yadea-ulike-page .section-spec-slider'),
-      $news: $('#yadea-ulike-page .section-news-slider')
+      $banner: $("#yadea-ulike-page .section-banner"),
+      $distance: $("#yadea-ulike-page .section-distance"),
+      $light: $("#yadea-ulike-page .section-light-section"),
+      $mixedFeature1: $("#yadea-ulike-page .feature-mixed-1"),
+      $led: $("#yadea-ulike-page .section-led"),
+      $mixedFeature2: $("#yadea-ulike-page .feature-mixed-2"),
+      $container: $("#yadea-ulike-page .container-feature"),
+      $charging: $("#yadea-ulike-page .charging-feature"),
+      $smartScreen: $("#yadea-ulike-page .smart-screen-feature"),
+      $fashionColor: $("#yadea-ulike-page .colors-feature"),
+      $controller: $("#yadea-ulike-page .section-bike-controller"),
+      $mixedFeature3: $("#yadea-ulike-page .feature-mixed-3"),
+      $antiThief: $("#yadea-ulike-page .anti-thief-feature"),
+      $waterResistance: $("#yadea-ulike-page .water-resistance"),
+      $accessories: $("#yadea-ulike-page .section-accessories"),
+      $features: $("#yadea-ulike-page .section-features"),
+      $imagesLibrary: $("#yadea-ulike-page .section-images-library"),
+      $specs: $("#yadea-ulike-page .section-spec-slider")
     };
     this.animationStatus = {
       banner: false,
@@ -16096,8 +16145,7 @@ function () {
       accessories: false,
       features: false,
       imagesLibrary: false,
-      specs: false,
-      news: false
+      specs: false
     };
     this.bindEvents();
   }
@@ -16109,7 +16157,17 @@ function () {
   _createClass(Home, [{
     key: "bindEvents",
     value: function bindEvents() {
-      this.ScrollingDetect();
+      var _this = this;
+
+      setTimeout(function () {
+        ulikeListener.emit("page-start");
+
+        _this.ScrollingDetect();
+      }, 3200);
+
+      window.onload = function () {
+        _this.$pageOverlay.addClass("hidden");
+      };
     }
     /* ===================================
      *  METHODS
@@ -16118,185 +16176,211 @@ function () {
   }, {
     key: "ScrollingDetect",
     value: function ScrollingDetect() {
-      var _this = this;
+      var _this2 = this;
 
-      $(window).on('scroll', function (e) {
+      $(window).on("scroll", function (e) {
         // Distance 2nd Section
-        if ((0, _utils.reachSection)(_this.pageSections.$distance)) {
-          if (!_this.animationStatus.distance) {
-            _this.animationStatus.distance = true;
-            ulikeListener.emit('distance-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$distance)) {
+          if (!_this2.animationStatus.distance) {
+            _this2.animationStatus.distance = true;
+            ulikeListener.emit("distance-anim");
           }
         } // Light 3rd Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$light)) {
-          if (!_this.animationStatus.light) {
-            _this.animationStatus.light = true;
-            ulikeListener.emit('light-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$light)) {
+          if (!_this2.animationStatus.light) {
+            _this2.animationStatus.light = true;
+            ulikeListener.emit("light-anim");
           }
         } // Mixed Feature 1 4rd Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$mixedFeature1)) {
-          if (!_this.animationStatus.mixedFeature1) {
-            _this.animationStatus.mixedFeature1 = true;
-            ulikeListener.emit('mixed-feature-1-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$mixedFeature1)) {
+          if (!_this2.animationStatus.mixedFeature1) {
+            _this2.animationStatus.mixedFeature1 = true;
+            ulikeListener.emit("mixed-feature-1-anim");
           }
         } // Mixed Feature 1 4rd Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$led)) {
-          if (!_this.animationStatus.led) {
-            _this.animationStatus.led = true;
-            ulikeListener.emit('led-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$led)) {
+          if (!_this2.animationStatus.led) {
+            _this2.animationStatus.led = true;
+            ulikeListener.emit("led-anim");
           }
         } // Mixed Feature 2 5th Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$mixedFeature2)) {
-          if (!_this.animationStatus.mixedFeature2) {
-            _this.animationStatus.mixedFeature2 = true;
-            ulikeListener.emit('mixed-feature-2-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$mixedFeature2)) {
+          if (!_this2.animationStatus.mixedFeature2) {
+            _this2.animationStatus.mixedFeature2 = true;
+            ulikeListener.emit("mixed-feature-2-anim");
           }
         } // Mixed Feature 2 5th Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$fashionColor)) {
-          if (!_this.animationStatus.fashionColor) {
-            _this.animationStatus.fashionColor = true;
-            ulikeListener.emit('fashion-color-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$fashionColor)) {
+          if (!_this2.animationStatus.fashionColor) {
+            _this2.animationStatus.fashionColor = true;
+            ulikeListener.emit("fashion-color-anim");
 
-            if (!_this.animationStatus.mixedFeature2) {
-              _this.animationStatus.mixedFeature2 = true;
-              ulikeListener.emit('mixed-feature-2-anim');
+            if (!_this2.animationStatus.mixedFeature2) {
+              _this2.animationStatus.mixedFeature2 = true;
+              ulikeListener.emit("mixed-feature-2-anim");
             }
           }
         } // Container
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$container)) {
-          if (!_this.animationStatus.container) {
-            _this.animationStatus.container = true;
-            ulikeListener.emit('container-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$container)) {
+          if (!_this2.animationStatus.container) {
+            _this2.animationStatus.container = true;
+            ulikeListener.emit("container-anim");
 
-            if (!_this.animationStatus.mixedFeature2) {
-              _this.animationStatus.mixedFeature2 = true;
-              ulikeListener.emit('mixed-feature-2-anim');
+            if (!_this2.animationStatus.mixedFeature2) {
+              _this2.animationStatus.mixedFeature2 = true;
+              ulikeListener.emit("mixed-feature-2-anim");
             }
           }
         } // Charging
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$charging)) {
-          if (!_this.animationStatus.charging) {
-            _this.animationStatus.charging = true;
-            ulikeListener.emit('charging-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$charging)) {
+          if (!_this2.animationStatus.charging) {
+            _this2.animationStatus.charging = true;
+            ulikeListener.emit("charging-anim");
 
-            if (!_this.animationStatus.mixedFeature2) {
-              _this.animationStatus.mixedFeature2 = true;
-              ulikeListener.emit('mixed-feature-2-anim');
+            if (!_this2.animationStatus.mixedFeature2) {
+              _this2.animationStatus.mixedFeature2 = true;
+              ulikeListener.emit("mixed-feature-2-anim");
             }
           }
         } // Charging
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$smartScreen)) {
-          if (!_this.animationStatus.smartScreen) {
-            _this.animationStatus.smartScreen = true;
-            ulikeListener.emit('smart-screen-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$smartScreen)) {
+          if (!_this2.animationStatus.smartScreen) {
+            _this2.animationStatus.smartScreen = true;
+            ulikeListener.emit("smart-screen-anim");
 
-            if (!_this.animationStatus.mixedFeature2) {
-              _this.animationStatus.mixedFeature2 = true;
-              ulikeListener.emit('mixed-feature-2-anim');
+            if (!_this2.animationStatus.mixedFeature2) {
+              _this2.animationStatus.mixedFeature2 = true;
+              ulikeListener.emit("mixed-feature-2-anim");
             }
           }
         } // Container 6th Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$controller)) {
-          if (!_this.animationStatus.controller) {
-            _this.animationStatus.controller = true;
-            ulikeListener.emit('controller-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$controller)) {
+          if (!_this2.animationStatus.controller) {
+            _this2.animationStatus.controller = true;
+            ulikeListener.emit("controller-anim");
           }
         } // Mixed  7th Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$mixedFeature3)) {
-          if (!_this.animationStatus.mixedFeature3) {
-            _this.animationStatus.mixedFeature3 = true;
-            ulikeListener.emit('mixed-feature-3-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$mixedFeature3)) {
+          if (!_this2.animationStatus.mixedFeature3) {
+            _this2.animationStatus.mixedFeature3 = true;
+            ulikeListener.emit("mixed-feature-3-anim");
           }
         } // Anti Thief Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$antiThief)) {
-          if (!_this.animationStatus.antiThief) {
-            _this.animationStatus.antiThief = true;
-            ulikeListener.emit('anti-thief-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$antiThief)) {
+          if (!_this2.animationStatus.antiThief) {
+            _this2.animationStatus.antiThief = true;
+            ulikeListener.emit("anti-thief-anim");
           } // If the page start at anti thief section, trigger mixed effect 3
 
 
-          if (!_this.animationStatus.mixedFeature3) {
-            _this.animationStatus.mixedFeature3 = true;
-            ulikeListener.emit('mixed-feature-3-anim');
+          if (!_this2.animationStatus.mixedFeature3) {
+            _this2.animationStatus.mixedFeature3 = true;
+            ulikeListener.emit("mixed-feature-3-anim");
           }
         } // Water Resistance Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$waterResistance)) {
-          if (!_this.animationStatus.waterResistance && _this.animationStatus.mixedFeature3) {
-            _this.animationStatus.waterResistance = true;
-            ulikeListener.emit('water-resistance-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$waterResistance)) {
+          if (!_this2.animationStatus.waterResistance && _this2.animationStatus.mixedFeature3) {
+            _this2.animationStatus.waterResistance = true;
+            ulikeListener.emit("water-resistance-anim");
           } // If the page start at anti thief section, trigger mixed effect 3
 
 
-          if (!_this.animationStatus.mixedFeature3) {
-            _this.animationStatus.mixedFeature3 = true;
-            ulikeListener.emit('mixed-feature-3-anim');
+          if (!_this2.animationStatus.mixedFeature3) {
+            _this2.animationStatus.mixedFeature3 = true;
+            ulikeListener.emit("mixed-feature-3-anim");
           }
         } // Accessories Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$accessories)) {
-          if (!_this.animationStatus.accessories) {
-            _this.animationStatus.accessories = true;
-            ulikeListener.emit('accessories-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$accessories)) {
+          if (!_this2.animationStatus.accessories) {
+            _this2.animationStatus.accessories = true;
+            ulikeListener.emit("accessories-anim");
           }
         } // Features Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$features)) {
-          if (!_this.animationStatus.features) {
-            _this.animationStatus.features = true;
-            ulikeListener.emit('features-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$features)) {
+          if (!_this2.animationStatus.features) {
+            _this2.animationStatus.features = true;
+            ulikeListener.emit("features-anim");
           }
         } // Images Library Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$imagesLibrary)) {
-          if (!_this.animationStatus.imagesLibrary) {
-            _this.animationStatus.imagesLibrary = true;
-            ulikeListener.emit('images-library-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$imagesLibrary)) {
+          if (!_this2.animationStatus.imagesLibrary) {
+            _this2.animationStatus.imagesLibrary = true;
+            ulikeListener.emit("images-library-anim");
           }
         } // Specs Section
 
 
-        if ((0, _utils.reachSection)(_this.pageSections.$specs)) {
-          if (!_this.animationStatus.specs) {
-            _this.animationStatus.specs = true;
-            ulikeListener.emit('specs-anim');
-          }
-        } // News Section
-
-
-        if ((0, _utils.reachSection)(_this.pageSections.$news)) {
-          if (!_this.animationStatus.news) {
-            _this.animationStatus.news = true;
-            ulikeListener.emit('features-anim');
+        if ((0, _utils.reachSection)(_this2.pageSections.$specs)) {
+          if (!_this2.animationStatus.specs) {
+            _this2.animationStatus.specs = true;
+            ulikeListener.emit("specs-anim");
           }
         }
       });
+    }
+  }, {
+    key: "SetupTestDriveFloatingButton",
+    value: function SetupTestDriveFloatingButton() {
+      var _this3 = this;
+
+      this.$testDriveFloatBlock = $(".signup-test-drive-float-btn");
+
+      if ($(".signup-test-drive-page").length < 1) {
+        this.allowInteractionTestDrive = true;
+        this.$testDriveThumbnail = this.$testDriveFloatBlock.find(".thumbnail-icon");
+        this.$testDriveMainIcon = this.$testDriveFloatBlock.find(".main-icon");
+        this.$testDriveCloseIcon = this.$testDriveMainIcon.find(".close-test-drive-area"); // this.$testDriveThumbnail.on('click', () => {
+        //     if(this.allowInteractionTestDrive){
+        //         this.allowInteractionTestDrive = false;
+        //         this.$testDriveFloatBlock.addClass('active');
+        //         setTimeout(() => {this.allowInteractionTestDrive = true;}, 350)
+        //     }
+        // });
+
+        this.$testDriveCloseIcon.on("click", function () {
+          if (_this3.allowInteractionTestDrive) {
+            _this3.allowInteractionTestDrive = false;
+
+            _this3.$testDriveFloatBlock.removeClass("active");
+
+            setTimeout(function () {
+              _this3.allowInteractionTestDrive = true;
+            }, 350);
+          }
+        });
+      } else {
+        this.$testDriveFloatBlock.hide();
+      }
     }
   }]);
 
@@ -18697,6 +18781,7 @@ function () {
       var $loadingIcon = formElement.find('.loading-context');
       var $buttonContext = formElement.find('.btn-context');
       var $submitBtn = formElement.find('[type=submit]');
+      var $callbackLink = formElement.data('callback-link') ? formElement.data('callback-link') : '';
       formElement.on('submit', function (e) {
         e.preventDefault();
         var today = new Date();
@@ -18720,8 +18805,13 @@ function () {
               $loadingIcon.hide();
               $submitFeedback.removeClass('success').addClass('error').html('Đăng ký mua xe không thành công, quý khách vui lòng thử lại');
             } else {
-              $submitBtn.hide();
-              $submitFeedback.removeClass('error').addClass('success').html('Đăng ký mua xe thành công, Yadea sẽ liên hệ lại với bạn');
+              if ($callbackLink === '') {
+                $submitBtn.hide();
+                $submitFeedback.removeClass('error').addClass('success').html('Đăng ký mua xe thành công, Yadea sẽ liên hệ lại với bạn');
+              } else {
+                $submitBtn.hide();
+                window.location.replace($callbackLink);
+              }
             }
           }
         });
@@ -18736,6 +18826,62 @@ exports.default = SignupInfo;
 
 /***/ }),
 /* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SignupInfo =
+/*#__PURE__*/
+function () {
+  /* ===================================
+   *  CONSTRUCTOR
+   * =================================== */
+  function SignupInfo() {
+    _classCallCheck(this, SignupInfo);
+
+    this.bindEvents();
+  }
+  /* ===================================
+   *  EVENTS
+   * =================================== */
+
+
+  _createClass(SignupInfo, [{
+    key: "bindEvents",
+    value: function bindEvents() {
+      var _this = this;
+
+      this.$openModalBtn = $('.open-october-info-modal');
+      this.$closeModalBtn = $('.close-october-info-modal');
+      this.$OctoberInfoModal = $('.october-sale-information-modal');
+      this.$openModalBtn.on('click', function () {
+        _this.$OctoberInfoModal.addClass('active');
+      });
+      this.$closeModalBtn.on('click', function () {
+        _this.$OctoberInfoModal.removeClass('active');
+      });
+    }
+  }]);
+
+  return SignupInfo;
+}();
+
+exports.default = SignupInfo;
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18847,7 +18993,7 @@ function () {
 exports.default = ColorFeature;
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

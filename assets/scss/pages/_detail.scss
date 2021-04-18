@@ -5,7 +5,7 @@
   // Product Heading Slider Layout
   .product-detail-layout{
     display: flex;
-    padding: 50px 0 0;
+    padding: 30px 0 0;
 
     // Left Side Bike Holder
     .bike-detail-slider{
@@ -151,7 +151,14 @@
     // Right Side Bike Content
     .bike-detail-summary{
       flex: 1;
-      padding-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      &>*{
+        width: 100%;
+      }
 
       .product-name{
         font-size: 2.35em;

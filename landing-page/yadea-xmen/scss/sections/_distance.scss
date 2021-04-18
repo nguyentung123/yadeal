@@ -1,0 +1,498 @@
+#yadea-xmen-page {
+  #yadea-xmen-distance,
+  .section-distance-road {
+    height: 55.2vw;
+    background-color: #222;
+
+    .main-content {
+      padding-top: 40px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .effect-holder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+
+      .bg-effect {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        // &.animating {
+        //   animation: filming 9s 1.5s ease-in-out infinite;
+        // }
+
+        .day-image,
+        .night-image,
+        .day-between {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          bottom: 0;
+        }
+
+        .day-image {
+          left: 0;
+
+          &.between {
+            &.between-1 {
+              left: 100%;
+            }
+
+            &.between-2 {
+              left: 300%;
+            }
+
+            &.between-3 {
+              left: 400%;
+            }
+          }
+        }
+
+        .night-image {
+          left: 200%;
+        }
+      }
+
+      .main-effect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 20%;
+
+        .bike-holder {
+          position: absolute;
+          top: 55%;
+          left: 38.5%;
+          width: 26%;
+
+          .main-bike {
+            position: relative;
+            z-index: 2;
+          }
+
+          .bike-shadow {
+            position: absolute;
+            z-index: 1;
+            width: 106%;
+            bottom: -15.3%;
+            left: -2%;
+          }
+
+          .wheel-holder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            .x5-wheel-front,
+            .x5-wheel-back,
+            .xmen-wheel-front,
+            .xmen-wheel-back {
+              position: absolute;
+              animation: spinning linear 1.2s infinite;
+
+              img {
+                width: 100%;
+                display: block;
+              }
+            }
+
+            .x5-wheel-front {
+              top: 60.4%;
+              width: 17.2%;
+              left: 85.5%;
+            }
+
+            .xmen-wheel-back {
+              top: 73.5%;
+              left: 5%;
+              width: 19%;
+            }
+
+            .xmen-wheel-front {
+              top: 72.5%;
+              left: 60%;
+              width: 21%;
+            }
+          }
+        }
+      }
+
+      .effect-swapper {
+        position: absolute;
+        top: 80%;
+        bottom: 1%;
+        left: 0;
+        right: 0;
+        z-index: 3;
+
+        .swapper-btn-holder {
+          padding: 15px 0;
+          text-align: center;
+
+          .swap-product {
+            border: 2px solid $red;
+            color: $red;
+            font-size: 20px;
+            line-height: 30px;
+            background-color: transparent;
+            font-weight: 700;
+            width: 150px;
+            margin: 0 8px;
+            outline: none;
+
+            &.active {
+              background-color: $red;
+              color: #222;
+            }
+          }
+        }
+
+        .info-holder {
+          text-align: center;
+          color: $red;
+          font-size: 16px;
+          margin-top: 10px;
+          font-weight: 600;
+        }
+
+        .products-distance-mb {
+          width: 420px;
+          height: 100%;
+          margin: auto;
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          // padding-bottom: 5vw;
+
+          .product-distance-holder {
+            width: 40%;
+            height: 80%;
+            background-color: #202020;
+            padding: 15px 0;
+            margin: 0 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all ease-in 100ms;
+
+            &:hover {
+              border: 1px solid $red;
+              background-color: #000;
+              transition: all ease-out 150ms;
+            }
+
+            .product-name {
+              width: 100%;
+              font-size: 14px;
+              color: $white;
+              font-weight: 400;
+            }
+
+            .speed {
+              span {
+                display: block;
+                color: $red;
+                text-align: center;
+              }
+
+              .label {
+                font-size: 14px;
+                font-weight: 400;
+              }
+
+              .value {
+                font-size: 28px;
+                font-weight: 900;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-lg-screen} {
+    #yadea-xmen-distance,
+    .section-distance-road {
+      width: 1920px;
+      margin-left: calc((100% - 1920px) / 2);
+      height: 1058px;
+    }
+  }
+
+  @media #{$information-laptop} {
+    #yadea-xmen-distance,
+    .section-distance-road {
+      .effect-holder {
+        .effect-swapper {
+          top: 80%;
+
+          .products-distance-mb {
+            width: 400px;
+            // height: 280px;
+
+            .product-distance-holder {
+              width: 40%;
+              height: 77%;
+              background-color: #202020;
+              padding: 15px 0;
+              margin: 0 10px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              transition: all ease-in 100ms;
+
+              &:hover {
+                border: 1px solid $red;
+                background-color: #000;
+                transition: all ease-out 150ms;
+              }
+
+              .product-name {
+                width: 100%;
+                font-size: 14px;
+                color: $white;
+                font-weight: 400;
+              }
+
+              .speed {
+                span {
+                  display: block;
+                  color: $red;
+                  text-align: center;
+                }
+
+                .label {
+                  font-size: 14px;
+                  font-weight: 400;
+                }
+
+                .value {
+                  font-size: 25px;
+                  font-weight: 900;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* === RESPONSIVE === */
+  @media #{$information-tablet} {
+    #yadea-xmen-distance,
+    .section-distance-road {
+      width: 256vw;
+      margin-left: -78vw;
+      height: 187.7333vw;
+
+      .main-content {
+        padding: 14vw 30px 0;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .effect-holder {
+        .main-effect {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 20%;
+
+          .bike-holder {
+            top: 60%;
+            left: 36%;
+            width: 28%;
+          }
+        }
+
+        .effect-swapper {
+          top: 74.5%;
+          width: 80vw;
+          left: 50%;
+          transform: translateX(-50%);
+
+          .products-distance-mb {
+            width: 100%;
+            height: 100%;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+
+            .product-distance-holder {
+              width: 40%;
+              height: 65%;
+              background-color: #202020;
+              padding: 18px 0;
+              margin: 0 10px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+
+              &.active {
+                border: 1px solid $red;
+                background-color: #000;
+              }
+
+              .product-name {
+                width: 100%;
+                font-size: 18px;
+                color: $white;
+              }
+
+              .speed {
+                span {
+                  display: block;
+                  color: $red;
+                  text-align: center;
+                }
+
+                .label {
+                  font-size: 16px;
+                }
+
+                .value {
+                  font-size: 32px;
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-phone} {
+    #yadea-xmen-distance,
+    .section-distance-road {
+      .main-content {
+        padding: 12vw 15px 0;
+      }
+
+      .effect-holder {
+        .effect-swapper {
+          .products-distance-mb {
+            .product-distance-holder {
+              width: 44%;
+              height: 70%;
+              padding: 13px 0 8px;
+              margin: 0 8px;
+
+              .product-name {
+                font-size: 14px;
+              }
+
+              .speed {
+                span {
+                  display: block;
+                  color: $red;
+                  text-align: center;
+                }
+
+                .label {
+                  font-size: 12px;
+                }
+
+                .value {
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$information-sm-phone} {
+    #yadea-xmen-distance,
+    .section-distance-road {
+      .main-content {
+        padding: 12vw 13px 0;
+      }
+
+      .effect-holder {
+        .effect-swapper {
+          .products-distance-mb {
+            .product-distance-holder {
+              width: 42%;
+              height: 66%;
+              padding: 11px 0 6px;
+              margin: 0 7px;
+
+              .product-name {
+                font-size: 13px;
+              }
+
+              .speed {
+                .label {
+                  font-size: 11px;
+                }
+
+                .value {
+                  font-size: 19px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* === Film strip === */
+@keyframes filming {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  40% {
+    -webkit-transform: translateX(-400%);
+    transform: translateX(-400%);
+  }
+
+  50% {
+    -webkit-transform: translateX(-400%);
+    transform: translateX(-400%);
+  }
+
+  90% {
+    -webkit-transform: translateX(-800%);
+    transform: translateX(-800%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-800%);
+    transform: translateX(-800%);
+  }
+}
+
+@keyframes spinning {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

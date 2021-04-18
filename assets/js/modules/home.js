@@ -6,6 +6,7 @@ import Supports from './support';
 import SliderDetail from './slider-detail';
 import FlipClockCustom from './flip-clock-custom';
 import SubmitApplyForm from './submit-apply-form';
+import DownloadAppSupportPage from './download-app-page';
 import SignupInfo from './_signup-info';
 
 export default class Home {
@@ -31,12 +32,16 @@ export default class Home {
         // Flip Clock Custom
         this.flipClockCustom = new FlipClockCustom();
 
-        if($('#signup-as-shop-form').length > 0){
+        if($('#signup-as-shop-form').length > 0 || $('#signup-test-drive').length > 0){
             let submitApplyForm = new SubmitApplyForm();
         }
 
         if($('.signup-info-modal').length > 0){
             let signupBuyBike = new SignupInfo();
+        }
+
+        if($('#download-app-support-page').length > 0){
+            let downloadAppSupportPage = new DownloadAppSupportPage();
         }
 
         this.bindEvents();
@@ -60,13 +65,6 @@ export default class Home {
                 $('#loading-overlay').addClass('hidden');
             }
         }, 3000);
-
-        this.$zaloHolder = $('.zalo-holder');
-        this.$zaloHolder.on('click', () => {
-            if(!this.$zaloHolder.hasClass('active')){
-                this.$zaloHolder.addClass('active');
-            }
-        });
     }
 
 

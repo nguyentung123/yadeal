@@ -18403,7 +18403,7 @@ function () {
             if (data == 'false') {
               $submitFeedback.removeClass('success').addClass('error').html('Đăng ký thông tin không thành công, quý khách vui lòng thử lại');
             } else {
-              $submitFeedback.removeClass('error').addClass('success').html('Đăng ký nhận thông tin thành công, Yadea sẽ liên hệ lại với bạn');
+              $submitFeedback.removeClass('error').addClass('success').html('Đăng ký nhận thông tin thành công, YADEA sẽ liên hệ lại với bạn');
             }
           }
         });

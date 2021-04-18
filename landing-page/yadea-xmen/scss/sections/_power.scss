@@ -1,0 +1,436 @@
+#yadea-xmen-page {
+  .section-power,
+  #yadea-xmen-smartkey {
+    // height: 132vw;
+    // overflow: hidden;
+    height: 2534.4px;
+
+    .view-holder {
+      height: 3965px;
+      position: relative;
+
+      .top-effect-content,
+      .bottom-effect-content {
+        position: absolute;
+      }
+
+      .top-effect-content {
+        top: 0;
+        left: calc((100% - 1920px) / 2);
+        right: calc((100% - 1920px) / 2);
+        height: 1200px;
+        z-index: 1;
+        // overflow: hidden;
+
+        .top-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background-color: #6c78f2;
+        }
+
+        .main-content {
+          padding-top: 40px;
+          position: relative;
+          z-index: 2;
+        }
+      }
+
+      .bottom-effect-content {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3042px;
+        z-index: 2;
+
+        .power-feature-layout {
+          width: 1110px;
+          margin: auto;
+          // height: 94.1%;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 466px 115px 340px 108px 350px 106px 360px 100px 375px 92px 475px;
+
+          .data-info {
+            background-color: #1d1d1d;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+
+            .data-info-label {
+              color: $red;
+              font-size: 20px;
+              margin-bottom: 15px;
+              text-transform: uppercase;
+              font-weight: 700;
+            }
+
+            .text {
+              color: $white;
+            }
+
+            &#power-data__counter-shock {
+              grid-column-gap: 1;
+              grid-row: 1;
+            }
+
+            &#power-data__bike-frame {
+              grid-column-gap: 2;
+              grid-row: 3;
+            }
+
+            &#power-data__bike-bottom {
+              grid-column-gap: 1;
+              grid-row: 5;
+            }
+
+            &#power-data__bike-water-resist {
+              grid-column-gap: 2;
+              grid-row: 7;
+            }
+
+            &#power-data__bike-engine {
+              grid-column-gap: 1;
+              grid-row: 9;
+            }
+
+            &#power-data__bike-wheel {
+              grid-column-gap: 2;
+              grid-row: 11;
+            }
+          }
+
+          .image-data {
+            background-color: $white;
+            z-index: 1;
+            position: relative;
+
+            &#power-image__counter-shock {
+              grid-column: 2;
+              grid-row: 1 / span 2;
+            }
+
+            &#power-image__bike-frame {
+              grid-column: 1;
+              grid-row: 2 / span 3;
+            }
+
+            &#power-image__bike-bottom {
+              grid-column: 2;
+              grid-row: 4 / span 3;
+            }
+
+            &#power-image__bike-water-resist {
+              grid-column: 1;
+              grid-row: 6 / span 3;
+            }
+
+            &#power-image__bike-engine {
+              grid-column: 2;
+              grid-row: 8 / span 3;
+            }
+
+            &#power-image__bike-wheel {
+              grid-column: 1;
+              grid-row: 10 / span 2;
+            }
+          }
+        }
+      }
+    }
+
+    @media #{$information-lg-screen} {
+      height: 2534.4px;
+
+      .view-holder {
+        width: 1920px;
+        margin-left: calc((100% - 1920px) / 2);
+        height: 3965px;
+
+        .top-effect-content {
+          height: 1200px;
+          left: 0;
+          right: 0;
+
+          .main-content {
+            padding-top: 45px;
+          }
+        }
+
+        .bottom-effect-content {
+          height: 3042px;
+
+          .power-feature-layout {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 466px 115px 340px 108px 350px 106px 360px 100px 375px 92px 475px;
+
+            .data-info {
+              padding: 20px;
+
+              .data-info-label {
+                font-size: 20px;
+                margin-bottom: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media #{$information-laptop} {
+      height: 2534.4px;
+
+      .view-holder {
+        width: 1600px;
+        margin-left: calc((100% - 1600px) / 2);
+        height: 3965px;
+
+        .top-effect-content {
+          height: 1200px;
+
+          .main-content {
+            padding-top: 35px;
+          }
+        }
+      }
+    }
+
+    @media #{$information-sm-laptop} {
+      height: 2534.4px;
+
+      .view-holder {
+        width: 1440px;
+        margin-left: calc((100% - 1440px) / 2);
+        height: 3965px;
+
+        .top-effect-content {
+          height: 1200px;
+
+          .main-content {
+            padding-top: 35px;
+          }
+        }
+      }
+    }
+
+    /* === RESPONSIVE === */
+    @media #{$information-tablet} {
+      height: auto;
+      .view-holder {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+
+        .top-effect-content {
+          position: relative;
+          height: 166.667vw;
+
+          .main-content {
+            padding-top: 14vw 30px 0;
+          }
+
+          .top-bg {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            // top: 33.33vw;
+
+            // &:after {
+            //   position: absolute;
+            //   content: "";
+            //   height: 10vw;
+            //   width: 100%;
+            //   bottom: -1vw;
+            //   background: linear-gradient(rgba(#fff, 0), #fff, #fff);
+            // }
+          }
+        }
+
+        .bottom-effect-content {
+          position: relative;
+          height: auto;
+          top: -37.5vw;
+
+          .power-feature-layout {
+            width: 82%;
+            margin: auto;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            margin-bottom: -20vw;
+
+            .data-info {
+              padding: 30px;
+              position: relative;
+              z-index: 2;
+
+              &:after {
+                content: "";
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                background-color: #1d1d1d;
+                left: calc(50% - 25px);
+                top: -25px;
+                transform: rotate(45deg);
+              }
+
+              .data-info-label {
+                font-size: 20px;
+                margin-bottom: 15px;
+                text-align: center !important;
+                position: relative;
+                z-index: 2;
+                font-weight: 700;
+              }
+
+              .text {
+                text-align: center !important;
+              }
+
+              &#power-data__counter-shock {
+                grid-row: 2;
+              }
+
+              &#power-data__bike-frame {
+                grid-row: 4;
+              }
+
+              &#power-data__bike-bottom {
+                grid-row: 6;
+              }
+
+              &#power-data__bike-water-resist {
+                grid-row: 8;
+              }
+
+              &#power-data__bike-engine {
+                grid-row: 10;
+              }
+
+              &#power-data__bike-wheel {
+                grid-row: 12;
+              }
+            }
+
+            .image-data {
+              &#power-image__counter-shock {
+                grid-column: 1;
+                grid-row: 1;
+              }
+
+              &#power-image__bike-frame {
+                grid-column: 1;
+                grid-row: 3;
+              }
+
+              &#power-image__bike-bottom {
+                grid-column: 1;
+                grid-row: 5;
+              }
+
+              &#power-image__bike-water-resist {
+                grid-column: 1;
+                grid-row: 7;
+              }
+
+              &#power-image__bike-engine {
+                grid-column: 1;
+                grid-row: 9;
+              }
+
+              &#power-image__bike-wheel {
+                grid-column: 1;
+                grid-row: 11;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media #{$information-phone} {
+      .view-holder {
+        .top-effect-content {
+          .main-content {
+            padding: 9vw 15px 0;
+          }
+        }
+
+        .bottom-effect-content {
+          .power-feature-layout {
+            width: 86%;
+            margin-bottom: -20vw;
+
+            .data-info {
+              padding: 20px 30px 30px;
+
+              &:after {
+                width: 40px;
+                height: 40px;
+                left: calc(50% - 20px);
+                top: -20px;
+              }
+
+              .data-info-label {
+                font-size: 17px;
+                margin-bottom: 12px;
+              }
+
+              .text {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media #{$information-sm-phone} {
+      .view-holder {
+        .top-effect-content {
+          .main-content {
+            padding: 8vw 13px 0;
+          }
+        }
+
+        .bottom-effect-content {
+          .power-feature-layout {
+            width: 86%;
+            margin-bottom: -20vw;
+
+            .data-info {
+              padding: 18px 25px 25px;
+
+              &:after {
+                width: 32px;
+                height: 32px;
+                left: calc(50% - 16px);
+                top: -16px;
+              }
+
+              .data-info-label {
+                font-size: 16px;
+                margin-bottom: 10px;
+              }
+
+              .text {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
