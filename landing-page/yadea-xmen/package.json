@@ -27,7 +27,7 @@
     "gulp-postcss": "7.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^3.2.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.2",
     "jquery-ui-bundle": "^1.12.1-migrate",
     "lodash": "^4.17.5",
     "postcss-color-function": "4.0.1",
